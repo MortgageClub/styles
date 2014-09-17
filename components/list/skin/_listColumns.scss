@@ -1,0 +1,50 @@
+/*doc
+---
+parent: list
+name: listColumns
+title: Multi-column Lists
+test: true
+---
+
+`list2cols` and `list3cols` can be used to make multi-column lists, they
+may be mixed in with any other list skin class. Currently this component
+only works in **Firefox 18+, Chrome 24+, Safari 5.1+, and IE10+**. For a
+full list of browsers that support multi column check [Can I
+Use](http://caniuse.com/#feat=multicolumn)
+
+```html_example
+<ul class="listBulleted list2cols">
+  <li>Status: For Sale</li>
+  <li>2 full, 1 partial bathrooms</li>
+  <li>Neighborhood:
+    <a href="">Nob Hill</a>
+  </li>
+  <li>Status: For Sale</li>
+  <li>2 full, 1 partial bathrooms</li>
+  <li>Neighborhood:
+    <a href="">Nob Hill</a>
+  </li>
+</ul>
+```
+
+*/
+
+
+// ListColumns Mixin
+@mixin listColumns($list) {
+	// space between columns in percentage
+	@each $number in $list {
+		$gap: 2;
+		$totalPercentageGap: $gap * ($number - 1);
+		
+		.list#{$number}cols {
+			@include column-count($number);
+			@include column-gap(percentage($gap/100));
+			@include column-width(((100 - $totalPercentageGap) / $number) + '%');
+		}
+	}
+}
+
+@mixin ooListColumns() {
+	@include listColumns((2,3));
+}

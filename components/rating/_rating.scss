@@ -1,0 +1,41 @@
+// Rating Mixin
+@mixin ooRating {
+  
+  //TODO: Move this to form
+  fieldset {
+    border: 0;
+  }
+  
+  .rating label,
+  .ratingGroup,
+  .ratingValue {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  // Class added by JS on the UL
+  .ratingGroup {
+    margin: 0;
+  
+    li {
+      float: left;
+    
+      span {
+        @extend .hideVisually;
+      }
+    }
+  
+    label {
+      display: block;
+      cursor: pointer;
+    }
+    
+    input {
+      @extend .hideVisually;
+    }
+  }
+  
+  .ratingValue {
+    margin-left: 5px;
+  }
+}

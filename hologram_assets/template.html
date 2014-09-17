@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Flexport OOCSS Style Guide</title>
+    <link rel="shortcut icon" href="doc_assets/brick.png" />
+    <link rel="stylesheet" href="build/css/screen.css">
+    <!-- CSS for toggling template classes -->
+    <link rel="stylesheet" href="doc_assets/css/templateDoc.css">
+
+    <script src="build/libs/script/jquery-1.8.2.min.js"></script>
+</head>
+
+  <body>
+    <header class="header pbn" role="banner">
+      <div class="backgroundHighlight typeReversed">
+        <div class="container">
+          <h1 class="h4 mvm"> <strong><i class="iconLocation"></i>Flexport</strong> Style Guide</h1>
+        </div>
+      </div>
+      <div class="hideFully" id="navPlaceholder"></div>
+      <div id="navigation" class="backgroundLowlight typeReversed">
+        <div class="container">
+          <span>
+            <ul class="oocssDocNav listInline">
+              <li><a href="index.html">Intro</a></li>
+              <li><a href="layout.html">Layout</a></li>
+              <li><a href="base_css.html">Base CSS</a></li>
+              <li><a href="components.html">Components</a></li>
+              <li><a href="javascript.html">Javascript</a></li>
+              <li><a href="utilities.html">Utilities</a></li>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <div class="content contentResponsive">
+      <section>
+        <div class="sideBar">
+          <h5>Side Bar Wonders</h5>
+          <img src="http://placehold.it/185x150">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+          suscipit metus velit, et semper ante blandit et. Curabitur
+          lectus nulla, bibendum in lorem at, vestibulum tristique
+          nulla. Pellentesque sed lectus est. In sodales urna sed est
+          venenatis viverra. In hac habitasse platea dictumst. Aliquam
+          suscipit turpis non metus euismod rutrum. Nam tristique
+          convallis placerat. Maecenas pharetra turpis eget nisl
+          lacinia, et volutpat magna interdum. </p>
+        </div>
+         <!-- //sidebar -->
+
+        <aside class="aside" role="complementary">
+          <h5>All the space for ads!</h5>
+          <img src="http://placehold.it/300x150">
+          <p>Nunc adipiscing aliquam eleifend. Donec molestie sapien
+          urna, et ultrices quam pellentesque cursus. Vivamus eros
+          ligula, feugiat ut mollis id, imperdiet non leo. Pellentesque
+          eu velit volutpat, rhoncus enim vitae, semper arcu. Proin
+          faucibus eu felis vel vestibulum. Aliquam leo odio, consequat
+          eget placerat sit amet, ultrices non dolor. Duis quis risus
+          viverra, pulvinar tortor quis, fringilla diam. Proin blandit
+          diam ante, eu rhoncus est venenatis et. Morbi egestas ante non
+          erat porta vestibulum. Cras egestas ipsum nec dui eleifend,
+          sed convallis erat posuere. </p>
+        </aside>
+
+        <div class="main" role="main">
+          <h5>All your importants things!</h5>
+          <p class="txtC">
+          <img src="http://fillmurray.com/600/400"><br>
+          <button class="btn btnPrimary btnSml" id="toggleTemplate">Toggle template classes</button>
+          <button class="btn btnDefault btnSml" id="toggleSideBar">Toggle left rail</button>
+          <button class="btn btnDefault btnSml" id="toggleAside">Toggle right rail</button>
+          </p>
+
+          <div class="box alert alertInfo hideOnNarrow">
+            <div class="boxBody">
+              <p class="typeContrast mvm">Current layout width is 1128px</p>
+            </div>
+          </div>
+
+          <div class="box alert alertConfirm hideOnWide">
+            <div class="boxBody">
+              <p class="typeContrast mvm">Current template width is 980px</p>
+            </div>
+          </div>
+
+          <p>Phasellus adipiscing eu purus eget sodales. Aenean vel
+          feugiat erat, non sollicitudin tellus. Integer eu tortor orci.
+          Donec feugiat ut tellus vel tincidunt. Etiam id pulvinar
+          ligula, eu rhoncus sem. Nullam in volutpat lorem, a bibendum
+          augue. Sed venenatis mi quis lacus tempus, vitae aliquet
+          turpis porttitor. Etiam et hendrerit purus. Duis elementum
+          quam vestibulum purus scelerisque tempor ac et enim. Morbi et
+          elit eu nulla tincidunt interdum. In neque sem, mattis vitae
+          dui et, luctus cursus metus.</p>
+
+          <p>Vestibulum ante ipsum primis in faucibus orci luctus et
+          ultrices posuere cubilia Curae; Suspendisse vitae lorem enim.
+          Nunc sit amet risus a quam tempus tincidunt. Vestibulum vel
+          nibh eros. Vestibulum at nibh aliquam, fermentum dolor et,
+          tempor lectus. Aenean sollicitudin faucibus vulputate. Fusce
+          malesuada erat at sagittis viverra. Sed vitae urna vitae lorem
+          commodo dignissim sit amet ut lorem. Maecenas sit amet
+          pharetra est. Donec sagittis luctus nulla sed dictum. In nec
+          ipsum id nibh faucibus rhoncus vitae ut lorem. Fusce eu leo
+          rutrum, interdum metus a, varius massa. Sed adipiscing, massa
+          eu congue porttitor, nibh elit rutrum nibh, quis aliquet
+          sapien nibh eget magna. </p>
+        </div>
+         <!-- //main -->
+      </section>
+    </div>
+    <!-- //content -->
+
+  <script>
+    $('#toggleTemplate').click(function() {
+      $('html').toggleClass('templateClasses');
+    })
+    $('#toggleSideBar').click(function() {
+      $('.sideBar').toggle();
+    })
+    $('#toggleAside').click(function() {
+      $('.aside').toggle();
+    })
+  </script>
+
+  </body>
+</html>

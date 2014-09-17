@@ -1,0 +1,50 @@
+/*doc
+---
+title: Inline Media Block
+name: inlineMedia
+category: Components
+author: Nicole Sullivan
+---
+
+Occasionally, you may need a media block that aligns vertically. In this case you should use the `mediaInline`. It only works with a single line of text, so use it judiciously. All `mediaInline` classes may be extended with vertical alignment utils `txtT`, `txtM`, and `txtB` to set the vertical alignment of that element to top, middle, or bottom respectively.
+
+Class                | Description
+-------------------- | -----------
+`mediaInline`        | The wrapper class for the inline media block. Required.
+
+```html_example
+<a class="mediaInline" href="http://www.trulia.com/">
+    <img src="http://placehold.it/20x20"
+      width="20"
+      height="20"
+      alt="">
+  <span>Icon on the left</span>
+</a>
+```
+
+```html_example
+<a class="mediaInline" href="http://www.trulia.com/">
+  <span>Icon on the left</span>
+  <img src="http://placehold.it/20x20"
+    width="20"
+    height="20"
+    alt="">
+</a>
+```
+
+*/
+
+
+// MediaInline Mixin
+@mixin ooMediaInline(){
+  
+  .mediaInline {
+    vertical-align: middle;
+    
+    > img,
+    > span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}

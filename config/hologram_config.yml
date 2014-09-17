@@ -1,0 +1,19 @@
+# The directory containing the source files to parse recusrively
+source: ../components
+
+# The directory that hologram will build to
+destination: ../docs
+
+# The assets needed to build the docs (includes header.html,
+# footer.html, etc)
+documentation_assets: ../hologram_assets
+
+custom_markdown: trulia_markdown_renderer.rb
+
+plugins:
+  - css_test_generator.rb
+
+# Any other asset folders that need to be copied to the destination
+# folder
+dependencies:
+  - ../build

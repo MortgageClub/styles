@@ -1,0 +1,89 @@
+/**
+* @desc         Styles for template documentation
+* @name         templateDoc
+* @author       mobywhale
+* @tested
+* @requires
+*/
+
+.templateClasses  .header,
+.templateClasses  .sideBar,
+.templateClasses  .aside,
+.templateClasses  .main,
+.templateClasses  .footer,
+.templateClasses  .content,
+.templateClasses  .container {
+  position: relative;
+}
+
+
+.templateClasses .container:before {
+  z-index: 99;
+  content: attr(class);
+  width: auto;
+  padding: 5px;
+  margin-left: 1px;
+
+  color: #fff;
+  font-size: 11px;
+  font-family: Menlo, Consolas, Monaco, "Lucida Console", monospace;
+}
+
+.templateClasses .header {
+  box-shadow: inset 0 0 0 2px pink;
+}
+
+.templateClasses .header:before {
+  background: pink;
+  position: absolute;
+  left: 0;
+}
+
+.templateClasses .content {
+  box-shadow: inset 0 0 0 2px green;
+}
+
+.templateClasses .content:before {
+  background: green;
+}
+
+.templateClasses .container {
+  box-shadow: inset 0 0 0 2px gold;
+}
+
+.templateClasses .container:before {
+    content: "container";
+    background: gold;
+    position: absolute;
+    left: 0;
+}
+
+.templateClasses .sideBar {
+  box-shadow: inset 0 0 0 2px orange;
+}
+
+.templateClasses .sideBar:before {
+    background: orange;
+}
+
+.templateClasses .aside {
+  box-shadow: inset 0 0 0 2px purple;
+}
+.templateClasses .aside:before {
+    background: purple;
+}
+
+.templateClasses .main {
+  box-shadow: inset 0 0 0 2px blue;
+
+.templateClasses .main:before {
+    background: blue;
+}
+
+.templateClasses .footer {
+  box-shadow: inset 0 0 0 2px red;
+}
+.templateClasses .footer:before {
+    background: red;
+}
+

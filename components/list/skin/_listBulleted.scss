@@ -1,0 +1,27 @@
+/*doc
+---
+parent: list
+name: listBulleted
+title: Bulleted Lists
+test: true
+---
+
+```html_example
+<ul class="listBulleted">
+  <li>First list item</li>
+  <li>Second list item</li>
+  <li>Third list item</li>
+</ul>
+```
+
+*/
+
+
+// ListBulleted Mixin
+@mixin ooListBulleted() {
+  
+  .listBulleted > li {
+    list-style-type: disc;
+    margin-left: 1.3em;
+  }
+}

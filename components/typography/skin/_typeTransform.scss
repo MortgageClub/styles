@@ -1,0 +1,37 @@
+/*doc
+---
+title: Typography Transform
+parent: typography
+name: typeTransform
+category: Base CSS
+author: JD
+---
+
+Transforms typography elements...
+
+```html_example
+<p class="typeCaps">typeCaps</p>
+<p class="typeCapitalize">type capitalize</p>
+<p class="typeTruncate" style="width:150px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor quam nec nibh adipiscing dictum. Sed auctor tristique ligula</p>
+```
+ */
+
+
+// TypeTransform Mixin
+@mixin ooTypeTransform {
+	
+	.typeCaps {
+		text-transform: uppercase;
+	}
+	
+	.typeCapitalize {
+		text-transform: capitalize;
+	}
+	
+	.typeTruncate {
+		overflow: hidden;
+		-ms-text-overflow: ellipsis;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+}

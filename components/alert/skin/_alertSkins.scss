@@ -1,0 +1,96 @@
+/*doc
+---
+title: Alert Types
+name: alertSkins
+parent: alert
+author: August Flanagan
+test: true
+---
+
+Class                | Description
+-------------------- | -----------
+`alert alertConfirm` | Used for successes and confirmation messages
+`alert alertInfo`    | Used for informational messages
+`alert alertWarn`    | Used for warning or error messages
+
+<div class="box alert alertConfirm">
+  <div class="boxBody">
+    <button class="boxClose">
+      <span role="presentation">&times;</span>
+      <span class="hideVisually">Close</span>
+    </button>
+    <p class="typeContrast mvm">A confirmation/success message goes here.</p>
+  </div>
+</div>
+<div class="box alert alertInfo">
+  <div class="boxBody">
+    <button class="boxClose">
+      <span role="presentation">&times;</span>
+      <span class="hideVisually">Close</span>
+    </button>
+    <p class="typeContrast mvm">An informative and reassuring message goes here. You're really swell.</p>
+  </div>
+</div>
+
+```html_example
+<div class="box alert alertWarn">
+  <div class="boxBody">
+    <button class="boxClose">
+      <span role="presentation">&times;</span>
+      <span class="hideVisually">Close</span>
+    </button>
+    <p class="typeContrast mvm">Dalek Bulletin: EXTERMINATE! EXTERMINATE!</p>
+  </div>
+</div>
+```
+
+[[[plugin:css-test
+<div class="box alert alertConfirm">
+  <div class="boxBody">
+    <button class="boxClose">
+      <span role="presentation">&times;</span>
+      <span class="hideVisually">Close</span>
+    </button>
+    <p class="typeContrast mvm">Please confirm that you are confirming this confirmation</p>
+  </div>
+</div>
+
+<div class="box alert alertInfo">
+  <div class="boxBody">
+    <button class="boxClose">
+      <span role="presentation">&times;</span>
+      <span class="hideVisually">Close</span>
+    </button>
+    <p class="typeContrast mvm">The information you are about to read is in this informational alert.</p>
+  </div>
+</div>
+
+<div class="box alert alertWarn">
+  <div class="boxBody">
+    <button class="boxClose">
+      <span role="presentation">&times;</span>
+      <span class="hideVisually">Close</span>
+    </button>
+    <p class="typeContrast mvm">Warning.</p>
+  </div>
+</div>
+]]]
+
+*/
+
+
+// AlertSkin Mixin
+@mixin alertSkin($type, $alertBackground) {
+  .alert#{$type} {
+    color: #fff;
+    background-color: $alertBackground;
+  }
+}
+
+
+// AlertSkins Mixin
+@mixin ooAlertSkins {
+  @include alertSkin("Confirm", $alertConfirmColor);
+  @include alertSkin("Warn", $alertWarnColor);
+  @include alertSkin("Info", $alertInfoColor);
+}

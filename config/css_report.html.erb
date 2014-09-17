@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>TXL Changes</title>
+    <link rel="stylesheet" href="http://txl.dev/build/css/screen.css">
+  </head>
+  <body>
+
+    <div class="main txtC">
+      <% for file_data in files %>
+        <div class="change">
+
+          <h2><%= file_data[:name] %></h2>
+          <div class="frameStacked" style="margin-bottom:27px;">
+            <img class="new" src="<%= file_data[:new] %>">
+            <img class="base hideFully" src="<%= file_data[:base] %>">
+            <img class="diff hideFully" src="<%= file_data[:compare] %>">
+          </div>
+
+          <div class="both hideFully">
+            <div class="frameStandard mrl">
+              <span class="overlayContainer">
+                <img src="<%= file_data[:new] %>">
+                <span class="overlayDefault overlayBottom overlayRight">
+                  <%= new_label %>
+                </span>
+              </span>
+            </div>
+            <div class="frameStandard">
+              <span class="overlayContainer">
+                <img class="" src="<%= file_data[:base] %>">
+                <span class="overlayDefault overlayBottom overlayRight">
+                  <%= base_label %>
+                </span>
+              </span>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="btnGroup imageView">
+            <button data-view="new" class="btn btnDefault btnActive"><%= new_label %></button>
+            <button data-view="base" class="btn btnDefault"><%= base_label %></button>
+            <button data-view="diff" class="btn btnDefault">Diff</button>
+            <button data-view="both" class="btn btnDefault">Side by Side</button>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function () {
+      $('.imageView button').click(function (event) {
+        var $el = $(this);
+        var $group = $el.parents('.change');
+        var view = $el.data('view');
+
+        $el.parent().find('.btnActive').removeClass('btnActive');
+        $el.addClass('btnActive');
+
+        $group.find('.both, .new, .base, .diff, .frameStacked').addClass('hideFully');
+        $group.find('.' + view).removeClass('hideFully');
+
+        if (view !== 'both') {
+          $group.find('.frameStacked').removeClass('hideFully');
+        }
+      });
+    });
+    </script>
+</body>

@@ -1,0 +1,49 @@
+/*doc
+---
+title: Dots
+parent: dot
+name: dotSkins
+test: true
+---
+
+Class          | Description
+-------------- | -----------------
+dotStandard    | This is a grey dot
+dotHighlight   | This is a green dot
+dotCallout     | This is a orange dot
+dotWarn        | This is a red dot
+
+
+```html_example
+<span class="dotStandard"></span><strong>Grey dot</strong>
+<span class="dotHighlight"></span><strong>Green dot</strong>
+<span class="dotCallout"></span><strong>Orange dot</strong>
+<span class="dotWarn"></span><strong>Red dot</strong>
+```
+
+*/
+
+
+// DotSkins Mixin
+@mixin ooDotSkins {
+
+  .dotStandard {
+    @extend %dot;
+    background-color: $dotStandardColor;
+  }
+
+  .dotHighlight {
+    @extend %dot;
+    background-color: $dotHighlight;
+  }
+
+  .dotCallout {
+    @extend %dot;
+    background-color: $dotCallout;
+  }
+
+  .dotWarn {
+    @extend %dot;
+    background-color: $dotWarn;
+  }
+}

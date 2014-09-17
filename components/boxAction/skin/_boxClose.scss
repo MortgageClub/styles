@@ -1,0 +1,46 @@
+/*doc
+---
+title: Box Close
+parent: boxAction
+name: boxCloseSkin
+author: August Flanagan
+test: true
+---
+
+```html_example
+<div class="box boxBasic backgroundBasic">
+  <button class="boxClose">
+    <span role="presentation">&times;</span>
+    <span class="hideVisually">Close</span>
+  </button>
+  <div class="boxHead boxHeadBasic">
+    <h5>I'd tell you a UDP joke</h5>
+  </div>
+  <div class="boxBody">
+    <p>But I don't think you'd get it.</p>
+  </div>
+</div>
+```
+
+*/
+
+
+// BoxClose Mixin
+@mixin ooBoxClose {
+
+  .boxClose {
+    @extend %boxAction;
+    top: 3px;
+    right: 6px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    color: $closeIconColor;
+    @include fontSize(14px);
+
+    &:hover,
+    &:focus {
+     color: $baseTextColor;
+    }
+  }
+}

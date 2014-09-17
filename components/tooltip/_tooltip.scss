@@ -1,0 +1,180 @@
+// TransparentBorder Mixin
+@mixin ttTransparentBorder($border1, $border2) {
+  .ie {
+    border-#{$border1}-color: transparent !important;
+    border-#{$border2}-color: transparent !important;
+  }
+}
+
+
+// Tooltip Mixin
+@mixin ooTooltip {
+  .tooltip {
+    width: auto;
+    max-width: 300px;
+    margin: 4px;
+    padding: .5em 1em;
+    position: absolute;
+    display: none;
+    z-index: $zIndexPageOverlay;
+    @include border-radius($borderRadiusDefault);
+    
+    // ie8
+    &.ie8:before {
+      display: none;
+    }
+    
+    .before {
+      @extend %tooltipBefore;
+      border: 1px solid transparent;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475, M12=-0.7071067811865477, M21=0.7071067811865477, M22=0.7071067811865475, SizingMethod='auto expand')"; // ie8
+    }
+  }
+  
+  %tooltipBefore {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    display: block;
+    content: '';
+    overflow: hidden;
+    background-color: #fff;
+    color: #555;
+    @include box-shadow( 1px 1px 0 0 $tooltipBorderColor);
+    z-index: $zIndexBackground;
+  }
+  
+  %tooltipdisplay {
+    display: block;
+  }
+  
+  // Top
+  .tooltipStemTop {
+    @include ttTransparentBorder(bottom, right);
+    
+    &:before,
+    .before {
+      @extend %tooltipBefore;
+      @extend %tooltipdisplay;
+      left: 13px;
+      top: -6px;
+      @include rotate(225deg);
+    }
+  
+    .ie {
+      top: -10px;
+      }
+  }
+  
+  // Right
+  .tooltipStemRight {
+    @include ttTransparentBorder(left, bottom);
+    
+    &:before,
+    .before {
+      @extend %tooltipBefore;
+      @extend %tooltipdisplay;
+      right: -6px;
+      top: 11px;
+      @include rotate(-45deg);
+    }
+    
+    .ie {
+      top: 8px;
+      right: -5px;
+    }
+  }
+  
+  // Left
+  .tooltipStemLeft {
+    @include ttTransparentBorder(top, right);
+    
+    &:before,
+    .before {
+      @extend %tooltipBefore;
+      @extend %tooltipdisplay;
+      left: -6px;
+      top: 10px;
+      @include rotate(135deg);
+    }
+    
+    .ie {
+      left: -10px;
+      top: 8px;
+    }
+  }
+  
+  // Bottom
+  .tooltipStemBottom {
+    @include ttTransparentBorder(top, left);
+    
+    &:before,
+    .before {
+      @extend %tooltipBefore;
+      @extend %tooltipdisplay;
+      left: 13px;
+      bottom: -6px;
+      @include rotate(45deg);
+    
+    }
+    
+    .ie {
+      bottom: -5px;
+    }
+  }
+  
+  // Bottom Left
+  .tooltipStemLeftBottom {
+    @include ttTransparentBorder(top, right);
+    
+    &:before,
+    .before {
+      @extend %tooltipBefore;
+      @extend %tooltipdisplay;
+      left: -6px;
+      bottom: 10px;
+      @include rotate(135deg);
+    }
+    
+    .ie {
+      left: -10px;
+      bottom: 8px;
+    }
+  }
+  
+  // Bottom Right
+  .tooltipStemBottomRight {
+    @include ttTransparentBorder(top, left);
+    
+    &:before,
+    .before {
+      @extend %tooltipBefore;
+      @extend %tooltipdisplay;
+      right: 13px;
+      bottom: -6px;
+      @include rotate(45deg);   
+    }
+    
+    .ie {
+      bottom: -5px;
+    }
+  }
+  
+  // Top Right
+  .tooltipStemTopRight {
+    @include ttTransparentBorder(bottom, right);
+  
+    &:before,
+    .before {
+      @extend %tooltipBefore;
+      @extend %tooltipdisplay;
+      right: 13px;
+      top: -6px;
+      @include rotate(225deg);
+    }
+    
+    .ie {
+      top: -10px;
+    }
+  }
+} // ooTooltip

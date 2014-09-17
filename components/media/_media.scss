@@ -1,0 +1,87 @@
+/*doc
+---
+title: Media
+name: media
+category: Components
+author: Nicole Sullivan
+---
+
+Media blocks are used to layout images with related content.
+
+The media block is a UI pattern of an image to the left and some text (or really anything) that describes it to the right. The image can be any size. The media block has an optional right region which should also be fixed width.
+
+Use any sized image or flash for the right or left area. Any content in the body including nesting other media blocks. Always set image height and width to avoid unnecessary reflows/repaints.
+
+Class          | Description
+-------------- | -----------
+`media`        | The wrapper class for the media block. Required.
+`mediaBody`    | Wrapper of the content region of the media block. Any content or other UI objects, including other media blocks may be nested within the media body.
+`mediaImg`     | Applied to an image or wrapper of the image (often a link), that you wish to align left. Optional.
+`mediaImgExt`  | Applied to an image or wrapper of the image (often a link), that you wish to align right. Optional.
+
+```html_example
+<div class="media">
+  <a href="http://www.trulia.com" class="mediaImg">
+    <img src="http://placehold.it/20x20" width="20" height="20" alt="Left aligned image">
+  </a>
+  <div class="mediaBody">
+    Simple text next to a small icon.
+  </div>
+</div>
+```
+
+```html_example
+<div class="media">
+  <a href="http://www.trulia.com" class="mediaImg mediaImgExt">
+    <img src="http://placehold.it/20x20" width="20" height="20" alt="Right aligned image">
+  </a>
+  <div class="mediaBody">
+    Right aligned media block.
+  </div>
+</div>
+```
+
+```html_example
+<div class="media">
+  <a href="http://www.trulia.com" class="mediaImg">
+    <img src="http://placehold.it/64x64" width="64" height="64" alt="Left aligned image">
+  </a>
+  <a href="http://www.trulia.com" class="mediaImg mediaImgExt">
+    <img src="http://placehold.it/64x64" width="64" height="64" alt="Right aligned image">
+  </a>
+  <div class="mediaBody">
+    <p><b>Right and left aligned media block</b></p>
+    <p>This media block has an image aligned to the right via the imgExt class applied to the image wrapper. Images can be right, left, or both. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</div>
+```
+
+*/
+
+
+// Media Mixin
+@mixin ooMedia(){
+  .media {
+    @extend %baseSpacing;
+    @include clearfix-me(micro);
+  
+    > .mediaImg {
+      float: left;
+      margin-right: 10px;
+    
+      > img {
+       display: block;
+      }
+    }
+    
+    > .mediaImgExt {
+      float:right;
+      margin-left: 10px;
+      margin-right: 0;
+    }
+    
+    > .mediaBody {
+      @include clearfix-me(facebook);
+    }
+  }
+}

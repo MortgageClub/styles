@@ -1,0 +1,40 @@
+// @desc         Create simple directional arrows in pure CSS.
+// @name         arrow
+// @author       David West
+// @tested       Chrome
+// @requires     N/A
+
+
+// Arrow Mixin
+@mixin arrow($direction, $size: 1em, $color: #222) {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-color: transparent;
+	content: '';
+	
+	@if $direction == 'up' or $direction == 'down' {
+		border-width: $size $size * .7;
+	}
+	@else {
+		border-width: $size * .7 $size;
+	}
+	
+	@if $direction == 'up' {
+		border-bottom-color: $color;
+		margin-left: $size * .7;
+	}
+	
+	@if $direction == 'down' {
+		border-top-color: $color;
+		margin-left: $size * .7;
+	}
+	
+	@if $direction == 'right' {
+		border-left-color: $color;
+	}
+	
+	@if $direction == 'left' {
+		border-right-color: $color;
+	}
+}

@@ -1,0 +1,53 @@
+/*doc
+---
+title: Colors
+parent: background
+name: backgroundSkins
+author: Nicole Sullivan
+---
+
+<div class="line txtC">
+    <div class="col cols3">
+      <div class="docSwatch backgroundLowlight"></div>
+      <code>backgroundLowlight</code>
+    </div>
+    <div class="col cols3">
+      <div class="docSwatch backgroundHighlight"></div>
+      <code>backgroundHighlight</code>
+    </div>
+    <div class="col cols3">
+      <div class="docSwatch backgroundBasic"></div>
+      <code>backgroundBasic</code>
+    </div>
+    <div class="col cols3">
+      <div class="docSwatch backgroundWarn"></div>
+      <code>backgroundWarn</code>
+    </div>
+    <div class="col cols3">
+      <div class="docSwatch backgroundCallout"></div>
+      <code>backgroundCallout</code>
+    </div>
+    <div class="col cols3">
+      <div class="docSwatch backgroundInverse"></div>
+      <code>backgroundInverse</code>
+    </div>
+    <div class="col cols3 lastcol">
+      <div class="docSwatch backgroundMidnight"></div>
+      <code>backgroundMidnight</code>
+    </div>
+
+    
+</div>
+*/
+
+
+// BackgroundSkins Mixin
+@mixin ooBackgroundSkins {
+  @include ooBackground("backgroundBasic", $bgBasic);
+  @include ooBackground("backgroundLowlight", $bgLowlight);
+  @include ooBackground("backgroundHighlight", $bgHighlight);
+  @include ooBackground("backgroundInverse", $bgInverse);
+  @include ooBackground("backgroundWarn", $bgWarn);
+  @include ooBackground("backgroundCallout", $bgCallout);
+  @include ooBackground("backgroundMidnight", $bgMidnight);
+}

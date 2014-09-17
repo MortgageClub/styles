@@ -1,0 +1,371 @@
+// Main Sass file to compile all TXL partials
+
+
+
+
+// Compass Mixins
+@import 'compass/css3/border-radius';
+@import 'compass/css3/box-shadow';
+@import 'compass/css3/box-sizing';
+@import 'compass/css3/transform';
+@import 'compass/css3/images';
+@import 'compass/css3/transition';
+@import 'compass/css3/opacity';
+
+
+// Additional Mixins
+@import '../components/_mixins';
+
+
+// TXL Variables
+@import '../components/variables';
+
+
+// Reset and Normalize
+@import '../components/normalize';
+@include ooNormalize;
+
+
+// Utilities
+@import '../components/utils/clearfix-me';
+@import '../components/utils/hide';
+@import '../components/utils/arrow';
+@import '../components/utils/pxToEm';
+@import '../components/utils/textAlign';
+@import '../components/utils/_centerHorizontal';
+@import '../components/utils/clickable';
+@import '../components/utils/noWrap';
+@import '../components/utils/animate';
+@import '../components/utils/zIndex';
+@include ooHideVisually;
+@include ooHideVisuallyFocusable;
+@include ooHideText;
+@include ooHideFully;
+@include ooHorizontalTextAlignment;
+@include ooVerticalTextAlignment;
+@include ooCenterHorizontal;
+@include ooClickable;
+@include ooNoWrap;
+@include ooAnimate;
+@include ooZIndices;
+
+
+// Whitespace
+@import '../components/whitespace/whitespace';
+@include tableResets;
+@include whitespace($spacingHelpers);
+
+
+// Typography
+@import '../components/typography/typography';
+@import '../components/typography/fonts';
+@import '../components/typography/skin/typeContrast';
+@import '../components/typography/skin/typeColor';
+@import '../components/typography/skin/typeWeight';
+@import '../components/typography/skin/typeTransform';
+@include ooOpenSans;
+@include ooTypography;
+@include ooTypeContrast;
+@include ooTypeColor;
+@include ooTypeWeight;
+@include ooTypeTransform;
+
+
+// Grid
+@import '../components/grid/grid';
+// @import '../components/grid/grid-responsive';
+// @import '../components/grid/grid-responsive';
+// @include oogrids-responsive((2em, 50em, 500em, 900em));
+// TODO change oogrids mixin to oogrid
+@include ooGrid($cols, $baseGutter);
+
+
+// Media
+@import '../components/media/media';
+@import '../components/mediaInline/mediaInline';
+@include ooMedia;
+@include ooMediaInline;
+
+
+// Links
+@import '../components/link/link';
+@include ooLink;
+
+
+// Ad
+@import '../components/ad/ad';
+@import '../components/ad/adBtn';
+@import '../components/ad/skin/adSkins';
+@include ooAd;
+@include ooAdBtn;
+@include ooAdSkins;
+
+
+// Background
+@import '../components/background/background';
+@import '../components/background/skin/backgroundSkins';
+@include ooBackgroundSkins;
+
+
+// Box
+@import '../components/box/box';
+@import '../components/box/skin/boxSkins';
+@import '../components/box/skin/boxTabPrimary';
+@import '../components/box/skin/boxTabColumns';
+@include ooBox;
+@include ooBoxSkins;
+@include ooBoxTabPrimary;
+@include ooBoxTabColumns;
+
+
+// Box Head
+@import '../components/boxHead/skin/boxHeadBasic';
+@import '../components/boxHead/skin/boxHeadHighlight';
+@include ooBoxHeadBasic;
+@include ooBoxHeadHighlight;
+
+
+// Box Foot
+@import '../components/boxFoot/skin/boxFootBasic';
+@include ooBoxFootBasic;
+
+
+// Box Action
+@import '../components/boxAction/boxAction';
+@import '../components/boxAction/skin/boxClose';
+@include ooBoxAction;
+@include ooBoxClose;
+
+
+// Lists
+@import '../components/list/list';
+@import '../components/list/skin/listOrdered';
+@import '../components/list/skin/listBulleted';
+@import '../components/list/skin/listBordered';
+@import '../components/list/skin/listInline';
+@import '../components/list/skin/listInlineCommas';
+@import '../components/list/skin/listNav';
+@import '../components/list/skin/listInlineDivider';
+@import '../components/list/skin/listWhitespace';
+@import '../components/list/skin/listColumns';
+@include ooList;
+@include ooListOrdered;
+@include ooListBulleted;
+@include ooListBordered;
+@include ooListInline;
+@include ooListInlineCommas;
+@include ooListNav;
+@include ooListInlineDivider;
+@include ooListWhitespace;
+@include ooListColumns;
+
+
+// Border
+@import '../components/border/border';
+@include ooBorder;
+
+
+// Modal
+@import '../components/modal/modal';
+@include ooModal;
+
+
+// Form
+@import '../components/form/form';
+@import '../components/form/formMixins';
+@import '../components/form/checkboxRadio/checkboxRadio';
+@import '../components/form/fieldGroup/fieldGroup';
+@import '../components/form/fieldGroupInline/fieldGroupInline';
+@import '../components/form/fieldRange/fieldRange';
+@import '../components/form/input/input';
+@import '../components/form/select/select';
+@import '../components/form/select/selectPretty';
+@import '../components/form/textarea/textarea';
+@import '../components/addOn/addOn';
+@import '../components/addOn/skin/addOnBasic';
+@import '../components/addOn/skin/addOnBtn';
+@include ooForm;
+@include ooAddOn;
+@include ooAddOnBasic;
+@include ooAddOnBtn;
+
+
+// Toggle
+@import '../components/toggle/toggle';
+@include ooToggle;
+
+
+// Slider
+@import '../components/slider/slider';
+@include ooSlider;
+
+
+// Frame
+@import '../components/frame/frame';
+@import '../components/frame/skin/frameThumb';
+@import '../components/frame/skin/frameSmall';
+@import '../components/frame/skin/frameStandard';
+@import '../components/frame/skin/frameStacked';
+@include ooFrame;
+@include ooFrameThumb;
+@include ooFrameSmall;
+@include ooFrameStandard;
+@include ooFrameStacked;
+
+
+// Overlay
+@import '../components/overlay/overlay';
+@import '../components/overlay/skin/overlaySkins';
+@include ooOverlay;
+@include ooOverlaySkins;
+
+
+// Badges
+@import '../components/badge/badge';
+@import '../components/badge/skin/badgeSkins';
+@import '../components/marker/marker';
+@include ooBadge;
+@include ooBadgeSkins;
+@include ooMarker;
+@include ooMarkerSkins;
+
+
+// Button
+@import '../components/button/button';
+@import '../components/button/skin/buttonSkins';
+@import '../components/button/skin/buttonLink';
+@include ooButton;
+@include ooButtonSkins;
+@include ooButtonLink;
+
+
+// Button Group
+@import '../components/buttonGroup/buttonGroup';
+@include ooButtonGroup;
+
+
+// Divider
+@import '../components/divider/divider';
+@include ooDivider;
+
+
+// Dropdown
+@import '../components/dropdown/dropdown';
+@import '../components/dropdown/skin/dropdownArrowSkins';
+@import '../components/dropdown/skin/dropdownBoxHighlight';
+@import '../components/dropdown/skin/dropdownBoxMenuItem';
+@include ooDropdown;
+@include ooDropdownArrowSkins;
+@include ooDropdownBoxHighlight;
+@include ooDropdownBoxMenuItem;
+
+
+// Table
+@import '../components/table/table';
+@import '../components/table/skin/tableSkins';
+// @import '../components/examples';
+@include ooTable;
+@include ooTableSkins;
+@include tableWhitespace($spacingHelpers);
+
+
+// Alerts and Messages
+@import '../components/alert/alert';
+@import '../components/alert/skin/alertSkins';
+@include ooAlert;
+@include ooAlertSkins;
+
+
+// Tooltip
+@import '../components/tooltip/tooltip';
+@import '../components/tooltip/skin/tooltipLight';
+@import '../components/tooltip/skin/tooltipDark';
+@include ooTooltip;
+@include ooTooltipLight;
+@include ooTooltipDark;
+
+
+// Rating
+@import '../components/rating/rating';
+@import '../components/rating/skin/ratingStar';
+@import '../components/rating/skin/ratingBar';
+@include ooRating;
+@include ooRatingStar;
+@include ooRatingBar;
+
+
+
+// Icon
+@import '../components/icon/icon';
+@import '../components/icon/iconImages';
+@import '../components/icon/iconSVG';
+@include ooIconFont;
+@include ooEntypo;
+@include ooIcon;
+@include ooIconImage;
+@include ooIconExt; //Opp. margin
+@include ooIconCompact; //No margin
+@include ooIconSVG;
+
+
+// Hover
+@import '../components/hover/hover';
+@include ooHover;
+
+
+// Template
+@import '../components/template/template';
+
+
+// Sticky
+@import '../components/sticky/sticky';
+@include ooSticky;
+
+
+// Image Container
+@import '../components/imageContainer/imageContainer';
+@import '../components/imageContainer/skin/imageContainerSkins';
+@include ooImageContainer;
+@include ooImageContainerSkins;
+
+
+// Navigation
+@import '../components/navigation/navigation';
+@import '../components/navigation/skin/navDefault';
+@include ooNavigation;
+@include ooNavDefault;
+
+
+// Tabs
+@import '../components/tabs/tabs';
+@import '../components/tabs/skin/tabDefault';
+@import '../components/tabs/skin/tabPrimary';
+@import '../components/tabs/skin/tabColumns';
+@include ooTabs;
+@include ooTabDefault;
+@include ooTabPrimary;
+@include ooTabColumns;
+
+
+// Photoplayer
+@import '../components/photoPlayer/photoPlayer';
+@include ooPhotoPlayer;
+
+
+// Tags
+@import '../components/tag/tag';
+@import '../components/tag/skin/tagSkins';
+@include ooTag;
+@include ooTagSkins;
+
+
+// Heat Map Bar
+@import '../components/heatMapBar/heatMapBar';
+@include ooHeatMapBar;
+
+
+// Dots
+@import '../components/dot/dot';
+@import '../components/dot/skin/dotSkins';
+@include ooDot;
+@include ooDotSkins;

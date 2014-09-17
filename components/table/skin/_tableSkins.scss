@@ -1,0 +1,197 @@
+/*doc
+---
+title: Table Styles
+parent: table
+name: tableSkins
+category: Base CSS
+test: true
+---
+
+Class                           | Description
+------------------------------- | -----------
+`table tableBasic`              | Basic table with borders on the cells
+`table tableHover`              | Add lowlight background to each row on mouse-over (except header)
+`table tableZebra`              | Add zebra-striping to alternating table rows (except header)
+`table tableRowBorderedTop`     | Add top border to each row (except header)
+`table tableRowBorderedBottom`  | Add bottom border to each row (except header)
+
+A basic table with borders on the cells.
+
+```html_example
+  <table class="table tableBasic">
+    <thead>
+      <tr>
+        <th class="txtL" style="width:20%">Here&#x27;s a header</th>
+        <th class="txtC" style="width:60%">Here&#x27;s a header</th>
+        <th class="txtR" style="width:20%">Here&#x27;s a header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="txtL">This text left aligns</td>
+        <td class="txtC">This text center aligns</td>
+        <td class="txtR">
+          <strong>This text right aligns</strong>
+        </td>
+      </tr>
+      <tr>
+        <td class="txtL">And some text:</td>
+        <td class="txtC">
+          <a href="">visit example.com</a>
+        </td>
+        <td class="txtR">And some text:</td>
+      </tr>
+      <tr>
+        <td class="txtL">And some text:</td>
+        <td class="txtC">$1500/mo</td>
+        <td class="txtR">And some text:</td>
+      </tr>
+    </tbody>
+  </table>
+```
+
+A table with top and bottom row borders and lowlight background on mouse over.
+
+```html_example
+  <table class="table tableHover tableRowBorderedTop tableRowBorderedBottom">
+    <thead>
+      <tr>
+        <th class="txtL" style="width:20%">Here&#x27;s a header</th>
+        <th class="txtC" style="width:60%">Here&#x27;s a header</th>
+        <th class="txtR" style="width:20%">Here&#x27;s a header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="txtL">This text left aligns</td>
+        <td class="txtC">This text center aligns</td>
+        <td class="txtR">
+          <strong>This text right aligns</strong>
+        </td>
+      </tr>
+      <tr>
+        <td class="txtL">And some text:</td>
+        <td class="txtC">
+          <a href="">visit example.com</a>
+        </td>
+        <td class="txtR">And some text:</td>
+      </tr>
+      <tr>
+        <td class="txtL">And some text:</td>
+        <td class="txtC">$1500/mo</td>
+        <td class="txtR">And some text:</td>
+      </tr>
+    </tbody>
+  </table>
+```
+*/
+
+// @param $name                 Name of this skin. Will build the classname as `.table{SkinName}`.
+// @param $borderWidth          Uniform border width
+// @param $borderStyle          Uniform border style
+// @param $borderColor          Uniform color for all the border
+// @param $hasCellBorder        Borders for all the cells in the table
+// @param $hasRowBorderTop      Top borders for rows in body
+// @param $hasRowBorderBottom   Bottom borders for rows in body
+// @param $rowHoverColor        Color for row background on mouse over
+// @param $rowAlternatingColor  Color for alternating row backgrounds
+
+
+// TableSkin Mixin
+@mixin tableSkin ($name, $borderWidth: null, $borderStyle: null, $borderColor: null, $hasCellBorder: false, $hasRowBorderTop: false, $hasRowBorderBottom: false, $rowHoverColor: null, $rowAlternatingColor: null) {
+
+  @if $borderWidth != null and $borderStyle != null and $borderColor != null {
+    @if $hasCellBorder == true {
+      .table#{$name} th,
+      .table#{$name} td {
+        border: $borderWidth $borderStyle $borderColor;
+      }
+    }
+    @else {
+      @if $hasRowBorderTop == true {
+        .table#{$name} tbody tr {
+          border-top: $borderWidth $borderStyle $borderColor;
+        }
+      }
+
+      @if $hasRowBorderBottom == true {
+        .table#{$name} tbody tr {
+          border-bottom: $borderWidth $borderStyle $borderColor;
+        }
+      }
+    }
+  }
+
+  @if $rowHoverColor != null {
+    .table#{$name} tbody tr:hover {
+      background-color: $rowHoverColor;
+    }
+  }
+
+  @if $rowAlternatingColor != null {
+    .table#{$name} tbody tr:nth-child(2n+1) {
+      background-color: $rowAlternatingColor;
+    }
+  }
+
+}
+
+// Actual Table Skins
+@mixin ooTableSkins () {
+
+  // Declares `tableBasic`
+  @include tableSkin (
+    "Basic",
+    $borderDefaultWidth,
+    $borderDefaultStyle,
+    $tableBasicBorder,
+    true
+  );
+
+  // Declares `tableHover`
+  @include tableSkin (
+    "Hover",
+    null,
+    null,
+    null,
+    false,
+    false,
+    false,
+    $bgLowlight
+  );
+
+  // Declares `tableZebra`
+  @include tableSkin (
+    "Zebra",
+    null,
+    null,
+    null,
+    false,
+    false,
+    false,
+    null,
+    $bgLowlight
+  );
+
+  // Declares `tableRowBorderedTop`
+  @include tableSkin (
+    "RowBorderedTop",
+    $borderDefaultWidth,
+    $borderDefaultStyle,
+    $tableBasicBorder,
+    false,
+    true,
+    false
+  );
+
+  // Declares `tableRowBorderedBottom`
+  @include tableSkin (
+    "RowBorderedBottom",
+    $borderDefaultWidth,
+    $borderDefaultStyle,
+    $tableBasicBorder,
+    false,
+    false,
+    true
+  );
+}

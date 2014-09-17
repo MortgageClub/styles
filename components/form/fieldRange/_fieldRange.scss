@@ -1,0 +1,49 @@
+/*doc
+---
+title: Range Input
+name: forms_b_fieldRange
+category: Forms
+---
+
+
+```html_example
+<form class="form">
+  <div class="field">
+    <label for="range1" class="fieldLabel">Range inputs</label>
+    <ul class="fieldGroup fieldRange">
+      <li class="cols12">
+        <span class="fieldItem text">
+          <input type="text" id="range1">
+        </span>
+      </li>
+      <li class="rangeLabel">
+        <label for="range2">to</label>
+      </li>
+      <li class="cols12">
+        <span class="fieldItem text">
+          <input type="text" id="range2">
+        </span>
+      </li>
+    </ul>
+  </div>
+</form>
+```
+
+*/
+
+
+// Form Class
+.form {
+  
+  .fieldRange {
+    
+    > li {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .rangeLabel {
+      padding: 0 10px;
+    }
+  }
+}

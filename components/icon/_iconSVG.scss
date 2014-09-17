@@ -1,0 +1,140 @@
+/*doc
+---
+title: SVG Icons
+name: svgicon
+parent: icon
+category: Base CSS
+author: Sean Stopnik
+---
+
+These icons work similarly to our icon fonts and image icons, but are SVG instead. When an icon doesn't exist in the Entypo icon Font library, then this would be the preferred alternative, rather than jpg or png icons. 
+
+
+#### Available Icons
+<ul>
+  <li><i class="iconEye"></i>iconEye</li>
+  <li><i class="iconEyeWhite"></i>iconEyeWhite</li>
+  <li><i class="iconHouse"></i>iconHouse</li>
+  <li><i class="iconFloorplan"></i>iconFloorplan</li>
+  <li><i class="iconBed"></i>iconBed</li>
+  <li><i class="iconBath"></i>iconBath</li>
+  <li><i class="iconBeauty"></i>iconBeauty</li>
+  <li><i class="iconCoffee"></i>iconCoffee</li>
+  <li><i class="iconEntertainment"></i>iconEntertainment</li>
+  <li><i class="iconNightlife"></i>iconNightlife</li>
+  <li><i class="iconShopping"></i>iconShopping</li>
+  <li><i class="iconRestaurants"></i>iconRestaurants</li>
+  <li><i class="iconActivelife"></i>iconActivelife</li>
+  <li><i class="iconGrocery"></i>iconGrocery</li>
+  <li><i class="iconMessageCompose"></i>iconMessageCompose</li>
+  <li><i class="iconMessageView"></i>iconMessageView</li>
+  <li><i class="iconMessageSend"></i>iconMessageSend</li>
+  <li><i class="iconMegaphone"></i>iconMegaphone</li>
+</ul>
+
+<br>
+#### Icons Sizes
+To size the SVG Icons, you can add an `.h1 - .h7` class.
+
+<ul>
+  <li><i class="iconEye h7"></i>iconGrocery h7</li>
+  <li><i class="iconEye h6"></i>iconGrocery h6</li>
+  <li><i class="iconEye h5"></i>iconGrocery h5</li>
+  <li><i class="iconEye h4"></i>iconGrocery h4</li>
+  <li><i class="iconEye h3"></i>iconGrocery h3</li>
+  <li><i class="iconEye h2"></i>iconGrocery h2</li>
+  <li><i class="iconEye h1"></i>iconGrocery h1</li>
+</ul>
+*/
+
+
+// SVG Icom Mixin
+%iconSvgBase {
+  display: inline-block;
+  @include size($baseSvgIconSizeDefault);
+  margin: $baseSvgIconMargin;
+  vertical-align: middle;
+  background: {
+    size: 100% 100%;
+    repeat: no-repeat;
+    position: center center;
+  }
+}
+
+%iconSvgFallback {
+  background-image: none;
+}
+
+@mixin svgIcon($name, $image, $hover: null, $ie-fallback: null) {
+  .icon#{$name} {
+    @extend %iconSvgBase;
+    background-image: url(#{$image}.svg);
+    
+    @if $hover {
+      &:hover {
+        background-image: url(#{$hover}.svg);
+      }
+    }
+    
+    @if $ie-fallback {
+      & {
+        @extend %iconSvgFallback;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{$image}.png', sizingMethod='scale');
+      }
+    }
+  }
+}
+
+[class*='icon'] {
+
+  &.h1 {
+    @include size(36px);
+  }
+  
+  &.h2 {
+    @include size(28px);
+  }
+  
+  &.h3 {
+    @include size(24px);
+  }
+  
+  &.h4 {
+    @include size(20px);
+  }
+  
+  &.h5 {
+    @include size(16px);
+  }
+  
+  &.h6 {
+    @include size(14px);
+  }
+  
+  &.h7 {
+    @include size(12px);
+  }
+}
+
+
+// SVG Icons
+@mixin ooIconSVG() {
+  @include svgIcon('Eye', 'http://static.trulia-cdn.com/images/icons/icon-eye-dark', $ie-fallback: true);
+  @include svgIcon('EyeWhite', 'http://static.trulia-cdn.com/images/icons/icon-eye-white');
+  @include svgIcon('House', 'http://static.trulia-cdn.com/images/icons/icon-house-dark');
+  @include svgIcon('Floorplan', 'http://static.trulia-cdn.com/images/icons/icon-floorplan-dark');
+  @include svgIcon('Bed', 'http://static.trulia-cdn.com/images/icons/icon-bed-dark');
+  @include svgIcon('Bath', 'http://static.trulia-cdn.com/images/icons/icon-bath-dark');
+  @include svgIcon('Beauty', 'http://static.trulia-cdn.com/images/icons/icon-beauty-dark');
+  @include svgIcon('Coffee', 'http://static.trulia-cdn.com/images/icons/icon-coffee-dark');
+  @include svgIcon('Entertainment', 'http://static.trulia-cdn.com/images/icons/icon-entertainment-dark');
+  @include svgIcon('Nightlife', 'http://static.trulia-cdn.com/images/icons/icon-nightlife-dark');
+  @include svgIcon('Shopping', 'http://static.trulia-cdn.com/images/icons/icon-shopping-dark');
+  @include svgIcon('Restaurants', 'http://static.trulia-cdn.com/images/icons/icon-restaurants-dark');
+  @include svgIcon('Activelife', 'http://static.trulia-cdn.com/images/icons/icon-activelife-dark');
+  @include svgIcon('Grocery', 'http://static.trulia-cdn.com/images/icons/icon-grocery-dark');
+  @include svgIcon('MessageCompose', 'http://static.trulia-cdn.com/images/icons/icon-message-compose');
+  @include svgIcon('MessageView', 'http://static.trulia-cdn.com/images/icons/icon-message-view');
+  @include svgIcon('MessageSend', 'http://static.trulia-cdn.com/images/icons/icon-message-send');
+  @include svgIcon('Megaphone', 'http://static.trulia-cdn.com/images/icons/icon-megaphone');
+}

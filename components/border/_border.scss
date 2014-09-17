@@ -1,0 +1,86 @@
+/*doc
+---
+title: Borders
+name: border
+category: Utilities
+---
+
+If you need to add a basic border to an element, use the following classes instead of adding to the CSS file.
+
+```html_example
+<div class="cols6 bas">
+  <h2 class="txtC pam">Plain borders all around!</h2>
+</div>
+
+<div class="cols6 bbm">
+  <h3 class="pas">Sometimes you just need one.</h3>
+</div>
+```
+
+
+Type         |             | **Description**
+--------     | ----------  | -----------
+b            | border      | 
+**Location** |             | 
+a            | all         | Adds border to all sides of the element
+h            | horizontal  | Adds border to the left and right sides of the element
+v            | vertical    | Adds border to the top and bottom sides of the element
+t            | top         | Adds border to the top side of the element
+l            | left        | Adds border to the left side of the element
+b            | bottom      | Adds border to the bottom side of the element
+r            | right       | Adds border to the right side of the element
+**Size**     |             |
+z            | zero        | No border width
+s            | small       | Small border width
+m            | medium      | Medium border width
+
+*/
+
+
+// Border Keys
+$border-keys: (a '', v -top -bottom, h -left -right, t -top, b -bottom, l -left, r -right);
+
+
+// Expand Border Function
+@function expand-border-key($k) {
+  @each $pair in $border-keys {
+    $short: nth($pair, 1);
+    $long: nth($pair, 2);
+		
+		// v and h need to pass in 2 parameters
+    @if (length($pair) == 3) {
+      $long: (nth($pair, 2) nth($pair, 3))
+    }
+    @if $short == $k {
+      @return $long;
+    }
+  }
+  @warn "Couldn't expand #{$k}";
+  @return $k;
+}
+
+
+// Border Mixin
+@mixin ooBorder($sizes: (0, $borderWidthSml, $borderWidthMed)) {
+  $size-names: (z,s,m);
+  $types: (b);
+  $locations: (v,h,l,r,t,b,a);
+  
+  @each $location in $locations {
+    @each $size-name in $size-names {
+      @each $type in $types {
+        .#{$type}#{$location}#{$size-name} {
+          //get returned list of locations. Can't assign to variable as it turns into 1 item in the list, not multiple items
+          @each $border-location in expand-border-key($location) {
+            @if (nth($sizes, index($size-names, $size-name)) != 0)
+            {
+              border#{$border-location}-style: $borderDefaultStyle;
+              border#{$border-location}-color: $borderDefaultColor;
+            }
+            border#{$border-location}-width: nth($sizes, index($size-names, $size-name)) !important;
+          }
+        }
+      }
+    }
+  }
+}

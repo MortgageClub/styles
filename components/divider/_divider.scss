@@ -1,0 +1,128 @@
+/*doc
+---
+title: Dividers
+name: divider
+category: Base CSS
+test: true
+---
+
+[[[plugin:css-test
+<br>
+<hr>
+<br>
+<hr class="divider">
+<br>
+]]]
+
+## Basic divider
+
+Most of the time a simple `<hr>` tag should be enough of a divider. If
+you're separating large content sections you may need to use the divider
+class: `<hr class='divider'>`
+
+```html_example
+<hr>
+<p>
+  Minim fixie ethical Intelligentsia, cred next level fugiat synth
+  try-hard farm-to-table literally. Flexitarian small batch pork belly,
+  kitsch mumblecore quis iPhone Etsy nostrud. Adipisicing fugiat
+  letterpress actually dolor. Ethical Neutra locavore Banksy meh. Sint
+  stumptown anim assumenda, irure Carles sriracha McSweeney's Pinterest.
+  Art party High Life deep v organic, quis pork belly elit nostrud
+  authentic. Street art organic squid Carles, culpa small batch
+  Intelligentsia.
+</p>
+<hr class="divider">
+<p>
+  Irure fap excepteur, eu locavore drinking vinegar next level meh
+  asymmetrical. Blue Bottle est plaid, vegan sunt nostrud pickled
+  stumptown fugiat bicycle rights actually 90s. Cliche incididunt
+  selfies, fashion axe dolore synth sunt disrupt butcher in. Direct trade
+  cred blog cliche four loko. Seitan sed High Life, PBR aliquip hella
+  wayfarers irony nesciunt Blue Bottle roof party Intelligentsia
+  adipisicing put a bird on it ullamco. Keffiyeh Brooklyn Vice, dolore
+  leggings qui tofu mumblecore swag DIY PBR&B sunt. Kitsch small batch
+  salvia selfies, ennui readymade Helvetica Pinterest bespoke whatever
+  incididunt VHS master cleanse.
+</p>
+```
+
+## Inline text divider
+
+If you have something that you need to appear in the middle of a line,
+such as in the registration form or where you want a strong visual
+break that includes a description of some sort, you can use the
+`inlineTextDivider` class.
+
+```html_example
+<p>
+  Minim fixie ethical Intelligentsia, cred next level fugiat synth
+  try-hard farm-to-table literally. Flexitarian small batch pork belly,
+  kitsch mumblecore quis iPhone Etsy nostrud. Adipisicing fugiat
+  letterpress actually dolor. Ethical Neutra locavore Banksy meh. Sint
+  stumptown anim assumenda, irure Carles sriracha McSweeney's Pinterest.
+  Art party High Life deep v organic, quis pork belly elit nostrud
+  authentic. Street art organic squid Carles, culpa small batch
+  Intelligentsia.
+</p>
+<div class="inlineTextDivider">But there is one thing you really should be aware of</div>
+<p>
+  Irure fap excepteur, eu locavore drinking vinegar next level meh
+  asymmetrical. Blue Bottle est plaid, vegan sunt nostrud pickled
+  stumptown fugiat bicycle rights actually 90s. Cliche incididunt
+  selfies, fashion axe dolore synth sunt disrupt butcher in. Direct trade
+  cred blog cliche four loko. Seitan sed High Life, PBR aliquip hella
+  wayfarers irony nesciunt Blue Bottle roof party Intelligentsia
+  adipisicing put a bird on it ullamco. Keffiyeh Brooklyn Vice, dolore
+  leggings qui tofu mumblecore swag DIY PBR&B sunt. Kitsch small batch
+  salvia selfies, ennui readymade Helvetica Pinterest bespoke whatever
+  incididunt VHS master cleanse.
+</p>
+```
+*/
+
+
+// Divider Mixin
+@mixin ooDivider {
+
+  hr {
+    // Remove the default hr border
+    border: none;
+    // Replace with chosen border-color
+    border-bottom: 1px solid $dividerColor;
+
+    &.divider {
+      border-width: 2px;
+      margin: 21px 0 42px 0;
+    }
+  }
+
+  .inlineTextDivider {
+    @extend %baseSpacing;
+
+    overflow: hidden;
+    text-align: center;
+    color: $inlineTextDividerColor;
+
+    &:before,
+    &:after {
+      background-color: $inlineTextDividerColor;
+      content: '';
+      display: inline-block;
+      height: 1px;
+      position: relative;
+      vertical-align: middle;
+      width: 50%;
+    }
+
+    &:before {
+      right: 0.5em;
+      margin-left: -50%;
+    }
+
+    &:after {
+      left: 0.5em;
+      margin-right: -50%;
+    }
+  }
+}

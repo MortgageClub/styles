@@ -1,0 +1,79 @@
+/*doc
+---
+title: Checkboxes and Radios
+category: Forms
+name: forms_e_radioButtonsCheckBoxes
+---
+
+##Checkbox
+
+```html_example
+<form class="form">
+  <div class="field">
+    <span class="fieldItem checkbox">
+      <input type="checkbox" id="checkbox1-1" name="checkbox1">
+      <label for="checkbox1-1">Label for checkbox</label>
+    </span>
+  </div>
+</form>
+```
+
+##Radio Button
+
+```html_example
+<form class="form">
+  <div class="field">
+    <span class="fieldItem radio">
+      <input type="radio" id="radio1-1" name="radio1">
+      <label for="radio1-1">Label for radio button</label>
+    </span>
+  </div>
+</form>
+```
+
+*/
+
+
+// Form Class
+.form {
+  
+  .radio,
+  .checkbox {
+    position: relative;
+
+    label {
+      display: block;
+      width: auto;
+      padding-left: 1.4em;
+    }
+    
+    input {
+      margin-right: 5px;
+      padding: 0;
+      float: left;
+      position: relative;
+      top: 4px;
+      border: 0;
+      line-height: 1.5em;
+      vertical-align: middle;
+      
+      &[type="radio"] {
+        top: 4px;
+      }
+    }
+  }
+
+  // Webkit Fix
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .radio,
+    .checkbox {
+      input {
+        top: 0.35em;
+        
+        &[type="radio"] {
+          left: 1px;
+        }
+      }
+    }
+  }
+} // .form

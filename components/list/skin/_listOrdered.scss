@@ -1,0 +1,62 @@
+/*doc
+---
+parent: list
+name: listOrdered
+title: Ordered Lists
+test: true
+---
+
+```html_example
+<ol class="listOrdered">
+  <li>First list item</li>
+  <li>Second list item</li>
+  <li>Third list item</li>
+</ol>
+```
+### Order list with alpha type
+```html_example
+<ul class="listOrderded listStyleAlpha">
+  <li>First list item</li>
+  <li>Second list item</li>
+  <li>Third list item</li>
+</ul>
+```
+### Order list with roman type
+```html_example
+<ul class="listOrderded listStyleRoman">
+  <li>First list item</li>
+  <li>Second list item</li>
+  <li>Third list item</li>
+</ul>
+```
+
+[[[plugin:css-test
+<ol class="listOrdered">
+  <li>First list item</li>
+  <li>Second list item</li>
+  <li>Third list item</li>
+</ol>
+]]]
+
+*/
+
+
+// ListOrdered Mixin
+@mixin ooListOrdered {
+
+  .listOrdered {
+
+    li {
+      list-style-type: decimal;
+      margin-left: 1.5em;
+    }
+
+    &.listStyleAlpha li {
+      list-style-type: lower-alpha;
+    }
+
+    &.listStyleRoman li {
+      list-style-type: lower-roman;
+    }
+  }
+}

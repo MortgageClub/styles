@@ -1,0 +1,16 @@
+// NavDefault Mixin
+@mixin ooNavDefault(){
+  .navDefault {
+  
+    > li {
+      border-left: solid 2px $navDividerColor;
+      padding: 10px 20px;
+      font-weight: bold;
+      
+      &:first-child {
+        border: none;
+        padding-left: 0;
+      }
+    }
+  }
+}

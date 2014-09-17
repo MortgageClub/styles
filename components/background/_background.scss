@@ -1,0 +1,21 @@
+/*doc
+---
+title: Background Colors
+name: background
+category: Base CSS
+author: Nicole Sullivan
+---
+
+We have a few background colors that can be used in various contexts.
+These are not for use as the entire page background but instead for
+specific components and modules on the page.
+
+*/
+
+
+// Background Mixin
+@mixin ooBackground($name, $color) {
+  .#{$name} {
+    background-color: $color;
+  }
+}

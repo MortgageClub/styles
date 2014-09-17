@@ -1,0 +1,274 @@
+// Default Mix-ins
+
+
+// Clearfix - use @extend %clearfix;
+%clearfix {
+	&:after {
+		display: block;
+		content: '';
+		clear: both;
+	}
+}
+
+
+// Transitions
+@mixin transition($speed: .15s) {
+	transition: all $speed ease-in-out;
+}
+
+@mixin transition-more($transition...) {
+	transition: $transition;
+}
+
+
+// Gradients
+@mixin gradient($origin: top, $start: #e1e1e1, $stop: #353535) {
+	background-color: $start;
+	background-image: -webkit-linear-gradient($origin, $start, $stop);
+	background-image: -moz-linear-gradient($origin, $start, $stop);
+	background-image: -o-linear-gradient($origin, $start, $stop);
+	background-image: -ms-linear-gradient($origin, $start, $stop);
+	background-image: linear-gradient($origin, $start, $stop);
+}
+
+
+// Rounded Corners
+@mixin radius($radius: 3px) {
+	border-radius: $radius;
+}
+
+
+// Rotate
+@mixin rotate($rotate) {
+	-webkit-transform: rotate($rotate);
+	transform: rotate($rotate);
+}
+
+
+// Scale
+@mixin scale($scale) {
+	-webkit-transform: scale($scale);
+	transform: scale($scale);
+}
+
+
+// Translate
+@mixin translate($translate) {
+	-webkit-transform: translate($translate);
+	transform: translate($translate);
+}
+
+
+// Backface Visibility
+@mixin backface($backface: hidden) {
+	-webkit-backface-visibility: $backface;
+	backface-visibility: $backface;
+}
+
+// Translate3d
+@mixin translate3d($translate3d) {
+	-webkit-transform: translate3d($translate3d);
+	transform: translate3d($translate3d);
+	@include backface;
+}
+
+
+// Animation
+@mixin animate($name, $speed: .2s, $ease: ease-in, $delay: .5s, $when: both) {
+	-webkit-animation: $name $speed $ease $delay $when;
+	animation: $name $speed $ease $delay $when;
+}
+
+
+// Keyframes
+@mixin keyframes($name) {
+	@-webkit-keyframes $name {
+		@content;
+	}
+	
+	@keyframes $name {
+		@content;
+	}
+}
+
+
+// Width and Height
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+
+// Box Sizing
+@mixin box-sizing($box: border-box) {
+	box-sizing: $box;
+}
+
+
+// Triangles
+@mixin triangle-base {
+	position: absolute;
+	@include size(0);
+	content: '';
+}
+
+@mixin triangle($direction, $size, $color) {
+	@if ($direction == "up") {
+		@include triangle-base();
+		border: {
+			left: $size solid transparent;
+			right: $size solid transparent;
+			bottom: $size solid $color;
+		}
+	}
+	
+	@else if ($direction == "down") {
+		@include triangle-base();
+		border: {
+			left: $size solid transparent;
+			right: $size solid transparent;
+			top: $size solid $color;
+		}
+	}
+	
+	@else if ($direction == "left") {
+		@include triangle-base();
+		border: {
+			top: $size solid transparent;
+			bottom: $size solid transparent;
+			right: $size solid $color;
+		}
+	}
+	
+	@else if ($direction == "right") {
+		@include triangle-base();
+		border: {
+			top: $size solid transparent;
+			bottom: $size solid transparent;
+			left: $size solid $color;
+		}
+	}
+}
+
+
+// Positioning
+@mixin position($position: null, $top: null, $right: null, $bottom: null, $left: null) {
+  @if $position {
+    position: $position;
+  }
+  
+  @if $top {
+    top: $top;
+  }
+  
+  @if $right {
+    right: $right;
+  }
+  
+  @if $bottom {
+    bottom: $bottom;
+  }
+  
+  @if $left {
+   left: $left; 
+  }
+}
+
+
+// Effects
+@mixin shadow($shadow...) {
+	box-shadow: $shadow;
+}
+
+@mixin fade($fade: 0.6) {
+	@include transition;
+  	opacity: 1.0;
+  	
+  	&:hover {
+	  	opacity: $fade;
+	}
+}
+
+
+// Retina Images
+@mixin background-image($image, $extension: jpg, $width: 100%, $height: 100%) {
+	background-image: url(#{$image}.#{$extension});
+	
+	@include media(retina) {
+		background: {
+			image: url(#{$image}@2x.#{$extension});
+			size: $width $height;
+		}
+	}
+}
+
+
+// REM Units with px fallback (assumes html is set to font-size: 62.5%)
+@mixin font-size($value: 1.6) {
+	font-size: $value + px;
+	font-size: ($value / 10) + rem;
+}
+
+
+// Media Query Sizes
+$phone: 599px;
+$small-tablet: 600px;
+$tablet: 768px;
+$device: 959px;
+$desktop: 960px;
+$large-desktop: 1280px;
+
+
+// Set IE Support
+$ie7-support: false;
+$ie8-support: false;
+
+
+// Media Query Mixin
+@mixin media($screen) {
+	@if $screen == phone {
+		@media (max-width: $phone) {
+			@content;
+		}
+	}
+	@else if $screen == small-tablet {
+		@media (min-width: $small-tablet) {
+			@content;
+		}
+	}
+	@else if $screen == tablet {
+		@media (min-width: $tablet) {
+			@content;
+		}
+	}
+	@else if $screen == only-tablet {
+		@media (min-width: $small-tablet) and (max-width: $device) {
+			@content;
+		}
+	}
+	@else if $screen == device {
+		@media (max-width: $device) {
+			@content;
+		}
+	}
+	@else if $screen == desktop {
+		@media (min-width: $desktop) {
+			@content;
+		}
+		@if $ie8-support {
+			.ie8 & {
+				@content;
+			}
+		}
+	}
+	@else if $screen == large-desktop {
+		@media (min-width: $large-desktop) {
+			@content;
+		}
+	}
+	@else if $screen == retina {
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+			@content;
+		}
+	}
+}

@@ -1,0 +1,43 @@
+/*doc
+---
+title: Z-Index
+category: Utilities
+name: z-index
+author: AlexI, Tuan
+---
+
+<a href="http://knowledge.corp.trulia.com/display/Engineering/Z-index+IAB+Guidelines">From the confluence</a>
+
+Please note that these classes are for the "global page" elements, that have semantic meaning in the page context, such as popups, navigation blocks, ads, etc. It shouldn't be used for internals of particular widget implementation, like markers on the map or z-positioning of the elements in a photoplayer. Each widget should have z-index:0 (since it's a content) and will prevent polluting page's z-axis space.
+
+Class                           | Description
+------------------------------- | -----------
+`zIndexBackground`              |   -5000; For elements in the background
+`zIndexMainContent`             |       0; For main content, and standard ads in place with regular content
+`zIndexExpandingAd`             |    6000; For expandable ad units
+`zIndexFloatingAd`              | 2001000; For over the page ads (OTP's)
+`zIndexPopup`                   | 3001000; For popup Elements -- chat window, message notifications
+`zIndexFloater`                 | 4001000; For non-anchored floating elements
+`zIndexNavigation`              | 5001000; For expanding site navigation elements
+`zIndexPageOverlay`             | 6001000; For full-page overlays
+
+*/
+
+
+// Z-Index Mixin
+@mixin zIndex($name, $index) {
+	.zIndex#{$name} {
+		z-index: $index !important;
+	}
+}
+
+@mixin ooZIndices() {
+	@include zIndex ("Background", $zIndexBackground);
+	@include zIndex ("MainContent", $zIndexMainContent);
+	@include zIndex ("ExpandingAd", $zIndexExpandingAd);
+	@include zIndex ("FloatingAd", $zIndexFloatingAd);
+	@include zIndex ("Popup", $zIndexPopup);
+	@include zIndex ("Floater", $zIndexFloater);
+	@include zIndex ("Navigation", $zIndexNavigation);
+	@include zIndex ("PageOverlay", $zIndexPageOverlay);
+}

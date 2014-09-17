@@ -1,0 +1,166 @@
+/*doc
+---
+title: Overlay Skins
+parent: overlay
+name: overlaySkins
+test: true
+---
+
+Class                  | Description
+---------------------- | -----------------
+overlayHighlight       | Apply the green color skin
+overlayLowlight        | Apply the black color skin
+overlayAction          | Apply the blue color skin -- designed for actionable/clickable element
+overlayDefault         | Apply the white color skin
+overlayTop             | Position the overlay at the top
+overlayBottom          | Position the overlay at the bottom
+overlayLeft            | Position the overlay on left
+overlayRight           | Position the overlay on right
+overlayMiddle          | Position the overlay in the middle
+overlayFullWidth       | Make the overlay be full width
+overlayFull            | Make the overlay cover the entire image
+
+
+
+```html_example
+<div class="frameStandard">
+  <span class="overlayContainer">
+    <img src="http://placekitten.com/640/480">
+    <span class="overlayDefault overlayBottom">You could
+      <b>OWN</b> this cat!</span>
+  </span>
+</div>
+```
+```html_example
+<div class="frameStandard">
+  <span class="overlayContainer">
+    <img src="http://placekitten.com/640/480">
+    <span class="txtC overlayHighlight overlayTop overlayFullWidth ">You could
+      <b>OWN</b> this cat!</span>
+  </span>
+</div>
+```
+```html_example
+<div class="frameStandard">
+  <span class="overlayContainer">
+    <img src="http://placekitten.com/640/480">
+    <span class="overlayLowlight overlayRight overlayMiddle">You could
+      <b>OWN</b> this cat!</span>
+  </span>
+</div>
+```
+
+```html_example
+<div class="frameStandard">
+  <span class="overlayContainer">
+    <img src="http://placekitten.com/640/480">
+    <a class="overlayAction overlayBottom overlayRight linkTypeReversed" href="#BuyCat">
+      Click to <b>BUY</b> this cat!</a>
+  </span>
+</div>
+```
+
+```html_example
+<div class="frameStandard">
+  <span class="overlayContainer">
+    <img src="http://placekitten.com/640/480">
+    <span class="overlayDefault overlayFull">You could
+      <b>OWN</b> this cat!</span>
+  </span>
+</div>
+```
+
+```html_example
+<div class="frameStandard imageContainer320x240">
+  <span class="overlayContainer">
+    <img src="http://placekitten.com/170/240" />
+    <span class="overlayLowlight overlayBottom overlayRight">You could
+        <b>OWN</b> this cat!</span>
+    </span>
+</div>
+```
+*/
+
+
+// OverlaySkins Mixin
+@mixin ooOverlaySkins {
+
+  // Colors
+  .overlayHighlight {
+    @extend %overlay;
+    color: $overlayHighlightFontColor;
+
+    // ie8
+    background-color: $overlayHighlightBackground;
+
+    // Modern Browser
+    background-color: rgba($overlayHighlightBackground, 0.7);
+  }
+
+  .overlayLowlight {
+    @extend %overlay;
+    color: $overlayLowlightFontColor;
+
+    // ie8
+    background-color: $overlayLowlightBackground;
+
+    // Modern Browser
+    background-color: rgba($overlayLowlightBackground, 0.7);
+  }
+
+  .overlayAction {
+    @extend %overlay;
+    color: $overlayActionFontColor;
+
+    //ie8
+    background-color: $overlayActionBackground;
+
+    // Modern Browser
+    background-color: rgba($overlayActionBackground, 0.7);
+  }
+
+  .overlayDefault {
+    @extend %overlay;
+    color: $overlayDefaultFontColor;
+
+    //ie8
+    background-color: $overlayDefaultBackground;
+
+    // Modern Browser
+    background-color: rgba($overlayDefaultBackground, 0.7);
+  }
+
+  // Positioning
+  .overlayTop {
+    top: 0;
+  }
+
+  .overlayBottom {
+    bottom: 0;
+  }
+
+  .overlayLeft {
+    left: 0;
+  }
+
+  .overlayRight {
+    right: 0;
+  }
+
+  .overlayMiddle {
+    top: 50%;
+  }
+
+  // Sizing
+  .overlayFullWidth {
+    left: 0;
+    right: 0;
+  }
+
+  .overlayFull {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

@@ -1,0 +1,46 @@
+/*doc
+---
+title: Typography Color
+parent: typography
+name: typeColor
+category: Base CSS
+author: Joe
+---
+
+These classes convey meaning through color.
+
+```html_example
+<p class="typeWarning">typeWarning</p>
+<p class="typeMidlight">typeMidlight</p>
+<p class="typeLowlight">typeLowlight</p>
+<p class="typeHighlight">typeHighlight</p>
+<p class="typeReversed backgroundHighlight">Type Reversed (note: for links, use <a class="linkTypeReversed" href="#Link">linkTypeReversed</a>)</p>
+<p class="typeContrast typeReversed backgroundHighlight">Type Contrast (use only for white text on dark background)</p>
+
+```
+*/
+
+
+// TypeColor
+@mixin ooTypeColor {
+
+  .typeWarning {
+    color: $warningTypeColor;
+  }
+  
+  .typeMidlight {
+    color: $midlightTypeColor;
+  }
+  
+  .typeHighlight {
+    color: $highlightTypeColor;
+  }
+  
+  .typeLowlight {
+    color: $lowlightTypeColor;
+  }
+  
+  .typeReversed {
+    color: $reversedTypeColor;
+  }
+}

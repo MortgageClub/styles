@@ -1,0 +1,58 @@
+/*doc
+---
+title: Buttons Group
+name: buttonGroup
+category: Base CSS
+test: true
+---
+
+Occasionally a set of buttons will need a more visually strong
+relationship to each other. Enter the `btnGroup` class. This class may
+be used with any combination of button skins and sizes, though you
+probably want to use the same size for all buttons within a given button
+group.
+
+```html_example
+<div class="btnGroup">
+  <button class="btn btnDefault">Save</button>
+  <button class="btn btnDefault">Share</button>
+  <button class="btn btnDefault">Flag</button>
+  <button class="btn btnDefault">More</button>
+</div>
+```
+
+Button Groups should do the right thing even with a single button:
+
+```html_example
+<div class="btnGroup">
+  <a title="Watch out, I bite." class="btn btnDefault">Lone Wolf</a>
+</div>
+```
+
+*/
+
+
+// ButtonGroup Mixin
+@mixin ooButtonGroup {
+
+  .btnGroup {
+    font-size: 0;
+    display: inline-block;
+
+    .btn {
+      margin-left: -1px;
+      border-radius: 0;
+
+      &:first-child {
+        margin-left: 0;
+        border-top-left-radius: $borderRadiusSml;
+        border-bottom-left-radius: $borderRadiusSml;
+      }
+
+      &:last-child {
+        border-top-right-radius: $borderRadiusSml;
+        border-bottom-right-radius: $borderRadiusSml;
+      }
+    }
+  }
+}

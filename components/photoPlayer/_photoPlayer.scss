@@ -1,0 +1,61 @@
+// Photo Player
+@mixin ooPhotoPlayer() {
+  
+  .photoPlayer {
+    @extend %baseSpacing;
+    display: block;
+  }
+  
+  .photoPlayerThumbnails {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-align: left;
+    white-space: nowrap;
+    margin-top: 10px;
+    
+    img {
+      text-indent: 0;
+      cursor: pointer;
+      margin: 0 8px;
+      padding: 3px;
+      border: $photoPlayerThumbnailBorderDefault;
+      background-color: $bgBasic;
+    }
+    
+    .photoPlayerThumbnailCurrent {
+      border: 2px solid $photoPlayerThumbnailBorderHighlightColor;
+    }
+  }
+    
+  .photoPlayerCurrentItem {
+    display: table-cell;
+    background-color: $bgBasic;
+    
+    img {
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    
+      &.landscape {
+        width: 100%;
+        opacity: 1;
+      }
+      
+      &.portrait {
+        height: 100%;
+        opacity: 1;
+      }
+    }
+  }
+  
+  .photoPlayerNextButton,
+  .photoPlayerPreviousButton {
+    margin: -($baseLineHeight / 2) 0 0 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}

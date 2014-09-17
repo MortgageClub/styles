@@ -1,0 +1,47 @@
+/*doc
+---
+title: Hover
+name: hover
+category: Components
+author: JD
+---
+
+You can use the hover and hoverDisplay classes to display elements on hover
+
+Class             | Description
+----------------- | -----------------
+`hover`           | This class goes on a container element. The element's size and shape will be used for determining when the hover effect is on and off.
+`hoverDisplay`    | The element to display on hover, this does not need to be a direct child of hover and can used as many times as needed.
+
+```html_example
+<ul class="hover">
+  <li class="hoverDisplay">One</li>
+  <li>Two</li>
+  <li class="hoverDisplay">Three</li>
+  <li>Four
+    <span class="hoverDisplay">Five</span>
+</ul>
+```
+
+*/
+
+
+// Hover Mixin
+@mixin ooHover {
+  
+  .hover {
+    
+    .hoverDisplay {
+      opacity: 0;
+      visibility: hidden;
+      @include transition(all .15s ease-in-out);
+    }
+    
+    &:hover {
+      .hoverDisplay {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}

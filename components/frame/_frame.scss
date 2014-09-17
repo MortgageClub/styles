@@ -1,0 +1,32 @@
+/*doc
+---
+title: Frames
+name: frame
+category: Components
+author: August
+---
+
+A frame is a simple border around some content, usually an image but
+other content can be used as well. The different skin classes generally
+change the intensity and padding size of the frame.
+
+*/
+
+
+// Frame Mixin
+@mixin ooFrame {
+  
+  %frame {
+    display: inline-block;
+    border: 1px solid #{$frameBorder}\9;
+    @include box-shadow(0 0 1px 1px rgba(0,0,0, 0.2));
+
+    img {
+      display:block;
+    }
+
+    .polaroid {
+      margin-top: 5px;
+    }
+  }
+}

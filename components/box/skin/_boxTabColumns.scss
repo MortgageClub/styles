@@ -1,0 +1,29 @@
+// BoxTabColums Mixin
+@mixin ooBoxTabColumns {
+  .boxTabColumns {
+    
+    .boxBody {
+      background: $tabColumnsActiveBackgroundColor; // Background color without transparency
+      background-color: $tabColumnsActiveBackgroundColorOpaque;
+      @include border-radius($borderRadiusDefault);
+      @include border-top-left-radius(0);
+      @include border-top-right-radius(0);
+      border: 1px solid $tabColumnActiveBorderColor;
+      border-top: none
+    }
+    
+    ul.tabBody {
+      margin: 0;
+    }
+    
+    .tabBody > li {
+      margin: 0;
+      padding: 0;
+      padding-top: 1px;  //used to collapse margin
+    }
+    
+    .line {
+      margin-left: 0;
+    }
+  }
+}

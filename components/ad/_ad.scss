@@ -1,0 +1,24 @@
+/*doc
+---
+name: ad
+title: Ads
+category: Components
+author: August Flanagan
+---
+
+Ad containers are standard sized containers that you can drop an ad unit
+in. Ads come in several sizes that will reserve the space on the page
+for the ad until it is loaded.
+
+*/
+
+
+// Ad Mixin
+@mixin ooAd {
+  %ad {
+    @extend %baseSpacing;
+    margin-left: auto;
+    margin-right: auto;
+    @include clearfix-me(overflow);
+  }
+}

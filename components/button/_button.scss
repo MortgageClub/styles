@@ -1,0 +1,92 @@
+/*doc
+---
+title: Buttons
+name: button
+category: Base CSS
+author: Derek Reynolds
+test: true
+---
+
+Button styles can be applied to any element. Typically you'll want to
+use either a `<button>` or an `<a>` element:
+
+```html_example
+<button class="btn btnDefault">Click</button>
+<a class="btn btnDefault" href="http://www.trulia.com/">Trulia</a>
+```
+If your button is actually a link to another page, please use the
+`<a>` element, while if your button performs an action, such as submitting
+a form or triggering some javascript event, then use a `<button>` element.
+
+##Button Sizes
+There are three 3 sizes for buttons: Large, medium (default)
+and small. Simply apply the size modifier class for the desired size.
+
+
+There are two other additional modifiers - `btnFullWidth` and `btnActive`. If the
+names are not self-explanatory see the examples below.
+
+Button                                                                |  Modifier Class
+--------------------------------------------------------------------- | -----------------
+<button class="btn btnDefault btnLrg">Large</button>                  | `btn btnDefault btnLrg`
+<button class="btn btnDefault">Default</button>                       | `btn btnDefault`
+<button class="btn btnDefault btnSml">Small</button>                  | `btn btnDefault btnSml`
+<button class="btn btnDefault btnFullWidth">Full width</button>       | `btn btnDefault btnFullWidth`
+<button class="btn btnDefault btnActive">Active Button State</button> | `btn btnDefault btnActive`
+
+[[[plugin:css-test
+<button class="btn btnDefault btnLrg">Large</button>
+<button class="btn btnDefault">Default</button>
+<button class="btn btnDefault btnSml">Small</button>
+<button class="btn btnDefault btnFullWidth">Full width</button>
+<button class="btn btnDefault btnActive">Active Button State</button>
+]]]
+
+*/
+
+
+// Button Mixin
+@mixin ooButton(){
+
+  // Resets button style
+  button {
+    background: none;
+    border: 0;
+  }
+
+  // Button Base
+  .btn {
+    padding: .5em 1em;
+    margin: 0;
+    display: inline-block;
+    font-weight: normal;
+    line-height: normal;
+    @include fontSize(14px);
+    text-decoration: none;
+    cursor: pointer;
+    border: 0;
+    background: none;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid $btnBorderColorDefault;
+    @include border-radius($borderRadiusSml);
+    @include transition(all .15s ease-in-out);
+    outline: none;
+  }
+
+  // Button Size
+  .btnSml {
+    @include fontSize(12px);
+    @include border-radius($borderRadiusSml);
+  }
+
+  .btnLrg {
+    @include fontSize(16px); //18px is in our type scale, but is too big on the button
+    line-height: 1.6;
+    @include border-radius($borderRadiusSml);
+  }
+
+  .btnFullWidth {
+    width: 100%;
+  }
+}

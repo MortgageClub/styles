@@ -1,0 +1,103 @@
+/*doc
+---
+title: Hide Things
+name: hide
+category: Utilities
+author: Fiona
+---
+
+Various ways to hide things.
+
+Class                    | Description
+-------------------------|-----------------------
+`hideText`               | Use this when you only need to hide the text.
+`hideFully`              | Use this to hide a content entirely. This also hides it from screen readers.
+`hideVisually`           | This hides content but leaves screenreaders able to read it.
+`hideVisually.focusable` | Hide content but it allow it to be focused on. ???
+`hideOnWide`             | This content will be hidden on pages greater than or equal to 1144px (that is 1128 + 16p for a scrollbar)
+`hideOnNarrow`           | This content will be hidden on pages less than 1144px (that is 1128 + 16p for a scrollbar)
+*/
+
+
+// Hide Text
+@mixin ooHideText() {
+	
+	.hideText {
+		background-color: transparent;
+		border: 0;
+		overflow: hidden;
+	}
+	
+	.hideText:before {
+		display: block;
+		width: 0;
+		height: 100%;
+		content: '';
+	}
+}
+
+
+// Hide Everything
+@mixin ooHideFully {
+	
+	.hideFully {
+		display: none !important;
+		visibility: hidden;
+	}
+}
+
+
+// Hide Visually - Still Visiable on Screenreaders
+@mixin ooHideVisually {
+	
+	.hideVisually {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		border: 0;
+		clip: rect(0 0 0 0);
+	}
+}
+
+
+// Extends the .hideVisually class to allow the element to be focusable
+@mixin ooHideVisuallyFocusable {
+  
+	.hideVisually.focusable:active,
+	.hideVisually.focusable:focus {
+		position: static;
+		width: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		clip: auto;
+	}
+}
+
+
+// ie8 and Below
+@media \0screen\,screen\9 {
+	
+	.hideOnNarrow {
+		display: none !important;
+	}
+}
+
+
+// Modern Browser
+@media screen and (max-width: $responsePointLrg - 1) {
+	
+	.hideOnNarrow {
+		display: none !important;
+	}
+}
+
+@media screen and (min-width: $responsePointLrg) {
+	
+	.hideOnWide {
+		display: none !important;
+	}
+}

@@ -1,0 +1,25 @@
+/*doc
+---
+title: Center Horizontal
+category: Utilities
+name: centerHorizontal
+author: Vaughn Koch
+---
+
+This is used to center whole blocks, instead of text-alignment centering. The block needs some kind of width specification.
+Note: IE8 requires a doctype to allow margin:auto to work properly.
+
+```html_example
+<div class="centerHorizontal cols8">The center of the universe.</div> 
+```
+
+*/
+
+
+// Horizontal Alignment Mixin
+@mixin ooCenterHorizontal() {
+	.centerHorizontal {
+		margin-left: auto; 
+		margin-right: auto;
+	}
+}

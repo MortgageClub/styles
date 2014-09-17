@@ -1,0 +1,7 @@
+source "http://rubygems.org"
+gem "compass"
+gem "hologram", "1.2"
+gem "guard", "1.8.3"
+gem "guard-shell"
+gem "rake"
+gem  "sass"

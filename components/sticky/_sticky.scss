@@ -1,0 +1,7 @@
+// Sticky Mixin
+@mixin ooSticky {
+  
+  .sticky {
+    position: fixed !important;
+  }
+}

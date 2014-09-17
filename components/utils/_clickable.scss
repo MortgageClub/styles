@@ -1,0 +1,30 @@
+/*doc
+---
+title: Clickable
+category: Utilities
+name: clickable
+author: August
+---
+
+
+Class       | Description
+----------- | -----------------
+`clickable` | Make an element have a clickable (pointer) mouseover
+
+
+```html_example
+<div class="backgroundHighlight clickable">
+  Sup, hover over me and see what happens
+</div>
+```
+
+*/
+
+
+// Horizontal Alignment Mixin
+@mixin ooClickable() {
+	
+	.clickable {
+		cursor: pointer;
+	}
+}

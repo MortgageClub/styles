@@ -1,0 +1,163 @@
+/*doc
+---
+title: Markers
+name: marker
+category: Components
+---
+
+These are markers, put them on a map. Do not use on walls; they may not wash off.
+
+Class             | Description
+----------------- | -----------------
+`markerDefault `  | White
+`markerPrimary`   | Green
+`markerSecondary` | Blue
+`markerTertiary`  | Red
+`markerHighlight` | Gold
+`markerLowlight`  | Gray
+`markerInverse`   | Black
+`markerHover`     | Makes your marker dark on hover.
+`markerRound`     | Makes your marker round and small
+`markerIcon`      | Small marker to use with single icon
+
+<!-- .marker* classes are in doc.css as embedded style tags are breaking some browsers -->
+
+```html_example
+  <div class="markerPrimary">$300</div><br>
+  <div class="markerSecondary">$900</div><br>
+  <div class="markerSecondary markerHover">Golden</div><br>
+  <div class="markerTertiary">Sold</div><br>
+  <div class="markerHighlight">Active</div><br>
+  <div class="markerDefault">$147k</div><br>
+  <div class="markerDefault markerIcon"><i class="iconHome"></i></div><br>
+  <div class="markerDefault markerRound bas">$</div><br>
+  <div class="markerLowlight markerRound">L</div><br>
+  <div class="markerInverse markerRound">R</div><br>
+  <div class="markerPrimary markerRound">H</div><br>
+```
+
+*/
+
+
+// MarkerColor Mixin
+@mixin markerColor($backgroundColor, $borderColor) {
+  background-color: $backgroundColor;
+  border-color: $borderColor;
+  
+  &:before {
+    background-color: $backgroundColor;
+    border-color: $borderColor;
+  }
+}
+
+
+// Marker Mixin
+@mixin ooMarker {
+  %marker {
+    width: auto;
+    min-width: 49px;
+    border-radius: $borderRadiusSml;
+    padding: 0px 3px;
+    position: absolute;
+    border-width: 1px;
+    border-style: solid;
+    @include fontSize(12px);
+    line-height: 16px;
+    font-weight: bold;
+    color: $reversedTypeColor;
+    text-align: center;
+    
+    &:hover {
+      cursor: pointer;
+    }
+    
+    &:before {
+      display: inline-block;
+      margin: auto 0;
+      content:'';
+      width: 4px;
+      height: 4px;
+      position: absolute;
+      top:14px;
+      left: 24px;
+      border-width: 0 1px 1px 0;
+      border-style: solid;
+      @include rotate(45deg);
+    }
+  }
+}
+
+
+// MarkerSkins Mixin
+@mixin ooMarkerSkins {
+  .markerPrimary {
+    @extend %marker;
+    @include markerColor($markerPrimaryColor, $markerPrimaryBorderColor);
+  }
+  
+  .markerSecondary {
+    @extend %marker;
+    @include markerColor($markerSecondaryColor, $markerSecondaryBorderColor);
+  }
+  
+  .markerTertiary {
+    @extend %marker;
+    @include markerColor($markerTertiaryColor, $markerTertiaryBorderColor);
+  }
+  
+  .markerDefault {
+    color: $markerDefaultTextColor;
+    @extend %marker;
+    @include markerColor($markerDefaultColor, $markerDefaultBorderColor);
+  }
+  
+  .markerLowlight {
+    color: $reversedTypeColor;
+    @extend %marker;
+    @include markerColor($markerLowlightColor, $markerLowlightBorderColor);
+  }
+  
+  .markerHighlight {
+    color: $reversedTypeColor;
+    @extend %marker;
+    @include markerColor($markerHighlightColor, $markerHighlightBorderColor);
+  }
+  
+  .markerInverse {
+    @extend %marker;
+    @include markerColor($markerInverseColor, $markerInverseBorderColor);
+  }
+  
+  .markerHover:hover {
+    @include markerColor($markerInverseColor, $markerInverseBorderColor);
+  }
+  
+  .markerRound {
+    width: 11px;
+    min-width: 0;
+    border-radius: $borderRadiusLrg;
+    border-width: 0;
+    @include fontSize(8px);
+    
+    &:before {
+      display: none;
+    }
+  }
+  
+  .markerIcon {
+    @extend %marker;
+    min-width: 28px;
+    padding: 0;
+    
+    &:before {
+      left: 11px;
+    }
+  }
+    
+  .markerIcon i {
+    
+    &:before {
+      margin: auto;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+/*doc
+---
+parent: frame
+title: Thumbnail Frame
+name: frameThumb
+test: true
+---
+
+```html_example
+<div class="frameThumb">
+  <img alt="" src="http://placekitten.com/40/40">
+</div>
+```
+*/
+
+
+// FrameThumb Mixin
+@mixin ooFrameThumb {
+  
+  .frameThumb {
+    @extend %frame;
+    padding: 2px;
+  }
+}

@@ -1,0 +1,50 @@
+/*doc
+---
+parent: ad
+name: z_adBtn
+title: Ad Button
+category: Components
+test: true
+---
+
+A button for some rather lame ads. Don't use this for anything else.
+
+```html_example
+ <button class="adBtn">Some Ad Text</button>
+```
+*/
+
+// Ad Button Mixin
+@mixin ooAdBtn {
+  .adBtn {
+    padding: .5em 1em;
+    margin: 0;
+    display: inline-block;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    border: 0;
+    background: none;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    @include border-radius(4px);
+    border: 1px #e0e0e0 solid;
+    background: #fff;
+    color: #222;
+    text-shadow: 0 1px 0 #fff;
+    @include box-shadow(0 1px 0 #ccc);
+
+    &:active {
+      position: relative;
+      top: 1px;
+      @include box-shadow(inset 0 3px 7px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05));
+    }
+
+    &:hover {
+      color: #222;
+    }
+  }
+}

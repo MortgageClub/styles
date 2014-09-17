@@ -1,0 +1,22 @@
+/*doc
+---
+title: Dots
+name: dot
+category: Components
+---
+
+Dots are a small dot for lists.
+
+*/
+
+
+// Dot Mixin
+@mixin ooDot {
+
+  %dot{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+  }
+}

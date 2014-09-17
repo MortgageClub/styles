@@ -1,0 +1,34 @@
+/*doc
+---
+title: Typography Emphasize
+parent: typography
+name: typeWeight
+category: Base CSS
+author: Nicole
+---
+
+These classes are used to emphasize or deemphasize typography elements
+
+```html_example
+<p class="typeEmphasize">typeEmphasize</p>
+<p class="typeDeemphasize">typeDeemphasize</p>
+<p class="typeWeightNormal">typeWeightNormal</p>
+```
+*/
+
+
+// TypeWeight Mixin
+@mixin ooTypeWeight {
+
+	.typeDeemphasize {
+		font-weight: 300 !important;
+	}
+	
+	.typeWeightNormal {
+		font-weight: normal !important;
+	}
+	
+	.typeEmphasize {
+		font-weight: bold !important;
+	}
+}

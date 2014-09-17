@@ -1,0 +1,29 @@
+/*doc
+---
+title: No Wrap
+category: Utilities
+name: noWrap
+author: August
+---
+
+
+Class       | Description
+----------- | -----------------
+`noWrap` 	| Force an element's text NOT to wrap to a new line.
+
+
+```html_example
+<div class="box boxBasic" style="width:20px;">
+  <p class="noWrap">Notice how I'm wider than my parent containers width...it's sort of my thing.</p>
+</div>
+```
+
+*/
+
+
+// Horizontal Alignment
+@mixin ooNoWrap() {
+	.noWrap {
+		white-space: nowrap;
+	}
+}

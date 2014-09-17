@@ -1,0 +1,160 @@
+/*doc
+---
+title: Whitespace
+name: whitespace
+category: Utilities
+author: Fiona
+---
+
+If you need to tweak elements by using margin or padding, use the following classes rather than adding to the CSS file.
+The classes are constructed by specifying `<type><location><size>` (see table and example below).
+
+```html_example
+<p class="pal">I have a lot of padding</p>
+<p class="man">I have no margin :(</p>
+```
+
+  Type       |            | Description
+--------     | ----------  | -----------
+p            | padding     | Space on the inside of the element
+m            | margin      | Space on the outside of the element
+**Location** |             |
+a            | all         | Adds spacing on all sides of the element
+h            | horizontal  | Adds spacing to the left and right sides of the element
+v            | vertical    | Adds spacing to the top and bottom sides of the element
+t            | top         | Adds spacing to the top side of the element
+l            | left        | Adds spacing to the left side of the element
+b            | bottom      | Adds spacing to the bottom side of the element
+r            | right       | Adds spacing to the right side of the element
+**Size**     |             |
+l            | large       | Adds a large amount of spacing (21px)
+m            | medium      | Adds a medium amount of spacing (10px)
+s            | small       | Adds a small amount of spacing (5px)
+n            | none        | Sets the spacing to 0
+
+
+*/
+
+
+// Set to true to see different spacing
+$debugSpacing: false;
+
+
+// Default Spacing
+%baseSpacing {
+	margin-top: $baseSpacing;
+	margin-bottom: $baseSpacing;
+}
+
+%baseSpacingLarge {
+	margin-top: $baseSpacingLarge;
+	margin-bottom: $baseSpacingLarge;
+}
+
+
+// Table Reset
+@mixin tableResets {
+	table {
+		h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, .media, pre {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}
+
+
+// Default Spacing Debug
+@if $debugSpacing {
+	h1, h2, h3, h4, h5, h6, ul, ol, dl, p, blockquote, .media, pre, .data {
+		outline: 1px solid aqua;
+	}
+
+	.media {
+		outline:1px solid magenta;
+	}
+
+	:first-child {
+		outline: 1px solid yellow;
+	}
+
+	:last-child {
+		outline: 1px solid green;
+	}
+}
+
+// Spacing Helpers
+
+// Should be used to modify the default spacing between objects (not between nodes of the same object)
+// Please use judiciously. You want to be using defaults most of the time, these are exceptions!
+// <type><location><size>
+
+// p,m 				padding,margin
+// a,t,r,b,l,h,v	all,top,right,bottom,left,horizontal,vertical
+// s,m,l,n 			small(5px),medium(10px),large(21px),none(0px)
+
+
+$whitespace-keys: (p padding, m margin, a '', v -top -bottom, h -left -right, t -top, r -right, b -bottom, l -left);
+@function expand-whitespace-key($k) {
+	@each $pair in $whitespace-keys {
+		$short: nth($pair, 1);
+		$long: nth($pair, 2);
+
+		// v and h need to pass in 2 parameters
+		@if (length($pair) == 3) {
+			$long: (nth($pair, 2) nth($pair, 3))
+		}
+
+		@if $short == $k {
+			@return $long;
+		}
+	}
+
+	@warn "Couldn't expand #{$k}";
+	@return $k;
+}
+
+
+// Whitespace Mixin
+@mixin  whitespace($sizes: (5px, 10px, 20px)){ // For now assume this list is always ascending
+
+	// Build Spacing Exceptions
+	$sizes: join(0, $sizes);
+	$size-names: ();
+
+	@if (length($sizes) == 1) {
+		$size-names: (n);
+		@warn "One spacing class isn't usually enough. Typically you should choose at least three.";
+	}
+	@else if (length($sizes) == 2) {
+		$size-names: (n, s);
+		@warn "Two spacing classes isn't usually enough. Typically you should choose at least three.";
+	}
+	@else if (length($sizes) == 3) {
+		$size-names: (n, s, m);
+	}
+	@else if (length($sizes) == 4) {
+		$size-names: (n, s, m, l);
+	}
+	@else if (length($sizes) == 5) {
+		$size-names: (n, s, m, l, xl);
+	}
+	@else if (length($sizes) > 5) {
+		$size-names: (n, xs, s, m, l, xl);
+	}
+
+	$types: (p,m);
+	$locations: (a, v, h, t, r, b, l);
+
+	@each $location in $locations {
+		@each $size-name in $size-names {
+			@each $type in $types {
+				.#{$type}#{$location}#{$size-name} {
+					// Get returned list of locations. Can't assign to variable as it turns into 1 item in the list, not multiple items
+					@each $whitespace-location in expand-whitespace-key($location) {
+						#{expand-whitespace-key($type)}#{$whitespace-location}: nth($sizes, index($size-names, $size-name)) !important;
+					}
+				}
+			}
+		}
+	}
+} // whiitespace

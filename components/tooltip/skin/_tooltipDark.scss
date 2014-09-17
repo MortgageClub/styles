@@ -1,0 +1,16 @@
+// TooltipDark
+@mixin ooTooltipDark {
+  
+  .tooltipDark,
+  .tooltipDark:before,
+  .tooltipDark .before {
+    background-color: #222;
+    color: #fff;
+    border-color: transparent;
+    box-shadow: none;
+  }
+  
+  .tooltipDark .ie {
+    border-color: #222;
+  }
+}

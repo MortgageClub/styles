@@ -1,0 +1,32 @@
+// Font-face Mixin
+@mixin font-face-mixin($font-name, $font-path, $font-file, $font-weight: normal, $weight-text: null) {
+	@font-face {
+		font-family: '#{$font-name}';
+		src: url('#{$font-path}/#{$font-file}.eot');
+		src: url('#{$font-path}/#{$font-file}.eot?#iefix') format('embedded-opentype'),
+		url('#{$font-path}/#{$font-file}.woff') format('woff'),
+		url('#{$font-path}/#{$font-file}.ttf') format('truetype'),
+		url('#{$font-path}/#{$font-file}.svg##{$font-name}#{$weight-text}') format('svg');
+		font-weight: $font-weight;
+		font-style: normal;
+	}
+}
+
+
+// OpenSans Mixin
+@mixin ooOpenSans() {
+	// OpenSans Light
+	@include font-face-mixin(OpenSans, 'http://static.trulia-cdn.com/images/fonts/OpenSans', OpenSans-Light-webfont, 300, Light);
+
+	// OpenSans Regular
+	@include font-face-mixin(OpenSans, 'http://static.trulia-cdn.com/images/fonts/OpenSans', OpenSans-Regular-webfont, 400, Regular);
+
+	// OpenSans Bold
+	@include font-face-mixin(OpenSans, 'http://static.trulia-cdn.com/images/fonts/OpenSans', OpenSans-Bold-webfont, 600, Bold);
+}
+
+
+// Entypo Mixin
+@mixin ooEntypo() {
+	@include font-face-mixin(Entypo, 'http://static.trulia-cdn.com/images/fonts/Entypo_061214', Entypo);
+}

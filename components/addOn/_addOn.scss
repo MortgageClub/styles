@@ -1,0 +1,77 @@
+/*doc
+---
+title: Add Ons
+name: addOn
+category: Forms
+author: JD
+test: true
+---
+
+There are many cases where text needs to be around an input. You can use
+these decorators so that your text will align nicely next to the input
+and be clear that it is related to the input. To use a field decorator
+you add `fieldAppend` or `fieldPrepend` to your `fieldItem` and then
+inside the `fieldItem` you add an `addOn` class.
+
+There are two caveats when using these components:
+
+1. There must not be any white space or line break betweent the .addOn
+element and the input element.
+2. The input must be sized so that there is room for the .addOn element
+(so use a colsN class).
+
+```html_example
+<div class="form">
+  <div class="field">
+    <label for="how_much" class="fieldLabel">How much?</label>
+    <span class="fieldItem fieldAppend text">
+      <input id="how_much" aria-labelledby="zero_cents" class="cols12" type="text"><span id="zero_cents" class="addOn addOnBasic">.00</span>
+    </span>
+  </div>
+  <div class="field">
+    <label for="how_much" class="fieldLabel">How much?</label>
+    <span class="fieldItem fieldPrepend text">
+      <span id="dollars" class="addOn addOnBasic">$</span><input aria-labelledby="dollars" id="how_much" class="cols12" type="text">
+    </span>
+  </div>
+</div>
+```
+
+*/
+
+
+// AddOn Mixin
+@mixin ooAddOn() {
+  .form {
+    .addOn {
+      @extend %formFieldStyle;
+    }
+
+    .fieldPrepend {
+      .addOn {
+        @include border-top-right-radius(0);
+        @include border-bottom-right-radius(0);
+        border-right: none;
+      }
+      .addOn + input {
+        @include border-top-left-radius(0);
+        @include border-bottom-left-radius(0);
+        border-left: none;
+      }
+    }
+
+    .fieldAppend {
+      input {
+        @include border-top-right-radius(0);
+        @include border-bottom-right-radius(0);
+        border-right: none;
+
+      }
+      input + .addOn {
+        @include border-top-left-radius(0);
+        @include border-bottom-left-radius(0);
+        border-left: none;
+      }
+    }
+  }
+}

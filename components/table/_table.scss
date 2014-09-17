@@ -1,0 +1,219 @@
+/*doc
+---
+title: Tables
+name: table
+category: Base CSS
+author: aflanagan
+---
+
+Tables are a way to structure content in a clean, readable format.
+By default columns will stretch to fill their content. You can define widths inline as is shown in the example
+
+There are a number of alignment helper classes available for use with a table:
+
+Helper   | Alignment
+---------|----------
+`txtL`   | horizontally align the text to the left of the cell (default)
+`txtC`   | horizontally center the text in the cell
+`txtR`   | horizontally align the text to the right of the cell
+`txtT`   | vertically align text to the top of the cell
+`txtM`   | vertically align text to the middle of the cell (default)
+`txtB`   | vertically align text to the bottom of the cell
+
+This is the default table with no skin applied.
+
+```html_example
+<table class="table">
+    <thead>
+      <tr>
+        <th class="txtL" style="width:20%">Here&#x27;s a header</th>
+        <th class="txtC" style="width:60%">Here&#x27;s a header</th>
+        <th class="txtR" style="width:20%">Here&#x27;s a header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="txtL">This text left aligns</td>
+        <td class="txtC">This text center aligns</td>
+        <td class="txtR">
+          <strong>This text right aligns</strong>
+        </td>
+      </tr>
+      <tr>
+        <td class="txtL">And some text:</td>
+        <td class="txtC">
+          <a href="">visit example.com</a>
+        </td>
+        <td class="txtR">And some text:</td>
+      </tr>
+      <tr>
+        <td class="txtL">And some text:</td>
+        <td class="txtC">$1500/mo</td>
+        <td class="txtR">And some text:</td>
+      </tr>
+    </tbody>
+  </table>
+```
+
+*/
+
+
+// Table Mixin
+@mixin ooTable{
+  
+  .table {
+    @extend %baseSpacing;
+    width: 100%;
+    
+    thead {
+      th {
+        font-weight: bold;
+        color: $baseTextColor;
+      }
+    }
+
+    th,
+    td {
+      padding: 8px;
+    }
+  }
+
+  // Horizontal Alignment
+  table .txtC,
+  table tr .txtC {
+    @extend .txtC;
+  }
+  
+  table .txtL,
+  table tr .txtL {
+    @extend .txtL;
+  }
+  
+  table .txtR,
+  table tr .txtR {
+    @extend .txtR;
+  }
+
+  // Vertical Alignment
+  table .txtT,
+  table tr .txtT {
+    @extend .txtT;
+  }
+  
+  table .txtB,
+  table tr .txtB {
+    @extend .txtB;
+  }
+  
+  table .txtM,
+  table tr .txtM {
+    @extend .txtM;
+  }
+}
+
+
+/*doc
+---
+title: Table Whitespace
+parent: table
+name: tableWhitespace
+author: August
+---
+
+Table cells can have their cell padding adjusted by adding a class to `table`, `td` or `th` element. It works similar to the whitespace 
+The classes are constructed by specifying `<type><location><size>` (see table and example below).
+
+```html_example
+<table class="table tableBasic tan">
+  <tr>
+    <td>One</td>
+    <td>Two</td>
+  </tr>
+  <tr>
+    <td>Three</td>
+    <td>Four</td>
+  </tr>
+  <tr>
+    <td>Five</td>
+    <td>Six</td>
+  </tr>
+</table>
+```
+
+  Type       |             | Description
+--------     | ----------  | -----------
+t            | table       | Affects only the spacing on th and td elements, you can set this directly on those elements or on the table element itself.
+**Location** |             |  
+a            | all         | Adds spacing on all sides of the element
+h            | horizontal  | Adds spacing to the left and right sides of the element 
+v            | vertical    | Adds spacing to the top and bottom sides of the element 
+**Size**     |             | 
+l            | large       | Adds a large amount of spacing (21px)
+m            | medium      | Adds a medium amount of spacing (10px)
+s            | small       | Adds a small amount of spacing (5px)
+n            | none        | Sets the spacing to 0
+
+
+*/
+
+
+$whitespace-keys: (t padding, a '', v -top -bottom, h -left -right);
+
+
+// Expand Whitespace Function
+@function expand-whitespace-key($k) {
+  @each $pair in $whitespace-keys {
+    $short: nth($pair, 1);
+    $long: nth($pair, 2);
+    // v and h need to pass in 2 parameters
+    @if (length($pair) == 3) {
+      $long: (nth($pair, 2) nth($pair, 3))
+    }
+    @if $short == $k {
+      @return $long;
+    }
+  }
+  @warn "Couldn't expand #{$k}";
+  @return $k;
+}
+
+
+// TableWhitespace Mixin
+@mixin  tableWhitespace($sizes: (5px, 10px, 20px)){
+
+  $sizes: join(0, $sizes);
+  $size-names: ();
+  
+  @if (length($sizes) == 1) {
+    $size-names: (n);
+    @warn "One spacing class isn't usually enough. Typically you should choose at least three.";
+  } @else if (length($sizes) == 2) {
+    $size-names: (n, s);
+    @warn "Two spacing classes isn't usually enough. Typically you should choose at least three.";
+  } @else if (length($sizes) == 3) {
+    $size-names: (n, s, m);
+  } @else if (length($sizes) == 4) {
+    $size-names: (n, s, m, l);
+  } @else if (length($sizes) == 5) {
+    $size-names: (n, s, m, l, xl);
+  } @else if (length($sizes) < 5) {
+    $size-names: (n, xs, s, m, l, xl);
+    @warn "No more than five spacing classes are supported, typically you want to have three.";
+  }
+  $types: (t);
+  $locations: (a, v, h);
+  
+  @each $location in $locations {
+    @each $size-name in $size-names {
+      @each $type in $types {
+        .#{$type}#{$location}#{$size-name} td,
+        .#{$type}#{$location}#{$size-name} th {
+          //get returned list of locations. Can't assign to variable as it turns into 1 item in the list, not multiple items
+          @each $whitespace-location in expand-whitespace-key($location) {
+            #{expand-whitespace-key($type)}#{$whitespace-location}: nth($sizes, index($size-names, $size-name));
+          }
+        }
+      }
+    }
+  }
+}

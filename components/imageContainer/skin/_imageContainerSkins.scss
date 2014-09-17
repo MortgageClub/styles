@@ -1,0 +1,82 @@
+/*doc
+---
+parent: imageContainer
+name: imageContainerSkins
+title: Image Container Sizes
+---
+
+Available sizes (skins) are:
+
+`imageContainerFlex`
+
+`imageContainer120x80`
+
+`imageContainer160x120`
+
+`imageContainer180x135`
+
+`imageContainer286x214`
+
+`imageContainer320x240`
+
+`imageContainerWide320x240` - Only applied when the window is larger than 1144px, specify this after your default imageContainer class
+
+You can use Image Containers like this:
+
+```html_example
+<div class="imageContainer180x135">
+  <img src="http://placehold.it/120x120" />
+</div>
+```
+
+```html_example
+<div class="imageContainer286x214 imageContainerWide320x240">
+  <img src="http://placehold.it/320x240" />
+ </div>
+```
+
+*/
+
+
+// ImageSkin
+@mixin ooImageContainerSkin($width, $height) {
+  
+  .imageContainer#{$width}x#{$height} {
+    @extend %imageContainer;
+    width: #{$width}px;
+    height: #{$height}px;
+  
+    img {
+      max-width: #{$width}px;
+      max-height: #{$height}px;
+    }
+  }
+}
+
+// ImageSkinWide
+@mixin ooImageContainerWideSkin($width, $height) {
+  
+  .imageContainerWide#{$width}x#{$height} {
+    width: #{$width}px;
+    height: #{$height}px;
+    
+    img {
+      max-width: #{$width}px;
+      max-height: #{$height}px;
+    }
+  }
+}
+
+// add your new container sizes here
+@mixin ooImageContainerSkins {
+  
+  @include ooImageContainerSkin(120, 80);
+  @include ooImageContainerSkin(160, 120);
+  @include ooImageContainerSkin(180, 135);
+  @include ooImageContainerSkin(286, 214);
+  @include ooImageContainerSkin(320, 240);
+  
+  @media screen and (min-width: $responsePointLrg) {
+    @include ooImageContainerWideSkin(320, 240);
+  }
+}

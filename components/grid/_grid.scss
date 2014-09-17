@@ -1,0 +1,214 @@
+/*doc
+---
+title: Grids
+name: grid
+category: Layout
+author: Nicole Sullivan
+---
+
+Grids may be used to break a page into smaller content areas. They allow you to layout full pages or even content within a box. They are infinitely nestable and stackable and will always retain the correct proportions with regard to the parent container.
+
+Class          | Description
+-------------- | -----------
+`line`        | Wrapper around one horizontal grouping of columns. This class takes all available width.
+`cols<n>`    | All columns are a fractional width of the total horizontal space taken up by their parent .line element. The Trulia system is base 24, so you can use any value for n from 1 to 24.
+`lastCol`     | For IE<=8 you must include a class lastCol on the final column in each line. This is because IE 7 & 8 do not support the last-child selector.
+
+You should use the cols class to define the relative proportions of the different content areas. For example, if you would like something to take one third of the space available on a line use the class cols8. In the examples below we have shown the most commonly used fractional widths, but you may use any value from 1 to 24.
+
+```html_example
+<div class="line">
+  <div class="col cols2">cols2</div>
+  <div class="col cols3">cols3</div>
+  <div class="col cols4">cols4</div>
+  <div class="col cols5">cols5</div>
+  <div class="col cols6">cols6</div>
+  <div class="col lastCol">lastCol</div>
+</div>
+
+<div class="line">
+  <div class="col cols7">cols7</div>
+  <div class="col cols8">cols8</div>
+  <div class="col cols9 lastCol">cols9</div>
+</div>
+
+<div class="line">
+  <div class="col cols10">cols10</div>
+  <div class="col cols11">cols11</div>
+  <div class="col lastCol">lastCol</div>
+</div>
+
+<div class="line">
+  <div class="col cols12">cols12</div>
+  <div class="col cols12 lastCol">cols12</div>
+</div>
+
+<div class="line">
+  <div class="col cols16">cols16</div>
+  <div class="col cols8 lastCol">cols8</div>
+</div>
+```
+
+##Grid inside a box
+
+```html_example
+<div class="box boxBasic boxHighlight backgroundBasic">
+  <div class="boxBody">
+    <p>This box is highlighted with the little shadows.</p>
+    <div class="line">
+      <div class="col cols8">
+        <p>This is the content of the first column</p>
+      </div>
+      <div class="col cols16 lastCol">
+        <p>This is the content of the second column</p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+##Right column on the grid : ColExt
+`colExt` permits to the `lastCol` to be positionned to the right, then there can be a space between the first columns and the last columns in that case
+###ColExt without size
+
+```html_example
+<div class="line">
+  <div class="col cols6">col on the left</div>
+  <div class="colExt">colExt on the right widthout width</div>
+</div>
+```
+
+###ColExt with size
+```html_example
+<div class="line">
+  <div class="col cols6">col on the left</div>
+  <div class="colExt cols6">colExt on the right width size 6</div>
+</div>
+```
+
+##Others examples
+```html_example
+<div class="line">
+  <div class="col cols4">
+    col on the left
+  </div>
+  <div class="colExt cols4">
+    colExt on the right width size 4
+  </div>
+</div>
+<div class="line">
+  <div class="col cols4">
+    col on the left
+  </div>
+  <div class="colExt cols6">
+    colExt on the right width size 6
+  </div>
+</div>
+```
+*/
+
+@import "compass/utilities/general/hacks";
+@import "compass/css3";
+
+$gridsDebug: false;
+$gridsDebugPosition: false;
+//TODO: make params into variables instead, so they can easily be updated w out changing this file.
+//TODO: Take different .cols into account, what if gutters are in rems? ems? percentage?
+//TODO: test in IE6 :(
+
+
+// Grid Mixin
+@mixin ooGrid($cols: (2,3,4,5,6), $gutter: $baseGutter) {
+
+  // ie7 and earlier need percentage based gutters because they dont do border-box
+  $iePercentGutter: percentage($gutter/$pageWidth);
+  
+  @each $col in $cols {
+    @for $i from 1 through $col {
+      .cols#{$i} {
+        width: percentage($i/$col) !important;
+      }
+    }
+  }
+
+  .line {
+    @include clearfix-me(micro);
+    margin-left: -$gutter;
+  
+    .col {
+      // col must take place by default even if it's empty
+      min-height: 1px;
+      float: left;
+      
+      @if $gutter {
+        @include box-sizing(border-box);
+        padding-left: $gutter;
+      }
+    }
+  
+    .colExt { // TODO: handle case where there are two (or more) .colExt in a line.
+      float: right;
+      
+      @if $gutter {
+        padding: 0 0 0 $gutter;
+      }
+    }
+  
+    .lastCol { // IE<8 needs a class .lastCol on the final column in any line.
+      @include clearfix-me(facebook);
+      float: none;
+    }
+    
+    .col:last-child { //Facebook clearfix for IE8. IE8 doesn't recognise :last-child and when grouped with other selectors, it causes other selectors to not recognise the rules.
+      display: table-cell;
+      float: none;
+      vertical-align: top;
+      width: 10000px !important;
+    }
+  } // .line
+} // ooGrid
+
+@if $gridsDebug {
+  .line > div:after {
+    content: attr(class);
+    display:block;
+    min-height: 40px;
+    line-height: 40px;
+    background-color: #eee;
+    text-align: center;
+    border-radius: 3px;
+    @include fontSize(12px);
+  }
+}
+
+@if $gridsDebugPosition {
+  .line {
+    background-color: #e2e2e2;
+  }
+  
+  .col {
+    background-color: #da0000;
+    border-radius: 7px;
+    
+    &:first-child {
+      background-color: green;
+    }
+    .firs & {
+      background-color: blue;
+    }
+  }
+  
+  .colExt ~ [class*=size]:last-child,
+  .las .col {
+    background-color:purple;
+  }
+  
+  .colExt ~ .colExt {
+    background-color: gray;
+  }
+}
+
+// if gutters were true they would need to be % based, so you would need to know page width
+// e.g. 15px gutters / 960px page width = 0.015625 or 1.5625%
+
+// or have them be pixel based and set padding box thingy

@@ -1,0 +1,66 @@
+// Modal Mixin
+@mixin ooModal {
+
+  // Sizes and positions the modal window
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    display: none;
+    width: 600px;
+    margin: 6em auto auto -300px;
+    @include transform(0, 0);
+    @include transition(all 0.2s ease-in-out);
+    
+    // With inline modals, when the user scrolls the window the modal may move outside the viewport.
+    // This is useful in cases where the modal may take up more screen space than the viewport.
+    // The register modal is a good example of this.
+    &.inlineModal {
+      position: absolute;
+    }
+  }
+  
+  // Make it higher than sky
+  .beingModal {
+    z-index: $zIndexPageOverlay + 1 !important;
+  }
+  
+  // Modal cover should as standard as possible
+  .modalCover {
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    // this should cover everything, otherwise other party should be refactored
+    z-index: $zIndexPageOverlay;
+  }
+  
+  // Being real modal and prevent blocked content scrolling
+  body.underModal {
+    overflow: hidden !important;
+  }
+
+}
+
+@mixin ooModalSkin($type, $coverBackground) {
+  
+  .modalCover_#{$type} {
+    background-color: #{$coverBackground};
+    opacity: 0.5;
+  }
+  
+  html.x-msie-8 .modalCover_#{$type},
+  html.x-msie-7 .modalCover_#{$type} {
+    filter: alpha(opacity=50);
+  }
+}
+
+// Dark Skin
+@include ooModalSkin('dark', $modalBackgroundDark);
+
+// Light Skin
+@include ooModalSkin('light', $modalBackgroundLight);

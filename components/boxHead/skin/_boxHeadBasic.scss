@@ -1,0 +1,33 @@
+/*doc
+---
+title: Box Head
+parent: box
+name: y_boxHeadBasic
+category: Components
+author: August
+test: true
+---
+
+```html_example
+<div class="box boxBasic backgroundBasic">
+  <div class="boxHead boxHeadBasic">
+    <h5>This is a box header</h5>
+  </div>
+  <div class="boxBody">
+    <p>I. Am. The. Body.</p>
+  </div>
+</div>
+```
+
+*/
+
+
+// BoxHeadBasic Mixin
+@mixin ooBoxHeadBasic {
+
+  .boxHeadBasic {
+    border-bottom: solid 1px $dividerColorLowlight;
+    padding: 0;
+    margin: 0 $baseSpacingLarge;
+  }
+}

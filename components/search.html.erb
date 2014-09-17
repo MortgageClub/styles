@@ -1,0 +1,24 @@
+<%= ERB.new(File.read(File.expand_path('../hologram_assets/_header.html')), nil, nil, eoutvar='_header').result(binding) %>
+
+<% for nav in [
+  {:title => 'Layout', :href => 'layout.html'},
+  {:title => 'Base CSS', :href => 'base_css.html'},
+  {:title => 'Components', :href => 'components.html'},
+  {:title => 'Forms', :href => 'forms.html'},
+  {:title => 'Javascript', :href => 'javascript.html'},
+  {:title => 'Utilities', :href => 'utilities.html'},
+] %>
+  <% page = pages[nav[:href]] %>
+  <% if page.has_key?(:blocks) %>
+    <h2><a class="activeLink" href="<%= nav[:title] %>"><%= nav[:title] %></a></h2>
+
+    <hr>
+    <ul class="list3cols">
+      <% for block in page[:blocks] %>
+        <li><a href="<%= nav[:href] %>#<%= block[:name] %>"><%= block[:title] %></a>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+
+<%= ERB.new(File.read(File.expand_path('../hologram_assets/_footer.html')), nil, nil, eoutvar='_footer').result(binding) %>

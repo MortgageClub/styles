@@ -1,0 +1,11 @@
+// Tabs Mixin
+@mixin ooTabs() {
+  
+  .tabs {
+  margin-bottom: 0;
+  
+    > li {
+      display: inline-block;
+    }
+  }
+}

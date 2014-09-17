@@ -1,0 +1,477 @@
+/*doc
+---
+title: Forms
+name: form
+category: Forms
+author: Susan Lin
+---
+
+Each group form field is wrapped by field, usually consisting of a label and a type of form field.
+The form field is wrapped by class `fieldItem` plus the type of form field: `text`, `select`, `radio`, and `checkbox`
+
+##Form containers
+Forms need to have class form.
+
+```html_example
+<form class="form">
+  ...your form fields
+</form>
+```
+
+#Labels
+Labels accompany most form fields.
+
+```html_example
+<form class="form">
+  <div class="field">
+    <label for="somethingNotHere" class="fieldLabel">Put labels on things</label>
+  </div>
+</form>
+````
+##Left Labels
+Add class `labelLeft` to `label`.
+
+```html_example
+<form class="form">
+  <div class="field">
+    <label for="textLeft1" class="labelLeft fieldLabel">Label on the left</label>
+    <span class="fieldItem text">
+      <input type="text" id="textLeft1">
+    </span>
+  </div>
+</form>
+```
+
+###Multiple fields with label on left
+Add class `labelLeft` to parent container.
+
+```html_example
+<form class="form">
+  <div class="labelLeft">
+    <div class="field">
+      <label for="text111" class="fieldLabel">Label on the left</label>
+      <span class="fieldItem text">
+        <input type="text" id="text111">
+      </span>
+    </div>
+    <div class="field">
+      <label for="text222" class="fieldLabel">Label on the left</label>
+      <span class="fieldItem text">
+        <input type="text" id="text222">
+      </span>
+    </div>
+  </div>
+</form>
+```
+>My left label doesn't fit! If you anticipate long labels, we highly recommend just
+using one on top instead.
+
+*/
+
+
+// Form Mixin
+@mixin ooForm() {
+
+  %formFieldStyle {
+    @include box-sizing(border-box);
+    width: 100%;
+    padding: .5em;
+    @include border-radius($formFieldBorderRadius);
+    border: $formFieldBorder;
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.1);
+    transition: border 0.2s;
+  
+    &:focus {
+      outline: none;
+      border: $formFieldBorderHighlight;
+    }
+  }
+
+  %formContext {
+    display: table-cell;
+    width: 10000px;
+  }
+  
+  // Placeholder Color
+  ::-webkit-input-placeholder {
+    color: $placeholderText;
+  }
+  
+  :-moz-placeholder {
+    color: $placeholderText;
+  }
+  
+  :-ms-input-placeholder {
+    color: $placeholderText;
+  }
+  
+  // Added via JS shim for ie7-9
+  .placeholder {
+    color: $placeholderText;
+  }
+
+  // Form field wrappers and layouts
+  .form {
+    @extend %baseSpacing;
+  
+    // Forms Structure
+    .field {
+      @extend %baseSpacing;
+      @include clearfix-me(micro);
+    }
+  
+    .fieldWarning {
+      
+      .text {
+        
+        textarea,
+        input {
+          border: $formFieldBorderWarning;
+        }
+      }
+    
+      .select select {
+        border: $formFieldBorderWarning;
+      }
+    
+      .fieldLabel {
+        color: $warningTypeColor;
+      }
+    }
+    
+    .col {
+      &:first-child {
+          margin-top: 0;
+      }
+      
+      &:last-child {
+          margin-bottom: 0;
+      }
+    }
+    
+    .fieldItem {
+      @extend %formContext;
+    }
+    
+    // Used for aligning text next to input elements
+    .fieldInlineText {
+      @include box-sizing(border-box);
+      padding: .5em;
+      display: inline-block;
+    }
+    
+    // Small fields for input / selects to match btnSml
+    .fieldSml,
+    .select .fieldSml {
+      @include fontSize(12px);
+      height: 31px;
+    }
+    
+    // Large fields for input / selects to match btnLrg
+    .fieldLrg,
+    .select .fieldLrg {
+      @include fontSize(16px); //18px is in our type scale, but is too big
+      height: 43px;
+    }
+    
+    // Use the textarea's row attribute to specify height
+    textarea.fieldSml,
+    textarea.fieldLrg {
+      height: auto;
+    }
+    
+    // Left labels
+    .fieldLabel {
+      margin-bottom: 2px;
+      min-height: 1px;
+      display: block;
+      cursor: pointer;
+      color: $formLabelColor;
+      font-weight: bold;
+    }
+    
+    label.labelLeft,
+    .labelLeft .fieldLabel {
+      width: 30%;
+      float: left;
+      padding: .5em 10px;
+      margin-right: 10px;
+      text-align: right;
+    }
+  } // .form
+} // ooForm
+
+
+/*doc
+---
+title: Field Sizes
+name: forms_w_Examples
+category: Forms
+author: Susan Lin
+---
+
+Sometimes you want a line of mixed fields which match the height of our
+buttons. Inputs and Selects can be modified with `fieldSml` or
+`fieldLrg`
+
+### Default Size
+
+```html_example
+<form class="form">
+  <div class="field">
+    <label class="fieldLabel">Your email address</label>
+    <ul class="fieldGroup fieldGroupInline">
+      <li>
+        <label for="textboxinline4">Email address 0</label>
+        <span class="fieldItem text">
+          <input type="text" id="textboxinline4">
+        </span>
+      </li>
+      <li>
+        <span class="fieldItem select">
+          <select id="select">
+            <option value="">Any</option>
+            <option value="0">Option 0</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </span>
+      </li>
+      <li>
+        <button class="btn btnDefault">Submit</button>
+      </li>
+    </ul>
+  </div>
+</form>
+```
+### Small Size
+An example using `fieldSml` modifiers.
+
+```html_example
+<form class="form">
+  <div class="field">
+    <label class="fieldLabel">Your email address</label>
+    <ul class="fieldGroup fieldGroupInline">
+      <li>
+        <label for="textboxinline4">Email address 0</label>
+        <span class="fieldItem text">
+          <input type="text" id="textboxinline4" class="fieldSml">
+        </span>
+      </li>
+      <li>
+        <span class="fieldItem select">
+          <select id="select" class="fieldSml">
+            <option value="">Any</option>
+            <option value="0">Option 0</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </span>
+      </li>
+      <li>
+        <button class="btn btnDefault btnSml">Submit</button>
+      </li>
+    </ul>
+  </div>
+</form>
+```
+### Large Size
+An example using `fieldLrg` modifiers.
+
+```html_example
+<form class="form">
+  <div class="field">
+    <label class="fieldLabel">Your email address</label>
+    <ul class="fieldGroup fieldGroupInline">
+      <li>
+        <label for="textboxinline4">Email address 0</label>
+        <span class="fieldItem text">
+          <input type="text" id="textboxinline4" class="fieldLrg">
+        </span>
+      </li>
+      <li>
+        <span class="fieldItem select">
+          <select id="select" class="fieldLrg">
+            <option value="">Any</option>
+            <option value="0">Option 0</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </span>
+      </li>
+      <li>
+        <button class="btn btnDefault btnLrg">Submit</button>
+      </li>
+    </ul>
+  </div>
+</form>
+```
+
+*/
+
+/*doc
+---
+title: Layout with Forms
+name: forms_x_Examples
+category: Forms
+author: Susan Lin
+---
+
+##Sizing with Cols
+You can use `cols<n>` to give labels or form fields (`<inputs>`, `<selects>`, etc) different sizing
+
+```html_example
+<form class="form">
+  <div class="field">
+    <label for="text234" class="fieldLabel labelLeft cols3">Label with input</label>
+    <span class="fieldItem text">
+      <input type="text" id="text234" class="cols6">
+    </span>
+  </div>
+</form>
+```
+
+##Sizing within Grids
+You can use the grid to create column layouts within your form.
+
+```html_example
+<form class="form">
+  <div class="line">
+    <div class="col cols12">
+      <div class="field">
+        <label class="fieldLabel">Select your option set 1</label>
+        <ul class="fieldGroup">
+          <li>
+            <span class="fieldItem checkbox">
+              <input type="checkbox" id="checkboxgroupcol1" name="checkboxgroupcol">
+              <label for="checkboxgroupcol1">Label for checkbox</label>
+            </span>
+          </li>
+          <li>
+            <span class="fieldItem checkbox">
+              <input type="checkbox" id="checkboxgroupcol2" name="checkboxgroupcol">
+              <label for="checkboxgroupcol2">Label for checkbox</label>
+            </span>
+          </li>
+          <li>
+            <span class="fieldItem checkbox">
+              <input type="checkbox" id="checkboxgroupcol3" name="checkboxgroupcol">
+              <label for="checkboxgroupcol3">Label for checkbox</label>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col lastCol">
+      <div class="field">
+        <label class="fieldLabel">Select your option set 2</label>
+        <ul class="fieldGroup">
+          <li>
+            <span class="fieldItem checkbox">
+              <input type="checkbox" id="checkboxgroupcol4" name="checkboxgroupcol2">
+              <label for="checkboxgroupcol4">Label for checkbox</label>
+            </span>
+          </li>
+          <li>
+            <span class="fieldItem checkbox">
+              <input type="checkbox" id="checkboxgroupcol5" name="checkboxgroupcol2">
+              <label for="checkboxgroupcol5">Label for checkbox</label>
+            </span>
+          </li>
+          <li>
+            <span class="fieldItem checkbox">
+              <input type="checkbox" id="checkboxgroupcol6" name="checkboxgroupcol2">
+              <label for="checkboxgroupcol6">Label for checkbox</label>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</form>
+```
+
+*/
+
+/*doc
+---
+title: Warning Forms
+name: forms_y_Examples
+category: Forms
+author: Susan Lin
+---
+
+Sometimes you need to give feedback to the user. Add `fieldWarning` to the `field` element.
+Use <a href="javascript.html#Tooltips">Tooltips</a> to expound on exact issues, e.g. "Email must contain @"
+
+```html_example
+
+<form class="form">
+
+  <div class="field fieldWarning">
+    <label for="foo" class="fieldLabel">Label with input</label>
+    <span class="fieldItem text">
+      <input type="text" id="foo" class="cols6" placeholder="I want words inside of me">
+    </span>
+  </div>
+
+  <div class="field fieldWarning">
+    <label for="bar" class="fieldLabel">Label with textarea</label>
+    <span class="fieldItem text">
+      <textarea id="bar" rows="4"></textarea>
+    </span>
+  </div>
+
+  <div class="field fieldWarning">
+    <label for="foobar" class="fieldLabel">Label with select</label>
+    <span class="fieldItem select">
+      <select id="foobar">
+        <option value="">Any</option>
+        <option value="0">Option 0</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+    </span>
+  </div>
+
+</form>
+```
+*/
+
+/*doc
+---
+title: Field Inline Text
+name: forms_z_Examples
+category: Forms
+author: JD
+---
+
+If you need to align text next to a input, or have text sit nicely next
+to a label in place of an input you can use the `fieldInlineText` class.
+
+```html_example
+
+<form class="form">
+
+  <div class="field">
+    <label for="foo" class="fieldLabel labelLeft">Label with input</label>
+    <span class="fieldItem text">
+      <input type="text" id="foo" class="cols10" placeholder="I want words inside of me">
+      <span class="fieldInlineText">These words are outside!</span>
+    </span>
+  </div>
+
+  <div class="field">
+    <label for="foo" class="fieldLabel labelLeft">Input some text</label>
+    <span class="fieldItem">
+      <span class="fieldInlineText">HAHAHA! You cannot!</span
+    </span>
+  </div>
+
+</form>
+```
+*/

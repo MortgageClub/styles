@@ -1,0 +1,48 @@
+/*doc
+---
+title: Box Skins
+parent: box
+name: boxBasicSkin
+author: August Flanagan
+test: true
+---
+
+
+####Box Basic
+```html_example
+<div class="box boxBasic backgroundBasic">
+  <div class="boxBody">
+    <p>This box has a white background.</p>
+  </div>
+</div>
+```
+
+
+####Box Highlight
+```html_example
+<div class="box boxHighlight backgroundBasic">
+  <div class="boxBody">
+    <p>This box is highlighted with the little shadows.</p>
+  </div>
+</div>
+```
+
+*/
+
+
+// BoxSkins Mixin
+@mixin ooBoxSkins {
+  .boxBasic {
+    @extend %boxSkinDefaults;
+  }
+
+  .boxHighlight {
+    @extend %boxSkinDefaults;
+    @include box-shadow(0 0 5px rgba(0,0,0, 0.07));
+  }
+
+  %boxSkinDefaults { // also used by dropdownBoxHighlight
+    border: 1px solid $borderColor;
+    @include border-radius($borderRadiusDefault);
+  }
+}

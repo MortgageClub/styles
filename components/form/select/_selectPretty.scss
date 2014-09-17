@@ -1,0 +1,166 @@
+/*doc
+---
+title: Pretty Select
+category: Forms
+name: forms_d1_select
+author: JD
+---
+
+Occasionally you have a select dropdown in a high-visibility spot on the
+page. For the most part we try to use the default browser selects but
+this does not always work well with the site's look and feel. In that
+case use a pretty select. This will create a select that looks good on
+most modern browsers while falling back to the default browser select in
+older browsers (IE8 and below). Further more it should still allow
+regular select accessibility features to work.
+
+```html_example
+<form class="form">
+  <div class="field">
+    <label for="select" class="fieldLabel">Label with select</label>
+
+      <div class="">
+       <span class="fieldItem select">
+          <div class="selectPretty">
+            <select>
+              <option value="">Any</option>
+              <option value="0">Option 0</option>
+              <option selected value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+            <div class="selectDisplay btn btnDefault">
+              <span class="selectLabel">Option 1</span>
+              <span class="selectTrigger"><i class="iconDownOpen"></i></span>
+            </div>
+          </div>
+        </span>
+      </div>
+
+  </div>
+</form>
+```
+
+```js_example
+$(document).ready(function () {
+  $('.selectPretty').truliaSelect();
+});
+```
+
+## jQuery Plugin: truliaSelect
+
+Options         | Description
+----------------|----------
+`labelTextFn`   | Define a custom function for determining what to display when the user selects an option. Defaults to: `function ($el, $select, $label, $input) { return $select.find(':selected').text(); };`
+**Methods**     |
+ `refresh`      | Syncs the label text with the currently selected value in the input (useful for programmatically changing `select` values and then updating the UI to reflect the new value)
+
+
+## ComboBox Example
+
+Occasionally you might want rig up a combobox style select.
+Combobox means that a user can either enter text in an input,
+or use a select to choose from default options. In that case
+just add a `fieldItem text` node with an input field inside the
+`selectPretty` node.
+
+**Nota Bene** There are two things that you will need to do to make this work:
+<br>
+**1.** Set a width less than 100% on your input to expose the select underneath.
+<br>
+**2.** It's up to you to grab the correct value whenthe form is submitted.
+If you're using a combobox you should *always* use the input as the real value.**
+
+```html_example
+<form class="form">
+  <div class="field">
+    <label for="select" class="fieldLabel">Label with select</label>
+
+      <div class="">
+       <span class="fieldItem select">
+          <div class="selectPretty">
+            <select>
+              <option value="">Any</option>
+              <option value="0">Option 0</option>
+              <option selected value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+            <span class="fieldItem text" style="width:97%;">
+              <input type="text" placeholder="text goes here" >
+            </span>
+            <div class="selectDisplay btn btnDefault">
+              <span class="selectLabel">Option 1</span>
+              <span class="selectTrigger"><i class="iconDownOpen"></i></span>
+            </div>
+          </div>
+        </span>
+      </div>
+
+  </div>
+</form>
+```
+
+```js_example
+$(document).ready(function () {
+  $('.selectPretty').truliaSelect();
+});
+```
+
+*/
+
+
+// Form Class
+.form {
+  // see the js script for how to use these classes
+  .selectPretty {
+    width: 100%;
+    position: relative;
+  
+    .selectDisplay {
+      width: 100%;
+      padding-right: 0px;
+      box-shadow: none;
+      @include box-sizing(border-box);
+    }
+  
+    .selectTrigger {
+      display: inline-block;
+      padding: 0 7px;
+      float: right;
+      
+      & > i:before {
+        margin-right: 0 !important;
+      }
+    }
+    
+    .selectLabel {
+      float: left;
+    }
+    
+    select {
+      position: absolute;
+      display: block;
+      cursor: pointer;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+    }
+    
+    input {
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
+    
+    .text {
+      position: absolute;
+    }
+  }
+}

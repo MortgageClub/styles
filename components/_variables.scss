@@ -1,0 +1,435 @@
+// TXL Main Variables
+// Last Updated: 6/3/14
+
+
+
+// Direct Colors (OLD - Leaving in for now for reference)
+// WARNING - NEVER USE THESE IN YOUR CODE - USE THE VARIABLES IN THE NEXT SECTION
+$white: #fff;
+$black: #222; //default text color
+$darkGray: #666;
+$midGray: #999; //gray text default
+$gray: #ccc; //border & divider gray
+$lightGray: #e9e9e9; //lowlight border
+$paleGray: #f3f3f3; //buttons gray
+$palestGray: #f9f9f9; //background gray
+$lightBlue: #2aa2b7; //new homepage link blue
+$midnightBlue: #3c3f55; //new homepage midnight blue
+$facebookBlue: #4063b3; //facebook connect blue button
+$tomatoSoup: #ee552a; //new homepage button color
+$tomatoSoupHover: #f46747; //new homepage button hover color
+$orange: #ff5c00;
+$darkOrange: #d35500;
+$gold: #ff9900;
+$green: #5eab1f;
+$paleGreen: #eff6e9;
+$darkGreen: #3d7314;
+$blue: #1885F0;
+$red: #cc2114;
+
+
+// New Colors (6/4/14)
+$white: #fff;
+$black: #333;
+$darkGray: #666;
+$midGray: #999;
+$gray: #ccc;
+$lightGray: #e9e9e9;
+$paleGray: #efefef;
+$palestGray: #f8f8f8;
+
+$green: #53b50a;
+$paleGreen: #4f9e1f;
+$darkGreen: #3d7314;
+$blue: #1eb9d4;
+$lightBlue: #1ba1e1;
+$midnightBlue: #40455f;
+$facebookBlue: #4063b3;
+$orange: #ee552a;
+$darkOrange: #b14700;
+$gold: #f9cb0b;
+$red: #e6001c;
+$fuschia: #ed1b77;
+$tomatoSoup: #ee552a;
+$tomatoSoupHover: #f46747;
+
+
+// Contours
+$borderDefaultWidth: 1px;
+$borderWidthSml: 1px;
+$borderWidthMed: 2px;
+$borderRadiusXSml: 3px;
+$borderRadiusSml: 4px;
+$borderRadiusDefault: 6px;
+$borderRadiusLrg: 8px;
+$borderDefaultStyle: solid;
+$borderDefaultColor: $gray;
+
+
+// Transition Speeds
+$transitionSpeedDefault: 400ms;
+$transitionSpeedSlow: 800ms;
+$transitionSpeedFast: 200ms;
+
+
+// z-index http://knowledge.corp.trulia.com/display/Engineering/Z-index+IAB+Guidelines
+$zIndexBackground: -5000; // Background, duh!
+$zIndexMainContent: 0; // Main content, and standard ads in place with regular content
+$zIndexExpandingAd: 6000; // Expandable ad units
+$zIndexFloatingAd: 2001000; // Over the page ads (OTP's)
+$zIndexPopup: 3001000; // Popup Elements -- Chat window, message notifications
+$zIndexFloater: 4001000; // Non-anchored floating elements
+$zIndexNavigation: 5001000; // Expanding Site Navigation Elements
+$zIndexPageOverlay: 6001000; // Full-page Overlays
+
+
+// ATTENTION!!!!
+// USE THESE COLOR VARIABLES IN YOUR CODE
+// (not the direct color names)
+
+// Typography Colors
+$baseTypeColor: $black;
+$lowlightTypeColor: $midGray;
+$highlightTypeColor: $green;
+$warningTypeColor: $red;
+$midlightTypeColor: $gold;
+$reversedTypeColor: $white;
+
+
+// Typography
+$rootFontSize: 16px; //Font size you set on <html> element. font-size: 100% = 16px.
+$btnFontSize: 12px;  // Font size for newTXL btn
+$baseLineHeight: 1.5em !default; //must be unitless
+$baseFontSize: 14px !default; // when using baseFontSize variable, must use it with fontSize mixin
+$baseFontFamily: OpenSans, sans-serif;
+$baseTextColor: $black;
+
+
+// Background Colors
+$bgLowlight: $palestGray;
+$bgHighlight: $green;
+$bgBasic: $white;
+$bgInverse: $black;
+$bgWarn: $red;
+$bgCallout: $orange;
+$bgMidnight: $midnightBlue;
+// To add additional backgrounds use the following syntax:
+//    @include ooBackground(<className>, <color>)
+//    @className  (The class name that you will use for that background)
+//    @color      (The color to be used for that background)
+
+
+// Tab Colors
+$tabsBoxBorder: $gray;
+$tabsBorder: $lightGray;
+$tabsBodyBackground: $white;
+$tabsHighlightColor: $palestGray;
+$tabsActiveColor: $white;
+$tabsActiveBackground: $white;
+$tabsActiveFontColor: $black;
+$tabsHighlightColor: $palestGray;
+$tabsActiveColor: $white;
+$tabsActiveBackground: $white;
+$tabsActiveFontColor: $black;
+$tabPrimaryBackgroundColor: $palestGray;
+$tabPrimaryActiveBackgroundColor: $white;
+$tabPrimaryActiveFontColor: $green;
+$tabPrimaryFontColor: $black;
+$tabPrimaryHoverFontColor: $blue;
+$tabColumnsBackgroundColor: rgb(173, 173, 173); // Fall back for IE
+$tabColumnsBackgroundColorOpaque: rgba(173, 173, 173, 0.9); //opaque gray
+$tabColumnsActiveBackgroundColor: $white;
+$tabColumnsActiveBackgroundColorOpaque: rgba(255, 255, 255, 0.9); //opaque white
+$tabColumnActiveBorderColor: $white;
+$tabBorderRadius: $borderRadiusDefault;
+
+
+// Badge Colors
+$badgePrimaryColor: $tomatoSoup;
+$badgeSecondaryColor: $green;
+$badgeTertiaryColor: $red;
+$badgeStandardColor: $midGray;
+
+
+// Dot Colors
+$dotStandardColor : $gold;
+$dotHighlight : $green;
+$dotWarn : $red;
+$dotCallout : $orange;
+
+
+// Heat Map Bar Colors
+$heatMapBarHot: $red;
+$heatMapBarWarm: $orange;
+$heatMapBarCool: $gold;
+$heatMapBarCold: $green;
+
+
+// Alert Colors
+$alertWarnColor: $red;
+$alertConfirmColor: $green;
+$alertInfoColor: $black;
+
+
+// Frame Colors
+$frameBackground: $midGray;
+$frameBorder: $lightGray; //fallback for IE8 and 7
+
+
+// Overlay Colors
+$overlayLowlightBackground: $black;
+$overlayLowlightFontColor: $white;
+$overlayHighlightBackground: $green;
+$overlayHighlightFontColor: $white;
+$overlayActionBackground: $blue;
+$overlayActionFontColor: $white;
+$overlayDefaultBackground: $white;
+$overlayDefaultFontColor: $black;
+
+
+// Divider
+$dividerColor: $lightGray;
+$dividerColorLowlight: $lightGray;
+$inlineTextDividerColor: $midGray;
+$borderColor: $lightGray;
+$borderColorLowlight: $lightGray;
+
+
+// Table Colors
+$tableBasicBorder: $lightGray;
+
+
+// List
+$listInlineDividerColor: $lightGray;
+$listBorderedDividerColor: $lightGray;
+$listHoverBackgroundColor: $palestGray;
+
+
+// Navigation
+$navDividerColor: $lightGray;
+
+
+// Tabs
+$tabDividerColor: $lightGray;
+
+
+// Close Icon
+$closeIconColor: $midGray;
+
+
+// SVG Icons
+$baseSvgIconSizeDefault: 16px;
+$baseSvgIconMargin: 0 4px 2px 0;
+
+
+// Tooltip
+$tooltipBackgroundDefault: $white;
+$tooltipBorderColor: $lightGray;
+
+
+// Toggle Colors
+$toggleColor: $black;
+$toggleColorLowlight: $midGray;
+
+
+// Link Colors
+$linkColor: $lightBlue;
+$linkHoverColor: $blue;
+$lowlightLinkColor: $midGray;
+$lowlightLinkHoverColor: $green;
+$linkNewTXLDefaultColor: $lightBlue;
+$activeLinkColor: $baseTextColor;
+$activeLinkHoverColor: $baseTextColor;
+
+
+// Misc Colors
+$lightBackground: $palestGray;
+
+
+// Button Colors
+$btnBackgroundColorDefault: $paleGray; //default
+$btnBackgroundHoverDefault: lighten($paleGray, 1%); //hover
+$lightBackground: $palestGray;
+$btnBackgroundColorFlat: $tomatoSoup; //flat button
+$btnBackgroundHoverFlat: $tomatoSoupHover; //flat button hover
+
+$btnBackgroundStartColorDefault: $paleGray; //default
+$btnBackgroundEndColorDefault: lighten($paleGray, 1%); //hover
+$btnTextColorDefault: $black;
+$btnTextShadowDefault: 0 1px 0 rgba(255, 255, 255, 1);
+$btnBorderColorDefault: $gray;
+$btnBoxShadowDefault: $gray;
+
+$altCommonBtnTextColor: $white;
+$altCommonBtnTextShadow: none;
+
+$btnBackgroundColorPrimary: $orange; //default
+$btnBackgroundHoverPrimary: lighten($orange, 5%); //hover
+$btnBoxShadowPrimary: $darkOrange;
+
+$btnBackgroundColorFacebook: $facebookBlue; //default
+$btnBackgroundHoverFacebook: lighten($facebookBlue, 5%); //hover
+$btnBoxShadowFacebook: $facebookBlue;
+
+$btnBackgroundColorDanger: $red; //default
+$btnBackgroundHoverDanger: lighten($red, 5%); //hover
+
+$btnBackgroundColorDeemphasize: $white;
+$btnBackgroundHoverDeemphasize: lighten($white, 5%);
+
+$btnBackgroundColorDisabled: $gray;
+$btnTextColorDisabled: $midGray;
+$btnTextShadowDisabled: none;
+
+
+// Whitespace
+$baseGutter: 21px; //TODO: should this be based on line-height?
+$baseSpacing: 3px;
+$spacingHelpers: (3px, 6px, 12px, 21px, 36px);
+$baseSpacingLarge: 21px;
+
+
+// Text Kerning
+$letterSpacingSml: 1px;
+
+
+// Layout
+$cols: 24;
+// /*
+//  * em-ratio	converts between em and px
+//  * to em 	divide by this ratio
+//  * to px 	mulitply by this ratio
+//  */
+// $em-ratio: $baseFontSize/$baseLineHeight;
+
+// /* whitespace */
+// $gutters-h: 15px;
+// $gutters-v: $baseLineHeight/2em*1rem; // set top and bottom margins to half the base line height so that the total takes up one row of vertical rhythm.
+// $spacing-helpers: ($em-ratio*$baseLineHeight/3, $em-ratio*$baseLineHeight/2, $em-ratio*$baseLineHeight); //TODO: convert to px;
+
+// /* grids */
+// $break-points: (); // can be pixel values or if only one value, break points will be made at that increment. (not for now)
+// $mobile-first: true;
+
+
+// Dropdown
+$dropdownBasicBoxBackground: $white;
+$dropdownBasicBoxBorder: 1px solid $green;
+$dropdownBasicItemActiveBackground: $green; // The item you hover/focus on in the dropdown box
+$dropdownBasicItemActiveTextColor: $white;
+$dropdownBasicItemTextShadow: 1px 1px 0 $darkGray; // can be null
+$dropdownBasicLinkColor: $blue;
+$dropdownListColor: $black;
+$dropdownListTextShadowColor: $white;
+$dropdownListHoverBackgroundColor: $gray;
+$dropdownListDividerBorderTopColor: $gray;
+$dropdownListDividerBorderBottomColor: $white;
+$dropdownLinkColor: $black;
+$dropdownDefaultZIndex: $zIndexPopup;
+
+
+// Form
+$placeholderText: $midGray;
+$formLabelColor: $midGray;
+$formFieldBorder: 1px solid $gray;
+$formFieldBorderHighlight: 1px solid $green;
+$formFieldBorderWarning: 1px solid $red;
+$formFieldBorderRadius: $borderRadiusSml;
+
+
+// Rating
+$ratingBarOffStartColor: $lightGray;
+$ratingBarOffEndColor: $midGray;
+$ratingBarOnStartColor: $darkGreen;
+$ratingBarOnEndColor: $green;
+
+
+// Template
+$pageWidthLrg: 1128px;
+$pageWidth: 980px;
+$responsePointLrg: $pageWidthLrg + 16;
+$skipLinkBackground: $green;
+$headerColor: $white;
+$bodyColor: $white;
+$sideBarWidth: 185px; // left column in template
+$asideWidth: 300px; // right column in template
+$footerBorder: 5px solid $green;
+$footerLinkColor: $black;
+$footerLinkHoverColor: $green;
+
+
+// Carousel
+$carouselPaginationColor: $gray;
+$carouselPaginationActiveColor: $green;
+
+
+// AddOn Defaults
+$addOnLowlightBackgroundColor: $gray;
+$addOnLowlightTextColor: $midGray;
+$addOnLowlightTextShadow: 0 1px 0 rgba(255, 255, 255, 1);
+$addOnBtnBackgroundColor: $palestGray;
+$addOnBtnBackgroundStartColor: $palestGray; //light
+$addOnBtnBackgroundEndColor: $palestGray; //dark
+$addOnBtnTextColor: $black;
+$addOnBtnTextShadow: 0 1px 0 rgba(255, 255, 255, 1);
+
+
+// Modal Colors
+$modalBackgroundDark: $black;
+$modalBackgroundLight: $white;
+
+
+// Image Container
+$imageContainerBackgroundColor: $palestGray;
+
+
+// Slider Colors
+$sliderBorderColor: $gray;
+$sliderBackgroundColor: $palestGray;
+$sliderLineInsetShadowColor: $lightGray;
+
+
+// Photo Player
+$photoPlayerThumbnailBorderDefault: 1px solid $gray;
+$photoPlayerThumbnailBorderHighlightColor: $green;
+
+
+// Tag Colors
+$tagBasicBorderColor: $lightGray;
+$tagBasicBackgroundColor: $palestGray;
+$tagCloseColor: $gray;
+$tagBasicShadowColor: $white;
+
+
+// Cards
+$cardRadius: 4px;
+$cardBaseColor: $white;
+$cardBasePadding: 15px 20px;
+$cardDivider: $lightGray;
+$cardFlipCardHeight: 290px;
+$cardFlipSpeed: .5s;
+
+
+// Animations
+$animateSpeed: .3s;
+$animateDelay: .5s;
+$animateSlideOffset: 40px;
+
+
+// Marker Colors
+$markerDefaultTextColor: $gray;
+$markerDefaultColor: $white;
+$markerDefaultBorderColor: darken($white, 15%);
+$markerPrimaryColor: $green;
+$markerPrimaryBorderColor: darken($green, 15%);
+$markerSecondaryColor: $blue;
+$markerSecondaryBorderColor: darken($blue, 15%);
+$markerTertiaryColor: $red;
+$markerTertiaryBorderColor: darken($red, 15%);
+$markerHighlightColor: $orange;
+$markerHighlightBorderColor: darken($orange, 15%);
+$markerLowlightColor: $midGray;
+$markerLowlightBorderColor: darken($midGray, 15%);
+$markerInverseColor: $black;
+$markerInverseBorderColor: darken($black, 15%);
+

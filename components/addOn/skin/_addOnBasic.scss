@@ -1,0 +1,30 @@
+/*doc
+---
+name: addOnBasic
+parent: addOn
+title: Basic AddOn
+test: true
+---
+
+```html_example
+<div class="form">
+  <div class="field">
+    <label for="percent" class="fieldLabel">Percent Down</label>
+    <span class="fieldItem fieldAppend text">
+      <input id="percent" aria-labelledby="percentage" class="cols12" type="text"><span id="percentage" class="addOn addOnBasic">%</span>
+    </span>
+  </div>
+</div>
+```
+
+*/
+
+
+// AddOnBasic Mixin
+@mixin ooAddOnBasic() {
+  .addOnBasic {
+    background: none;
+    color: $black;
+    text-shadow: none;
+  }
+}
