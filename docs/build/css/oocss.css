@@ -1,0 +1,1362 @@
+/*doc
+
+---
+title: Typography
+name: typography
+category: Base CSS
+---
+
+## Headings
+All html headings `<h1>` through `<h6>` are available. You can also apply classes `.h1` through `.h8` to any typography element to override the default size.
+(`h7` is a class that sets the `font-size` to our smallest available reading size. `h8` is a super special class that should only be used for auxiliary text such as disclaimers or credits for data sources.)
+
+```html_example
+<h1 class="h0">h0 Homepage Heading</h1>
+<h1>h1.Heading</h1>
+<h2>h2.Heading</h2>
+<h3>h3.Heading</h3>
+<h4>h4.Heading</h4>
+<h5>h5.Heading</h5>
+<h6>h6.Heading</h6>
+<h6 class="h3">h6 with .h3</h6>
+<h1 class="h7">Small text (h1 with h7)</h1>
+<p class="h8">This is data is provided by the Kitten Foundation &copy; with permission, mew.</h8>
+```
+*/
+/*doc
+---
+title: Typography Color
+parent: typography
+name: typeColor
+category: Base CSS
+---
+
+These classes convey meaning through color.
+
+```html_example
+<p class="typeWarning">typeWarning</p>
+<p class="typeLowlight">typeLowlight</p>
+<p class="typeHighlight">typeHighlight</p>
+<p class="typeMidnight">typeMidnight</p>
+<p class="typeReversed backgroundMidnight">Type Reversed</p>
+
+```
+*/
+/*doc
+---
+title: Typography Emphasize
+parent: typography
+name: typeWeight
+category: Base CSS
+---
+
+These classes are used to emphasize or deemphasize typography elements
+
+```html_example
+<p class="typeEmphasize">typeEmphasize</p>
+<p class="typeDeemphasize">typeDeemphasize</p>
+<p class="typeWeightNormal">typeWeightNormal</p>
+```
+*/
+/*doc
+---
+title: Typography Transform
+parent: typography
+name: typeTransform
+category: Base CSS
+---
+
+Transforms typography elements...
+
+```html_example
+<p class="typeCaps">typeCaps</p>
+<p class="typeCapitalize">type capitalize</p>
+<p class="typeTruncate" style="width:150px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor quam nec nibh adipiscing dictum. Sed auctor tristique ligula</p>
+```
+ */
+.h0 {
+  font-size: 48px;
+  line-height: 1.4;
+  margin: 5px 0;
+}
+
+.h1 {
+  font-size: 36px;
+  line-height: 1.3;
+  margin: 5px 0;
+}
+
+.h2 {
+  font-size: 28px;
+  line-height: 1.4;
+  margin: 5px 0;
+}
+
+.h3 {
+  font-size: 24px;
+  line-height: 1.4;
+  margin: 5px 0;
+}
+
+.h4 {
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 5px 0;
+}
+
+.h5 {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 5px 0;
+}
+
+.h6 {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 5px 0;
+}
+
+.h7 {
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+.h8 {
+  font-size: 9px;
+  line-height: 1.2;
+}
+
+.typeWarning {
+  color: #e6001c;
+}
+
+.typeHighlight {
+  color: #53b50a;
+}
+
+.typeLowlight {
+  color: #999;
+}
+
+.typeMidnight {
+  color: #003151;
+}
+
+.typeReversed {
+  color: #fff;
+}
+
+.typeDeemphasize {
+  font-weight: 300 !important;
+}
+
+.typeWeightNormal {
+  font-weight: normal !important;
+}
+
+.typeEmphasize {
+  font-weight: bold !important;
+}
+
+.typeCaps {
+  text-transform: uppercase;
+}
+
+.typeCapitalize {
+  text-transform: capitalize;
+}
+
+.typeTruncate {
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*doc
+---
+title: Background Colors
+name: background
+category: Base CSS
+---
+
+We have a few background colors that can be used in various contexts.
+These are not for use as the entire page background but instead for
+specific components and modules on the page.
+
+*/
+/*doc
+---
+title: Colors
+parent: background
+name: backgroundSkins
+---
+
+<div class="line txtC">
+  <div class="col cols6">
+    <div class="docSwatch backgroundLowlight"></div>
+    <code>backgroundLowlight</code>
+  </div>
+  <div class="col cols6">
+    <div class="docSwatch backgroundHighlight"></div>
+    <code>backgroundHighlight</code>
+  </div>
+  <div class="col cols6">
+    <div class="docSwatch backgroundBasic"></div>
+    <code>backgroundBasic</code>
+  </div>
+  <div class="col cols6">
+    <div class="docSwatch backgroundWarn"></div>
+    <code>backgroundWarn</code>
+  </div>
+  <div class="col cols6">
+    <div class="docSwatch backgroundCallout"></div>
+    <code>backgroundCallout</code>
+  </div>
+  <div class="col cols6">
+    <div class="docSwatch backgroundInverse"></div>
+    <code>backgroundInverse</code>
+  </div>
+  <div class="col cols6 lastcol">
+    <div class="docSwatch backgroundMidnight"></div>
+    <code>backgroundMidnight</code>
+  </div>
+</div>
+*/
+.backgroundBasic {
+  background-color: #fff;
+}
+
+.backgroundLowlight {
+  background-color: #f8f8f8;
+}
+
+.backgroundHighlight {
+  background-color: #53b50a;
+}
+
+.backgroundInverse {
+  background-color: #333;
+}
+
+.backgroundWarn {
+  background-color: #e6001c;
+}
+
+.backgroundCallout {
+  background-color: #ee552a;
+}
+
+.backgroundMidnight {
+  background-color: #003151;
+}
+
+/*doc
+---
+title: Whitespace
+name: whitespace
+category: Utilities
+---
+
+If you need to tweak elements by using margin or padding, use the following classes rather than adding to the CSS file.
+The classes are constructed by specifying `<type><location><size>` (see table and example below).
+
+```html_example
+<p class="pal">I have a lot of padding</p>
+<p class="man">I have no margin :(</p>
+```
+
+  Type       |            | Description
+--------     | ----------  | -----------
+p            | padding     | Space on the inside of the element
+m            | margin      | Space on the outside of the element
+**Location** |             |
+a            | all         | Adds spacing on all sides of the element
+h            | horizontal  | Adds spacing to the left and right sides of the element
+v            | vertical    | Adds spacing to the top and bottom sides of the element
+t            | top         | Adds spacing to the top side of the element
+l            | left        | Adds spacing to the left side of the element
+b            | bottom      | Adds spacing to the bottom side of the element
+r            | right       | Adds spacing to the right side of the element
+**Size**     |             |
+xl           | extra large | Adds an extra large amount of spacing (36px)
+l            | large       | Adds a large amount of spacing (21px)
+m            | medium      | Adds a medium amount of spacing (12px)
+s            | small       | Adds a small amount of spacing (6px)
+xs           | extra small | Adds an extra small amount of spacing (3px)
+n            | none        | Sets the spacing to 0
+
+*/
+.pan {
+  padding: 0 !important;
+}
+
+.man {
+  margin: 0 !important;
+}
+
+.paxs {
+  padding: 3px !important;
+}
+
+.maxs {
+  margin: 3px !important;
+}
+
+.pas {
+  padding: 6px !important;
+}
+
+.mas {
+  margin: 6px !important;
+}
+
+.pam {
+  padding: 12px !important;
+}
+
+.mam {
+  margin: 12px !important;
+}
+
+.pal {
+  padding: 21px !important;
+}
+
+.mal {
+  margin: 21px !important;
+}
+
+.paxl {
+  padding: 36px !important;
+}
+
+.maxl {
+  margin: 36px !important;
+}
+
+.pvn {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.mvn {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.pvxs {
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+}
+
+.mvxs {
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+}
+
+.pvs {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.mvs {
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+}
+
+.pvm {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+.mvm {
+  margin-top: 12px !important;
+  margin-bottom: 12px !important;
+}
+
+.pvl {
+  padding-top: 21px !important;
+  padding-bottom: 21px !important;
+}
+
+.mvl {
+  margin-top: 21px !important;
+  margin-bottom: 21px !important;
+}
+
+.pvxl {
+  padding-top: 36px !important;
+  padding-bottom: 36px !important;
+}
+
+.mvxl {
+  margin-top: 36px !important;
+  margin-bottom: 36px !important;
+}
+
+.phn {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.mhn {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.phxs {
+  padding-left: 3px !important;
+  padding-right: 3px !important;
+}
+
+.mhxs {
+  margin-left: 3px !important;
+  margin-right: 3px !important;
+}
+
+.phs {
+  padding-left: 6px !important;
+  padding-right: 6px !important;
+}
+
+.mhs {
+  margin-left: 6px !important;
+  margin-right: 6px !important;
+}
+
+.phm {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+.mhm {
+  margin-left: 12px !important;
+  margin-right: 12px !important;
+}
+
+.phl {
+  padding-left: 21px !important;
+  padding-right: 21px !important;
+}
+
+.mhl {
+  margin-left: 21px !important;
+  margin-right: 21px !important;
+}
+
+.phxl {
+  padding-left: 36px !important;
+  padding-right: 36px !important;
+}
+
+.mhxl {
+  margin-left: 36px !important;
+  margin-right: 36px !important;
+}
+
+.ptn {
+  padding-top: 0 !important;
+}
+
+.mtn {
+  margin-top: 0 !important;
+}
+
+.ptxs {
+  padding-top: 3px !important;
+}
+
+.mtxs {
+  margin-top: 3px !important;
+}
+
+.pts {
+  padding-top: 6px !important;
+}
+
+.mts {
+  margin-top: 6px !important;
+}
+
+.ptm {
+  padding-top: 12px !important;
+}
+
+.mtm {
+  margin-top: 12px !important;
+}
+
+.ptl {
+  padding-top: 21px !important;
+}
+
+.mtl {
+  margin-top: 21px !important;
+}
+
+.ptxl {
+  padding-top: 36px !important;
+}
+
+.mtxl {
+  margin-top: 36px !important;
+}
+
+.prn {
+  padding-right: 0 !important;
+}
+
+.mrn {
+  margin-right: 0 !important;
+}
+
+.prxs {
+  padding-right: 3px !important;
+}
+
+.mrxs {
+  margin-right: 3px !important;
+}
+
+.prs {
+  padding-right: 6px !important;
+}
+
+.mrs {
+  margin-right: 6px !important;
+}
+
+.prm {
+  padding-right: 12px !important;
+}
+
+.mrm {
+  margin-right: 12px !important;
+}
+
+.prl {
+  padding-right: 21px !important;
+}
+
+.mrl {
+  margin-right: 21px !important;
+}
+
+.prxl {
+  padding-right: 36px !important;
+}
+
+.mrxl {
+  margin-right: 36px !important;
+}
+
+.pbn {
+  padding-bottom: 0 !important;
+}
+
+.mbn {
+  margin-bottom: 0 !important;
+}
+
+.pbxs {
+  padding-bottom: 3px !important;
+}
+
+.mbxs {
+  margin-bottom: 3px !important;
+}
+
+.pbs {
+  padding-bottom: 6px !important;
+}
+
+.mbs {
+  margin-bottom: 6px !important;
+}
+
+.pbm {
+  padding-bottom: 12px !important;
+}
+
+.mbm {
+  margin-bottom: 12px !important;
+}
+
+.pbl {
+  padding-bottom: 21px !important;
+}
+
+.mbl {
+  margin-bottom: 21px !important;
+}
+
+.pbxl {
+  padding-bottom: 36px !important;
+}
+
+.mbxl {
+  margin-bottom: 36px !important;
+}
+
+.pln {
+  padding-left: 0 !important;
+}
+
+.mln {
+  margin-left: 0 !important;
+}
+
+.plxs {
+  padding-left: 3px !important;
+}
+
+.mlxs {
+  margin-left: 3px !important;
+}
+
+.pls {
+  padding-left: 6px !important;
+}
+
+.mls {
+  margin-left: 6px !important;
+}
+
+.plm {
+  padding-left: 12px !important;
+}
+
+.mlm {
+  margin-left: 12px !important;
+}
+
+.pll {
+  padding-left: 21px !important;
+}
+
+.mll {
+  margin-left: 21px !important;
+}
+
+.plxl {
+  padding-left: 36px !important;
+}
+
+.mlxl {
+  margin-left: 36px !important;
+}
+
+/*doc
+---
+title: Borders
+name: border
+category: Utilities
+---
+
+If you need to add a basic border to an element, use the following classes instead of adding to the CSS file.
+
+```html_example
+<div class="bas">
+  <h2 class="txtC pam">Plain borders all around!</h2>
+</div>
+<br><br>
+
+<div class="bbm">
+  <h3 class="pas">Sometimes you just need one.</h3>
+</div>
+```
+
+
+Type         |             | **Description**
+--------     | ----------  | -----------
+b            | border      |
+**Location** |             |
+a            | all         | Adds border to all sides of the element
+h            | horizontal  | Adds border to the left and right sides of the element
+v            | vertical    | Adds border to the top and bottom sides of the element
+t            | top         | Adds border to the top side of the element
+l            | left        | Adds border to the left side of the element
+b            | bottom      | Adds border to the bottom side of the element
+r            | right       | Adds border to the right side of the element
+**Size**     |             |
+z            | zero        | No border width
+s            | small       | Small border width
+m            | medium      | Medium border width
+
+*/
+.bvz {
+  border-top-width: 0 !important;
+  border-bottom-width: 0 !important;
+}
+
+.bvs {
+  border-top-style: solid;
+  border-top-color: #e9e9e9;
+  border-top-width: 1px !important;
+  border-bottom-style: solid;
+  border-bottom-color: #e9e9e9;
+  border-bottom-width: 1px !important;
+}
+
+.bvm {
+  border-top-style: solid;
+  border-top-color: #e9e9e9;
+  border-top-width: 2px !important;
+  border-bottom-style: solid;
+  border-bottom-color: #e9e9e9;
+  border-bottom-width: 2px !important;
+}
+
+.bhz {
+  border-left-width: 0 !important;
+  border-right-width: 0 !important;
+}
+
+.bhs {
+  border-left-style: solid;
+  border-left-color: #e9e9e9;
+  border-left-width: 1px !important;
+  border-right-style: solid;
+  border-right-color: #e9e9e9;
+  border-right-width: 1px !important;
+}
+
+.bhm {
+  border-left-style: solid;
+  border-left-color: #e9e9e9;
+  border-left-width: 2px !important;
+  border-right-style: solid;
+  border-right-color: #e9e9e9;
+  border-right-width: 2px !important;
+}
+
+.blz {
+  border-left-width: 0 !important;
+}
+
+.bls {
+  border-left-style: solid;
+  border-left-color: #e9e9e9;
+  border-left-width: 1px !important;
+}
+
+.blm {
+  border-left-style: solid;
+  border-left-color: #e9e9e9;
+  border-left-width: 2px !important;
+}
+
+.brz {
+  border-right-width: 0 !important;
+}
+
+.brs {
+  border-right-style: solid;
+  border-right-color: #e9e9e9;
+  border-right-width: 1px !important;
+}
+
+.brm {
+  border-right-style: solid;
+  border-right-color: #e9e9e9;
+  border-right-width: 2px !important;
+}
+
+.btz {
+  border-top-width: 0 !important;
+}
+
+.bts {
+  border-top-style: solid;
+  border-top-color: #e9e9e9;
+  border-top-width: 1px !important;
+}
+
+.btm {
+  border-top-style: solid;
+  border-top-color: #e9e9e9;
+  border-top-width: 2px !important;
+}
+
+.bbz {
+  border-bottom-width: 0 !important;
+}
+
+.bbs {
+  border-bottom-style: solid;
+  border-bottom-color: #e9e9e9;
+  border-bottom-width: 1px !important;
+}
+
+.bbm {
+  border-bottom-style: solid;
+  border-bottom-color: #e9e9e9;
+  border-bottom-width: 2px !important;
+}
+
+.baz {
+  border-width: 0 !important;
+}
+
+.bas {
+  border-style: solid;
+  border-color: #e9e9e9;
+  border-width: 1px !important;
+}
+
+.bam {
+  border-style: solid;
+  border-color: #e9e9e9;
+  border-width: 2px !important;
+}
+
+/*doc
+---
+title: Overlay
+name: overlay
+category: Components
+---
+
+Occasionally you need some text that shows on top of an image, so in that case use an overlay class.
+
+*/
+/*doc
+---
+title: Overlay Skins
+parent: overlay
+name: overlaySkins
+test: true
+---
+
+Class                  | Description
+---------------------- | -----------------
+overlayHighlight       | Apply the green color skin
+overlayLowlight        | Apply the black color skin
+overlayAction          | Apply the blue color skin -- designed for actionable/clickable element
+overlayMidnight        | Apply the midnight color skin
+overlayDefault         | Apply the white color skin
+overlayTop             | Position the overlay at the top
+overlayBottom          | Position the overlay at the bottom
+overlayLeft            | Position the overlay on left
+overlayRight           | Position the overlay on right
+overlayMiddle          | Position the overlay in the middle
+overlayFullWidth       | Make the overlay be full width
+overlayFull            | Make the overlay cover the entire image
+overlayFadeOut         | Make the overlay cover fade out to zero opacity. Meant to use with animate
+
+
+
+```html_example
+<div class="overlayContainer" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="overlayDefault overlayBottom">You could
+    <b>OWN</b> this cat!</span>
+</div>
+```
+```html_example
+<div class="overlayContainer" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="txtC overlayHighlight overlayTop overlayFullWidth ">You could
+    <b>OWN</b> this cat!</span>
+</div>
+```
+```html_example
+
+<div class="overlayContainer" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="overlayLowlight overlayRight overlayMiddle">You could
+    <b>OWN</b> this cat!</span>
+</div>
+```
+
+```html_example
+<div class="overlayContainer" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="overlayAction overlayBottom overlayRight clickable">
+    Click to <b>BUY</b> this cat!</span>
+</div>
+```
+
+```html_example
+<div class="overlayContainer" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="overlayMidnight overlayFull">You could
+    <b>OWN</b> this cat!</span>
+</div>
+```
+*/
+.overlayContainer {
+  position: relative;
+  display: block;
+  width: inherit \9;
+}
+.overlayContainer img {
+  display: block;
+}
+
+.overlay, .overlayHighlight, .overlayLowlight, .overlayAction, .overlayDefault, .overlayMidnight {
+  position: absolute;
+  opacity: 1;
+  z-index: 5;
+}
+
+.overlayHighlight {
+  color: #fff;
+  background-color: #53b50a;
+  background-color: rgba(83, 181, 10, 0.7);
+}
+
+.overlayLowlight {
+  color: #fff;
+  background-color: #333;
+  background-color: rgba(51, 51, 51, 0.7);
+}
+
+.overlayAction {
+  color: #fff;
+  background-color: #1eb9d4;
+  background-color: rgba(30, 185, 212, 0.7);
+}
+
+.overlayDefault {
+  color: #333;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.overlayMidnight {
+  color: #fff;
+  background-color: #003151;
+  background-color: rgba(0, 49, 81, 0.7);
+}
+
+.overlayTop {
+  top: 0;
+}
+
+.overlayBottom {
+  bottom: 0;
+}
+
+.overlayLeft {
+  left: 0;
+}
+
+.overlayRight {
+  right: 0;
+}
+
+.overlayMiddle {
+  top: 50%;
+}
+
+.overlayFullWidth {
+  left: 0;
+  right: 0;
+}
+
+.overlayFull {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.overlayFadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/*
+ * clearfix     used project wide to clear floats and create a new formatting context
+ * usage      @include clearfix-me(<empty|overflow|facebook|micro|stubborn>)
+ * $clearfix-method sets default method
+ */
+/*doc
+---
+title: Hide Things
+name: hide
+category: Utilities
+---
+
+Various ways to hide things.
+
+Class                    | Description
+-------------------------|-----------------------
+`hideText`               | Use this when you only need to hide the text.
+`hideFully`              | Use this to hide a content entirely. This also hides it from screen readers.
+`hideVisually`           | This hides content but leaves screenreaders able to read it.
+`hideVisually.focusable` | Hide content but it allow it to be focused on. ???
+`hideOnWide`             | This content will be hidden on pages greater than or equal to 1144px (that is 1128 + 16p for a scrollbar)
+`hideOnNarrow`           | This content will be hidden on pages less than 1144px (that is 1128 + 16p for a scrollbar)
+*/
+@media \0screen\,screen\9 {
+  .hideOnNarrow {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 1143px) {
+  .hideOnNarrow {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 1144px) {
+  .hideOnWide {
+    display: none !important;
+  }
+}
+/**
+ * Convert px to em
+ *
+ * @param $px - the value in pixel you want to convert
+ * @param $context - the context in pixel e.g. you want to set margin on your text,
+ * and font size on your text is equivalent to 14px, then your context is 14px.
+ *
+ * e.g. margin: pxToEm(20px, 14px);
+ *
+ */
+/*doc
+---
+title: Center Horizontal
+category: Utilities
+name: centerHorizontal
+---
+
+This is used to center whole blocks, instead of text-alignment centering. The block needs some kind of width specification.
+Note: IE8 requires a doctype to allow margin:auto to work properly.
+
+```html_example
+<div class="centerHorizontal" style="width: 200px;">The center of the universe.</div>
+```
+
+*/
+/*doc
+---
+title: Clickable
+category: Utilities
+name: clickable
+---
+
+
+Class       | Description
+----------- | -----------------
+`clickable` | Make an element have a clickable (pointer) mouseover
+
+
+```html_example
+<div class="backgroundHighlight clickable">
+  Sup, hover over me and see what happens
+</div>
+```
+
+*/
+/*doc
+---
+title: No Wrap
+category: Utilities
+name: noWrap
+---
+
+
+Class       | Description
+----------- | -----------------
+`noWrap` 	| Force an element's text NOT to wrap to a new line.
+
+
+```html_example
+<div class="box boxBasic" style="width:20px;">
+  <p class="noWrap">Notice how I'm wider than my parent containers width...it's sort of my thing.</p>
+</div>
+```
+
+*/
+/*doc
+---
+title: Animate
+category: Utilities
+name: animate
+---
+
+
+Class                | Description
+-------------------- | -----------------
+`animate`            | add effect when changing from one style to another
+`animate animateSlow`| longer transition duration
+`animate animateFast`| shorter transition duration
+
+
+```html_example
+<p>Sup, hover me and see what happens</p>
+
+<div class="overlayContainer hover" style="width: 180px;">
+  <img src="http://placekitten.com/180/135">
+  <span class="overlayLowlight overlayFull hoverDisplay animate animateSlow">
+  You could <b>OWN</b> this cat!
+  </span>
+</div>
+
+```
+
+*/
+/*doc
+---
+title: Z-Index
+category: Utilities
+name: z-index
+---
+
+Please note that these classes are for the "global page" elements, that have semantic meaning in the page context, such as popups, navigation blocks, ads, etc. It shouldn't be used for internals of particular widget implementation, like markers on the map or z-positioning of the elements in a photoplayer. Each widget should have z-index:0 (since it's a content) and will prevent polluting page's z-axis space.
+
+Class                           | Description
+------------------------------- | -----------
+`zIndexBackground`              | -50; For elements in the background
+`zIndexMainContent`             |   0; For main content, and standard ads in place with regular content
+`zIndexPopup`                   |  20; For popup Elements -- chat window, message notifications
+`zIndexFloater`                 |  50; For non-anchored floating elements
+`zIndexNavigation`              |  80; For expanding site navigation elements
+`zIndexPageOverlay`             | 100; For full-page overlays
+
+*/
+.hideVisually {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.hideVisually.focusable:active,
+.hideVisually.focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
+.hideText {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+}
+
+.hideText:before {
+  display: block;
+  width: 0;
+  height: 100%;
+  content: '';
+}
+
+.hideFully {
+  display: none !important;
+  visibility: hidden;
+}
+
+.centerHorizontal {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.noWrap {
+  white-space: nowrap;
+}
+
+.animate {
+  transition: all 400ms ease-in-out;
+}
+
+.animateSlow {
+  -moz-transition-duration: 800ms;
+  -o-transition-duration: 800ms;
+  -webkit-transition-duration: 800ms;
+  transition-duration: 800ms;
+}
+
+.animateFast {
+  -moz-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
+}
+
+.zIndexBackground {
+  z-index: -50 !important;
+}
+
+.zIndexMainContent {
+  z-index: 0 !important;
+}
+
+.zIndexPopup {
+  z-index: 20 !important;
+}
+
+.zIndexFloater {
+  z-index: 50 !important;
+}
+
+.zIndexNavigation {
+  z-index: 80 !important;
+}
+
+.zIndexPageOverlay {
+  z-index: 100 !important;
+}
+
+/*doc
+---
+title: Image Icons
+name: iconInline
+category: Base CSS
+---
+
+These icons work similarly to bootstrap icon fonts, but are static images instead.
+
+## Available Icons
+
+```html_example
+<ul>
+  <li><i class="iconSpinner"></i>iconSpinner</li>
+  <li><i class="iconLargeSpinner"></i>iconLargeSpinner</li>
+</ul>
+```
+
+*/
+.iconSpinner:before, .iconLargeSpinner:before {
+  display: inline-block;
+  content: '';
+}
+
+.iconSpinner:before {
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/gif;base64,R0lGODlhFAAUAPf/AP7+/v39/fz8/Pv7+/n5+fb29vj4+Pf39/T09PX19fr6+u3t7fDw8PHx8fPz8/Ly8uDg4O/v7zw8POzs7Ofn5+vr6+rq6oaGhubm5gEBAenp6e7u7jk5OaOjo5ycnIODgz09PcjIyJubmwkJCaSkpKCgoEJCQujo6J2dncnJyURERDc3N0lJSd3d3SoqKuPj497e3oWFhVBQUOHh4UBAQDY2NsrKyqamppKSktPT05OTk5mZmaWlpUNDQ0dHR2ZmZjs7O+Li4jMzMzU1Ndzc3EVFRdfX16enp5eXl8vLyzo6OjIyMggICA0NDQQEBAMDA9jY2NDQ0AsLC6GhoY6Ojq6urpGRkeTk5IiIiI+Pj1JSUlNTU0ZGRk1NTVdXVy4uLi8vLywsLEFBQSkpKRsbG9bW1gYGBgoKCs7Ozs/Pz5qamj8/P9ra2khISC0tLZSUlJ6entnZ2eXl5TQ0NE5OTjExMQcHB0tLS5WVlRISEtHR0WFhYQUFBZaWlsXFxREREYSEhJCQkLKyslVVVRYWFsfHx1FRUTg4OAICAnR0dDAwMKmpqSgoKMPDw1tbW2VlZQ4ODszMzIyMjI2NjbS0tNXV1d/f339/f7u7uysrK9TU1MbGxsTExLq6ury8vFhYWMDAwICAgCEhIWxsbJ+fn1paWlRUVD4+Pqurq6ioqJiYmH19fSQkJBUVFQwMDLOzs4qKioGBgba2tsLCwkxMTFlZWYKCghgYGEpKSg8PDxQUFBcXF3h4eIeHhx4eHsHBwa+vrxkZGdvb29LS0iYmJmJiYrGxsaqqqr+/v19fXxMTE4mJiW9vb62trV1dXVZWVnJycri4uL29vaKios3NzSAgIIuLi76+vrW1tW1tbRoaGiMjIyIiImpqarCwsLm5uWdnZ09PTx0dHaysrHp6eicnJxAQEBwcHH5+fre3t3BwcHd3d3FxcXV1dR8fH2BgYGtra1xcXGlpaXl5eXNzc2RkZCUlJXZ2dnt7e2NjY15eXmhoaG5ubv///wAAAP///yH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NDY3Q0ZFRjk2OTcxMUUzOEZEMUVFODE4QjlDNkIxMiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NDY3Q0ZGMDk2OTcxMUUzOEZEMUVFODE4QjlDNkIxMiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjY0NjdDRkVEOTY5NzExRTM4RkQxRUU4MThCOUM2QjEyIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY0NjdDRkVFOTY5NzExRTM4RkQxRUU4MThCOUM2QjEyIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1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');
+  vertical-align: middle;
+  margin: 0 0 2px 0;
+}
+
+.iconSpinner:before, .iconLargeSpinner:before {
+  display: inline-block;
+  content: '';
+}
+
+.iconLargeSpinner:before {
+  width: 54px;
+  height: 55px;
+  background-image: url('data:image/gif;base64,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');
+  vertical-align: middle;
+  margin: 0 0 2px 0;
+}
+
+/*doc
+---
+title: Sticky
+category: Utilities
+name: sticky
+---
+
+Make an element stick in place on a page. The menu on this page is an example of this.
+*/
+.sticky {
+  position: fixed !important;
+}
+
+/*doc
+---
+title: Dots
+name: dot
+category: Components
+---
+
+Dots are a small dot for lists.
+
+*/
+/*doc
+---
+title: Dots
+parent: dot
+name: dotSkins
+---
+
+```html_example
+<span class="dotStandard"></span><span class="mrm">dotStandard</span>
+<span class="dotLowlight"></span><span class="mrm">dotLowlight</span>
+<span class="dotHighlight"></span><span class="mrm">dotHighlight</span>
+<span class="dotMidnight"></span><span class="mrm">dotMidnight</span>
+<span class="dotCallout"></span><span class="mrm">dotCallout</span>
+<span class="dotWarn"></span><span class="mrm">dotWarn</span>
+```
+*/
+.dotStandard, .dotLowlight, .dotMidnight, .dotHighlight, .dotCallout, .dotWarn {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+}
+
+.dotStandard {
+  background-color: #f9cb0b;
+}
+
+.dotLowlight {
+  background-color: #ccc;
+}
+
+.dotMidnight {
+  background-color: #003151;
+}
+
+.dotHighlight {
+  background-color: #53b50a;
+}
+
+.dotCallout {
+  background-color: #ee552a;
+}
+
+.dotWarn {
+  background-color: #e6001c;
+}
+
+/*doc
+---
+title: Hover
+name: hover
+category: Components
+---
+
+You can use the hover and hoverDisplay classes to display elements on hover
+
+Class             | Description
+----------------- | -----------------
+`hover`           | This class goes on a container element. The element's size and shape will be used for determining when the hover effect is on and off.
+`hoverDisplay`    | The element to display on hover, this does not need to be a direct child of hover and can used as many times as needed.
+
+```html_example
+<ul class="hover">
+  <li class="hoverDisplay">One</li>
+  <li>Two</li>
+  <li class="hoverDisplay">Three</li>
+  <li>Four
+    <span class="hoverDisplay">Five</span>
+</ul>
+```
+
+*/
+.hover .hoverDisplay {
+  opacity: 0;
+  pointer-events: none;
+}
+.hover:hover .hoverDisplay {
+  opacity: 1;
+}

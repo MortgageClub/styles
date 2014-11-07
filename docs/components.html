@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Flexport Style Guide</title>
+    <link rel="shortcut icon" href="doc_assets/brick.png" />
+
+    <link rel="stylesheet" href="doc_assets/css/screen.css">
+    <link rel="stylesheet" href="build/css/oocss.css">
+
+    <!-- Documentation CSS -->
+    <link rel="stylesheet" href="doc_assets/css/doc.css">
+    <link rel="stylesheet" href="doc_assets/css/github.css">
+
+    <!-- Main libraries -->
+    <script src="build/libs/script/jquery-1.8.2.min.js"></script>
+    <script src="build/libs/script/jquery.placeholder.js"></script>
+    <script src="build/libs/script/underscore-1.4.4.min.js"></script>
+    <!-- component js and init scripts -->
+    <script src="build/script/components.js"></script>
+</head>
+
+  <body>
+    <a href="#main" class="hideVisually focusable skipLink">Skip to content</a>
+
+<header class="header pbn" role="banner">
+  <div class="backgroundMidnight typeReversed">
+    <div class="container">
+      <h1 class="h4 mvm"> <strong>Flexport</strong> Style Guide</h1>
+    </div>
+  </div>
+  <div class="hideFully" id="navPlaceholder"></div>
+  <div id="navigation" class="backgroundLowlight typeReversed">
+    <div class="container">
+      <span>
+        <ul class="oocssDocNav listInline">
+          
+
+          <li><a  href="base_css.html" >Base CSS</a></li>
+
+          
+
+          <li><a class="activeNavElem" href="components.html" >Components</a></li>
+
+          
+
+          <li><a  href="utilities.html" >Utilities</a></li>
+
+          
+
+        </ul>
+      </span>
+    </div>
+  </div>
+  <!-- //header/container -->
+</header>
+
+<div class="content contentResponsive">
+  <section>
+    <div class="line">
+
+      <div class="col cols4">
+      
+          <div class="componentMenu box boxBasic backgroundBasic">
+            <div class="boxBody pan">
+              <ul class="componentList listBorderedHover man lvn lhn">
+                
+                  
+                    <li><a class="pas" href="#dot">Dots</a></li>
+                  
+                
+                  
+                
+                  
+                    <li><a class="pas" href="#hover">Hover</a></li>
+                  
+                
+                  
+                    <li><a class="pas" href="#overlay">Overlay</a></li>
+                  
+                
+                  
+                
+              </ul>
+            </div>
+          </div>
+      
+      </div>
+
+      <div class="main col cols20 lastCol">
+
+
+
+<h1 id="dot">Dots</h1>
+
+<p>Dots are a small dot for lists.</p>
+
+<h2 id="dotSkins">Dots</h2>
+<div class="codeExample"><div class="exampleOutput"><span class="dotStandard"></span><span class="mrm">dotStandard</span>
+<span class="dotLowlight"></span><span class="mrm">dotLowlight</span>
+<span class="dotHighlight"></span><span class="mrm">dotHighlight</span>
+<span class="dotMidnight"></span><span class="mrm">dotMidnight</span>
+<span class="dotCallout"></span><span class="mrm">dotCallout</span>
+<span class="dotWarn"></span><span class="mrm">dotWarn</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"dotStandard"</span><span class="nt">&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"mrm"</span><span class="nt">&gt;</span>dotStandard<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"dotLowlight"</span><span class="nt">&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"mrm"</span><span class="nt">&gt;</span>dotLowlight<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"dotHighlight"</span><span class="nt">&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"mrm"</span><span class="nt">&gt;</span>dotHighlight<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"dotMidnight"</span><span class="nt">&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"mrm"</span><span class="nt">&gt;</span>dotMidnight<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"dotCallout"</span><span class="nt">&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"mrm"</span><span class="nt">&gt;</span>dotCallout<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"dotWarn"</span><span class="nt">&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"mrm"</span><span class="nt">&gt;</span>dotWarn<span class="nt">&lt;/span&gt;</span>
+</pre></div></div></div>
+<h1 id="hover">Hover</h1>
+
+<p>You can use the hover and hoverDisplay classes to display elements on hover</p>
+<table class="table tableBasic"><thead><tr><th class="txtL">Class</th>
+<th class="txtL">Description</th>
+</tr></thead><tbody><tr><td><code>hover</code></td>
+<td>This class goes on a container element. The element&#39;s size and shape will be used for determining when the hover effect is on and off.</td>
+</tr><tr><td><code>hoverDisplay</code></td>
+<td>The element to display on hover, this does not need to be a direct child of hover and can used as many times as needed.</td>
+</tr></tbody></table><div class="codeExample"><div class="exampleOutput"><ul class="hover">
+  <li class="hoverDisplay">One</li>
+  <li>Two</li>
+  <li class="hoverDisplay">Three</li>
+  <li>Four
+    <span class="hoverDisplay">Five</span>
+</ul>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"hover"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"hoverDisplay"</span><span class="nt">&gt;</span>One<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Two<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"hoverDisplay"</span><span class="nt">&gt;</span>Three<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Four
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"hoverDisplay"</span><span class="nt">&gt;</span>Five<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div></div></div>
+<h1 id="overlay">Overlay</h1>
+
+<p>Occasionally you need some text that shows on top of an image, so in that case use an overlay class.</p>
+
+<h2 id="overlaySkins">Overlay Skins</h2>
+<table class="table tableBasic"><thead><tr><th class="txtL">Class</th>
+<th class="txtL">Description</th>
+</tr></thead><tbody><tr><td>overlayHighlight</td>
+<td>Apply the green color skin</td>
+</tr><tr><td>overlayLowlight</td>
+<td>Apply the black color skin</td>
+</tr><tr><td>overlayAction</td>
+<td>Apply the blue color skin -- designed for actionable/clickable element</td>
+</tr><tr><td>overlayMidnight</td>
+<td>Apply the midnight color skin</td>
+</tr><tr><td>overlayDefault</td>
+<td>Apply the white color skin</td>
+</tr><tr><td>overlayTop</td>
+<td>Position the overlay at the top</td>
+</tr><tr><td>overlayBottom</td>
+<td>Position the overlay at the bottom</td>
+</tr><tr><td>overlayLeft</td>
+<td>Position the overlay on left</td>
+</tr><tr><td>overlayRight</td>
+<td>Position the overlay on right</td>
+</tr><tr><td>overlayMiddle</td>
+<td>Position the overlay in the middle</td>
+</tr><tr><td>overlayFullWidth</td>
+<td>Make the overlay be full width</td>
+</tr><tr><td>overlayFull</td>
+<td>Make the overlay cover the entire image</td>
+</tr><tr><td>overlayFadeOut</td>
+<td>Make the overlay cover fade out to zero opacity. Meant to use with animate</td>
+</tr></tbody></table><div class="codeExample"><div class="exampleOutput"><div class="overlayContainer" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="overlayDefault overlayBottom">You could
+    <b>OWN</b> this cat!</span>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"overlayContainer"</span> <span class="na">style=</span><span class="s">"width: 170px;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placekitten.com/170/240"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"overlayDefault overlayBottom"</span><span class="nt">&gt;</span>You could
+    <span class="nt">&lt;b&gt;</span>OWN<span class="nt">&lt;/b&gt;</span> this cat!<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="codeExample"><div class="exampleOutput"><div class="overlayContainer" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="txtC overlayHighlight overlayTop overlayFullWidth ">You could
+    <b>OWN</b> this cat!</span>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"overlayContainer"</span> <span class="na">style=</span><span class="s">"width: 170px;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placekitten.com/170/240"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"txtC overlayHighlight overlayTop overlayFullWidth "</span><span class="nt">&gt;</span>You could
+    <span class="nt">&lt;b&gt;</span>OWN<span class="nt">&lt;/b&gt;</span> this cat!<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="codeExample"><div class="exampleOutput">
+<div class="overlayContainer" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="overlayLowlight overlayRight overlayMiddle">You could
+    <b>OWN</b> this cat!</span>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"overlayContainer"</span> <span class="na">style=</span><span class="s">"width: 170px;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placekitten.com/170/240"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"overlayLowlight overlayRight overlayMiddle"</span><span class="nt">&gt;</span>You could
+    <span class="nt">&lt;b&gt;</span>OWN<span class="nt">&lt;/b&gt;</span> this cat!<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="codeExample"><div class="exampleOutput"><div class="overlayContainer" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="overlayAction overlayBottom overlayRight clickable">
+    Click to <b>BUY</b> this cat!</span>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"overlayContainer"</span> <span class="na">style=</span><span class="s">"width: 170px;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placekitten.com/170/240"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"overlayAction overlayBottom overlayRight clickable"</span><span class="nt">&gt;</span>
+    Click to <span class="nt">&lt;b&gt;</span>BUY<span class="nt">&lt;/b&gt;</span> this cat!<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="codeExample"><div class="exampleOutput"><div class="overlayContainer" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="overlayMidnight overlayFull">You could
+    <b>OWN</b> this cat!</span>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"overlayContainer"</span> <span class="na">style=</span><span class="s">"width: 170px;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placekitten.com/170/240"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"overlayMidnight overlayFull"</span><span class="nt">&gt;</span>You could
+    <span class="nt">&lt;b&gt;</span>OWN<span class="nt">&lt;/b&gt;</span> this cat!<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div>      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+$(document).ready(function() {
+
+  // make the navigation a little bit sticky
+  $('#navigation').sticky({css:{ zIndex: 1, width:'100%',height: $('#navigation').height() - 1 + 'px', borderBottom:'1px solid #ccc', top: 0}, targetEl: '#navigation' });
+
+  // When jumping to page subsections, don't cover the heading with #navigation
+  $('.componentList').find('a').click(function (event) {
+    event.preventDefault();
+    location.hash = $(this).attr('href');
+    var offset = $($(this).attr('href')).offset();
+    $(window).scrollTop(offset.top - 36);
+  });
+
+
+  // since the nav bar is part of the page flow, lets size the
+  // placeholder that takes it place while it's floating around
+  $('#navPlaceholder').css({
+    'height': $('#navigation').height() - 1 + 'px',
+  });
+
+  $('#navigation').on('scrolly:atSetPoint', function (event, flag) {
+    if (flag) {
+      $('.componentMenu').addClass('sticky').css({top:'47px'});
+    }
+    else {
+      $('.componentMenu').removeClass('sticky').css({top:0});
+    }
+    $('#navPlaceholder').toggleClass('hideFully');
+
+  });
+
+});
+</script>
+<script type="text/javascript" src="doc_assets/js/class_click.js"></script>
+<script type="text/javascript" src="doc_assets/js/components.js"></script>
+</body>
+</html>

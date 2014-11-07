@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Flexport Style Guide</title>
+    <link rel="shortcut icon" href="doc_assets/brick.png" />
+
+    <link rel="stylesheet" href="doc_assets/css/screen.css">
+    <link rel="stylesheet" href="build/css/oocss.css">
+
+    <!-- Documentation CSS -->
+    <link rel="stylesheet" href="doc_assets/css/doc.css">
+    <link rel="stylesheet" href="doc_assets/css/github.css">
+
+    <!-- Main libraries -->
+    <script src="build/libs/script/jquery-1.8.2.min.js"></script>
+    <script src="build/libs/script/jquery.placeholder.js"></script>
+    <script src="build/libs/script/underscore-1.4.4.min.js"></script>
+    <!-- component js and init scripts -->
+    <script src="build/script/components.js"></script>
+</head>
+
+  <body>
+    <a href="#main" class="hideVisually focusable skipLink">Skip to content</a>
+
+<header class="header pbn" role="banner">
+  <div class="backgroundMidnight typeReversed">
+    <div class="container">
+      <h1 class="h4 mvm"> <strong>Flexport</strong> Style Guide</h1>
+    </div>
+  </div>
+  <div class="hideFully" id="navPlaceholder"></div>
+  <div id="navigation" class="backgroundLowlight typeReversed">
+    <div class="container">
+      <span>
+        <ul class="oocssDocNav listInline">
+          
+
+          <li><a class="activeNavElem" href="base_css.html" >Base CSS</a></li>
+
+          
+
+          <li><a  href="components.html" >Components</a></li>
+
+          
+
+          <li><a  href="utilities.html" >Utilities</a></li>
+
+          
+
+        </ul>
+      </span>
+    </div>
+  </div>
+  <!-- //header/container -->
+</header>
+
+<div class="content contentResponsive">
+  <section>
+    <div class="line">
+
+      <div class="col cols4">
+      
+          <div class="componentMenu box boxBasic backgroundBasic">
+            <div class="boxBody pan">
+              <ul class="componentList listBorderedHover man lvn lhn">
+                
+                  
+                    <li><a class="pas" href="#background">Background Colors</a></li>
+                  
+                
+                  
+                
+                  
+                    <li><a class="pas" href="#iconInline">Image Icons</a></li>
+                  
+                
+                  
+                    <li><a class="pas" href="#typography">Typography</a></li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            </div>
+          </div>
+      
+      </div>
+
+      <div class="main col cols20 lastCol">
+
+
+
+<h1 id="background">Background Colors</h1>
+
+<p>We have a few background colors that can be used in various contexts.
+These are not for use as the entire page background but instead for
+specific components and modules on the page.</p>
+
+<h2 id="backgroundSkins">Colors</h2>
+
+<div class="line txtC">
+  <div class="col cols6">
+    <div class="docSwatch backgroundLowlight"></div>
+    <code>backgroundLowlight</code>
+  </div>
+  <div class="col cols6">
+    <div class="docSwatch backgroundHighlight"></div>
+    <code>backgroundHighlight</code>
+  </div>
+  <div class="col cols6">
+    <div class="docSwatch backgroundBasic"></div>
+    <code>backgroundBasic</code>
+  </div>
+  <div class="col cols6">
+    <div class="docSwatch backgroundWarn"></div>
+    <code>backgroundWarn</code>
+  </div>
+  <div class="col cols6">
+    <div class="docSwatch backgroundCallout"></div>
+    <code>backgroundCallout</code>
+  </div>
+  <div class="col cols6">
+    <div class="docSwatch backgroundInverse"></div>
+    <code>backgroundInverse</code>
+  </div>
+  <div class="col cols6 lastcol">
+    <div class="docSwatch backgroundMidnight"></div>
+    <code>backgroundMidnight</code>
+  </div>
+</div>
+
+<h1 id="iconInline">Image Icons</h1>
+
+<p>These icons work similarly to bootstrap icon fonts, but are static images instead.</p>
+
+<h2>Available Icons</h2>
+<div class="codeExample"><div class="exampleOutput"><ul>
+  <li><i class="iconSpinner"></i>iconSpinner</li>
+  <li><i class="iconLargeSpinner"></i>iconLargeSpinner</li>
+</ul>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;i</span> <span class="na">class=</span><span class="s">"iconSpinner"</span><span class="nt">&gt;&lt;/i&gt;</span>iconSpinner<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;i</span> <span class="na">class=</span><span class="s">"iconLargeSpinner"</span><span class="nt">&gt;&lt;/i&gt;</span>iconLargeSpinner<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div></div></div>
+<h1 id="typography">Typography</h1>
+
+<h2>Headings</h2>
+
+<p>All html headings <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> are available. You can also apply classes <code>.h1</code> through <code>.h8</code> to any typography element to override the default size.
+(<code>h7</code> is a class that sets the <code>font-size</code> to our smallest available reading size. <code>h8</code> is a super special class that should only be used for auxiliary text such as disclaimers or credits for data sources.)</p>
+<div class="codeExample"><div class="exampleOutput"><h1 class="h0">h0 Homepage Heading</h1>
+<h1>h1.Heading</h1>
+<h2>h2.Heading</h2>
+<h3>h3.Heading</h3>
+<h4>h4.Heading</h4>
+<h5>h5.Heading</h5>
+<h6>h6.Heading</h6>
+<h6 class="h3">h6 with .h3</h6>
+<h1 class="h7">Small text (h1 with h7)</h1>
+<p class="h8">This is data is provided by the Kitten Foundation &copy; with permission, mew.</h8>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"h0"</span><span class="nt">&gt;</span>h0 Homepage Heading<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h1&gt;</span>h1.Heading<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h2&gt;</span>h2.Heading<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;h3&gt;</span>h3.Heading<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;h4&gt;</span>h4.Heading<span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;h5&gt;</span>h5.Heading<span class="nt">&lt;/h5&gt;</span>
+<span class="nt">&lt;h6&gt;</span>h6.Heading<span class="nt">&lt;/h6&gt;</span>
+<span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"h3"</span><span class="nt">&gt;</span>h6 with .h3<span class="nt">&lt;/h6&gt;</span>
+<span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"h7"</span><span class="nt">&gt;</span>Small text (h1 with h7)<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"h8"</span><span class="nt">&gt;</span>This is data is provided by the Kitten Foundation <span class="ni">&amp;copy;</span> with permission, mew.<span class="nt">&lt;/h8&gt;</span>
+</pre></div></div></div>
+<h2 id="typeColor">Typography Color</h2>
+
+<p>These classes convey meaning through color.</p>
+<div class="codeExample"><div class="exampleOutput"><p class="typeWarning">typeWarning</p>
+<p class="typeLowlight">typeLowlight</p>
+<p class="typeHighlight">typeHighlight</p>
+<p class="typeMidnight">typeMidnight</p>
+<p class="typeReversed backgroundMidnight">Type Reversed</p>
+
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"typeWarning"</span><span class="nt">&gt;</span>typeWarning<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"typeLowlight"</span><span class="nt">&gt;</span>typeLowlight<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"typeHighlight"</span><span class="nt">&gt;</span>typeHighlight<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"typeMidnight"</span><span class="nt">&gt;</span>typeMidnight<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"typeReversed backgroundMidnight"</span><span class="nt">&gt;</span>Type Reversed<span class="nt">&lt;/p&gt;</span>
+
+</pre></div></div></div>
+<h2 id="typeTransform">Typography Transform</h2>
+
+<p>Transforms typography elements...</p>
+<div class="codeExample"><div class="exampleOutput"><p class="typeCaps">typeCaps</p>
+<p class="typeCapitalize">type capitalize</p>
+<p class="typeTruncate" style="width:150px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor quam nec nibh adipiscing dictum. Sed auctor tristique ligula</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"typeCaps"</span><span class="nt">&gt;</span>typeCaps<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"typeCapitalize"</span><span class="nt">&gt;</span>type capitalize<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"typeTruncate"</span> <span class="na">style=</span><span class="s">"width:150px;"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor quam nec nibh adipiscing dictum. Sed auctor tristique ligula<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h2 id="typeWeight">Typography Emphasize</h2>
+
+<p>These classes are used to emphasize or deemphasize typography elements</p>
+<div class="codeExample"><div class="exampleOutput"><p class="typeEmphasize">typeEmphasize</p>
+<p class="typeDeemphasize">typeDeemphasize</p>
+<p class="typeWeightNormal">typeWeightNormal</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"typeEmphasize"</span><span class="nt">&gt;</span>typeEmphasize<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"typeDeemphasize"</span><span class="nt">&gt;</span>typeDeemphasize<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"typeWeightNormal"</span><span class="nt">&gt;</span>typeWeightNormal<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+$(document).ready(function() {
+
+  // make the navigation a little bit sticky
+  $('#navigation').sticky({css:{ zIndex: 1, width:'100%',height: $('#navigation').height() - 1 + 'px', borderBottom:'1px solid #ccc', top: 0}, targetEl: '#navigation' });
+
+  // When jumping to page subsections, don't cover the heading with #navigation
+  $('.componentList').find('a').click(function (event) {
+    event.preventDefault();
+    location.hash = $(this).attr('href');
+    var offset = $($(this).attr('href')).offset();
+    $(window).scrollTop(offset.top - 36);
+  });
+
+
+  // since the nav bar is part of the page flow, lets size the
+  // placeholder that takes it place while it's floating around
+  $('#navPlaceholder').css({
+    'height': $('#navigation').height() - 1 + 'px',
+  });
+
+  $('#navigation').on('scrolly:atSetPoint', function (event, flag) {
+    if (flag) {
+      $('.componentMenu').addClass('sticky').css({top:'47px'});
+    }
+    else {
+      $('.componentMenu').removeClass('sticky').css({top:0});
+    }
+    $('#navPlaceholder').toggleClass('hideFully');
+
+  });
+
+});
+</script>
+<script type="text/javascript" src="doc_assets/js/class_click.js"></script>
+<script type="text/javascript" src="doc_assets/js/components.js"></script>
+</body>
+</html>

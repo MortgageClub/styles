@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Flexport Style Guide</title>
+    <link rel="shortcut icon" href="doc_assets/brick.png" />
+
+    <link rel="stylesheet" href="doc_assets/css/screen.css">
+    <link rel="stylesheet" href="build/css/oocss.css">
+
+    <!-- Documentation CSS -->
+    <link rel="stylesheet" href="doc_assets/css/doc.css">
+    <link rel="stylesheet" href="doc_assets/css/github.css">
+
+    <!-- Main libraries -->
+    <script src="build/libs/script/jquery-1.8.2.min.js"></script>
+    <script src="build/libs/script/jquery.placeholder.js"></script>
+    <script src="build/libs/script/underscore-1.4.4.min.js"></script>
+    <!-- component js and init scripts -->
+    <script src="build/script/components.js"></script>
+</head>
+
+  <body>
+    <a href="#main" class="hideVisually focusable skipLink">Skip to content</a>
+
+<header class="header pbn" role="banner">
+  <div class="backgroundMidnight typeReversed">
+    <div class="container">
+      <h1 class="h4 mvm"> <strong>Flexport</strong> Style Guide</h1>
+    </div>
+  </div>
+  <div class="hideFully" id="navPlaceholder"></div>
+  <div id="navigation" class="backgroundLowlight typeReversed">
+    <div class="container">
+      <span>
+        <ul class="oocssDocNav listInline">
+          
+
+          <li><a  href="base_css.html" >Base CSS</a></li>
+
+          
+
+          <li><a  href="components.html" >Components</a></li>
+
+          
+
+          <li><a  href="utilities.html" >Utilities</a></li>
+
+          
+
+        </ul>
+      </span>
+    </div>
+  </div>
+  <!-- //header/container -->
+</header>
+
+<div class="content contentResponsive">
+  <section>
+    <div class="line">
+
+      <div class="col cols4">
+      
+      </div>
+
+      <div class="main col cols20 lastCol">
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+$(document).ready(function() {
+
+  // make the navigation a little bit sticky
+  $('#navigation').sticky({css:{ zIndex: 1, width:'100%',height: $('#navigation').height() - 1 + 'px', borderBottom:'1px solid #ccc', top: 0}, targetEl: '#navigation' });
+
+  // When jumping to page subsections, don't cover the heading with #navigation
+  $('.componentList').find('a').click(function (event) {
+    event.preventDefault();
+    location.hash = $(this).attr('href');
+    var offset = $($(this).attr('href')).offset();
+    $(window).scrollTop(offset.top - 36);
+  });
+
+
+  // since the nav bar is part of the page flow, lets size the
+  // placeholder that takes it place while it's floating around
+  $('#navPlaceholder').css({
+    'height': $('#navigation').height() - 1 + 'px',
+  });
+
+  $('#navigation').on('scrolly:atSetPoint', function (event, flag) {
+    if (flag) {
+      $('.componentMenu').addClass('sticky').css({top:'47px'});
+    }
+    else {
+      $('.componentMenu').removeClass('sticky').css({top:0});
+    }
+    $('#navPlaceholder').toggleClass('hideFully');
+
+  });
+
+});
+</script>
+<script type="text/javascript" src="doc_assets/js/class_click.js"></script>
+<script type="text/javascript" src="doc_assets/js/components.js"></script>
+</body>
+</html>
+
