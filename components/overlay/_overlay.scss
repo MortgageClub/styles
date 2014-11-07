@@ -5,11 +5,7 @@ name: overlay
 category: Components
 ---
 
-Occasionally you need some text that shows on top of an image, so in that case use an overlay class.  
-
-**Note:** If using with an [`imageContainer`](#Image_Container) **make sure to put the <code>overlayContainer</code> inside the [`imageContainer`](#Image_Container)**.  
-
-This fixes a known IE8 issue and forces the <code>overlayContainer</code> to inherit the width of the [`imageContainer`](#Image_Container).
+Occasionally you need some text that shows on top of an image, so in that case use an overlay class.
 
 */
 
@@ -20,13 +16,15 @@ This fixes a known IE8 issue and forces the <code>overlayContainer</code> to inh
     position: relative;
     display: block;
     width: inherit \9; // In IE8 this keeps this container from taking up more width than its parent container.
-    
+
     img {
       display: block;
     }
   }
-  
+
   %overlay {
     position: absolute;
+    opacity: 1;
+    z-index: 5;
   }
 }

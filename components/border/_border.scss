@@ -8,11 +8,12 @@ category: Utilities
 If you need to add a basic border to an element, use the following classes instead of adding to the CSS file.
 
 ```html_example
-<div class="cols6 bas">
+<div class="bas">
   <h2 class="txtC pam">Plain borders all around!</h2>
 </div>
+<br><br>
 
-<div class="cols6 bbm">
+<div class="bbm">
   <h3 class="pas">Sometimes you just need one.</h3>
 </div>
 ```
@@ -20,8 +21,8 @@ If you need to add a basic border to an element, use the following classes inste
 
 Type         |             | **Description**
 --------     | ----------  | -----------
-b            | border      | 
-**Location** |             | 
+b            | border      |
+**Location** |             |
 a            | all         | Adds border to all sides of the element
 h            | horizontal  | Adds border to the left and right sides of the element
 v            | vertical    | Adds border to the top and bottom sides of the element
@@ -46,7 +47,7 @@ $border-keys: (a '', v -top -bottom, h -left -right, t -top, b -bottom, l -left,
   @each $pair in $border-keys {
     $short: nth($pair, 1);
     $long: nth($pair, 2);
-		
+
 		// v and h need to pass in 2 parameters
     @if (length($pair) == 3) {
       $long: (nth($pair, 2) nth($pair, 3))
@@ -65,7 +66,7 @@ $border-keys: (a '', v -top -bottom, h -left -right, t -top, b -bottom, l -left,
   $size-names: (z,s,m);
   $types: (b);
   $locations: (v,h,l,r,t,b,a);
-  
+
   @each $location in $locations {
     @each $size-name in $size-names {
       @each $type in $types {

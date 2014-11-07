@@ -3,24 +3,16 @@
 title: Dots
 parent: dot
 name: dotSkins
-test: true
 ---
 
-Class          | Description
--------------- | -----------------
-dotStandard    | This is a grey dot
-dotHighlight   | This is a green dot
-dotCallout     | This is a orange dot
-dotWarn        | This is a red dot
-
-
 ```html_example
-<span class="dotStandard"></span><strong>Grey dot</strong>
-<span class="dotHighlight"></span><strong>Green dot</strong>
-<span class="dotCallout"></span><strong>Orange dot</strong>
-<span class="dotWarn"></span><strong>Red dot</strong>
+<span class="dotStandard"></span><span class="mrm">dotStandard</span>
+<span class="dotLowlight"></span><span class="mrm">dotLowlight</span>
+<span class="dotHighlight"></span><span class="mrm">dotHighlight</span>
+<span class="dotMidnight"></span><span class="mrm">dotMidnight</span>
+<span class="dotCallout"></span><span class="mrm">dotCallout</span>
+<span class="dotWarn"></span><span class="mrm">dotWarn</span>
 ```
-
 */
 
 
@@ -29,7 +21,17 @@ dotWarn        | This is a red dot
 
   .dotStandard {
     @extend %dot;
-    background-color: $dotStandardColor;
+    background-color: $dotStandard;
+  }
+
+  .dotLowlight {
+    @extend %dot;
+    background-color: $dotLowlight;
+  }
+
+  .dotMidnight {
+    @extend %dot;
+    background-color: $dotMidnight;
   }
 
   .dotHighlight {

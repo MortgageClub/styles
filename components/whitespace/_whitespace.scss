@@ -3,7 +3,6 @@
 title: Whitespace
 name: whitespace
 category: Utilities
-author: Fiona
 ---
 
 If you need to tweak elements by using margin or padding, use the following classes rather than adding to the CSS file.
@@ -27,11 +26,12 @@ l            | left        | Adds spacing to the left side of the element
 b            | bottom      | Adds spacing to the bottom side of the element
 r            | right       | Adds spacing to the right side of the element
 **Size**     |             |
+xl           | extra large | Adds an extra large amount of spacing (36px)
 l            | large       | Adds a large amount of spacing (21px)
-m            | medium      | Adds a medium amount of spacing (10px)
-s            | small       | Adds a small amount of spacing (5px)
+m            | medium      | Adds a medium amount of spacing (12px)
+s            | small       | Adds a small amount of spacing (6px)
+xs           | extra small | Adds an extra small amount of spacing (3px)
 n            | none        | Sets the spacing to 0
-
 
 */
 
@@ -49,17 +49,6 @@ $debugSpacing: false;
 %baseSpacingLarge {
 	margin-top: $baseSpacingLarge;
 	margin-bottom: $baseSpacingLarge;
-}
-
-
-// Table Reset
-@mixin tableResets {
-	table {
-		h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, .media, pre {
-			margin-left: 0;
-			margin-right: 0;
-		}
-	}
 }
 
 

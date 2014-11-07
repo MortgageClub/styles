@@ -47,3 +47,6 @@ img/icon-s2640f536f1.png
 Gemfile.lock
 /tests
 /reports
+
+# Backup
+/zBackup

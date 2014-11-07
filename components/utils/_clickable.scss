@@ -3,7 +3,6 @@
 title: Clickable
 category: Utilities
 name: clickable
-author: August
 ---
 
 
@@ -23,7 +22,7 @@ Class       | Description
 
 // Horizontal Alignment Mixin
 @mixin ooClickable() {
-	
+
 	.clickable {
 		cursor: pointer;
 	}

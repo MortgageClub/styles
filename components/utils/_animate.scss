@@ -3,33 +3,26 @@
 title: Animate
 category: Utilities
 name: animate
-author: Tuan
 ---
 
 
 Class                | Description
 -------------------- | -----------------
 `animate`            | add effect when changing from one style to another
-`animateSlow`        | longer transition duration
-`animateFast`        | shorter transition duration
+`animate animateSlow`| longer transition duration
+`animate animateFast`| shorter transition duration
 
 
 ```html_example
-<p>Sup, hover these guys and see what happens</p>
-<div class="frameSmall">
-  <span class="overlayContainer hover">
-    <img src="http://placekitten.com/180/135">
-    <span class="overlayLowlight overlayFull hoverDisplay animate">
-    You could <b>OWN</b> this cat!
-    </span>
+<p>Sup, hover me and see what happens</p>
+
+<div class="overlayContainer hover" style="width: 180px;">
+  <img src="http://placekitten.com/180/135">
+  <span class="overlayLowlight overlayFull hoverDisplay animate animateSlow">
+  You could <b>OWN</b> this cat!
   </span>
 </div>
 
-<br><ul class="listInline lhl">
-<li><div class="markerPrimary markerRound markerHover animate animateSlow">H</div></li>
-<li><div class="markerSecondary markerRound markerHover animate">M</div></li>
-<li><div class="markerInverse markerRound markerHover animate animateFast">E</div></li>
-</ul><br>
 ```
 
 */
@@ -37,15 +30,15 @@ Class                | Description
 
 // Animate Mixin
 @mixin ooAnimate() {
-	
+
 	.animate {
-		@include transition(all $transitionSpeedDefault ease);
+		@include transition($transitionSpeedDefault);
 	}
-	
+
 	.animateSlow {
 		@include transition-duration($transitionSpeedSlow);
 	}
-	
+
 	.animateFast {
 		@include transition-duration($transitionSpeedFast);
 	}

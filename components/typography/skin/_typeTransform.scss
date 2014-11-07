@@ -4,7 +4,6 @@ title: Typography Transform
 parent: typography
 name: typeTransform
 category: Base CSS
-author: JD
 ---
 
 Transforms typography elements...
@@ -19,19 +18,19 @@ Transforms typography elements...
 
 // TypeTransform Mixin
 @mixin ooTypeTransform {
-	
-	.typeCaps {
-		text-transform: uppercase;
-	}
-	
-	.typeCapitalize {
-		text-transform: capitalize;
-	}
-	
-	.typeTruncate {
-		overflow: hidden;
-		-ms-text-overflow: ellipsis;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	}
+
+  .typeCaps {
+    text-transform: uppercase;
+  }
+
+  .typeCapitalize {
+    text-transform: capitalize;
+  }
+
+  .typeTruncate {
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }

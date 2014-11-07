@@ -2,8 +2,6 @@
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-http_images_path = "http://static.trulia-cdn.com/images/oocss/"
-http_generated_images_path = "http://static.trulia-cdn.com/images/oocss/"
 css_dir = "../build/css"
 sass_dir = "../build_targets"
 images_dir = "../img"

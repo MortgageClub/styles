@@ -3,7 +3,6 @@
 title: Hide Things
 name: hide
 category: Utilities
-author: Fiona
 ---
 
 Various ways to hide things.
@@ -21,13 +20,13 @@ Class                    | Description
 
 // Hide Text
 @mixin ooHideText() {
-	
+
 	.hideText {
 		background-color: transparent;
 		border: 0;
 		overflow: hidden;
 	}
-	
+
 	.hideText:before {
 		display: block;
 		width: 0;
@@ -39,7 +38,7 @@ Class                    | Description
 
 // Hide Everything
 @mixin ooHideFully {
-	
+
 	.hideFully {
 		display: none !important;
 		visibility: hidden;
@@ -49,7 +48,7 @@ Class                    | Description
 
 // Hide Visually - Still Visiable on Screenreaders
 @mixin ooHideVisually {
-	
+
 	.hideVisually {
 		position: absolute;
 		width: 1px;
@@ -65,7 +64,7 @@ Class                    | Description
 
 // Extends the .hideVisually class to allow the element to be focusable
 @mixin ooHideVisuallyFocusable {
-  
+
 	.hideVisually.focusable:active,
 	.hideVisually.focusable:focus {
 		position: static;
@@ -80,7 +79,7 @@ Class                    | Description
 
 // ie8 and Below
 @media \0screen\,screen\9 {
-	
+
 	.hideOnNarrow {
 		display: none !important;
 	}
@@ -89,14 +88,14 @@ Class                    | Description
 
 // Modern Browser
 @media screen and (max-width: $responsePointLrg - 1) {
-	
+
 	.hideOnNarrow {
 		display: none !important;
 	}
 }
 
 @media screen and (min-width: $responsePointLrg) {
-	
+
 	.hideOnWide {
 		display: none !important;
 	}

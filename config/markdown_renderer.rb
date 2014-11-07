@@ -1,5 +1,4 @@
-#Convert markdown to Trulia's oocss blocks
-class TruliaMarkdownRenderer < Hologram::MarkdownRenderer
+class MarkdownRenderer < Hologram::MarkdownRenderer
   def table(heading, body)
     return '<table class="table tableBasic"><thead>' + heading + '</thead><tbody>' + body + '</tbody></table>'
   end

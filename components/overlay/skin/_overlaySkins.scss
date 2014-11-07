@@ -11,6 +11,7 @@ Class                  | Description
 overlayHighlight       | Apply the green color skin
 overlayLowlight        | Apply the black color skin
 overlayAction          | Apply the blue color skin -- designed for actionable/clickable element
+overlayMidnight        | Apply the midnight color skin
 overlayDefault         | Apply the white color skin
 overlayTop             | Position the overlay at the top
 overlayBottom          | Position the overlay at the bottom
@@ -19,64 +20,46 @@ overlayRight           | Position the overlay on right
 overlayMiddle          | Position the overlay in the middle
 overlayFullWidth       | Make the overlay be full width
 overlayFull            | Make the overlay cover the entire image
+overlayFadeOut         | Make the overlay cover fade out to zero opacity. Meant to use with animate
 
 
 
 ```html_example
-<div class="frameStandard">
-  <span class="overlayContainer">
-    <img src="http://placekitten.com/640/480">
-    <span class="overlayDefault overlayBottom">You could
-      <b>OWN</b> this cat!</span>
-  </span>
+<div class="overlayContainer" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="overlayDefault overlayBottom">You could
+    <b>OWN</b> this cat!</span>
 </div>
 ```
 ```html_example
-<div class="frameStandard">
-  <span class="overlayContainer">
-    <img src="http://placekitten.com/640/480">
-    <span class="txtC overlayHighlight overlayTop overlayFullWidth ">You could
-      <b>OWN</b> this cat!</span>
-  </span>
+<div class="overlayContainer" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="txtC overlayHighlight overlayTop overlayFullWidth ">You could
+    <b>OWN</b> this cat!</span>
 </div>
 ```
 ```html_example
-<div class="frameStandard">
-  <span class="overlayContainer">
-    <img src="http://placekitten.com/640/480">
-    <span class="overlayLowlight overlayRight overlayMiddle">You could
-      <b>OWN</b> this cat!</span>
-  </span>
+
+<div class="overlayContainer" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="overlayLowlight overlayRight overlayMiddle">You could
+    <b>OWN</b> this cat!</span>
 </div>
 ```
 
 ```html_example
-<div class="frameStandard">
-  <span class="overlayContainer">
-    <img src="http://placekitten.com/640/480">
-    <a class="overlayAction overlayBottom overlayRight linkTypeReversed" href="#BuyCat">
-      Click to <b>BUY</b> this cat!</a>
-  </span>
+<div class="overlayContainer" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="overlayAction overlayBottom overlayRight clickable">
+    Click to <b>BUY</b> this cat!</span>
 </div>
 ```
 
 ```html_example
-<div class="frameStandard">
-  <span class="overlayContainer">
-    <img src="http://placekitten.com/640/480">
-    <span class="overlayDefault overlayFull">You could
-      <b>OWN</b> this cat!</span>
-  </span>
-</div>
-```
-
-```html_example
-<div class="frameStandard imageContainer320x240">
-  <span class="overlayContainer">
-    <img src="http://placekitten.com/170/240" />
-    <span class="overlayLowlight overlayBottom overlayRight">You could
-        <b>OWN</b> this cat!</span>
-    </span>
+<div class="overlayContainer" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="overlayMidnight overlayFull">You could
+    <b>OWN</b> this cat!</span>
 </div>
 ```
 */
@@ -84,6 +67,9 @@ overlayFull            | Make the overlay cover the entire image
 
 // OverlaySkins Mixin
 @mixin ooOverlaySkins {
+  .overlay {
+    @extend %overlay;
+  }
 
   // Colors
   .overlayHighlight {
@@ -130,6 +116,18 @@ overlayFull            | Make the overlay cover the entire image
     background-color: rgba($overlayDefaultBackground, 0.7);
   }
 
+  .overlayMidnight {
+    @extend %overlay;
+    color: $overlayMidnightFontColor;
+
+    //ie8
+    background-color: $overlayMidnightBackground;
+
+    // Modern Browser
+    background-color: rgba($overlayMidnightBackground, 0.7);
+  }
+
+
   // Positioning
   .overlayTop {
     top: 0;
@@ -162,5 +160,10 @@ overlayFull            | Make the overlay cover the entire image
     top: 0;
     right: 0;
     bottom: 0;
+  }
+
+  .overlayFadeOut {
+    opacity: 0;
+    pointer-events: none;
   }
 }

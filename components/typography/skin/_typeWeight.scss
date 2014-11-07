@@ -4,7 +4,6 @@ title: Typography Emphasize
 parent: typography
 name: typeWeight
 category: Base CSS
-author: Nicole
 ---
 
 These classes are used to emphasize or deemphasize typography elements
@@ -23,11 +22,11 @@ These classes are used to emphasize or deemphasize typography elements
 	.typeDeemphasize {
 		font-weight: 300 !important;
 	}
-	
+
 	.typeWeightNormal {
 		font-weight: normal !important;
 	}
-	
+
 	.typeEmphasize {
 		font-weight: bold !important;
 	}

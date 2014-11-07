@@ -8,10 +8,7 @@ destination: ../docs
 # footer.html, etc)
 documentation_assets: ../hologram_assets
 
-custom_markdown: trulia_markdown_renderer.rb
-
-plugins:
-  - css_test_generator.rb
+custom_markdown: markdown_renderer.rb
 
 # Any other asset folders that need to be copied to the destination
 # folder

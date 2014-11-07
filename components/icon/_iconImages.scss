@@ -2,26 +2,15 @@
 ---
 title: Image Icons
 name: iconInline
-parent: icon
 category: Base CSS
-author: JD
-test: true
 ---
 
-These icons work similarly to our icon fonts, but are static images instead.
+These icons work similarly to bootstrap icon fonts, but are static images instead.
 
 ## Available Icons
 
 ```html_example
 <ul>
-  <li><h5 class="typeLowlight"> Common </h5></li>
-  <li><i class="iconFHEO"></i>iconFHEO</li>
-  <li><i class="iconStarDefault"></i>iconStarDefault</li>
-  <li><i class="iconStarActive"></i>iconStarActive</li>
-  <li><i class="iconStarNotification"></i>iconStarNotification</li>
-  <li><i class="iconCrime"></i>iconCrime</li>
-  <li><i class="iconCity"></i>iconCity</li>
-  <li><i class="iconCityLowlight"></i>iconCityLowlight</li>
   <li><i class="iconSpinner"></i>iconSpinner</li>
   <li><i class="iconLargeSpinner"></i>iconLargeSpinner</li>
 </ul>
@@ -32,7 +21,7 @@ These icons work similarly to our icon fonts, but are static images instead.
 
 // IconInline Mixin
 @mixin ooIconInline($name, $image, $margin, $hoverImage: "") {
-  
+
   %iconImage {
     display:inline-block;
     content: '';
@@ -61,13 +50,6 @@ These icons work similarly to our icon fonts, but are static images instead.
 
 // IconImage Mixin
 @mixin ooIconImage {
-  @include ooIconInline("FHEO", "inline/fheo.png", 0 2px 0 0);
-  @include ooIconInline("StarDefault", "inline/star_default.png", 0 0 2px 0, "inline/star_active.png");
-  @include ooIconInline("StarActive", "inline/star_active.png", 0 0 2px 0);
-  @include ooIconInline("StarNotification", "inline/star_notification.png", 0 0 2px 0, "inline/star_active.png");
   @include ooIconInline("Spinner", "inline/spinner_dots.gif", 0 0 2px 0);
   @include ooIconInline("LargeSpinner", "inline/ajax_loader.gif", 0 0 2px 0);
-  @include ooIconInline("Crime", "inline/icon_crime_lightblue_1x.png", 0 0 2px 0, "inline/icon_crime_blue_1x.png");
-  @include ooIconInline("City", "inline/icon_city_blue.png", 0 4px 2px 0, "inline/icon_city_green.png");
-  @include ooIconInline("CityLowlight", "inline/icon_city_gray.png", 0 4px 2px 0, "inline/icon_city_green.png");
 }

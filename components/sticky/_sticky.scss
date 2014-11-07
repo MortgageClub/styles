@@ -1,6 +1,15 @@
-// Sticky Mixin
+/*doc
+---
+title: Sticky
+category: Utilities
+name: sticky
+---
+
+Make an element stick in place on a page. The menu on this page is an example of this.
+*/
+
 @mixin ooSticky {
-  
+
   .sticky {
     position: fixed !important;
   }
