@@ -25,6 +25,10 @@
 @include ooTypeWeight;
 @include ooTypeTransform;
 
+// Links
+@import '../components/link/link';
+@include ooLink;
+
 // Background
 @import '../components/background/background';
 @import '../components/background/skin/backgroundSkins';
@@ -37,6 +41,7 @@
 // Border
 @import '../components/border/border';
 @include ooBorder;
+@include ooBorderRadius;
 
 // Overlay
 @import '../components/overlay/overlay';

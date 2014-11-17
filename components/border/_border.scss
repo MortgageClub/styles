@@ -8,13 +8,13 @@ category: Utilities
 If you need to add a basic border to an element, use the following classes instead of adding to the CSS file.
 
 ```html_example
-<div class="bas">
+<div class="bas rtl rtr">
   <h2 class="txtC pam">Plain borders all around!</h2>
 </div>
 <br><br>
 
-<div class="bbm">
-  <h3 class="pas">Sometimes you just need one.</h3>
+<div class="bbm blm rbl">
+  <h3 class="pas">Sometimes you just need two.</h3>
 </div>
 ```
 
@@ -34,6 +34,14 @@ r            | right       | Adds border to the right side of the element
 z            | zero        | No border width
 s            | small       | Small border width
 m            | medium      | Medium border width
+
+Border Radius   |  **Description**
+--------        |  -----------
+`rtl`           | Rounded top-left corner
+`rtr`           | Rounded top-right corner
+`rbl`           | Rounded bottom-left corner
+`rbr`           | Rounded bottom-right corner
+`roundedCorners`| Rounded all corners
 
 */
 
@@ -83,5 +91,27 @@ $border-keys: (a '', v -top -bottom, h -left -right, t -top, b -bottom, l -left,
         }
       }
     }
+  }
+}
+
+@mixin ooBorderRadius() {
+  .rtl {
+    border-top-left-radius: $borderRadiusDefault;
+  }
+
+  .rtr {
+    border-top-right-radius: $borderRadiusDefault;
+  }
+
+  .rbl {
+    border-bottom-left-radius: $borderRadiusDefault;
+  }
+
+  .rbr {
+    border-bottom-right-radius: $borderRadiusDefault;
+  }
+
+  .roundedCorners {
+    border-radius: $borderRadiusDefault;
   }
 }

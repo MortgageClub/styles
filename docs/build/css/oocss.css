@@ -176,6 +176,69 @@ Transforms typography elements...
 
 /*doc
 ---
+title: Link
+name: link
+category: Base CSS
+test: true
+---
+
+Styles applied to anchor elements to provide alternative colors and indicators.
+
+Style                                                                                                | Class              | Description
+---------------------------------------------------------------------------------------------------- | ------------------ | -----------
+<a href="#">Default Link</a>                                                                         |                    | Default style for links
+<a class="linkLowlight" href="#">Lowlight Link</a>                                                   | `linkLowlight`     | Deemphasized link color
+<div class="backgroundHighlight"><a class="linkTypeReversed" href="#">Type Reversed Link</a></div>   | `linkTypeReversed` | Type reversed link color
+<a class="linkForward" href="#">Link Forward</a>                                                     | `linkForward`      | Handy for links that indicate a forward direction (such as progressing through steps).
+<a class="linkBack" href="#">Link Back</a>                                                           | `linkBack`         | Handy for links that indicate a backward direction (such as going through completed<br/>steps or a results page from a detail page).
+
+```html_example
+<a class="linkLowlight" href="#">Lowlight Link</a>
+<a href="#" class="linkForward">Link Forward</a>
+<a href="#">Default Link</a>
+<a href="#" class="linkBack">Link Back</a>
+```
+
+*/
+a, a:hover, a:focus, .linkLowlight, .linkTypeReversed {
+  text-decoration: none;
+}
+
+a {
+  color: #0093bf;
+  outline: 0;
+  transition: all all 0.15s ease-in-out ease-in-out;
+}
+a:hover, a:focus {
+  color: #003151;
+}
+
+.linkLowlight {
+  color: #999;
+}
+.linkLowlight:hover, .linkLowlight:focus {
+  color: #003151;
+}
+
+.linkTypeReversed {
+  color: #fff;
+}
+.linkTypeReversed:hover, .linkTypeReversed:focus {
+  color: #fff;
+}
+
+.linkForward:after {
+  margin-left: pxToEm(5, 14);
+  content: "\00BB";
+}
+
+.linkBack:before {
+  margin-right: pxToEm(5, 14);
+  content: "\00AB";
+}
+
+/*doc
+---
 title: Background Colors
 name: background
 category: Base CSS
@@ -658,13 +721,13 @@ category: Utilities
 If you need to add a basic border to an element, use the following classes instead of adding to the CSS file.
 
 ```html_example
-<div class="bas">
+<div class="bas rtl rtr">
   <h2 class="txtC pam">Plain borders all around!</h2>
 </div>
 <br><br>
 
-<div class="bbm">
-  <h3 class="pas">Sometimes you just need one.</h3>
+<div class="bbm blm rbl">
+  <h3 class="pas">Sometimes you just need two.</h3>
 </div>
 ```
 
@@ -684,6 +747,14 @@ r            | right       | Adds border to the right side of the element
 z            | zero        | No border width
 s            | small       | Small border width
 m            | medium      | Medium border width
+
+Border Radius   |  **Description**
+--------        |  -----------
+`rtl`           | Rounded top-left corner
+`rtr`           | Rounded top-right corner
+`rbl`           | Rounded bottom-left corner
+`rbr`           | Rounded bottom-right corner
+`roundedCorners`| Rounded all corners
 
 */
 .bvz {
@@ -810,6 +881,26 @@ m            | medium      | Medium border width
   border-style: solid;
   border-color: #e9e9e9;
   border-width: 2px !important;
+}
+
+.rtl {
+  border-top-left-radius: 6px;
+}
+
+.rtr {
+  border-top-right-radius: 6px;
+}
+
+.rbl {
+  border-bottom-left-radius: 6px;
+}
+
+.rbr {
+  border-bottom-right-radius: 6px;
+}
+
+.roundedCorners {
+  border-radius: 6px;
 }
 
 /*doc

@@ -12,7 +12,7 @@ $green: #53b50a;
 $paleGreen: #4f9e1f;
 $darkGreen: #3d7314;
 $blue: #1eb9d4;
-$lightBlue: #1ba1e1;
+$lightBlue: #0093bf;
 $midnightBlue: #003151;
 $facebookBlue: #4063b3;
 $orange: #ee552a;
@@ -204,12 +204,9 @@ $toggleColorLowlight: $midGray;
 
 // Link Colors
 $linkColor: $lightBlue;
-$linkHoverColor: $blue;
+$linkHoverColor: $midnightBlue;
 $lowlightLinkColor: $midGray;
-$lowlightLinkHoverColor: $green;
-$linkNewTXLDefaultColor: $lightBlue;
-$activeLinkColor: $baseTextColor;
-$activeLinkHoverColor: $baseTextColor;
+$lowlightLinkHoverColor: $midnightBlue;
 
 
 // Misc Colors
