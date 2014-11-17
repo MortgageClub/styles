@@ -1451,3 +1451,53 @@ Class             | Description
 .hover:hover .hoverDisplay {
   opacity: 1;
 }
+
+/*doc
+---
+title: Collapsible
+name: collapsible
+category: Components
+---
+
+You can use the collapsible and collapsed to build animated accordion component
+
+Class             | Description
+----------------- | -----------------
+`collapsible`     | This class sets the max-height of your element with a very high value
+`collapsed`       | When you apply `animate collapsible` to an element, toggling `collapsed` will collapse or expand that element
+
+```html_example
+<ul id="collapsible_example">
+  <li class="mvn">
+    <p class="backgroundLowlight clickable mvn">One</p>
+    <div class="animate collapsible collapsed pvl">I'm the first child</div>
+  <li class="mvn bvs">
+    <p class="backgroundLowlight clickable mvn">Two</p>
+    <div class="animate collapsible collapsed pvl">I'm the second child</div>
+  <li class="mvn">
+    <p class="backgroundLowlight clickable mvn">Three</p>
+    <div class="animate collapsible collapsed pvl">I'm the third child</div>
+</ul>
+```
+
+```js_example
+  $('#collapsible_example').each(function() {
+    var $list = $(this);
+    $list.find('li').on('click', function() {
+      $list.find('div').addClass('collapsed');
+      $(this).find('div').removeClass('collapsed');
+    });
+  });
+```
+
+*/
+.collapsible {
+  max-height: 5000px;
+}
+
+.collapsed {
+  max-height: 0px;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+}

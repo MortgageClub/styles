@@ -70,6 +70,10 @@
               <ul class="componentList listBorderedHover man lvn lhn">
                 
                   
+                    <li><a class="pas" href="#collapsible">Collapsible</a></li>
+                  
+                
+                  
                     <li><a class="pas" href="#dot">Dots</a></li>
                   
                 
@@ -95,6 +99,52 @@
 
 
 
+<h1 id="collapsible">Collapsible</h1>
+
+<p>You can use the collapsible and collapsed to build animated accordion component</p>
+<table class="table tableBasic"><thead><tr><th class="txtL">Class</th>
+<th class="txtL">Description</th>
+</tr></thead><tbody><tr><td><code>collapsible</code></td>
+<td>This class sets the max-height of your element with a very high value</td>
+</tr><tr><td><code>collapsed</code></td>
+<td>When you apply <code>animate collapsible</code> to an element, toggling <code>collapsed</code> will collapse or expand that element</td>
+</tr></tbody></table><div class="codeExample"><div class="exampleOutput"><ul id="collapsible_example">
+  <li class="mvn">
+    <p class="backgroundLowlight clickable mvn">One</p>
+    <div class="animate collapsible collapsed pvl">I'm the first child</div>
+  <li class="mvn bvs">
+    <p class="backgroundLowlight clickable mvn">Two</p>
+    <div class="animate collapsible collapsed pvl">I'm the second child</div>
+  <li class="mvn">
+    <p class="backgroundLowlight clickable mvn">Three</p>
+    <div class="animate collapsible collapsed pvl">I'm the third child</div>
+</ul>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"collapsible_example"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"mvn"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"backgroundLowlight clickable mvn"</span><span class="nt">&gt;</span>One<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"animate collapsible collapsed pvl"</span><span class="nt">&gt;</span>I'm the first child<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"mvn bvs"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"backgroundLowlight clickable mvn"</span><span class="nt">&gt;</span>Two<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"animate collapsible collapsed pvl"</span><span class="nt">&gt;</span>I'm the second child<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"mvn"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"backgroundLowlight clickable mvn"</span><span class="nt">&gt;</span>Three<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"animate collapsible collapsed pvl"</span><span class="nt">&gt;</span>I'm the third child<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div></div></div><script>  $('#collapsible_example').each(function() {
+    var $list = $(this);
+    $list.find('li').on('click', function() {
+      $list.find('div').addClass('collapsed');
+      $(this).find('div').removeClass('collapsed');
+    });
+  });
+</script> <div class="codeBlock jsExample"><div class="highlight"><pre>  <span class="nx">$</span><span class="p">(</span><span class="s1">'#collapsible_example'</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">$list</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="nx">$list</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'li'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">$list</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'div'</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">'collapsed'</span><span class="p">);</span>
+      <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'div'</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">'collapsed'</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+</pre></div></div>
 <h1 id="dot">Dots</h1>
 
 <p>Dots are a small dot for lists.</p>
