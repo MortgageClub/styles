@@ -15,6 +15,25 @@
 // Vars
 @import '../components/variables';
 
+// Utilities
+@import '../components/utils/clearfix-me';
+@import '../components/utils/hide';
+@import '../components/utils/pxToEm';
+@import '../components/utils/_centerHorizontal';
+@import '../components/utils/clickable';
+@import '../components/utils/noWrap';
+@import '../components/utils/animate';
+@import '../components/utils/zIndex';
+@include ooHideVisually;
+@include ooHideVisuallyFocusable;
+@include ooHideText;
+@include ooHideFully;
+@include ooCenterHorizontal;
+@include ooClickable;
+@include ooNoWrap;
+@include ooAnimate;
+@include ooZIndices;
+
 // Typography
 @import '../components/typography/typography';
 @import '../components/typography/skin/typeColor';
@@ -48,25 +67,6 @@
 @import '../components/overlay/skin/overlaySkins';
 @include ooOverlay;
 @include ooOverlaySkins;
-
-// Utilities
-@import '../components/utils/clearfix-me';
-@import '../components/utils/hide';
-@import '../components/utils/pxToEm';
-@import '../components/utils/_centerHorizontal';
-@import '../components/utils/clickable';
-@import '../components/utils/noWrap';
-@import '../components/utils/animate';
-@import '../components/utils/zIndex';
-@include ooHideVisually;
-@include ooHideVisuallyFocusable;
-@include ooHideText;
-@include ooHideFully;
-@include ooCenterHorizontal;
-@include ooClickable;
-@include ooNoWrap;
-@include ooAnimate;
-@include ooZIndices;
 
 // Icon
 @import '../components/icon/iconImages';

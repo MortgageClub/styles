@@ -1,3 +1,247 @@
+/*
+ * clearfix     used project wide to clear floats and create a new formatting context
+ * usage      @include clearfix-me(<empty|overflow|facebook|micro|stubborn>)
+ * $clearfix-method sets default method
+ */
+/*doc
+---
+title: Hide Things
+name: hide
+category: Utilities
+---
+
+Various ways to hide things.
+
+Class                    | Description
+-------------------------|-----------------------
+`hideText`               | Use this when you only need to hide the text.
+`hideFully`              | Use this to hide a content entirely. This also hides it from screen readers.
+`hideVisually`           | This hides content but leaves screenreaders able to read it.
+`hideVisually.focusable` | Hide content but it allow it to be focused on. ???
+`hideOnWide`             | This content will be hidden on pages greater than or equal to 1144px (that is 1128 + 16p for a scrollbar)
+`hideOnNarrow`           | This content will be hidden on pages less than 1144px (that is 1128 + 16p for a scrollbar)
+*/
+@media \0screen\,screen\9 {
+  .hideOnNarrow {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 1143px) {
+  .hideOnNarrow {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 1144px) {
+  .hideOnWide {
+    display: none !important;
+  }
+}
+/**
+ * Convert px to em
+ *
+ * @param $px - the value in pixel you want to convert
+ * @param $context - the context in pixel e.g. you want to set margin on your text,
+ * and font size on your text is equivalent to 14px, then your context is 14px.
+ *
+ * e.g. margin: pxToEm(20px, 14px);
+ *
+ */
+/*doc
+---
+title: Center Horizontal
+category: Utilities
+name: centerHorizontal
+---
+
+This is used to center whole blocks, instead of text-alignment centering. The block needs some kind of width specification.
+Note: IE8 requires a doctype to allow margin:auto to work properly.
+
+```html_example
+<div class="centerHorizontal" style="width: 200px;">The center of the universe.</div>
+```
+
+*/
+/*doc
+---
+title: Clickable
+category: Utilities
+name: clickable
+---
+
+
+Class       | Description
+----------- | -----------------
+`clickable` | Make an element have a clickable (pointer) mouseover
+
+
+```html_example
+<div class="backgroundHighlight clickable">
+  Sup, hover over me and see what happens
+</div>
+```
+
+*/
+/*doc
+---
+title: No Wrap
+category: Utilities
+name: noWrap
+---
+
+
+Class       | Description
+----------- | -----------------
+`noWrap` 	| Force an element's text NOT to wrap to a new line.
+
+
+```html_example
+<div class="box boxBasic" style="width:20px;">
+  <p class="noWrap">Notice how I'm wider than my parent containers width...it's sort of my thing.</p>
+</div>
+```
+
+*/
+/*doc
+---
+title: Animate
+category: Utilities
+name: animate
+---
+
+
+Class                | Description
+-------------------- | -----------------
+`animate`            | add effect when changing from one style to another
+`animate animateSlow`| longer transition duration
+`animate animateFast`| shorter transition duration
+
+
+```html_example
+<p>Sup, hover me and see what happens</p>
+
+<div class="overlayContainer hover" style="width: 180px;">
+  <img src="http://placekitten.com/180/135">
+  <span class="overlayLowlight overlayFull hoverDisplay animate animateSlow">
+  You could <b>OWN</b> this cat!
+  </span>
+</div>
+
+```
+
+*/
+/*doc
+---
+title: Z-Index
+category: Utilities
+name: z-index
+---
+
+Please note that these classes are for the "global page" elements, that have semantic meaning in the page context, such as popups, navigation blocks, ads, etc. It shouldn't be used for internals of particular widget implementation, like markers on the map or z-positioning of the elements in a photoplayer. Each widget should have z-index:0 (since it's a content) and will prevent polluting page's z-axis space.
+
+Class                           | Description
+------------------------------- | -----------
+`zIndexBackground`              | -50; For elements in the background
+`zIndexMainContent`             |   0; For main content, and standard ads in place with regular content
+`zIndexPopup`                   |  20; For popup Elements -- chat window, message notifications
+`zIndexFloater`                 |  50; For non-anchored floating elements
+`zIndexNavigation`              |  80; For expanding site navigation elements
+`zIndexPageOverlay`             | 100; For full-page overlays
+
+*/
+.hideVisually {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.hideVisually.focusable:active,
+.hideVisually.focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
+.hideText {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+}
+
+.hideText:before {
+  display: block;
+  width: 0;
+  height: 100%;
+  content: '';
+}
+
+.hideFully {
+  display: none !important;
+  visibility: hidden;
+}
+
+.centerHorizontal {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.noWrap {
+  white-space: nowrap;
+}
+
+.animate {
+  transition: all 400ms ease-in-out;
+}
+
+.animateSlow {
+  -moz-transition-duration: 800ms;
+  -o-transition-duration: 800ms;
+  -webkit-transition-duration: 800ms;
+  transition-duration: 800ms;
+}
+
+.animateFast {
+  -moz-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
+}
+
+.zIndexBackground {
+  z-index: -50 !important;
+}
+
+.zIndexMainContent {
+  z-index: 0 !important;
+}
+
+.zIndexPopup {
+  z-index: 20 !important;
+}
+
+.zIndexFloater {
+  z-index: 50 !important;
+}
+
+.zIndexNavigation {
+  z-index: 80 !important;
+}
+
+.zIndexPageOverlay {
+  z-index: 100 !important;
+}
+
 /*doc
 
 ---
@@ -228,12 +472,12 @@ a:hover, a:focus {
 }
 
 .linkForward:after {
-  margin-left: pxToEm(5, 14);
+  margin-left: 0.35714em;
   content: "\00BB";
 }
 
 .linkBack:before {
-  margin-right: pxToEm(5, 14);
+  margin-right: 0.35714em;
   content: "\00AB";
 }
 
@@ -1058,250 +1302,6 @@ overlayFadeOut         | Make the overlay cover fade out to zero opacity. Meant 
 .overlayFadeOut {
   opacity: 0;
   pointer-events: none;
-}
-
-/*
- * clearfix     used project wide to clear floats and create a new formatting context
- * usage      @include clearfix-me(<empty|overflow|facebook|micro|stubborn>)
- * $clearfix-method sets default method
- */
-/*doc
----
-title: Hide Things
-name: hide
-category: Utilities
----
-
-Various ways to hide things.
-
-Class                    | Description
--------------------------|-----------------------
-`hideText`               | Use this when you only need to hide the text.
-`hideFully`              | Use this to hide a content entirely. This also hides it from screen readers.
-`hideVisually`           | This hides content but leaves screenreaders able to read it.
-`hideVisually.focusable` | Hide content but it allow it to be focused on. ???
-`hideOnWide`             | This content will be hidden on pages greater than or equal to 1144px (that is 1128 + 16p for a scrollbar)
-`hideOnNarrow`           | This content will be hidden on pages less than 1144px (that is 1128 + 16p for a scrollbar)
-*/
-@media \0screen\,screen\9 {
-  .hideOnNarrow {
-    display: none !important;
-  }
-}
-@media screen and (max-width: 1143px) {
-  .hideOnNarrow {
-    display: none !important;
-  }
-}
-@media screen and (min-width: 1144px) {
-  .hideOnWide {
-    display: none !important;
-  }
-}
-/**
- * Convert px to em
- *
- * @param $px - the value in pixel you want to convert
- * @param $context - the context in pixel e.g. you want to set margin on your text,
- * and font size on your text is equivalent to 14px, then your context is 14px.
- *
- * e.g. margin: pxToEm(20px, 14px);
- *
- */
-/*doc
----
-title: Center Horizontal
-category: Utilities
-name: centerHorizontal
----
-
-This is used to center whole blocks, instead of text-alignment centering. The block needs some kind of width specification.
-Note: IE8 requires a doctype to allow margin:auto to work properly.
-
-```html_example
-<div class="centerHorizontal" style="width: 200px;">The center of the universe.</div>
-```
-
-*/
-/*doc
----
-title: Clickable
-category: Utilities
-name: clickable
----
-
-
-Class       | Description
------------ | -----------------
-`clickable` | Make an element have a clickable (pointer) mouseover
-
-
-```html_example
-<div class="backgroundHighlight clickable">
-  Sup, hover over me and see what happens
-</div>
-```
-
-*/
-/*doc
----
-title: No Wrap
-category: Utilities
-name: noWrap
----
-
-
-Class       | Description
------------ | -----------------
-`noWrap` 	| Force an element's text NOT to wrap to a new line.
-
-
-```html_example
-<div class="box boxBasic" style="width:20px;">
-  <p class="noWrap">Notice how I'm wider than my parent containers width...it's sort of my thing.</p>
-</div>
-```
-
-*/
-/*doc
----
-title: Animate
-category: Utilities
-name: animate
----
-
-
-Class                | Description
--------------------- | -----------------
-`animate`            | add effect when changing from one style to another
-`animate animateSlow`| longer transition duration
-`animate animateFast`| shorter transition duration
-
-
-```html_example
-<p>Sup, hover me and see what happens</p>
-
-<div class="overlayContainer hover" style="width: 180px;">
-  <img src="http://placekitten.com/180/135">
-  <span class="overlayLowlight overlayFull hoverDisplay animate animateSlow">
-  You could <b>OWN</b> this cat!
-  </span>
-</div>
-
-```
-
-*/
-/*doc
----
-title: Z-Index
-category: Utilities
-name: z-index
----
-
-Please note that these classes are for the "global page" elements, that have semantic meaning in the page context, such as popups, navigation blocks, ads, etc. It shouldn't be used for internals of particular widget implementation, like markers on the map or z-positioning of the elements in a photoplayer. Each widget should have z-index:0 (since it's a content) and will prevent polluting page's z-axis space.
-
-Class                           | Description
-------------------------------- | -----------
-`zIndexBackground`              | -50; For elements in the background
-`zIndexMainContent`             |   0; For main content, and standard ads in place with regular content
-`zIndexPopup`                   |  20; For popup Elements -- chat window, message notifications
-`zIndexFloater`                 |  50; For non-anchored floating elements
-`zIndexNavigation`              |  80; For expanding site navigation elements
-`zIndexPageOverlay`             | 100; For full-page overlays
-
-*/
-.hideVisually {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  border: 0;
-  clip: rect(0 0 0 0);
-}
-
-.hideVisually.focusable:active,
-.hideVisually.focusable:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
-}
-
-.hideText {
-  background-color: transparent;
-  border: 0;
-  overflow: hidden;
-}
-
-.hideText:before {
-  display: block;
-  width: 0;
-  height: 100%;
-  content: '';
-}
-
-.hideFully {
-  display: none !important;
-  visibility: hidden;
-}
-
-.centerHorizontal {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.clickable {
-  cursor: pointer;
-}
-
-.noWrap {
-  white-space: nowrap;
-}
-
-.animate {
-  transition: all 400ms ease-in-out;
-}
-
-.animateSlow {
-  -moz-transition-duration: 800ms;
-  -o-transition-duration: 800ms;
-  -webkit-transition-duration: 800ms;
-  transition-duration: 800ms;
-}
-
-.animateFast {
-  -moz-transition-duration: 200ms;
-  -o-transition-duration: 200ms;
-  -webkit-transition-duration: 200ms;
-  transition-duration: 200ms;
-}
-
-.zIndexBackground {
-  z-index: -50 !important;
-}
-
-.zIndexMainContent {
-  z-index: 0 !important;
-}
-
-.zIndexPopup {
-  z-index: 20 !important;
-}
-
-.zIndexFloater {
-  z-index: 50 !important;
-}
-
-.zIndexNavigation {
-  z-index: 80 !important;
-}
-
-.zIndexPageOverlay {
-  z-index: 100 !important;
 }
 
 /*doc
