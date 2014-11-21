@@ -30,9 +30,13 @@ name: backgroundSkins
     <div class="docSwatch backgroundInverse"></div>
     <code>backgroundInverse</code>
   </div>
-  <div class="col cols6 lastcol">
+  <div class="col cols6">
     <div class="docSwatch backgroundMidnight"></div>
     <code>backgroundMidnight</code>
+  </div>
+  <div class="col cols6 lastcol">
+    <div class="docSwatch backgroundDaylight"></div>
+    <code>backgroundDaylight</code>
   </div>
 </div>
 */
@@ -47,4 +51,5 @@ name: backgroundSkins
   @include ooBackground("backgroundWarn", $bgWarn);
   @include ooBackground("backgroundCallout", $bgCallout);
   @include ooBackground("backgroundMidnight", $bgMidnight);
+  @include ooBackground("backgroundDaylight", $bgDaylight);
 }

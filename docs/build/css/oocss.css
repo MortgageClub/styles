@@ -525,9 +525,13 @@ name: backgroundSkins
     <div class="docSwatch backgroundInverse"></div>
     <code>backgroundInverse</code>
   </div>
-  <div class="col cols6 lastcol">
+  <div class="col cols6">
     <div class="docSwatch backgroundMidnight"></div>
     <code>backgroundMidnight</code>
+  </div>
+  <div class="col cols6 lastcol">
+    <div class="docSwatch backgroundDaylight"></div>
+    <code>backgroundDaylight</code>
   </div>
 </div>
 */
@@ -557,6 +561,10 @@ name: backgroundSkins
 
 .backgroundMidnight {
   background-color: #003151;
+}
+
+.backgroundDaylight {
+  background-color: #fefbf2;
 }
 
 /*doc
