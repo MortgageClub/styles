@@ -10,6 +10,7 @@ Transforms typography elements...
 
 ```html_example
 <p class="typeCaps">typeCaps</p>
+<p class="typeLowercase">tYpeLowercase</p>
 <p class="typeCapitalize">type capitalize</p>
 <p class="typeTruncate" style="width:150px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor quam nec nibh adipiscing dictum. Sed auctor tristique ligula</p>
 ```
@@ -18,13 +19,16 @@ Transforms typography elements...
 
 // TypeTransform Mixin
 @mixin ooTypeTransform {
+  .typeLowercase {
+    text-transform: lowercase !important;
+  }
 
   .typeCaps {
-    text-transform: uppercase;
+    text-transform: uppercase !important;
   }
 
   .typeCapitalize {
-    text-transform: capitalize;
+    text-transform: capitalize !important;
   }
 
   .typeTruncate {
