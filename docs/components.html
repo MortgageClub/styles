@@ -198,85 +198,117 @@
 <h2 id="overlaySkins">Overlay Skins</h2>
 <table class="table tableBasic"><thead><tr><th class="txtL">Class</th>
 <th class="txtL">Description</th>
-</tr></thead><tbody><tr><td>overlayHighlight</td>
+</tr></thead><tbody><tr><td><code>overlay</code></td>
+<td>Position the element as an overlay (abosolute) with no background color</td>
+</tr><tr><td><strong>Skins</strong></td>
+<td></td>
+</tr><tr><td><code>overlayHighlight</code></td>
 <td>Apply the green color skin</td>
-</tr><tr><td>overlayLowlight</td>
+</tr><tr><td><code>overlayLowlight</code></td>
 <td>Apply the black color skin</td>
-</tr><tr><td>overlayAction</td>
+</tr><tr><td><code>overlayAction</code></td>
 <td>Apply the blue color skin -- designed for actionable/clickable element</td>
-</tr><tr><td>overlayMidnight</td>
+</tr><tr><td><code>overlayMidnight</code></td>
 <td>Apply the midnight color skin</td>
-</tr><tr><td>overlayDefault</td>
+</tr><tr><td><code>overlayDefault</code></td>
 <td>Apply the white color skin</td>
-</tr><tr><td>overlayTop</td>
+</tr><tr><td><strong>Positions</strong></td>
+<td></td>
+</tr><tr><td><code>overlayTop</code></td>
 <td>Position the overlay at the top</td>
-</tr><tr><td>overlayBottom</td>
+</tr><tr><td><code>overlayBottom</code></td>
 <td>Position the overlay at the bottom</td>
-</tr><tr><td>overlayLeft</td>
+</tr><tr><td><code>overlayLeft</code></td>
 <td>Position the overlay on left</td>
-</tr><tr><td>overlayRight</td>
+</tr><tr><td><code>overlayRight</code></td>
 <td>Position the overlay on right</td>
-</tr><tr><td>overlayMiddle</td>
+</tr><tr><td><code>overlayMiddle</code></td>
 <td>Position the overlay in the middle</td>
-</tr><tr><td>overlayFullWidth</td>
+</tr><tr><td><code>overlayFullWidth</code></td>
 <td>Make the overlay be full width</td>
-</tr><tr><td>overlayFull</td>
+</tr><tr><td><code>overlayFull</code></td>
 <td>Make the overlay cover the entire image</td>
-</tr><tr><td>overlayFadeOut</td>
-<td>Make the overlay cover fade out to zero opacity. Meant to use with animate</td>
-</tr></tbody></table><div class="codeExample"><div class="exampleOutput"><div class="overlayContainer" style="width: 170px;">
+</tr><tr><td><strong>Animations</strong></td>
+<td>Meant to use with <code>animate</code> classes</td>
+</tr><tr><td><code>overlayFadeOut</code></td>
+<td>Make the overlay cover fade out to zero opacity.</td>
+</tr><tr><td><code>overlaySlideUp</code></td>
+<td>Make the overlay slide 100% to the top</td>
+</tr><tr><td><code>overlaySlideRight</code></td>
+<td>Make the overlay slide 100% to the right</td>
+</tr><tr><td><code>overlaySlideDown</code></td>
+<td>Make the overlay slide 100% to the bottom</td>
+</tr><tr><td><code>overlaySlideLeft</code></td>
+<td>Make the overlay slide 100% to the left</td>
+</tr></tbody></table><div class="codeExample"><div class="exampleOutput"><div id="slideLeftEx" class="overlayContainer clickable" style="width: 170px;">
   <img src="http://placekitten.com/170/240">
-  <span class="overlayDefault overlayBottom">You could
-    <b>OWN</b> this cat!</span>
+  <span class="overlayDefault overlayBottom animate">Click to <b>OWN</b> this cat!</span>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"overlayContainer"</span> <span class="na">style=</span><span class="s">"width: 170px;"</span><span class="nt">&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"slideLeftEx"</span> <span class="na">class=</span><span class="s">"overlayContainer clickable"</span> <span class="na">style=</span><span class="s">"width: 170px;"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placekitten.com/170/240"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"overlayDefault overlayBottom"</span><span class="nt">&gt;</span>You could
-    <span class="nt">&lt;b&gt;</span>OWN<span class="nt">&lt;/b&gt;</span> this cat!<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"overlayDefault overlayBottom animate"</span><span class="nt">&gt;</span>Click to <span class="nt">&lt;b&gt;</span>OWN<span class="nt">&lt;/b&gt;</span> this cat!<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div><div class="codeExample"><div class="exampleOutput"><div class="overlayContainer" style="width: 170px;">
+</pre></div></div></div><div class="codeExample"><div class="exampleOutput"><div id="slideUpEx" class="overlayContainer clickable" style="width: 170px;">
   <img src="http://placekitten.com/170/240">
-  <span class="txtC overlayHighlight overlayTop overlayFullWidth ">You could
-    <b>OWN</b> this cat!</span>
+  <span class="txtC overlayHighlight overlayTop overlayFullWidth animate">Click to <b>OWN</b> this cat!</span>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"overlayContainer"</span> <span class="na">style=</span><span class="s">"width: 170px;"</span><span class="nt">&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"slideUpEx"</span> <span class="na">class=</span><span class="s">"overlayContainer clickable"</span> <span class="na">style=</span><span class="s">"width: 170px;"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placekitten.com/170/240"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"txtC overlayHighlight overlayTop overlayFullWidth "</span><span class="nt">&gt;</span>You could
-    <span class="nt">&lt;b&gt;</span>OWN<span class="nt">&lt;/b&gt;</span> this cat!<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"txtC overlayHighlight overlayTop overlayFullWidth animate"</span><span class="nt">&gt;</span>Click to <span class="nt">&lt;b&gt;</span>OWN<span class="nt">&lt;/b&gt;</span> this cat!<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div><div class="codeExample"><div class="exampleOutput">
-<div class="overlayContainer" style="width: 170px;">
+</pre></div></div></div><div class="codeExample"><div class="exampleOutput"><div id="slideRightEx" class="overlayContainer clickable" style="width: 170px;">
   <img src="http://placekitten.com/170/240">
-  <span class="overlayLowlight overlayRight overlayMiddle">You could
-    <b>OWN</b> this cat!</span>
+  <span class="overlayLowlight overlayRight overlayMiddle animate">Click to <b>OWN</b> this cat!</span>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"overlayContainer"</span> <span class="na">style=</span><span class="s">"width: 170px;"</span><span class="nt">&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"slideRightEx"</span> <span class="na">class=</span><span class="s">"overlayContainer clickable"</span> <span class="na">style=</span><span class="s">"width: 170px;"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placekitten.com/170/240"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"overlayLowlight overlayRight overlayMiddle"</span><span class="nt">&gt;</span>You could
-    <span class="nt">&lt;b&gt;</span>OWN<span class="nt">&lt;/b&gt;</span> this cat!<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"overlayLowlight overlayRight overlayMiddle animate"</span><span class="nt">&gt;</span>Click to <span class="nt">&lt;b&gt;</span>OWN<span class="nt">&lt;/b&gt;</span> this cat!<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div><div class="codeExample"><div class="exampleOutput"><div class="overlayContainer" style="width: 170px;">
+</pre></div></div></div><div class="codeExample"><div class="exampleOutput"><div id="slideDownEx" class="overlayContainer clickable" style="width: 170px;">
   <img src="http://placekitten.com/170/240">
-  <span class="overlayAction overlayBottom overlayRight clickable">
-    Click to <b>BUY</b> this cat!</span>
+  <span class="overlayAction overlayBottom overlayRight animate">Click to <b>OWN</b> this cat!</span>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"overlayContainer"</span> <span class="na">style=</span><span class="s">"width: 170px;"</span><span class="nt">&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"slideDownEx"</span> <span class="na">class=</span><span class="s">"overlayContainer clickable"</span> <span class="na">style=</span><span class="s">"width: 170px;"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placekitten.com/170/240"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"overlayAction overlayBottom overlayRight clickable"</span><span class="nt">&gt;</span>
-    Click to <span class="nt">&lt;b&gt;</span>BUY<span class="nt">&lt;/b&gt;</span> this cat!<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"overlayAction overlayBottom overlayRight animate"</span><span class="nt">&gt;</span>Click to <span class="nt">&lt;b&gt;</span>OWN<span class="nt">&lt;/b&gt;</span> this cat!<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div><div class="codeExample"><div class="exampleOutput"><div class="overlayContainer" style="width: 170px;">
+</pre></div></div></div><div class="codeExample"><div class="exampleOutput"><div id="fadeOutEx" class="overlayContainer clickable" style="width: 170px;">
   <img src="http://placekitten.com/170/240">
-  <span class="overlayMidnight overlayFull">You could
-    <b>OWN</b> this cat!</span>
+  <span class="overlayMidnight overlayFull animate animateSlow">Click to <b>OWN</b> this cat!</span>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"overlayContainer"</span> <span class="na">style=</span><span class="s">"width: 170px;"</span><span class="nt">&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"fadeOutEx"</span> <span class="na">class=</span><span class="s">"overlayContainer clickable"</span> <span class="na">style=</span><span class="s">"width: 170px;"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placekitten.com/170/240"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"overlayMidnight overlayFull"</span><span class="nt">&gt;</span>You could
-    <span class="nt">&lt;b&gt;</span>OWN<span class="nt">&lt;/b&gt;</span> this cat!<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"overlayMidnight overlayFull animate animateSlow"</span><span class="nt">&gt;</span>Click to <span class="nt">&lt;b&gt;</span>OWN<span class="nt">&lt;/b&gt;</span> this cat!<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div>
+</pre></div></div></div><div class="codeExample"><div class="exampleOutput"><div id="twoOverlayEx" class="overlayContainer clickable" style="width: 170px; height: 240px;">
+  <img id="catImg" class="overlay animate" src="http://placekitten.com/170/240">
+  <img id="sheenImg" class="overlay animate overlaySlideLeft" src="http://placesheen.com/170/240">
+  <span class="overlayAction overlayBottom overlayRight">Click to <b>OWN</b> this cat!</span>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"twoOverlayEx"</span> <span class="na">class=</span><span class="s">"overlayContainer clickable"</span> <span class="na">style=</span><span class="s">"width: 170px; height: 240px;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">id=</span><span class="s">"catImg"</span> <span class="na">class=</span><span class="s">"overlay animate"</span> <span class="na">src=</span><span class="s">"http://placekitten.com/170/240"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">id=</span><span class="s">"sheenImg"</span> <span class="na">class=</span><span class="s">"overlay animate overlaySlideLeft"</span> <span class="na">src=</span><span class="s">"http://placesheen.com/170/240"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"overlayAction overlayBottom overlayRight"</span><span class="nt">&gt;</span>Click to <span class="nt">&lt;b&gt;</span>OWN<span class="nt">&lt;/b&gt;</span> this cat!<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><script>$('#slideLeftEx').on('click', function() {$(this).find('.animate').toggleClass('overlaySlideLeft');});
+$('#slideUpEx').on('click', function() {$(this).find('.animate').toggleClass('overlaySlideUp');});
+$('#slideDownEx').on('click', function() {$(this).find('.animate').toggleClass('overlaySlideDown');});
+$('#slideRightEx').on('click', function() {$(this).find('.animate').toggleClass('overlaySlideRight');});
+$('#fadeOutEx').on('click', function() {$(this).find('.animate').toggleClass('overlayFadeOut');});
+$('#twoOverlayEx').on('click', function() {
+  $(this).find('#catImg').toggleClass('overlaySlideRight');
+  $(this).find('#sheenImg').toggleClass('overlaySlideLeft');
+});
+</script> <div class="codeBlock jsExample"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#slideLeftEx'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.animate'</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s1">'overlaySlideLeft'</span><span class="p">);});</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#slideUpEx'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.animate'</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s1">'overlaySlideUp'</span><span class="p">);});</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#slideDownEx'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.animate'</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s1">'overlaySlideDown'</span><span class="p">);});</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#slideRightEx'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.animate'</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s1">'overlaySlideRight'</span><span class="p">);});</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#fadeOutEx'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.animate'</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s1">'overlayFadeOut'</span><span class="p">);});</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#twoOverlayEx'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'#catImg'</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s1">'overlaySlideRight'</span><span class="p">);</span>
+  <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'#sheenImg'</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s1">'overlaySlideLeft'</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div></div>
 <h1 id="table">Table</h1>
 <table class="table tableBasic"><thead><tr><th class="txtL">Class</th>
 <th class="txtL">Description</th>
@@ -445,7 +477,7 @@ The classes are constructed by specifying <code>&lt;type&gt;&lt;location&gt;&lt;
 $(document).ready(function() {
 
   // make the navigation a little bit sticky
-  $('#navigation').sticky({css:{ zIndex: 1, width:'100%',height: $('#navigation').height() - 1 + 'px', borderBottom:'1px solid #ccc', top: 0}, targetEl: '#navigation' });
+  $('#navigation').sticky({css:{ zIndex: 1000000, width:'100%',height: $('#navigation').height() - 1 + 'px', borderBottom:'1px solid #ccc', top: 0}, targetEl: '#navigation' });
 
   // When jumping to page subsections, don't cover the heading with #navigation
   $('.componentList').find('a').click(function (event) {

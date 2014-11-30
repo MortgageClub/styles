@@ -6,62 +6,81 @@ name: overlaySkins
 test: true
 ---
 
-Class                  | Description
----------------------- | -----------------
-overlayHighlight       | Apply the green color skin
-overlayLowlight        | Apply the black color skin
-overlayAction          | Apply the blue color skin -- designed for actionable/clickable element
-overlayMidnight        | Apply the midnight color skin
-overlayDefault         | Apply the white color skin
-overlayTop             | Position the overlay at the top
-overlayBottom          | Position the overlay at the bottom
-overlayLeft            | Position the overlay on left
-overlayRight           | Position the overlay on right
-overlayMiddle          | Position the overlay in the middle
-overlayFullWidth       | Make the overlay be full width
-overlayFull            | Make the overlay cover the entire image
-overlayFadeOut         | Make the overlay cover fade out to zero opacity. Meant to use with animate
-
+Class                    | Description
+------------------------ | -----------------
+`overlay`                | Position the element as an overlay (abosolute) with no background color
+**Skins**                |
+`overlayHighlight`       | Apply the green color skin
+`overlayLowlight`        | Apply the black color skin
+`overlayAction`          | Apply the blue color skin -- designed for actionable/clickable element
+`overlayMidnight`        | Apply the midnight color skin
+`overlayDefault`         | Apply the white color skin
+**Positions**            |
+`overlayTop`             | Position the overlay at the top
+`overlayBottom`          | Position the overlay at the bottom
+`overlayLeft`            | Position the overlay on left
+`overlayRight`           | Position the overlay on right
+`overlayMiddle`          | Position the overlay in the middle
+`overlayFullWidth`       | Make the overlay be full width
+`overlayFull`            | Make the overlay cover the entire image
+**Animations**           | Meant to use with `animate` classes
+`overlayFadeOut`         | Make the overlay cover fade out to zero opacity.
+`overlaySlideUp`         | Make the overlay slide 100% to the top
+`overlaySlideRight`      | Make the overlay slide 100% to the right
+`overlaySlideDown`       | Make the overlay slide 100% to the bottom
+`overlaySlideLeft`       | Make the overlay slide 100% to the left
 
 
 ```html_example
-<div class="overlayContainer" style="width: 170px;">
+<div id="slideLeftEx" class="overlayContainer clickable" style="width: 170px;">
   <img src="http://placekitten.com/170/240">
-  <span class="overlayDefault overlayBottom">You could
-    <b>OWN</b> this cat!</span>
+  <span class="overlayDefault overlayBottom animate">Click to <b>OWN</b> this cat!</span>
 </div>
 ```
 ```html_example
-<div class="overlayContainer" style="width: 170px;">
+<div id="slideUpEx" class="overlayContainer clickable" style="width: 170px;">
   <img src="http://placekitten.com/170/240">
-  <span class="txtC overlayHighlight overlayTop overlayFullWidth ">You could
-    <b>OWN</b> this cat!</span>
+  <span class="txtC overlayHighlight overlayTop overlayFullWidth animate">Click to <b>OWN</b> this cat!</span>
 </div>
 ```
 ```html_example
+<div id="slideRightEx" class="overlayContainer clickable" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="overlayLowlight overlayRight overlayMiddle animate">Click to <b>OWN</b> this cat!</span>
+</div>
+```
+```html_example
+<div id="slideDownEx" class="overlayContainer clickable" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="overlayAction overlayBottom overlayRight animate">Click to <b>OWN</b> this cat!</span>
+</div>
+```
+```html_example
+<div id="fadeOutEx" class="overlayContainer clickable" style="width: 170px;">
+  <img src="http://placekitten.com/170/240">
+  <span class="overlayMidnight overlayFull animate animateSlow">Click to <b>OWN</b> this cat!</span>
+</div>
+```
+```html_example
+<div id="twoOverlayEx" class="overlayContainer clickable" style="width: 170px; height: 240px;">
+  <img id="catImg" class="overlay animate" src="http://placekitten.com/170/240">
+  <img id="sheenImg" class="overlay animate overlaySlideLeft" src="http://placesheen.com/170/240">
+  <span class="overlayAction overlayBottom overlayRight">Click to <b>OWN</b> this cat!</span>
+</div>
+```
 
-<div class="overlayContainer" style="width: 170px;">
-  <img src="http://placekitten.com/170/240">
-  <span class="overlayLowlight overlayRight overlayMiddle">You could
-    <b>OWN</b> this cat!</span>
-</div>
+```js_example
+$('#slideLeftEx').on('click', function() {$(this).find('.animate').toggleClass('overlaySlideLeft');});
+$('#slideUpEx').on('click', function() {$(this).find('.animate').toggleClass('overlaySlideUp');});
+$('#slideDownEx').on('click', function() {$(this).find('.animate').toggleClass('overlaySlideDown');});
+$('#slideRightEx').on('click', function() {$(this).find('.animate').toggleClass('overlaySlideRight');});
+$('#fadeOutEx').on('click', function() {$(this).find('.animate').toggleClass('overlayFadeOut');});
+$('#twoOverlayEx').on('click', function() {
+  $(this).find('#catImg').toggleClass('overlaySlideRight');
+  $(this).find('#sheenImg').toggleClass('overlaySlideLeft');
+});
 ```
 
-```html_example
-<div class="overlayContainer" style="width: 170px;">
-  <img src="http://placekitten.com/170/240">
-  <span class="overlayAction overlayBottom overlayRight clickable">
-    Click to <b>BUY</b> this cat!</span>
-</div>
-```
-
-```html_example
-<div class="overlayContainer" style="width: 170px;">
-  <img src="http://placekitten.com/170/240">
-  <span class="overlayMidnight overlayFull">You could
-    <b>OWN</b> this cat!</span>
-</div>
-```
 */
 
 
@@ -165,5 +184,18 @@ overlayFadeOut         | Make the overlay cover fade out to zero opacity. Meant 
   .overlayFadeOut {
     opacity: 0;
     pointer-events: none;
+  }
+
+  .overlaySlideLeft {
+    @include transform(translate3d(-100%, 0, 0));
+  }
+  .overlaySlideRight {
+    @include transform(translate3d(100%, 0, 0));
+  }
+  .overlaySlideUp {
+    @include transform(translate3d(0, -100%, 0));
+  }
+  .overlaySlideDown {
+    @include transform(translate3d(0, 100%, 0));
   }
 }

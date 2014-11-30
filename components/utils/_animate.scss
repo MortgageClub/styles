@@ -33,6 +33,8 @@ Class                | Description
 
 	.animate {
 		@include transition($transitionSpeedDefault);
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
 	}
 
 	.animateSlow {

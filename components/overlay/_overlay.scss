@@ -16,7 +16,8 @@ Occasionally you need some text that shows on top of an image, so in that case u
     position: relative;
     display: block;
     width: inherit \9; // In IE8 this keeps this container from taking up more width than its parent container.
-
+    overflow: hidden;
+    @include transform(translate3d(0, 0 , 0));
     img {
       display: block;
     }

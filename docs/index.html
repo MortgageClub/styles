@@ -81,7 +81,7 @@
 $(document).ready(function() {
 
   // make the navigation a little bit sticky
-  $('#navigation').sticky({css:{ zIndex: 1, width:'100%',height: $('#navigation').height() - 1 + 'px', borderBottom:'1px solid #ccc', top: 0}, targetEl: '#navigation' });
+  $('#navigation').sticky({css:{ zIndex: 1000000, width:'100%',height: $('#navigation').height() - 1 + 'px', borderBottom:'1px solid #ccc', top: 0}, targetEl: '#navigation' });
 
   // When jumping to page subsections, don't cover the heading with #navigation
   $('.componentList').find('a').click(function (event) {
