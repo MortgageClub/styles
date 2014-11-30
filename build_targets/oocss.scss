@@ -68,6 +68,11 @@
 @include ooOverlay;
 @include ooOverlaySkins;
 
+// Table
+@import '../components/table/table';
+@include ooTable;
+@include tableWhitespace($spacingHelpers);
+
 // Icon
 @import '../components/icon/iconImages';
 @include ooIconImage;

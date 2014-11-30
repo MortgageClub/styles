@@ -1,0 +1,221 @@
+/*doc
+---
+title: Table
+name: table
+category: Components
+---
+
+Class                           | Description
+------------------------------- | -----------
+`table table-bordered`          | Basic table with borders on the cells
+`table table-primary`           | With header in primary background color; and alternating background color between the rows
+**Sorting**                     |
+`sort-actions inactive`         | Lowlight color applied to the carets to indicate the column isn't sorted
+`sort-actions active`           | Highlight color applied to the carets to indicate that the column is sorted
+
+
+#### Table Whitespace
+Table cells can have their cell padding adjusted by adding a class to `table`, `td` or `th` element. It works similar to the whitespace
+The classes are constructed by specifying `<type><location><size>` (see table and example below).
+
+  Type       |             | Description
+--------     | ----------  | -----------
+t            | table       | Affects only the spacing on `<th>` and `<td>` elements, you can set this directly on those elements or on the `<tbody>` or `<table>` element itself.
+**Location** |             |
+a            | all         | Adds spacing on all sides of the element
+h            | horizontal  | Adds spacing to the left and right sides of the element
+v            | vertical    | Adds spacing to the top and bottom sides of the element
+**Size**     |             |
+xl           | extra large | Adds an extra large amount of spacing (36px)
+l            | large       | Adds a large amount of spacing (21px)
+m            | medium      | Adds a medium amount of spacing (12px)
+s            | small       | Adds a small amount of spacing (6px)
+xs           | extra small | Adds an extra small amount of spacing (3px)
+n            | none        | Sets the spacing to 0
+
+```html_example
+  <table class="table table-bordered table-primary">
+    <thead>
+      <tr>
+        <th class="clickable plm">
+          <a>
+            Name
+            <span class="sort-actions active prn">
+              <span class="dropup"></span><span class="caret caret-bottom"></span>
+            </span>
+          </a>
+        </th>
+        <th class="clickable plm">
+          <a>
+            Origin
+            <span class="sort-actions inactive prn">
+              <span class="dropup">
+                <span class="caret caret-top"></span></span><span class="caret caret-bottom">
+              </span>
+            </span>
+          </a>
+        </th>
+        <th class="clickable plm">
+          <a>
+            Destination
+            <span class="sort-actions inactive prn">
+              <span class="dropup">
+                <span class="caret caret-top"></span></span><span class="caret caret-bottom">
+              </span>
+            </span>
+          </a>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="tam">
+      <tr>
+        <td><a href="#table">Really big speakers</a></td>
+        <td>Guangzhou, China</td>
+        <td>San Francisco, CA</td>
+      </tr>
+      <tr>
+        <td><a href="#table">Phenolic Laminated Panel</a></td>
+        <td>Osaka, Japan</td>
+        <td>New York, NY</td>
+      </tr>
+      <tr>
+        <td><a href="#table">Dogs and Cats</a></td>
+        <td>Aabenraa, Denmark</td>
+        <td>Los Angeles, CA</td>
+      </tr>
+    </tbody>
+  </table>
+```
+
+*/
+
+@mixin ooTable {
+  .table-primary {
+    border: 0px;
+    margin-bottom: 0px;
+
+    thead > tr > th {
+      background-color:#00436E;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 400;
+      border-left: 0px;
+      border-right: 1px solid #00436E;
+      border-bottom: 2px solid #000;
+      text-transform:uppercase;
+      min-width: 80px;
+      a {
+        color: #fff;
+        text-decoration:none;
+      }
+    }
+
+    tr:nth-child(odd){
+      background: #F7F7F7;
+    }
+
+    tr:nth-child(even){
+      background: #FFF;
+    }
+
+    .caret {
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 5px;
+
+
+      &.caret-top {
+        margin-top: -8px;
+        margin-right: -10px;
+      }
+
+      &.caret-bottom {
+        margin-top: 7px;
+      }
+    }
+
+    .sort-actions {
+      float: right;
+      padding-right: 10px;
+      &.inactive {
+        color: #c1c1c1;
+      }
+      &.active {
+        color: #fff;
+
+        .dropup .caret-top {
+          margin-right: 0;
+        }
+      }
+    }
+
+    tbody > tr.clickable:hover {
+      background: #F0F0F0;
+    }
+
+    tbody > tr > td {
+      padding: 20px;
+    }
+  }
+}
+
+
+$whitespace-keys: (t padding, a '', v -top -bottom, h -left -right);
+
+
+// Expand Whitespace Function
+@function expand-whitespace-key($k) {
+  @each $pair in $whitespace-keys {
+    $short: nth($pair, 1);
+    $long: nth($pair, 2);
+    // v and h need to pass in 2 parameters
+    @if (length($pair) == 3) {
+      $long: (nth($pair, 2) nth($pair, 3))
+    }
+    @if $short == $k {
+      @return $long;
+    }
+  }
+  @return $k;
+}
+
+
+// TableWhitespace Mixin
+@mixin tableWhitespace($sizes: (5px, 10px, 20px)){
+
+  $sizes: join(0, $sizes);
+  $size-names: ();
+
+  @if (length($sizes) == 1) {
+    $size-names: (n);
+    @warn "One spacing class isn't usually enough. Typically you should choose at least three.";
+  } @else if (length($sizes) == 2) {
+    $size-names: (n, s);
+    @warn "Two spacing classes isn't usually enough. Typically you should choose at least three.";
+  } @else if (length($sizes) == 3) {
+    $size-names: (n, s, m);
+  } @else if (length($sizes) == 4) {
+    $size-names: (n, s, m, l);
+  } @else if (length($sizes) == 5) {
+    $size-names: (n, s, m, l, xl);
+  } @else if (length($sizes) > 5) {
+    $size-names: (n, xs, s, m, l, xl);
+  }
+  $types: (t);
+  $locations: (a, v, h);
+
+  @each $location in $locations {
+    @each $size-name in $size-names {
+      @each $type in $types {
+        .#{$type}#{$location}#{$size-name} td,
+        .#{$type}#{$location}#{$size-name} th {
+          //get returned list of locations. Can't assign to variable as it turns into 1 item in the list, not multiple items
+          @each $whitespace-location in expand-whitespace-key($location) {
+            #{expand-whitespace-key($type)}#{$whitespace-location}: nth($sizes, index($size-names, $size-name)) !important;
+          }
+        }
+      }
+    }
+  }
+}
+

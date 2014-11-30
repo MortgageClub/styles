@@ -1319,6 +1319,255 @@ overlayFadeOut         | Make the overlay cover fade out to zero opacity. Meant 
 
 /*doc
 ---
+title: Table
+name: table
+category: Components
+---
+
+Class                           | Description
+------------------------------- | -----------
+`table table-bordered`          | Basic table with borders on the cells
+`table table-primary`           | With header in primary background color; and alternating background color between the rows
+**Sorting**                     |
+`sort-actions inactive`         | Lowlight color applied to the carets to indicate the column isn't sorted
+`sort-actions active`           | Highlight color applied to the carets to indicate that the column is sorted
+
+
+#### Table Whitespace
+Table cells can have their cell padding adjusted by adding a class to `table`, `td` or `th` element. It works similar to the whitespace
+The classes are constructed by specifying `<type><location><size>` (see table and example below).
+
+  Type       |             | Description
+--------     | ----------  | -----------
+t            | table       | Affects only the spacing on `<th>` and `<td>` elements, you can set this directly on those elements or on the `<tbody>` or `<table>` element itself.
+**Location** |             |
+a            | all         | Adds spacing on all sides of the element
+h            | horizontal  | Adds spacing to the left and right sides of the element
+v            | vertical    | Adds spacing to the top and bottom sides of the element
+**Size**     |             |
+xl           | extra large | Adds an extra large amount of spacing (36px)
+l            | large       | Adds a large amount of spacing (21px)
+m            | medium      | Adds a medium amount of spacing (12px)
+s            | small       | Adds a small amount of spacing (6px)
+xs           | extra small | Adds an extra small amount of spacing (3px)
+n            | none        | Sets the spacing to 0
+
+```html_example
+  <table class="table table-bordered table-primary">
+    <thead>
+      <tr>
+        <th class="clickable plm">
+          <a>
+            Name
+            <span class="sort-actions active prn">
+              <span class="dropup"></span><span class="caret caret-bottom"></span>
+            </span>
+          </a>
+        </th>
+        <th class="clickable plm">
+          <a>
+            Origin
+            <span class="sort-actions inactive prn">
+              <span class="dropup">
+                <span class="caret caret-top"></span></span><span class="caret caret-bottom">
+              </span>
+            </span>
+          </a>
+        </th>
+        <th class="clickable plm">
+          <a>
+            Destination
+            <span class="sort-actions inactive prn">
+              <span class="dropup">
+                <span class="caret caret-top"></span></span><span class="caret caret-bottom">
+              </span>
+            </span>
+          </a>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="tam">
+      <tr>
+        <td><a href="#table">Really big speakers</a></td>
+        <td>Guangzhou, China</td>
+        <td>San Francisco, CA</td>
+      </tr>
+      <tr>
+        <td><a href="#table">Phenolic Laminated Panel</a></td>
+        <td>Osaka, Japan</td>
+        <td>New York, NY</td>
+      </tr>
+      <tr>
+        <td><a href="#table">Dogs and Cats</a></td>
+        <td>Aabenraa, Denmark</td>
+        <td>Los Angeles, CA</td>
+      </tr>
+    </tbody>
+  </table>
+```
+
+*/
+.table-primary {
+  border: 0px;
+  margin-bottom: 0px;
+}
+.table-primary thead > tr > th {
+  background-color: #00436E;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  border-left: 0px;
+  border-right: 1px solid #00436E;
+  border-bottom: 2px solid #000;
+  text-transform: uppercase;
+  min-width: 80px;
+}
+.table-primary thead > tr > th a {
+  color: #fff;
+  text-decoration: none;
+}
+.table-primary tr:nth-child(odd) {
+  background: #F7F7F7;
+}
+.table-primary tr:nth-child(even) {
+  background: #FFF;
+}
+.table-primary .caret {
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 5px;
+}
+.table-primary .caret.caret-top {
+  margin-top: -8px;
+  margin-right: -10px;
+}
+.table-primary .caret.caret-bottom {
+  margin-top: 7px;
+}
+.table-primary .sort-actions {
+  float: right;
+  padding-right: 10px;
+}
+.table-primary .sort-actions.inactive {
+  color: #c1c1c1;
+}
+.table-primary .sort-actions.active {
+  color: #fff;
+}
+.table-primary .sort-actions.active .dropup .caret-top {
+  margin-right: 0;
+}
+.table-primary tbody > tr.clickable:hover {
+  background: #F0F0F0;
+}
+.table-primary tbody > tr > td {
+  padding: 20px;
+}
+
+.tan td,
+.tan th {
+  padding: 0 !important;
+}
+
+.taxs td,
+.taxs th {
+  padding: 3px !important;
+}
+
+.tas td,
+.tas th {
+  padding: 6px !important;
+}
+
+.tam td,
+.tam th {
+  padding: 12px !important;
+}
+
+.tal td,
+.tal th {
+  padding: 21px !important;
+}
+
+.taxl td,
+.taxl th {
+  padding: 36px !important;
+}
+
+.tvn td,
+.tvn th {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.tvxs td,
+.tvxs th {
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+}
+
+.tvs td,
+.tvs th {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.tvm td,
+.tvm th {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+.tvl td,
+.tvl th {
+  padding-top: 21px !important;
+  padding-bottom: 21px !important;
+}
+
+.tvxl td,
+.tvxl th {
+  padding-top: 36px !important;
+  padding-bottom: 36px !important;
+}
+
+.thn td,
+.thn th {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.thxs td,
+.thxs th {
+  padding-left: 3px !important;
+  padding-right: 3px !important;
+}
+
+.ths td,
+.ths th {
+  padding-left: 6px !important;
+  padding-right: 6px !important;
+}
+
+.thm td,
+.thm th {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+.thl td,
+.thl th {
+  padding-left: 21px !important;
+  padding-right: 21px !important;
+}
+
+.thxl td,
+.thxl th {
+  padding-left: 36px !important;
+  padding-right: 36px !important;
+}
+
+/*doc
+---
 title: Image Icons
 name: iconInline
 category: Base CSS
