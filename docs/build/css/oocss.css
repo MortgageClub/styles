@@ -203,7 +203,6 @@ Class                           | Description
 .animate {
   transition: all 400ms ease-in-out;
   -webkit-backface-visibility: hidden;
-  -webkit-perspective: 1000;
 }
 
 .animateSlow {
