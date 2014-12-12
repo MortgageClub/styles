@@ -1621,6 +1621,161 @@ n            | none        | Sets the spacing to 0
 
 /*doc
 ---
+title: Icons
+name: icon
+category: Base CSS
+---
+
+Flexport OOCSS uses the <a href="http://entypo.com">entypo icon font</a> for most icons.
+These icons are just a font and can be styled and treated like any other typography element.
+
+To use an icon simply find the icon in the list below and simply include the class listed next to the
+icon in an `<i>` tag like this:
+
+```html_example
+<p><i class="iconUser"></i>John Doe</p>
+<p class="typeHighlight"><i class="iconThumbsUp"></i>Nice Job!</p>
+<p><a href="#"><i class="iconMail"></i>Contact Us</a></p>
+```
+
+## Available Icons
+<ul class="list3cols">
+
+  <li><h5 class="typeLowlight"> Core </h5>
+  <li><i class="iconHome"></i>iconHome</li>
+  <li><i class="iconMortgage"></i>iconMortgage</li>
+  <li><i class="iconRent"></i>iconRent</li>
+  <li><i class="iconAgent"></i>iconAgent</li>
+  <li><i class="iconSearch"></i>iconSearch</li>
+  <li><i class="iconStarEmpty"></i>iconStarEmpty</li>
+  <li><i class="iconStar"></i>iconStar</li>
+  <li><i class="iconHeart"></i>iconHeart</li>
+  <li><i class="iconHeartEmpty"></i>iconHeartEmpty</li>
+  <li><i class="iconMail"></i>iconMail</li>
+  <li><i class="iconList"></i>iconList</li>
+  <li><i class="iconPicture"></i>iconPicture</li>
+  <li><i class="iconMap"></i>iconMap</li>
+  <li><i class="iconThumbsUp"></i>iconThumbsUp</li>
+  <li><i class="iconThumbsDown"></i>iconThumbsDown</li>
+  <li><i class="iconBell"></i>iconBell</li>
+  <li><i class="iconBasket"></i>iconBasket</li>
+  <li><i class="iconDocs"></i>iconDocs</li>
+  <li><i class="iconVideo"></i>iconVideo</li>
+  <li><i class="iconCalendar"></i>iconCalendar</li>
+  <li><i class="iconCamera"></i>iconCamera</li>
+  <li><i class="iconClock"></i>iconClock</li>
+  <li><i class="iconHourGlass"></i>iconHourGlass</li>
+  <li><i class="iconFood"></i>iconFood</li>
+  <li><i class="iconFuel"></i>iconFuel</li>
+
+  <li><h5 class="typeLowlight"> Users / User Help </h5>
+  <li><i class="iconUser"></i>iconUser</li>
+  <li><i class="iconUsers"></i>iconUsers</li>
+  <li><i class="iconVcard"></i>iconVcard</li>
+  <li><i class="iconCog"></i>iconCog</li>
+  <li><i class="iconInfo"></i>iconInfo</li>
+  <li><i class="iconHelp"></i>iconHelp</li>
+  <li><i class="iconTrophy"></i>iconTrophy</li>
+  <li><i class="iconBookmark"></i>iconBookmark</li>
+  <li><i class="iconAttention"></i>iconAttention</li>
+  <li><i class="iconBlock"></i>iconBlock</li>
+  <li><i class="iconFlag"></i>iconFlag</li>
+  <li><i class="iconPrint"></i>iconPrint</li>
+
+  <li><h5 class="typeLowlight"> UGC </h5>
+  <li><i class="iconTag"></i>iconTag</li>
+  <li><i class="iconQuote"></i>iconQuote</li>
+  <li><i class="iconComment"></i>iconComment</li>
+  <li><i class="iconChat"></i>iconChat</li>
+
+  <li><h5 class="typeLowlight"> Social Media </h5>
+  <li><i class="iconTwitter"></i>iconTwitter</li>
+  <li><i class="iconFacebook"></i>iconFacebook</li>
+  <li><i class="iconPinterest"></i>iconPinterest</li>
+  <li><i class="iconLinkedin"></i>iconLinkedin</li>
+
+  <li><h5 class="typeLowlight"> Inbox / Web </h5>
+  <li><i class="iconCloud"></i>iconCloud</li>
+  <li><i class="iconInbox"></i>iconInbox</li>
+  <li><i class="iconFolder"></i>iconFolder</li>
+  <li><i class="iconPencil"></i>iconPencil</li>
+  <li><i class="iconReply"></i>iconReply</li>
+  <li><i class="iconReplyAll"></i>iconReplyAll</li>
+  <li><i class="iconForward"></i>iconForward</li>
+  <li><i class="iconAttach"></i>iconAttach</li>
+
+  <li><h5 class="typeLowlight"> Controls </h5>
+  <li><i class="iconPopup"></i>iconPopup</li>
+  <li><i class="iconPlus"></i>iconPlus</li>
+  <li><i class="iconMinus"></i>iconMinus</li>
+  <li><i class="iconTrash"></i>iconTrash</li>
+  <li><i class="iconResizeFull"></i>iconResizeFull</li>
+  <li><i class="iconResizeSmall"></i>iconResizeSmall</li>
+  <li><i class="iconCheck"></i>iconCheck</li>
+  <li><i class="iconCancel"></i>iconCancel</li>
+
+  <li><h5 class="typeLowlight"> Arrows </h5>
+  <li><i class="iconDownOpen"></i>iconDownOpen</li>
+  <li><i class="iconLeftOpen"></i>iconLeftOpen</li>
+  <li><i class="iconRightOpen"></i>iconRightOpen</li>
+  <li><i class="iconUpOpen"></i>iconUpOpen</li>
+  <li><i class="iconUp"></i>iconUp</li>
+  <li><i class="iconDown"></i>iconDown</li>
+  <li><i class="iconLeft "></i>iconLeft</li>
+  <li><i class="iconRight"></i>iconRight</li>
+
+  <li><h5 class="typeLowlight"> Mobile </h5>
+  <li><i class="iconMenu"></i>iconMenu</li>
+  <li><i class="iconExport"></i>iconExport</li>
+  <li><i class="iconPhone"></i>iconPhone</li>
+  <li><i class="iconMobile"></i>iconMobile</li>
+
+  <li><h5 class="typeLowlight"> Maps / Local Info </h5>
+  <li><i class="iconAddress"></i>iconAddress</li>
+  <li><i class="iconLocation"></i>iconLocation</li>
+  <li><i class="iconDirection"></i>iconDirection</li>
+  <li><i class="iconCup"></i>iconCup</li>
+  <li><i class="iconFlight"></i>iconFlight</li>
+  <li><i class="iconGlobe"></i>iconGlobe</li>
+  <li><i class="iconLeaf"></i>iconLeaf</li>
+  <li><i class="iconGraduationCap"></i>iconGraduationCap</li>
+  <li><i class="iconTicket"></i>iconTicket</li>
+  <li><i class="iconRocket"></i>iconRocket</li>
+
+  <li><h5 class="typeLowlight"> Data </h5>
+  <li><i class="iconChartPie"></i>iconChartPie</li>
+  <li><i class="iconChartLine"></i>iconChartLine</li>
+  <li><i class="iconChartBar"></i>iconChartBar</li>
+  <li><i class="iconChartArea"></i>iconChartArea</li>
+
+</ul>
+
+*/
+.icon-sprite, .icon-rentalsSlsCta, .icon-transitscoreDefault, .icon-walkscoreDefault {
+  background-image: url('/../img/icon-s8c62edafe7.png');
+  background-repeat: no-repeat;
+}
+
+.icon-rentalsSlsCta {
+  background-position: 0 0;
+  height: 33px;
+  width: 69px;
+}
+
+.icon-transitscoreDefault {
+  background-position: 0 -33px;
+  height: 15px;
+  width: 13px;
+}
+
+.icon-walkscoreDefault {
+  background-position: 0 -48px;
+  height: 16px;
+  width: 78px;
+}
+
+/*doc
+---
 title: Image Icons
 name: iconInline
 category: Base CSS
@@ -1638,6 +1793,384 @@ These icons work similarly to bootstrap icon fonts, but are static images instea
 ```
 
 */
+.iconFood:before, .iconDollarSign:before, .iconMortgage:before, .iconRent:before, .iconAgent:before, .iconHeartEmpty:before, .iconHourGlass:before, .iconFuel:before, .iconPlus:before, .iconMinus:before, .iconStar:before, .iconStarEmpty:before, .iconHome:before, .iconMenu:before, .iconHeart:before, .iconFlag:before, .iconCog:before, .iconDownOpen:before, .iconLeftOpen:before, .iconRightOpen:before, .iconUpOpen:before, .iconDown:before, .iconLeft:before, .iconRight:before, .iconUp:before, .iconAttention:before, .iconCloud:before, .iconMail:before, .iconPencil:before, .iconCheck:before, .iconCancel:before, .iconHelp:before, .iconQuote:before, .iconDirection:before, .iconForward:before, .iconList:before, .iconTag:before, .iconReply:before, .iconReplyAll:before, .iconExport:before, .iconPrint:before, .iconComment:before, .iconChat:before, .iconVcard:before, .iconAddress:before, .iconLocation:before, .iconMap:before, .iconTrash:before, .iconDocs:before, .iconBasket:before, .iconResizeFull:before, .iconResizeSmall:before, .iconPopup:before, .iconInbox:before, .iconFlight:before, .iconTwitter:before, .iconFacebook:before, .iconLinkedin:before, .iconPicture:before, .iconGlobe:before, .iconLeaf:before, .iconGraduationCap:before, .iconTicket:before, .iconVideo:before, .iconTrophy:before, .iconThumbsUp:before, .iconThumbsDown:before, .iconUser:before, .iconUsers:before, .iconFolder:before, .iconCalendar:before, .iconChartPie:before, .iconChartLine:before, .iconChartBar:before, .iconChartArea:before, .iconAttach:before, .iconPhone:before, .iconMobile:before, .iconCamera:before, .iconSearch:before, .iconBell:before, .iconBookmark:before, .iconClock:before, .iconBlock:before, .iconRocket:before, .iconPinterest:before, .iconCup:before, .iconInfo:before {
+  font-family: 'Entypo';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  vertical-align: text-top;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+}
+
+.iconFood:before {
+  content: "\e601";
+}
+
+.iconDollarSign:before {
+  content: "\e602";
+}
+
+.iconMortgage:before {
+  content: "\e606";
+}
+
+.iconRent:before {
+  content: "\e607";
+}
+
+.iconAgent:before {
+  content: "\e609";
+}
+
+.iconHeartEmpty:before {
+  content: "\e61b";
+}
+
+.iconHourGlass:before {
+  content: "\e647";
+}
+
+.iconFuel:before {
+  content: "\e800";
+}
+
+.iconPlus:before {
+  content: "\e802";
+}
+
+.iconMinus:before {
+  content: "\e803";
+}
+
+.iconStar:before {
+  content: "\e805";
+}
+
+.iconStarEmpty:before {
+  content: "\e806";
+}
+
+.iconHome:before {
+  content: "\e807";
+}
+
+.iconMenu:before {
+  content: "\e808";
+}
+
+.iconHeart:before {
+  content: "\e809";
+}
+
+.iconFlag:before {
+  content: "\e80a";
+}
+
+.iconCog:before {
+  content: "\e80b";
+}
+
+.iconDownOpen:before {
+  content: "\e80c";
+}
+
+.iconLeftOpen:before {
+  content: "\e80d";
+}
+
+.iconRightOpen:before {
+  content: "\e80e";
+}
+
+.iconUpOpen:before {
+  content: "\e80f";
+}
+
+.iconDown:before {
+  content: "\e810";
+}
+
+.iconLeft:before {
+  content: "\e811";
+}
+
+.iconRight:before {
+  content: "\e812";
+}
+
+.iconUp:before {
+  content: "\e813";
+}
+
+.iconAttention:before {
+  content: "\e814";
+}
+
+.iconCloud:before {
+  content: "\e815";
+}
+
+.iconMail:before {
+  content: "\e816";
+}
+
+.iconPencil:before {
+  content: "\e817";
+}
+
+.iconCheck:before {
+  content: "\e818";
+}
+
+.iconCancel:before {
+  content: "\e819";
+}
+
+.iconHelp:before {
+  content: "\e81a";
+}
+
+.iconQuote:before {
+  content: "\e81b";
+}
+
+.iconDirection:before {
+  content: "\e81c";
+}
+
+.iconForward:before {
+  content: "\e81d";
+}
+
+.iconList:before {
+  content: "\e81e";
+}
+
+.iconTag:before {
+  content: "\e81f";
+}
+
+.iconReply:before {
+  content: "\e820";
+}
+
+.iconReplyAll:before {
+  content: "\e821";
+}
+
+.iconExport:before {
+  content: "\e822";
+}
+
+.iconPrint:before {
+  content: "\e823";
+}
+
+.iconComment:before {
+  content: "\e824";
+}
+
+.iconChat:before {
+  content: "\e825";
+}
+
+.iconVcard:before {
+  content: "\e826";
+}
+
+.iconAddress:before {
+  content: "\e827";
+}
+
+.iconLocation:before {
+  content: "\e828";
+}
+
+.iconMap:before {
+  content: "\e829";
+}
+
+.iconTrash:before {
+  content: "\e82a";
+}
+
+.iconDocs:before {
+  content: "\e82b";
+}
+
+.iconBasket:before {
+  content: "\e82c";
+}
+
+.iconResizeFull:before {
+  content: "\e82d";
+}
+
+.iconResizeSmall:before {
+  content: "\e82e";
+}
+
+.iconPopup:before {
+  content: "\e82f";
+}
+
+.iconInbox:before {
+  content: "\e830";
+}
+
+.iconFlight:before {
+  content: "\e831";
+}
+
+.iconTwitter:before {
+  content: "\e832";
+}
+
+.iconFacebook:before {
+  content: "\e833";
+}
+
+.iconLinkedin:before {
+  content: "\e834";
+}
+
+.iconPicture:before {
+  content: "\e835";
+}
+
+.iconGlobe:before {
+  content: "\e836";
+}
+
+.iconLeaf:before {
+  content: "\e837";
+}
+
+.iconGraduationCap:before {
+  content: "\e838";
+}
+
+.iconTicket:before {
+  content: "\e839";
+}
+
+.iconVideo:before {
+  content: "\e83a";
+}
+
+.iconTrophy:before {
+  content: "\e83b";
+}
+
+.iconThumbsUp:before {
+  content: "\e83c";
+}
+
+.iconThumbsDown:before {
+  content: "\e83d";
+}
+
+.iconUser:before {
+  content: "\e83e";
+}
+
+.iconUsers:before {
+  content: "\e83f";
+}
+
+.iconFolder:before {
+  content: "\e840";
+}
+
+.iconCalendar:before {
+  content: "\e841";
+}
+
+.iconChartPie:before {
+  content: "\e842";
+}
+
+.iconChartLine:before {
+  content: "\e843";
+}
+
+.iconChartBar:before {
+  content: "\e844";
+}
+
+.iconChartArea:before {
+  content: "\e845";
+}
+
+.iconAttach:before {
+  content: "\e846";
+}
+
+.iconPhone:before {
+  content: "\e847";
+}
+
+.iconMobile:before {
+  content: "\e848";
+}
+
+.iconCamera:before {
+  content: "\e849";
+}
+
+.iconSearch:before {
+  content: "\e84a";
+}
+
+.iconBell:before {
+  content: "\e84b";
+}
+
+.iconBookmark:before {
+  content: "\e84c";
+}
+
+.iconClock:before {
+  content: "\e84d";
+}
+
+.iconBlock:before {
+  content: "\e84e";
+}
+
+.iconRocket:before {
+  content: "\e84f";
+}
+
+.iconPinterest:before {
+  content: "\e850";
+}
+
+.iconCup:before {
+  content: "\e851";
+}
+
+.iconInfo:before {
+  content: "\e804";
+}
+
+@font-face {
+  font-family: "Entypo";
+  src: url("http://static.trulia-cdn.com/images/fonts/Entypo_061214/Entypo.eot");
+  src: url("http://static.trulia-cdn.com/images/fonts/Entypo_061214/Entypo.eot?#iefix") format("embedded-opentype"), url("http://static.trulia-cdn.com/images/fonts/Entypo_061214/Entypo.woff") format("woff"), url("http://static.trulia-cdn.com/images/fonts/Entypo_061214/Entypo.ttf") format("truetype"), url("http://static.trulia-cdn.com/images/fonts/Entypo_061214/Entypo.svg#Entypo") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .iconSpinner:before, .iconLargeSpinner:before {
   display: inline-block;
   content: '';
