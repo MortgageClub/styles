@@ -137,14 +137,11 @@ icon in an `<i>` tag like this:
   .icon {
     display: inline-block;
     vertical-align: middle;
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
-
-$icon-sprite-dimensions: true; //$<folder name>-sprite-dimensions
-
-@import "icon/*.png";
-@include all-icon-sprites;
-
 
 @mixin ooIconFont {
 
@@ -163,6 +160,7 @@ $icon-sprite-dimensions: true; //$<folder name>-sprite-dimensions
     // For safety - reset parent styles, that can break glyph codes
     font-variant: normal;
     text-transform: none;
+    -webkit-font-smoothing: auto;
   }
 
   .iconFood:before {

@@ -1751,29 +1751,6 @@ icon in an `<i>` tag like this:
 </ul>
 
 */
-.icon-sprite, .icon-rentalsSlsCta, .icon-transitscoreDefault, .icon-walkscoreDefault {
-  background-image: url('/../img/icon-s8c62edafe7.png');
-  background-repeat: no-repeat;
-}
-
-.icon-rentalsSlsCta {
-  background-position: 0 0;
-  height: 33px;
-  width: 69px;
-}
-
-.icon-transitscoreDefault {
-  background-position: 0 -33px;
-  height: 15px;
-  width: 13px;
-}
-
-.icon-walkscoreDefault {
-  background-position: 0 -48px;
-  height: 16px;
-  width: 78px;
-}
-
 /*doc
 ---
 title: Image Icons
@@ -1805,6 +1782,7 @@ These icons work similarly to bootstrap icon fonts, but are static images instea
   text-align: center;
   font-variant: normal;
   text-transform: none;
+  -webkit-font-smoothing: auto;
 }
 
 .iconFood:before {
@@ -2169,6 +2147,9 @@ These icons work similarly to bootstrap icon fonts, but are static images instea
 .icon {
   display: inline-block;
   vertical-align: middle;
+  line-height: 1;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .iconSpinner:before, .iconLargeSpinner:before {
