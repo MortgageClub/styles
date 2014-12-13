@@ -60,6 +60,7 @@ $baseTypeColor: $black;
 $lowlightTypeColor: $midGray;
 $highlightTypeColor: $green;
 $warningTypeColor: $red;
+$calloutTypeColor: $orange;
 $midnightTypeColor: $midnightBlue;
 $reversedTypeColor: $white;
 
@@ -82,6 +83,7 @@ $bgWarn: $red;
 $bgCallout: $orange;
 $bgMidnight: $midnightBlue;
 $bgDaylight: $yellow;
+$bgAction: $lightBlue;
 // To add additional backgrounds use the following syntax:
 //    @include ooBackground(<className>, <color>)
 //    @className  (The class name that you will use for that background)

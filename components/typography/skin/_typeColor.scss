@@ -10,6 +10,7 @@ These classes convey meaning through color.
 
 ```html_example
 <p class="typeWarning">typeWarning</p>
+<p class="typeCallout">typeCallout</p>
 <p class="typeLowlight">typeLowlight</p>
 <p class="typeHighlight">typeHighlight</p>
 <p class="typeMidnight">typeMidnight</p>
@@ -23,6 +24,10 @@ These classes convey meaning through color.
 
   .typeWarning {
     color: $warningTypeColor;
+  }
+
+  .typeCallout {
+    color: $calloutTypeColor;
   }
 
   .typeHighlight {

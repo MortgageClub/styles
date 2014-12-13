@@ -280,6 +280,7 @@ These classes convey meaning through color.
 
 ```html_example
 <p class="typeWarning">typeWarning</p>
+<p class="typeCallout">typeCallout</p>
 <p class="typeLowlight">typeLowlight</p>
 <p class="typeHighlight">typeHighlight</p>
 <p class="typeMidnight">typeMidnight</p>
@@ -375,6 +376,10 @@ Transforms typography elements...
 
 .typeWarning {
   color: #e6001c;
+}
+
+.typeCallout {
+  color: #ee552a;
 }
 
 .typeHighlight {
@@ -535,9 +540,13 @@ name: backgroundSkins
     <div class="docSwatch backgroundMidnight"></div>
     <code>backgroundMidnight</code>
   </div>
-  <div class="col cols6 lastcol">
+  <div class="col cols6">
     <div class="docSwatch backgroundDaylight"></div>
     <code>backgroundDaylight</code>
+  </div>
+  <div class="col cols6">
+    <div class="docSwatch backgroundAction"></div>
+    <code>backgroundAction</code>
   </div>
 </div>
 */
@@ -571,6 +580,10 @@ name: backgroundSkins
 
 .backgroundDaylight {
   background-color: #fefbf2;
+}
+
+.backgroundAction {
+  background-color: #0093bf;
 }
 
 /*doc
@@ -2137,13 +2150,6 @@ These icons work similarly to bootstrap icon fonts, but are static images instea
   content: "\e804";
 }
 
-@font-face {
-  font-family: "Entypo";
-  src: url("http://static.trulia-cdn.com/images/fonts/Entypo_061214/Entypo.eot");
-  src: url("http://static.trulia-cdn.com/images/fonts/Entypo_061214/Entypo.eot?#iefix") format("embedded-opentype"), url("http://static.trulia-cdn.com/images/fonts/Entypo_061214/Entypo.woff") format("woff"), url("http://static.trulia-cdn.com/images/fonts/Entypo_061214/Entypo.ttf") format("truetype"), url("http://static.trulia-cdn.com/images/fonts/Entypo_061214/Entypo.svg#Entypo") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
 .icon {
   display: inline-block;
   vertical-align: middle;

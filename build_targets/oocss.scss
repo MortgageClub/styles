@@ -36,7 +36,6 @@
 
 // Typography
 @import '../components/typography/typography';
-@import '../components/typography/fonts';
 @import '../components/typography/skin/typeColor';
 @import '../components/typography/skin/typeWeight';
 @import '../components/typography/skin/typeTransform';
@@ -78,7 +77,6 @@
 @import '../components/icon/icon';
 @import '../components/icon/iconImages';
 @include ooIconFont;
-@include ooEntypo;
 @include ooIcon;
 @include ooIconImage;
 
