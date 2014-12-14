@@ -22,7 +22,7 @@ $red: #e6001c;
 $fuschia: #ed1b77;
 $tomatoSoup: #ee552a;
 $tomatoSoupHover: #f46747;
-$yellow: #fefbf2;
+$paleYellow: #fdf8e8;
 
 
 // Contours
@@ -79,10 +79,11 @@ $bgLowlight: $palestGray;
 $bgHighlight: $green;
 $bgBasic: $white;
 $bgInverse: $black;
+$bgSeattle: $midGray;
 $bgWarn: $red;
 $bgCallout: $orange;
 $bgMidnight: $midnightBlue;
-$bgDaylight: $yellow;
+$bgDaylight: $paleYellow;
 $bgAction: $lightBlue;
 // To add additional backgrounds use the following syntax:
 //    @include ooBackground(<className>, <color>)
