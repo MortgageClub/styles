@@ -19,8 +19,8 @@ name: backgroundSkins
     <code>backgroundBasic</code>
   </div>
   <div class="col cols6">
-    <div class="docSwatch backgroundWarn"></div>
-    <code>backgroundWarn</code>
+    <div class="docSwatch backgroundWarning"></div>
+    <code>backgroundWarning</code>
   </div>
   <div class="col cols6">
     <div class="docSwatch backgroundCallout"></div>
@@ -56,7 +56,7 @@ name: backgroundSkins
   @include ooBackground("backgroundLowlight", $bgLowlight);
   @include ooBackground("backgroundHighlight", $bgHighlight);
   @include ooBackground("backgroundInverse", $bgInverse);
-  @include ooBackground("backgroundWarn", $bgWarn);
+  @include ooBackground("backgroundWarning", $bgWarn);
   @include ooBackground("backgroundCallout", $bgCallout);
   @include ooBackground("backgroundMidnight", $bgMidnight);
   @include ooBackground("backgroundDaylight", $bgDaylight);

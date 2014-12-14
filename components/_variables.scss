@@ -57,6 +57,7 @@ $zIndexPageOverlay: 100; // Full-page Overlays
 
 // Typography Colors
 $baseTypeColor: $black;
+$seattleTypeColor: midGray;
 $lowlightTypeColor: $midGray;
 $highlightTypeColor: $green;
 $warningTypeColor: $red;
@@ -124,13 +125,14 @@ $badgeStandardColor: $midGray;
 
 
 // Dot Colors
-$dotStandard : $gold;
 $dotLowlight : $gray;
+$dotSeattle : $midGray;
 $dotHighlight : $green;
 $dotWarn : $red;
 $dotCallout : $orange;
 $dotMidnight: $midnightBlue;
 $dotInverse: $black;
+$dotAction: $lightBlue;
 
 // Heat Map Bar Colors
 $heatMapBarHot: $red;

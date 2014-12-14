@@ -281,9 +281,10 @@ These classes convey meaning through color.
 ```html_example
 <p class="typeWarning">typeWarning</p>
 <p class="typeCallout">typeCallout</p>
-<p class="typeLowlight">typeLowlight</p>
 <p class="typeHighlight">typeHighlight</p>
 <p class="typeMidnight">typeMidnight</p>
+<p class="typeSeattle">typeSeattle</p>
+<p class="typeLowlight">typeLowlight</p>
 <p class="typeReversed backgroundMidnight">Type Reversed</p>
 
 ```
@@ -384,6 +385,10 @@ Transforms typography elements...
 
 .typeHighlight {
   color: #53b50a;
+}
+
+.typeSeattle {
+  color: midGray;
 }
 
 .typeLowlight {
@@ -525,8 +530,8 @@ name: backgroundSkins
     <code>backgroundBasic</code>
   </div>
   <div class="col cols6">
-    <div class="docSwatch backgroundWarn"></div>
-    <code>backgroundWarn</code>
+    <div class="docSwatch backgroundWarning"></div>
+    <code>backgroundWarning</code>
   </div>
   <div class="col cols6">
     <div class="docSwatch backgroundCallout"></div>
@@ -570,7 +575,7 @@ name: backgroundSkins
   background-color: #333;
 }
 
-.backgroundWarn {
+.backgroundWarning {
   background-color: #e6001c;
 }
 
@@ -2225,25 +2230,36 @@ name: dotSkins
 ```html_example
 <span class="dotStandard"></span><span class="mrm">dotStandard</span>
 <span class="dotLowlight"></span><span class="mrm">dotLowlight</span>
+<span class="dotSeattle"></span><span class="mrm">dotSeattle</span>
+<span class="dotInverse"></span><span class="mrm">dotInverse</span>
 <span class="dotHighlight"></span><span class="mrm">dotHighlight</span>
 <span class="dotMidnight"></span><span class="mrm">dotMidnight</span>
 <span class="dotCallout"></span><span class="mrm">dotCallout</span>
-<span class="dotWarn"></span><span class="mrm">dotWarn</span>
+<span class="dotWarning"></span><span class="mrm">dotWarning</span>
+<span class="dotAction"></span><span class="mrm">dotAction</span>
 ```
 */
-.dotStandard, .dotLowlight, .dotMidnight, .dotHighlight, .dotCallout, .dotWarn {
+.dotAction, .dotLowlight, .dotSeattle, .dotInverse, .dotMidnight, .dotHighlight, .dotCallout, .dotWarning {
   display: inline-block;
   width: 12px;
   height: 12px;
   border-radius: 6px;
 }
 
-.dotStandard {
-  background-color: #f9cb0b;
+.dotAction {
+  background-color: #0093bf;
 }
 
 .dotLowlight {
   background-color: #ccc;
+}
+
+.dotSeattle {
+  background-color: #999;
+}
+
+.dotInverse {
+  background-color: #333;
 }
 
 .dotMidnight {
@@ -2258,7 +2274,7 @@ name: dotSkins
   background-color: #ee552a;
 }
 
-.dotWarn {
+.dotWarning {
   background-color: #e6001c;
 }
 

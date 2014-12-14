@@ -8,25 +8,37 @@ name: dotSkins
 ```html_example
 <span class="dotStandard"></span><span class="mrm">dotStandard</span>
 <span class="dotLowlight"></span><span class="mrm">dotLowlight</span>
+<span class="dotSeattle"></span><span class="mrm">dotSeattle</span>
+<span class="dotInverse"></span><span class="mrm">dotInverse</span>
 <span class="dotHighlight"></span><span class="mrm">dotHighlight</span>
 <span class="dotMidnight"></span><span class="mrm">dotMidnight</span>
 <span class="dotCallout"></span><span class="mrm">dotCallout</span>
-<span class="dotWarn"></span><span class="mrm">dotWarn</span>
+<span class="dotWarning"></span><span class="mrm">dotWarning</span>
+<span class="dotAction"></span><span class="mrm">dotAction</span>
 ```
 */
 
 
 // DotSkins Mixin
 @mixin ooDotSkins {
-
-  .dotStandard {
+  .dotAction {
     @extend %dot;
-    background-color: $dotStandard;
+    background-color: $dotAction;
   }
 
   .dotLowlight {
     @extend %dot;
     background-color: $dotLowlight;
+  }
+
+  .dotSeattle {
+    @extend %dot;
+    background-color: $dotSeattle;
+  }
+
+  .dotInverse {
+    @extend %dot;
+    background-color: $dotInverse;
   }
 
   .dotMidnight {
@@ -44,7 +56,7 @@ name: dotSkins
     background-color: $dotCallout;
   }
 
-  .dotWarn {
+  .dotWarning {
     @extend %dot;
     background-color: $dotWarn;
   }
