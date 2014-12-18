@@ -46,6 +46,10 @@ name: backgroundSkins
     <div class="docSwatch backgroundAction"></div>
     <code>backgroundAction</code>
   </div>
+  <div class="col cols6">
+    <div class="docSwatch backgroundFacebook"></div>
+    <code>backgroundFacebook</code>
+  </div>
 </div>
 */
 
@@ -62,4 +66,5 @@ name: backgroundSkins
   @include ooBackground("backgroundDaylight", $bgDaylight);
   @include ooBackground("backgroundAction", $bgAction);
   @include ooBackground("backgroundSeattle", $bgSeattle);
+  @include ooBackground("backgroundFacebook", $bgFacebook);
 }

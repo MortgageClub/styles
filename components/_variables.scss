@@ -64,6 +64,7 @@ $warningTypeColor: $red;
 $calloutTypeColor: $orange;
 $midnightTypeColor: $midnightBlue;
 $reversedTypeColor: $white;
+$facebookTypeColor: $facebookBlue;
 
 
 // Typography
@@ -86,6 +87,7 @@ $bgCallout: $orange;
 $bgMidnight: $midnightBlue;
 $bgDaylight: $paleYellow;
 $bgAction: $lightBlue;
+$bgFacebook: $facebookBlue;
 // To add additional backgrounds use the following syntax:
 //    @include ooBackground(<className>, <color>)
 //    @className  (The class name that you will use for that background)
@@ -133,6 +135,7 @@ $dotCallout : $orange;
 $dotMidnight: $midnightBlue;
 $dotInverse: $black;
 $dotAction: $lightBlue;
+$dotFacebook: $facebookBlue;
 
 // Heat Map Bar Colors
 $heatMapBarHot: $red;

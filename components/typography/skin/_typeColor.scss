@@ -15,6 +15,7 @@ These classes convey meaning through color.
 <p class="typeMidnight">typeMidnight</p>
 <p class="typeSeattle">typeSeattle</p>
 <p class="typeLowlight">typeLowlight</p>
+<p class="typeFacebook">typeFacebook</p>
 <p class="typeReversed backgroundMidnight">Type Reversed</p>
 
 ```
@@ -49,5 +50,9 @@ These classes convey meaning through color.
 
   .typeReversed {
     color: $reversedTypeColor;
+  }
+
+  .typeFacebook {
+    color: $facebookTypeColor;
   }
 }

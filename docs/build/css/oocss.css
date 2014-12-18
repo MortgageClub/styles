@@ -285,6 +285,7 @@ These classes convey meaning through color.
 <p class="typeMidnight">typeMidnight</p>
 <p class="typeSeattle">typeSeattle</p>
 <p class="typeLowlight">typeLowlight</p>
+<p class="typeFacebook">typeFacebook</p>
 <p class="typeReversed backgroundMidnight">Type Reversed</p>
 
 ```
@@ -401,6 +402,10 @@ Transforms typography elements...
 
 .typeReversed {
   color: #fff;
+}
+
+.typeFacebook {
+  color: #4063b3;
 }
 
 .typeDeemphasize {
@@ -557,6 +562,10 @@ name: backgroundSkins
     <div class="docSwatch backgroundAction"></div>
     <code>backgroundAction</code>
   </div>
+  <div class="col cols6">
+    <div class="docSwatch backgroundFacebook"></div>
+    <code>backgroundFacebook</code>
+  </div>
 </div>
 */
 .backgroundBasic {
@@ -597,6 +606,10 @@ name: backgroundSkins
 
 .backgroundSeattle {
   background-color: #999;
+}
+
+.backgroundFacebook {
+  background-color: #4063b3;
 }
 
 /*doc
@@ -2228,18 +2241,19 @@ name: dotSkins
 ---
 
 ```html_example
-<span class="dotStandard"></span><span class="mrm">dotStandard</span>
-<span class="dotLowlight"></span><span class="mrm">dotLowlight</span>
-<span class="dotSeattle"></span><span class="mrm">dotSeattle</span>
-<span class="dotInverse"></span><span class="mrm">dotInverse</span>
-<span class="dotHighlight"></span><span class="mrm">dotHighlight</span>
-<span class="dotMidnight"></span><span class="mrm">dotMidnight</span>
-<span class="dotCallout"></span><span class="mrm">dotCallout</span>
-<span class="dotWarning"></span><span class="mrm">dotWarning</span>
-<span class="dotAction"></span><span class="mrm">dotAction</span>
+<span class="dotStandard mrxs"></span><span class="mrm">dotStandard</span>
+<span class="dotLowlight mrxs"></span><span class="mrm">dotLowlight</span>
+<span class="dotSeattle mrxs"></span><span class="mrm">dotSeattle</span>
+<span class="dotInverse mrxs"></span><span class="mrm">dotInverse</span>
+<span class="dotHighlight mrxs"></span><span class="mrm">dotHighlight</span>
+<span class="dotMidnight mrxs"></span><span class="mrm">dotMidnight</span>
+<span class="dotCallout mrxs"></span><span class="mrm">dotCallout</span>
+<span class="dotWarning mrxs"></span><span class="mrm">dotWarning</span>
+<span class="dotAction mrxs"></span><span class="mrm">dotAction</span>
+<span class="dotFacebook mrxs"></span><span class="mrm">dotFacebook</span>
 ```
 */
-.dotAction, .dotLowlight, .dotSeattle, .dotInverse, .dotMidnight, .dotHighlight, .dotCallout, .dotWarning {
+.dotAction, .dotLowlight, .dotSeattle, .dotInverse, .dotMidnight, .dotHighlight, .dotCallout, .dotWarning, .dotFacebook {
   display: inline-block;
   width: 12px;
   height: 12px;
@@ -2276,6 +2290,10 @@ name: dotSkins
 
 .dotWarning {
   background-color: #e6001c;
+}
+
+.dotFacebook {
+  background-color: #4063b3;
 }
 
 /*doc

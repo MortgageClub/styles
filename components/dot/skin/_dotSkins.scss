@@ -6,15 +6,16 @@ name: dotSkins
 ---
 
 ```html_example
-<span class="dotStandard"></span><span class="mrm">dotStandard</span>
-<span class="dotLowlight"></span><span class="mrm">dotLowlight</span>
-<span class="dotSeattle"></span><span class="mrm">dotSeattle</span>
-<span class="dotInverse"></span><span class="mrm">dotInverse</span>
-<span class="dotHighlight"></span><span class="mrm">dotHighlight</span>
-<span class="dotMidnight"></span><span class="mrm">dotMidnight</span>
-<span class="dotCallout"></span><span class="mrm">dotCallout</span>
-<span class="dotWarning"></span><span class="mrm">dotWarning</span>
-<span class="dotAction"></span><span class="mrm">dotAction</span>
+<span class="dotStandard mrxs"></span><span class="mrm">dotStandard</span>
+<span class="dotLowlight mrxs"></span><span class="mrm">dotLowlight</span>
+<span class="dotSeattle mrxs"></span><span class="mrm">dotSeattle</span>
+<span class="dotInverse mrxs"></span><span class="mrm">dotInverse</span>
+<span class="dotHighlight mrxs"></span><span class="mrm">dotHighlight</span>
+<span class="dotMidnight mrxs"></span><span class="mrm">dotMidnight</span>
+<span class="dotCallout mrxs"></span><span class="mrm">dotCallout</span>
+<span class="dotWarning mrxs"></span><span class="mrm">dotWarning</span>
+<span class="dotAction mrxs"></span><span class="mrm">dotAction</span>
+<span class="dotFacebook mrxs"></span><span class="mrm">dotFacebook</span>
 ```
 */
 
@@ -59,5 +60,10 @@ name: dotSkins
   .dotWarning {
     @extend %dot;
     background-color: $dotWarn;
+  }
+
+  .dotFacebook {
+    @extend %dot;
+    background-color: $dotFacebook;
   }
 }
