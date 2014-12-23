@@ -70,8 +70,8 @@ $border-keys: (a '', v -top -bottom, h -left -right, t -top, b -bottom, l -left,
 
 
 // Border Mixin
-@mixin ooBorder($sizes: (0, $borderWidthSml, $borderWidthMed)) {
-  $size-names: (z,s,m);
+@mixin ooBorder($sizes: (0, $borderWidthSml, $borderWidthMed, $borderWidthLrg)) {
+  $size-names: (z,s,m,l);
   $types: (b);
   $locations: (v,h,l,r,t,b,a);
 

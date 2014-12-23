@@ -12,6 +12,7 @@ These classes are used to emphasize or deemphasize typography elements
 <p class="typeEmphasize">typeEmphasize</p>
 <p class="typeDeemphasize">typeDeemphasize</p>
 <p class="typeWeightNormal">typeWeightNormal</p>
+<p class="typeBold">typeBold</p>
 ```
 */
 
@@ -29,5 +30,9 @@ These classes are used to emphasize or deemphasize typography elements
 
 	.typeEmphasize {
 		font-weight: bold !important;
+	}
+
+	.typeBold {
+		font-weight: 600 !important;
 	}
 }

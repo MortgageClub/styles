@@ -1,0 +1,27 @@
+/*doc
+---
+title: Typography Height
+parent: typography
+name: typeHeight
+category: Base CSS
+---
+
+These classes are used to increase or decrease typography line heights
+
+```html_example
+<p>default line height<br>default line height</p>
+<p class="typeLgLine">typeLgLine<br>typeLgLine</p>
+```
+*/
+
+// TypeHeight
+@mixin ooTypeHeight {
+
+  .typeNoLine {
+    line-height: 0px;
+  }
+
+  .typeLgLine {
+    line-height: 26px;
+  }
+}

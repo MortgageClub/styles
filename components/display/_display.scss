@@ -1,0 +1,39 @@
+/*doc
+---
+title: Display
+name: display
+category: Components
+---
+
+Sets the display type for an element.
+
+
+Class                           | Description
+------------------------------- | -----------
+`inline`          | This class will make the element display inline.
+`block`           | This class will make the element display as a block.
+
+```html_example
+
+<div style="width:200px">
+  <div style="border:1px solid black;margin-bottom:10px">
+    <a class="inline" style="border:1px solid red">I'm an inline anchor</a>
+  </div>
+  <div style="border:1px solid black">
+    <a class="block" style="border:1px solid red">I'm a block anchor</a>
+  </div>
+</div>
+
+```
+
+*/
+
+@mixin ooDisplay {
+  .inline {
+    display: inline;
+  }
+
+  .block {
+    display: block;
+  }
+}

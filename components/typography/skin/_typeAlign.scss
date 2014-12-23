@@ -1,0 +1,32 @@
+/*doc
+---
+title: Typography Align
+parent: typography
+name: typeAlign
+category: Base CSS
+---
+
+These classes are used to increase or decrease typography line heights
+
+```html_example
+<h5 class="typeAlignLeft">typeAlignLeft</h5>
+<h5 class="typeAlignCenter">typeAlignCenter</h5>
+<h5 class="typeAlignRight">typeAlignRight</h5>
+```
+*/
+
+// TypeAlign
+@mixin ooTypeAlign {
+
+  .typeAlignLeft {
+    text-align: left;
+  }
+
+  .typeAlignCenter {
+    text-align: center;
+  }
+
+  .typeAlignRight {
+  	text-align: right;
+  }
+}
