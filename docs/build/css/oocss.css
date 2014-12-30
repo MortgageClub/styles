@@ -189,6 +189,35 @@ Class                           | Description
 `zIndexPageOverlay`             | 100; For full-page overlays
 
 */
+/*doc
+---
+title: Display
+name: display
+category: Utilities
+---
+
+Sets the display type for an element.
+
+
+Class                           | Description
+------------------------------- | -----------
+`inline`          | This class will make the element display inline.
+`block`           | This class will make the element display as a block.
+
+```html_example
+
+<div style="width:200px">
+  <div style="border:1px solid black;margin-bottom:10px">
+    <a class="inline" style="border:1px solid red">I'm an inline anchor</a>
+  </div>
+  <div style="border:1px solid black">
+    <a class="block" style="border:1px solid red">I'm a block anchor</a>
+  </div>
+</div>
+
+```
+
+*/
 .hideVisually {
   position: absolute;
   width: 1px;
@@ -292,6 +321,14 @@ Class                           | Description
   z-index: 100 !important;
 }
 
+.inline {
+  display: inline;
+}
+
+.block {
+  display: block;
+}
+
 /*doc
 
 ---
@@ -373,6 +410,22 @@ Transforms typography elements...
 <p class="typeTruncate" style="width:150px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor quam nec nibh adipiscing dictum. Sed auctor tristique ligula</p>
 ```
  */
+/*doc
+---
+title: Typography Align
+parent: typography
+name: typeAlign
+category: Base CSS
+---
+
+These classes are used to increase or decrease typography line heights
+
+```html_example
+<h5 class="typeAlignLeft">typeAlignLeft</h5>
+<h5 class="typeAlignCenter">typeAlignCenter</h5>
+<h5 class="typeAlignRight">typeAlignRight</h5>
+```
+*/
 .h0 {
   font-size: 48px;
   line-height: 1.4;
@@ -491,6 +544,18 @@ Transforms typography elements...
   -ms-text-overflow: ellipsis;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.typeAlignLeft {
+  text-align: left;
+}
+
+.typeAlignCenter {
+  text-align: center;
+}
+
+.typeAlignRight {
+  text-align: right;
 }
 
 /*doc
@@ -1287,24 +1352,28 @@ Border Radius   |  **Description**
   border-width: 3px !important;
 }
 
+.noRoundedCorners {
+  border-radius: 0px !important;
+}
+
 .rtl {
-  border-top-left-radius: 6px;
+  border-top-left-radius: 6px !important;
 }
 
 .rtr {
-  border-top-right-radius: 6px;
+  border-top-right-radius: 6px !important;
 }
 
 .rbl {
-  border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 6px !important;
 }
 
 .rbr {
-  border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 6px !important;
 }
 
 .roundedCorners {
-  border-radius: 6px;
+  border-radius: 6px !important;
 }
 
 /*doc

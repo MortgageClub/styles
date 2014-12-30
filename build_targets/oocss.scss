@@ -25,6 +25,7 @@
 @import '../components/utils/display';
 @import '../components/utils/animate';
 @import '../components/utils/zIndex';
+@import '../components/utils/display';
 @include ooHideVisually;
 @include ooHideVisuallyFocusable;
 @include ooHideText;
@@ -35,16 +36,19 @@
 @include ooDisplay;
 @include ooAnimate;
 @include ooZIndices;
+@include ooDisplay;
 
 // Typography
 @import '../components/typography/typography';
 @import '../components/typography/skin/typeColor';
 @import '../components/typography/skin/typeWeight';
 @import '../components/typography/skin/typeTransform';
+@import '../components/typography/skin/typeAlign';
 @include ooTypography;
 @include ooTypeColor;
 @include ooTypeWeight;
 @include ooTypeTransform;
+@include ooTypeAlign;
 
 // Links
 @import '../components/link/link';
