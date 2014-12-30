@@ -80,13 +80,13 @@ To do this you will need to add a semantic class to your element and then target
 @mixin ooDropdownArrow($position, $stemPlacement) {
 
   %dropdownArrow {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-left: 1px solid;
     border-top: 1px solid;
     border-color: inherit;
     position: absolute;
-    top: -8px;
+    top: -6px;
     background-color: inherit;
     content: '';
     @include rotate(45deg);

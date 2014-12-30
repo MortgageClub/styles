@@ -1,0 +1,34 @@
+/*doc
+---
+title: Circles
+name: circle
+category: Components
+---
+
+Use this componanet to create circle objects (100% border radius)
+
+*/
+
+
+// Circle Mixin
+@mixin ooCircle {
+
+  %circle{
+    display: inline-block;
+    border-radius: 100%;
+    text-align: center;
+
+    &.sm {
+      width: 16px;
+      height: 16px;
+    }
+    &.md {
+      width: 20px;
+      height: 20px;
+    }
+    &.lg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

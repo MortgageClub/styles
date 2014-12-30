@@ -1,0 +1,69 @@
+/*doc
+---
+title: Circles
+parent: circle
+name: circleSkins
+---
+
+```html_example
+<span class="circleStandard mrxs"></span><span class="mrm">circleStandard</span>
+<span class="circleLowlight mrxs"></span><span class="mrm">circleLowlight</span>
+<span class="circleSeattle mrxs"></span><span class="mrm">circleSeattle</span>
+<span class="circleInverse mrxs"></span><span class="mrm">circleInverse</span>
+<span class="circleHighlight mrxs"></span><span class="mrm">circleHighlight</span>
+<span class="circleMidnight mrxs"></span><span class="mrm">circleMidnight</span>
+<span class="circleCallout mrxs"></span><span class="mrm">circleCallout</span>
+<span class="circleWarning mrxs"></span><span class="mrm">circleWarning</span>
+<span class="circleAction mrxs"></span><span class="mrm">circleAction</span>
+<span class="circleFacebook mrxs"></span><span class="mrm">circleFacebook</span>
+```
+*/
+
+
+// circleSkins Mixin
+@mixin ooCircleSkins {
+  .circleAction {
+    @extend %circle;
+    background-color: $circleAction;
+  }
+
+  .circleLowlight {
+    @extend %circle;
+    background-color: $circleLowlight;
+  }
+
+  .circleSeattle {
+    @extend %circle;
+    background-color: $circleSeattle;
+  }
+
+  .circleInverse {
+    @extend %circle;
+    background-color: $circleInverse;
+  }
+
+  .circleMidnight {
+    @extend %circle;
+    background-color: $circleMidnight;
+  }
+
+  .circleHighlight {
+    @extend %circle;
+    background-color: $circleHighlight;
+  }
+
+  .circleCallout {
+    @extend %circle;
+    background-color: $circleCallout;
+  }
+
+  .circleWarning {
+    @extend %circle;
+    background-color: $circleWarn;
+  }
+
+  .circleFacebook {
+    @extend %circle;
+    background-color: $circleFacebook;
+  }
+}

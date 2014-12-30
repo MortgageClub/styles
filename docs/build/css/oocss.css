@@ -1621,6 +1621,9 @@ n            | none        | Sets the spacing to 0
   text-transform: uppercase;
   min-width: 80px;
 }
+.table-primary thead > tr > th.sm {
+  min-width: 0px;
+}
 .table-primary thead > tr > th a {
   color: #fff;
   text-decoration: none;
@@ -2332,6 +2335,90 @@ Make an element stick in place on a page. The menu on this page is an example of
 
 /*doc
 ---
+title: Circles
+name: circle
+category: Components
+---
+
+Use this componanet to create circle objects (100% border radius)
+
+*/
+/*doc
+---
+title: Circles
+parent: circle
+name: circleSkins
+---
+
+```html_example
+<span class="circleStandard mrxs"></span><span class="mrm">circleStandard</span>
+<span class="circleLowlight mrxs"></span><span class="mrm">circleLowlight</span>
+<span class="circleSeattle mrxs"></span><span class="mrm">circleSeattle</span>
+<span class="circleInverse mrxs"></span><span class="mrm">circleInverse</span>
+<span class="circleHighlight mrxs"></span><span class="mrm">circleHighlight</span>
+<span class="circleMidnight mrxs"></span><span class="mrm">circleMidnight</span>
+<span class="circleCallout mrxs"></span><span class="mrm">circleCallout</span>
+<span class="circleWarning mrxs"></span><span class="mrm">circleWarning</span>
+<span class="circleAction mrxs"></span><span class="mrm">circleAction</span>
+<span class="circleFacebook mrxs"></span><span class="mrm">circleFacebook</span>
+```
+*/
+.circleAction, .circleLowlight, .circleSeattle, .circleInverse, .circleMidnight, .circleHighlight, .circleCallout, .circleWarning, .circleFacebook {
+  display: inline-block;
+  border-radius: 100%;
+  text-align: center;
+}
+.sm.circleAction, .sm.circleLowlight, .sm.circleSeattle, .sm.circleInverse, .sm.circleMidnight, .sm.circleHighlight, .sm.circleCallout, .sm.circleWarning, .sm.circleFacebook {
+  width: 16px;
+  height: 16px;
+}
+.md.circleAction, .md.circleLowlight, .md.circleSeattle, .md.circleInverse, .md.circleMidnight, .md.circleHighlight, .md.circleCallout, .md.circleWarning, .md.circleFacebook {
+  width: 20px;
+  height: 20px;
+}
+.lg.circleAction, .lg.circleLowlight, .lg.circleSeattle, .lg.circleInverse, .lg.circleMidnight, .lg.circleHighlight, .lg.circleCallout, .lg.circleWarning, .lg.circleFacebook {
+  width: 24px;
+  height: 24px;
+}
+
+.circleAction {
+  background-color: #0093bf;
+}
+
+.circleLowlight {
+  background-color: #ccc;
+}
+
+.circleSeattle {
+  background-color: #999;
+}
+
+.circleInverse {
+  background-color: #333;
+}
+
+.circleMidnight {
+  background-color: #003151;
+}
+
+.circleHighlight {
+  background-color: #53b50a;
+}
+
+.circleCallout {
+  background-color: #ee552a;
+}
+
+.circleWarning {
+  background-color: #e6001c;
+}
+
+.circleFacebook {
+  background-color: #4063b3;
+}
+
+/*doc
+---
 title: Dots
 name: dot
 category: Components
@@ -2880,7 +2967,7 @@ When you want to "dock" the dropdown to your menu for a sleek look, you can use 
   margin-bottom: 3px;
 }
 .dropdownList > li:hover {
-  background-color: #ccc;
+  background-color: #e9e9e9;
 }
 .dropdownList > li.dropdownDivider {
   margin: 3px 0;
@@ -2902,13 +2989,13 @@ When you want to "dock" the dropdown to your menu for a sleek look, you can use 
 }
 
 .dropdownArrowLeft::before, .dropdownArrowCenter::before, .dropdownArrowRight::before {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-left: 1px solid;
   border-top: 1px solid;
   border-color: inherit;
   position: absolute;
-  top: -8px;
+  top: -6px;
   background-color: inherit;
   content: '';
   -webkit-transform: rotate(45deg);
@@ -2932,13 +3019,13 @@ When you want to "dock" the dropdown to your menu for a sleek look, you can use 
 }
 
 .dropdownArrowLeft::before, .dropdownArrowCenter::before, .dropdownArrowRight::before {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-left: 1px solid;
   border-top: 1px solid;
   border-color: inherit;
   position: absolute;
-  top: -8px;
+  top: -6px;
   background-color: inherit;
   content: '';
   -webkit-transform: rotate(45deg);
@@ -2962,13 +3049,13 @@ When you want to "dock" the dropdown to your menu for a sleek look, you can use 
 }
 
 .dropdownArrowLeft::before, .dropdownArrowCenter::before, .dropdownArrowRight::before {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-left: 1px solid;
   border-top: 1px solid;
   border-color: inherit;
   position: absolute;
-  top: -8px;
+  top: -6px;
   background-color: inherit;
   content: '';
   -webkit-transform: rotate(45deg);

@@ -86,6 +86,12 @@
 @import '../components/sticky/sticky';
 @include ooSticky;
 
+// Circles
+@import '../components/circle/circle';
+@import '../components/circle/skin/circleSkins';
+@include ooCircle;
+@include ooCircleSkins;
+
 // Dots
 @import '../components/dot/dot';
 @import '../components/dot/skin/dotSkins';

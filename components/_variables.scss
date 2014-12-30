@@ -126,6 +126,16 @@ $badgeSecondaryColor: $green;
 $badgeTertiaryColor: $red;
 $badgeStandardColor: $midGray;
 
+// Circle Colors
+$circleLowlight : $gray;
+$circleSeattle : $midGray;
+$circleHighlight : $green;
+$circleWarn : $red;
+$circleCallout : $orange;
+$circleMidnight: $midnightBlue;
+$circleInverse: $black;
+$circleAction: $lightBlue;
+$circleFacebook: $facebookBlue;
 
 // Dot Colors
 $dotLowlight : $gray;
@@ -299,7 +309,7 @@ $dropdownBasicItemTextShadow: 1px 1px 0 $darkGray; // can be null
 $dropdownBasicLinkColor: $blue;
 $dropdownListColor: $black;
 $dropdownListTextShadowColor: $white;
-$dropdownListHoverBackgroundColor: $gray;
+$dropdownListHoverBackgroundColor: $lightGray;
 $dropdownListDividerBorderTopColor: $gray;
 $dropdownListDividerBorderBottomColor: $white;
 $dropdownLinkColor: $black;

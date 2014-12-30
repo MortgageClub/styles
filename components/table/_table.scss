@@ -104,6 +104,11 @@ n            | none        | Sets the spacing to 0
       border-bottom: 2px solid #000;
       text-transform:uppercase;
       min-width: 80px;
+
+      &.sm {
+        min-width: 0px;
+      }
+
       a {
         color: #fff;
         text-decoration:none;
