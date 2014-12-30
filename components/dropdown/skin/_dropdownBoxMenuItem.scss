@@ -1,0 +1,36 @@
+/*doc
+---
+title: Dropdown Box Menu Item
+name: dropdownBoxMenuItem
+parent: dropdown
+category: Components
+---
+
+When you want to "dock" the dropdown to your menu for a sleek look, you can use `dropdownBoxMenuItem`
+
+```html_example
+  <span class="dropdown">
+    <a href="#pancakes"> Mic Drop </a>
+    <div class="box dropdownBox dropdownBoxHighlight dropdownBoxMenuItem backgroundLowlight">
+      <ul class="dropdownList">
+        <li><a href="#strawberry" class="dropdownLink">Emoji</a></li>
+        <li><a href="#blueberry" class="dropdownLink">Emoticons</a></li>
+        <li><a href="#kiwi" class="dropdownLink">Emotes</a></li>
+        <li class="dropdownDivider"></li>
+        <li><a href="#corn_bread" class="dropdownLink">TV Remotes</a></li>
+      </ul>
+    </div>
+  </span>
+```
+
+*/
+
+
+// DropdownBoxMenuItem Mixin
+@mixin ooDropdownBoxMenuItem {
+
+  .dropdownBoxMenuItem {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}

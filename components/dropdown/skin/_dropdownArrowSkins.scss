@@ -1,0 +1,125 @@
+/*doc
+---
+title: Dropdown Arrow
+name: dropdownArrow
+parent: dropdown
+category: Components
+---
+
+There are three positions from dropdown arrows: `dropdownArrowLeft`, `dropdownArrowCenter`, `dropdownArrowRight`.
+These positions are relative the box the arrow is attached to, not the trigger element.
+
+
+The position of any arrow can be overriden by targeting the `::before` pseudo-element and changing this position.
+To do this you will need to add a semantic class to your element and then target the element like so
+`.myClass.dropdownBox::before { left: 50%; }`.
+<br><br>
+**NOTA BENE:** Overriding positioning is one of the only times you should need to create custom CSS outside of the library.
+
+<br>
+####Dropdown Arrow Left
+```html_example
+<span class="dropdown">
+  <a href="#pancakes" >Pancakes</a>
+  <div class="box dropdownBox dropdownArrowLeft backgroundLowlight">
+    <ul class="dropdownList">
+      <li><a href="#strawberry" class="dropdownLink">Strawberry</a></li>
+      <li><a href="#blueberry" class="dropdownLink">Blueberry</a></li>
+      <li><a href="#kiwi" class="dropdownLink">Kiwi</a></li>
+      <li><a href="#apricot" class="dropdownLink">Apricot</a></li>
+      <li class="dropdownDivider"></li>
+      <li><a href="#corn_bread" class="dropdownLink">Corn Bread</a></li>
+      <li><a href="#sweet_cream" class="dropdownLink">Sweet Cream</a></li>
+    </ul>
+  </div>
+</span>
+```
+
+<br>
+####Dropdown Arrow Center
+```html_example
+<span class="dropdown">
+  <a href="#pancakes" >Pancakes</a>
+  <div class="box dropdownBox dropdownArrowCenter backgroundLowlight">
+    <ul class="dropdownList">
+      <li><a href="#strawberry" class="dropdownLink">Strawberry</a></li>
+      <li><a href="#blueberry" class="dropdownLink">Blueberry</a></li>
+      <li><a href="#kiwi" class="dropdownLink">Kiwi</a></li>
+      <li><a href="#apricot" class="dropdownLink">Apricot</a></li>
+      <li class="dropdownDivider"></li>
+      <li><a href="#corn_bread" class="dropdownLink">Corn Bread</a></li>
+      <li><a href="#sweet_cream" class="dropdownLink">Sweet Cream</a></li>
+    </ul>
+  </div>
+</span>
+```
+
+<br />
+####Dropdown Arrow Right
+```html_example
+<span class="dropdown">
+  <a href="#pancakes" >Pancakes</a>
+  <div class="box dropdownBox dropdownArrowRight backgroundLowlight">
+    <ul class="dropdownList">
+      <li><a href="#strawberry" class="dropdownLink">Strawberry</a></li>
+      <li><a href="#blueberry" class="dropdownLink">Blueberry</a></li>
+      <li><a href="#kiwi" class="dropdownLink">Kiwi</a></li>
+      <li><a href="#apricot" class="dropdownLink">Apricot</a></li>
+      <li class="dropdownDivider"></li>
+      <li><a href="#corn_bread" class="dropdownLink">Corn Bread</a></li>
+      <li><a href="#sweet_cream" class="dropdownLink">Sweet Cream</a></li>
+    </ul>
+  </div>
+</span>
+```
+
+*/
+
+
+// DropdownArrow Mixin
+@mixin ooDropdownArrow($position, $stemPlacement) {
+
+  %dropdownArrow {
+    width: 12px;
+    height: 12px;
+    border-left: 1px solid;
+    border-top: 1px solid;
+    border-color: inherit;
+    position: absolute;
+    top: -8px;
+    background-color: inherit;
+    content: '';
+    @include rotate(45deg);
+  }
+
+  // push the dropdownBox down if we have a stem on it.
+  .dropdownArrow#{$position} {
+    // a rough approximation of where to push the box, works well with small targets.
+    // might need to do some manual positioning for other elements.
+    top:150%;
+  }
+
+  .dropdownArrow#{$position}::before {
+    @extend %dropdownArrow;
+    left: $stemPlacement;
+  }
+
+  // this gives us a more forgiving target for our hover.
+  // As long as you are within this you are golden.
+  // 27px seems to give us a forgiving, but not too forgiving spread
+  .dropdownArrow#{$position}:after {
+    position: absolute;
+    top: -27px;
+    height: 27px;
+    width: 100%;
+    content: '';
+  }
+}
+
+
+// DropdownArrowSkins Mixin
+@mixin ooDropdownArrowSkins() {
+  @include ooDropdownArrow("Left", 10%);
+  @include ooDropdownArrow("Center", 50%);
+  @include ooDropdownArrow("Right", 80%);
+}

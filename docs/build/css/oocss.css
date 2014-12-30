@@ -1,8 +1,20 @@
+@charset "UTF-8";
 /*
  * clearfix     used project wide to clear floats and create a new formatting context
  * usage      @include clearfix-me(<empty|overflow|facebook|micro|stubborn>)
  * $clearfix-method sets default method
  */
+.box:before, .box .boxHead:before,
+.box .boxFoot:before, .box:after, .box .boxHead:after,
+.box .boxFoot:after {
+  content: '';
+  display: table;
+}
+.box:after, .box .boxHead:after,
+.box .boxFoot:after {
+  clear: both;
+}
+
 /*doc
 ---
 title: Hide Things
@@ -103,6 +115,35 @@ Class       | Description
 */
 /*doc
 ---
+title: Display
+name: display
+category: Utilities
+---
+
+Sets the display type for an element.
+
+
+Class                           | Description
+------------------------------- | -----------
+`inline`          | This class will make the element display inline.
+`block`           | This class will make the element display as a block.
+
+```html_example
+
+<div style="width:200px">
+  <div style="border:1px solid black;margin-bottom:10px">
+    <a class="inline" style="border:1px solid red">I'm an inline anchor</a>
+  </div>
+  <div style="border:1px solid black">
+    <a class="block" style="border:1px solid red">I'm a block anchor</a>
+  </div>
+</div>
+
+```
+
+*/
+/*doc
+---
 title: Animate
 category: Utilities
 name: animate
@@ -198,6 +239,14 @@ Class                           | Description
 
 .noWrap {
   white-space: nowrap;
+}
+
+.inline {
+  display: inline;
+}
+
+.block {
+  display: block;
 }
 
 .animate {
@@ -653,6 +702,11 @@ xs           | extra small | Adds an extra small amount of spacing (3px)
 n            | none        | Sets the spacing to 0
 
 */
+.box {
+  margin-top: 21px;
+  margin-bottom: 21px;
+}
+
 .pan {
   padding: 0 !important;
 }
@@ -2430,4 +2484,520 @@ Class             | Description
   margin: 0 !important;
   padding: 0 !important;
   overflow: hidden;
+}
+
+/*doc
+---
+title: Boxes
+name: box
+category: Components
+---
+
+Boxes are a common way of grouping related content. They consist of a
+wrapper with the class `box` applied.
+
+Inside a box, there are three sections:
+
+- head
+
+- body
+
+- foot
+
+**All boxes must have a body**, and optionally, may have a head and/or foot.
+
+```html_example
+<div class="cols6">
+    <div class="box boxBasic backgroundLowlight docDesignNotes">
+      <div class="boxBody">
+        <h2>See more!</h2>
+        <p class="mbl">Boxes and examples below.</p>
+      </div>
+    </div>
+  </div>
+```
+
+>Boxes occasionally help break up an otherwise white and
+typographically reliant grid. Use them for important content or when
+things are getting monotonous.
+
+Boxes come with a couple different border skins: `boxBasic` and
+`boxHighlight`. These may be used with any combination of background
+class.
+
+
+*/
+/*doc
+---
+title: Box Skins
+parent: box
+name: boxBasicSkin
+---
+
+
+####Box Basic
+```html_example
+<div class="box boxBasic backgroundBasic">
+  <div class="boxBody">
+    <p>This box has a white background.</p>
+  </div>
+</div>
+```
+
+
+####Box Highlight
+```html_example
+<div class="box boxHighlight backgroundBasic">
+  <div class="boxBody">
+    <p>This box is highlighted with the little shadows.</p>
+  </div>
+</div>
+```
+
+*/
+.box {
+  position: relative;
+}
+.box .boxFoot {
+  padding: 0;
+  margin: 0 21px;
+}
+.box .boxBody {
+  padding: 0 21px;
+}
+
+.boxHighlight {
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.07);
+}
+
+.boxBasic, .boxHighlight, .dropdownBox, .dropdownBoxHighlight {
+  border: 1px solid #e9e9e9;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.boxTabPrimary .boxBody {
+  border: 1px solid #e9e9e9;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.boxTabColumns .boxBody {
+  background: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  border: 1px solid #fff;
+  border-top: none;
+}
+.boxTabColumns ul.tabBody {
+  margin: 0;
+}
+.boxTabColumns .tabBody > li {
+  margin: 0;
+  padding: 0;
+  padding-top: 1px;
+}
+.boxTabColumns .line {
+  margin-left: 0;
+}
+
+/*doc
+---
+title: Dropdowns
+name: dropdown
+category: Components
+---
+
+You can add a dropdown to anything. No javascript required. If you *do* want to trigger a dropdown programatically
+you can simply add the class `dropdownHover` to your trigger element and that will show the dropdown.
+
+```html_example
+<span class="dropdown">
+  <a href="#pancakes" >Pancakes</a>
+  <div class="dropdownBox box boxBasic backgroundLowlight">
+    <ul class="dropdownList">
+      <li><a href="#strawberry" class="dropdownLink">Strawberry</a></li>
+      <li><a href="#blueberry" class="dropdownLink">Blueberry</a></li>
+      <li><a href="#kiwi" class="dropdownLink">Kiwi</a></li>
+      <li><a href="#apricot" class="dropdownLink">Apricot</a></li>
+      <li class="dropdownDivider"></li>
+      <li><a href="#corn_bread" class="dropdownLink">Corn Bread</a></li>
+      <li><a href="#sweet_cream" class="dropdownLink">Sweet Cream</a></li>
+    </ul>
+  </div>
+</span>
+```
+
+Dropdown with dropdown box align right
+
+```html_example
+<div class="dropdown cols10 txtR">
+  <a href="#pancakes" >Pancakes</a>
+  <div class="dropdownBox dropdownBoxRight box boxBasic backgroundLowlight">
+    <ul class="dropdownList">
+      <li><a href="#strawberry" class="dropdownLink">Strawberry</a></li>
+      <li><a href="#blueberry" class="dropdownLink">Blueberry</a></li>
+      <li><a href="#kiwi" class="dropdownLink">Kiwi</a></li>
+      <li><a href="#apricot" class="dropdownLink">Apricot</a></li>
+      <li class="dropdownDivider"></li>
+      <li><a href="#corn_bread" class="dropdownLink">Corn Bread</a></li>
+      <li><a href="#sweet_cream" class="dropdownLink">Sweet Cream</a></li>
+    </ul>
+  </div>
+</div>
+```
+
+You may combine dropdowns with inline lists to create menus:
+
+```html_example
+<ul class="listInline">
+  <li>
+    <span class="dropdown">
+      <a href="#pancakes" >Pancakes</a>
+      <div class="dropdownBox box boxBasic backgroundLowlight">
+        <ul class="dropdownList">
+          <li><a href="#strawberry" class="dropdownLink">Strawberry</a></li>
+          <li><a href="#blueberry" class="dropdownLink">Blueberry</a></li>
+          <li><a href="#kiwi" class="dropdownLink">Kiwi</a></li>
+          <li><a href="#apricot" class="dropdownLink">Apricot</a></li>
+          <li class="dropdownDivider"></li>
+          <li><a href="#corn_bread" class="dropdownLink">Corn Bread</a></li>
+          <li><a href="#sweet_cream" class="dropdownLink">Sweet Cream</a></li>
+        </ul>
+      </div>
+    </span>
+  <li>
+    <span class="dropdown">
+      <a href="#pancakes" >Waffles</a>
+      <div class="dropdownBox box boxBasic backgroundLowlight">
+        <ul class="dropdownList">
+          <li><a href="#belgian" class="dropdownLink">Belgian</a></li>
+          <li><a href="#liege" class="dropdownLink">Liège</a></li>
+          <li><a href="#hong_kong" class="dropdownLink">Hong Kong style</a></li>
+          <li><a href="#pandan" class="dropdownLink">Pandan</a></li>
+        </ul>
+      </div>
+    </span>
+  <li>
+    <span class="dropdown">
+      <a href="#pancakes" >French Toast</a>
+      <div class="dropdownBox box boxBasic backgroundLowlight">
+        <ul class="dropdownList">
+          <li><a href="#there_is_only_one_french_toast" class="dropdownLink">There is only one french toast</a></li>
+        </ul>
+      </div>
+    </span>
+</ul>
+```
+
+*/
+/*doc
+---
+title: Dropdown Arrow
+name: dropdownArrow
+parent: dropdown
+category: Components
+---
+
+There are three positions from dropdown arrows: `dropdownArrowLeft`, `dropdownArrowCenter`, `dropdownArrowRight`.
+These positions are relative the box the arrow is attached to, not the trigger element.
+
+
+The position of any arrow can be overriden by targeting the `::before` pseudo-element and changing this position.
+To do this you will need to add a semantic class to your element and then target the element like so
+`.myClass.dropdownBox::before { left: 50%; }`.
+<br><br>
+**NOTA BENE:** Overriding positioning is one of the only times you should need to create custom CSS outside of the library.
+
+<br>
+####Dropdown Arrow Left
+```html_example
+<span class="dropdown">
+  <a href="#pancakes" >Pancakes</a>
+  <div class="box dropdownBox dropdownArrowLeft backgroundLowlight">
+    <ul class="dropdownList">
+      <li><a href="#strawberry" class="dropdownLink">Strawberry</a></li>
+      <li><a href="#blueberry" class="dropdownLink">Blueberry</a></li>
+      <li><a href="#kiwi" class="dropdownLink">Kiwi</a></li>
+      <li><a href="#apricot" class="dropdownLink">Apricot</a></li>
+      <li class="dropdownDivider"></li>
+      <li><a href="#corn_bread" class="dropdownLink">Corn Bread</a></li>
+      <li><a href="#sweet_cream" class="dropdownLink">Sweet Cream</a></li>
+    </ul>
+  </div>
+</span>
+```
+
+<br>
+####Dropdown Arrow Center
+```html_example
+<span class="dropdown">
+  <a href="#pancakes" >Pancakes</a>
+  <div class="box dropdownBox dropdownArrowCenter backgroundLowlight">
+    <ul class="dropdownList">
+      <li><a href="#strawberry" class="dropdownLink">Strawberry</a></li>
+      <li><a href="#blueberry" class="dropdownLink">Blueberry</a></li>
+      <li><a href="#kiwi" class="dropdownLink">Kiwi</a></li>
+      <li><a href="#apricot" class="dropdownLink">Apricot</a></li>
+      <li class="dropdownDivider"></li>
+      <li><a href="#corn_bread" class="dropdownLink">Corn Bread</a></li>
+      <li><a href="#sweet_cream" class="dropdownLink">Sweet Cream</a></li>
+    </ul>
+  </div>
+</span>
+```
+
+<br />
+####Dropdown Arrow Right
+```html_example
+<span class="dropdown">
+  <a href="#pancakes" >Pancakes</a>
+  <div class="box dropdownBox dropdownArrowRight backgroundLowlight">
+    <ul class="dropdownList">
+      <li><a href="#strawberry" class="dropdownLink">Strawberry</a></li>
+      <li><a href="#blueberry" class="dropdownLink">Blueberry</a></li>
+      <li><a href="#kiwi" class="dropdownLink">Kiwi</a></li>
+      <li><a href="#apricot" class="dropdownLink">Apricot</a></li>
+      <li class="dropdownDivider"></li>
+      <li><a href="#corn_bread" class="dropdownLink">Corn Bread</a></li>
+      <li><a href="#sweet_cream" class="dropdownLink">Sweet Cream</a></li>
+    </ul>
+  </div>
+</span>
+```
+
+*/
+/*doc
+---
+title: Dropdown Box Highlight
+name: dropdownBoxHighlight
+parent: dropdown
+category: Components
+---
+
+If you need your dropdown to have a bit of shadow and pop off the page you can add this.
+
+```html_example
+<span class="dropdown">
+  <a href="#pancakes" >Pancakes</a>
+  <div class="box dropdownBox dropdownBoxHighlight backgroundLowlight">
+    <ul class="dropdownList">
+      <li><a href="#strawberry" class="dropdownLink">Strawberry</a></li>
+      <li><a href="#blueberry" class="dropdownLink">Blueberry</a></li>
+      <li><a href="#kiwi" class="dropdownLink">Kiwi</a></li>
+      <li><a href="#apricot" class="dropdownLink">Apricot</a></li>
+      <li class="dropdownDivider"></li>
+      <li><a href="#corn_bread" class="dropdownLink">Corn Bread</a></li>
+      <li><a href="#sweet_cream" class="dropdownLink">Sweet Cream</a></li>
+    </ul>
+  </div>
+</span>
+```
+
+*/
+/*doc
+---
+title: Dropdown Box Menu Item
+name: dropdownBoxMenuItem
+parent: dropdown
+category: Components
+---
+
+When you want to "dock" the dropdown to your menu for a sleek look, you can use `dropdownBoxMenuItem`
+
+```html_example
+  <span class="dropdown">
+    <a href="#pancakes"> Mic Drop </a>
+    <div class="box dropdownBox dropdownBoxHighlight dropdownBoxMenuItem backgroundLowlight">
+      <ul class="dropdownList">
+        <li><a href="#strawberry" class="dropdownLink">Emoji</a></li>
+        <li><a href="#blueberry" class="dropdownLink">Emoticons</a></li>
+        <li><a href="#kiwi" class="dropdownLink">Emotes</a></li>
+        <li class="dropdownDivider"></li>
+        <li><a href="#corn_bread" class="dropdownLink">TV Remotes</a></li>
+      </ul>
+    </div>
+  </span>
+```
+
+*/
+.dropdown {
+  position: relative;
+}
+.dropdown:hover .dropdownBox, .dropdown.dropdownHover .dropdownBox {
+  display: block;
+}
+
+.dropdownBox {
+  margin: 0;
+  top: 100%;
+  left: 0;
+  position: absolute;
+  z-index: 20;
+  display: none;
+}
+
+.dropdownBoxRight {
+  left: auto;
+  right: 0;
+}
+
+.dropdownList {
+  margin: 0;
+  padding: 0;
+}
+.dropdownList > li {
+  margin: 0;
+  padding: 0 18px;
+  display: block;
+  font-size: 14px;
+  line-height: 30px;
+  color: #333;
+  white-space: nowrap;
+  text-decoration: none;
+  text-shadow: 0px 1px #fff;
+  cursor: pointer;
+}
+.dropdownList > li:first-child {
+  margin-top: 6px;
+}
+.dropdownList > li:last-child {
+  margin-bottom: 3px;
+}
+.dropdownList > li:hover {
+  background-color: #ccc;
+}
+.dropdownList > li.dropdownDivider {
+  margin: 3px 0;
+  border: 1px solid;
+  border-top-color: #ccc;
+  border-bottom-color: #fff;
+  border-left-width: 0;
+  border-right-width: 0;
+}
+
+.dropdownLink {
+  display: block;
+  color: #333;
+  text-decoration: none;
+}
+.dropdownLink:hover, .dropdownLink:focus {
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdownArrowLeft::before, .dropdownArrowCenter::before, .dropdownArrowRight::before {
+  width: 12px;
+  height: 12px;
+  border-left: 1px solid;
+  border-top: 1px solid;
+  border-color: inherit;
+  position: absolute;
+  top: -8px;
+  background-color: inherit;
+  content: '';
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.dropdownArrowLeft {
+  top: 150%;
+}
+
+.dropdownArrowLeft::before {
+  left: 10%;
+}
+
+.dropdownArrowLeft:after {
+  position: absolute;
+  top: -27px;
+  height: 27px;
+  width: 100%;
+  content: '';
+}
+
+.dropdownArrowLeft::before, .dropdownArrowCenter::before, .dropdownArrowRight::before {
+  width: 12px;
+  height: 12px;
+  border-left: 1px solid;
+  border-top: 1px solid;
+  border-color: inherit;
+  position: absolute;
+  top: -8px;
+  background-color: inherit;
+  content: '';
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.dropdownArrowCenter {
+  top: 150%;
+}
+
+.dropdownArrowCenter::before {
+  left: 50%;
+}
+
+.dropdownArrowCenter:after {
+  position: absolute;
+  top: -27px;
+  height: 27px;
+  width: 100%;
+  content: '';
+}
+
+.dropdownArrowLeft::before, .dropdownArrowCenter::before, .dropdownArrowRight::before {
+  width: 12px;
+  height: 12px;
+  border-left: 1px solid;
+  border-top: 1px solid;
+  border-color: inherit;
+  position: absolute;
+  top: -8px;
+  background-color: inherit;
+  content: '';
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.dropdownArrowRight {
+  top: 150%;
+}
+
+.dropdownArrowRight::before {
+  left: 80%;
+}
+
+.dropdownArrowRight:after {
+  position: absolute;
+  top: -27px;
+  height: 27px;
+  width: 100%;
+  content: '';
+}
+
+.dropdownBoxHighlight {
+  -moz-box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.07), 2px 2px 3px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.07), 2px 2px 3px rgba(0, 0, 0, 0.07);
+  box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.07), 2px 2px 3px rgba(0, 0, 0, 0.07);
+}
+
+.dropdownBoxMenuItem {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }

@@ -1,0 +1,39 @@
+/*doc
+---
+title: Dropdown Box Highlight
+name: dropdownBoxHighlight
+parent: dropdown
+category: Components
+---
+
+If you need your dropdown to have a bit of shadow and pop off the page you can add this.
+
+```html_example
+<span class="dropdown">
+  <a href="#pancakes" >Pancakes</a>
+  <div class="box dropdownBox dropdownBoxHighlight backgroundLowlight">
+    <ul class="dropdownList">
+      <li><a href="#strawberry" class="dropdownLink">Strawberry</a></li>
+      <li><a href="#blueberry" class="dropdownLink">Blueberry</a></li>
+      <li><a href="#kiwi" class="dropdownLink">Kiwi</a></li>
+      <li><a href="#apricot" class="dropdownLink">Apricot</a></li>
+      <li class="dropdownDivider"></li>
+      <li><a href="#corn_bread" class="dropdownLink">Corn Bread</a></li>
+      <li><a href="#sweet_cream" class="dropdownLink">Sweet Cream</a></li>
+    </ul>
+  </div>
+</span>
+```
+
+*/
+
+
+// DropdownBoxHightLight Mixin
+@mixin ooDropdownBoxHighlight {
+
+	.dropdownBoxHighlight {
+		@extend %boxSkinDefaults;
+		// Bump the spread down to 3px to be similar to the boxHighlight
+		@include box-shadow(-2px 2px 3px rgba(0,0,0, 0.07), 2px 2px 3px rgba(0,0,0, 0.07));
+	}
+}

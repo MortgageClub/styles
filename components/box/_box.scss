@@ -1,0 +1,66 @@
+/*doc
+---
+title: Boxes
+name: box
+category: Components
+---
+
+Boxes are a common way of grouping related content. They consist of a
+wrapper with the class `box` applied.
+
+Inside a box, there are three sections:
+
+- head
+
+- body
+
+- foot
+
+**All boxes must have a body**, and optionally, may have a head and/or foot.
+
+```html_example
+<div class="cols6">
+    <div class="box boxBasic backgroundLowlight docDesignNotes">
+      <div class="boxBody">
+        <h2>See more!</h2>
+        <p class="mbl">Boxes and examples below.</p>
+      </div>
+    </div>
+  </div>
+```
+
+>Boxes occasionally help break up an otherwise white and
+typographically reliant grid. Use them for important content or when
+things are getting monotonous.
+
+Boxes come with a couple different border skins: `boxBasic` and
+`boxHighlight`. These may be used with any combination of background
+class.
+
+
+*/
+
+
+// Box Mixin
+@mixin ooBox {
+
+  .box {
+    @extend %baseSpacingLarge;
+    position: relative;
+    @include clearfix-me(micro);
+
+    .boxHead,
+    .boxFoot {
+      @include clearfix-me(micro);
+    }
+
+    .boxFoot {
+      padding: 0;
+      margin: 0 $baseSpacingLarge;
+    }
+
+    .boxBody {
+      padding: 0 $baseSpacingLarge;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+// BoxTabPrimary Mixin
+@mixin ooBoxTabPrimary {
+  .boxTabPrimary .boxBody{
+    border: 1px solid $borderColor;
+    @include border-radius($borderRadiusDefault);
+    @include border-top-left-radius(0);
+  }
+}
