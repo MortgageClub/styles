@@ -2340,7 +2340,7 @@ name: circle
 category: Components
 ---
 
-Use this componanet to create circle objects (100% border radius)
+Use this component to create circle objects (100% border radius).
 
 */
 /*doc
@@ -2351,16 +2351,16 @@ name: circleSkins
 ---
 
 ```html_example
-<span class="circleStandard mrxs"></span><span class="mrm">circleStandard</span>
-<span class="circleLowlight mrxs"></span><span class="mrm">circleLowlight</span>
-<span class="circleSeattle mrxs"></span><span class="mrm">circleSeattle</span>
-<span class="circleInverse mrxs"></span><span class="mrm">circleInverse</span>
-<span class="circleHighlight mrxs"></span><span class="mrm">circleHighlight</span>
-<span class="circleMidnight mrxs"></span><span class="mrm">circleMidnight</span>
-<span class="circleCallout mrxs"></span><span class="mrm">circleCallout</span>
-<span class="circleWarning mrxs"></span><span class="mrm">circleWarning</span>
-<span class="circleAction mrxs"></span><span class="mrm">circleAction</span>
-<span class="circleFacebook mrxs"></span><span class="mrm">circleFacebook</span>
+<span class="circleStandard md mrxs">1</span><span class="mrm">circleStandard</span>
+<span class="circleLowlight md mrxs">2</span><span class="mrm">circleLowlight</span>
+<span class="circleSeattle md mrxs">3</span><span class="mrm">circleSeattle</span>
+<span class="circleInverse md mrxs">4</span><span class="mrm">circleInverse</span>
+<span class="circleHighlight md mrxs">5</span><span class="mrm">circleHighlight</span>
+<span class="circleMidnight md mrxs">6</span><span class="mrm">circleMidnight</span>
+<span class="circleCallout md mrxs">7</span><span class="mrm">circleCallout</span>
+<span class="circleWarning md mrxs">8</span><span class="mrm">circleWarning</span>
+<span class="circleAction md mrxs">9</span><span class="mrm">circleAction</span>
+<span class="circleFacebook md mrxs">10</span><span class="mrm">circleFacebook</span>
 ```
 */
 .circleAction, .circleLowlight, .circleSeattle, .circleInverse, .circleMidnight, .circleHighlight, .circleCallout, .circleWarning, .circleFacebook {
