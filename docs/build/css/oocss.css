@@ -189,35 +189,6 @@ Class                           | Description
 `zIndexPageOverlay`             | 100; For full-page overlays
 
 */
-/*doc
----
-title: Display
-name: display
-category: Utilities
----
-
-Sets the display type for an element.
-
-
-Class                           | Description
-------------------------------- | -----------
-`inline`          | This class will make the element display inline.
-`block`           | This class will make the element display as a block.
-
-```html_example
-
-<div style="width:200px">
-  <div style="border:1px solid black;margin-bottom:10px">
-    <a class="inline" style="border:1px solid red">I'm an inline anchor</a>
-  </div>
-  <div style="border:1px solid black">
-    <a class="block" style="border:1px solid red">I'm a block anchor</a>
-  </div>
-</div>
-
-```
-
-*/
 .hideVisually {
   position: absolute;
   width: 1px;
@@ -3046,7 +3017,7 @@ When you want to "dock" the dropdown to your menu for a sleek look, you can use 
 }
 .dropdownList > li {
   margin: 0;
-  padding: 0 18px;
+  padding: 0;
   display: block;
   font-size: 14px;
   line-height: 30px;
@@ -3078,6 +3049,7 @@ When you want to "dock" the dropdown to your menu for a sleek look, you can use 
   display: block;
   color: #333;
   text-decoration: none;
+  padding: 0 18px;
 }
 .dropdownLink:hover, .dropdownLink:focus {
   color: #333;

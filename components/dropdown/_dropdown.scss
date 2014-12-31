@@ -124,7 +124,7 @@ You may combine dropdowns with inline lists to create menus:
 
     > li {
       margin: 0;
-      padding: 0 18px;
+      padding: 0;
       display: block;
       font-size: $baseFontSize;
       line-height: 30px;
@@ -161,6 +161,7 @@ You may combine dropdowns with inline lists to create menus:
     display: block;
     color: $dropdownLinkColor;
     text-decoration: none;
+    padding: 0 18px;
 
     &:hover,
     &:focus {
