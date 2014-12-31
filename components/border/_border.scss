@@ -95,7 +95,7 @@ $border-keys: (a '', v -top -bottom, h -left -right, t -top, b -bottom, l -left,
 }
 
 @mixin ooBorderRadius() {
-  .noRoundedCorners {
+  .squareCorners {
     border-radius: 0px !important;
   }
   

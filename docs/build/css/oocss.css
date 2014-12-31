@@ -1344,7 +1344,7 @@ Border Radius   |  **Description**
   border-width: 3px !important;
 }
 
-.noRoundedCorners {
+.squareCorners {
   border-radius: 0px !important;
 }
 
