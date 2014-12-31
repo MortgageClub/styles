@@ -19,16 +19,16 @@ Use this component to create circle objects (100% border radius).
     text-align: center;
 
     &.sm {
-      width: 16px;
-      height: 16px;
+      width: $circleRadiusSml * 2;
+      height: $circleRadiusSml * 2;
     }
     &.md {
-      width: 20px;
-      height: 20px;
+      width: $circleRadiusMed * 2;
+      height: $circleRadiusMed * 2;
     }
     &.lg {
-      width: 24px;
-      height: 24px;
+      width: $circleRadiusLrg * 2;
+      height: $circleRadiusLrg * 2;
     }
   }
 }
