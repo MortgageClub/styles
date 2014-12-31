@@ -2430,16 +2430,16 @@ name: circleSkins
   text-align: center;
 }
 .sm.circleAction, .sm.circleLowlight, .sm.circleSeattle, .sm.circleInverse, .sm.circleMidnight, .sm.circleHighlight, .sm.circleCallout, .sm.circleWarning, .sm.circleFacebook {
-  width: 16px;
-  height: 16px;
-}
-.md.circleAction, .md.circleLowlight, .md.circleSeattle, .md.circleInverse, .md.circleMidnight, .md.circleHighlight, .md.circleCallout, .md.circleWarning, .md.circleFacebook {
   width: 20px;
   height: 20px;
 }
+.md.circleAction, .md.circleLowlight, .md.circleSeattle, .md.circleInverse, .md.circleMidnight, .md.circleHighlight, .md.circleCallout, .md.circleWarning, .md.circleFacebook {
+  width: 30px;
+  height: 30px;
+}
 .lg.circleAction, .lg.circleLowlight, .lg.circleSeattle, .lg.circleInverse, .lg.circleMidnight, .lg.circleHighlight, .lg.circleCallout, .lg.circleWarning, .lg.circleFacebook {
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
 }
 
 .circleAction {
