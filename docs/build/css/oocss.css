@@ -321,14 +321,6 @@ Class                           | Description
   z-index: 100 !important;
 }
 
-.inline {
-  display: inline;
-}
-
-.block {
-  display: block;
-}
-
 /*doc
 
 ---
