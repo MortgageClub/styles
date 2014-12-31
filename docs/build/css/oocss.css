@@ -361,6 +361,7 @@ These classes convey meaning through color.
 <p class="typeCallout">typeCallout</p>
 <p class="typeHighlight">typeHighlight</p>
 <p class="typeMidnight">typeMidnight</p>
+<p class="typeCrimson">typeCrimson</p>
 <p class="typeSeattle">typeSeattle</p>
 <p class="typeLowlight">typeLowlight</p>
 <p class="typeFacebook">typeFacebook</p>
@@ -501,6 +502,10 @@ These classes are used to increase or decrease typography line heights
 
 .typeFacebook {
   color: #4063b3;
+}
+
+.typeCrimson {
+  color: #943437;
 }
 
 .typeDeemphasize {
@@ -650,6 +655,10 @@ name: backgroundSkins
     <code>backgroundWarning</code>
   </div>
   <div class="col cols6">
+    <div class="docSwatch backgroundCrimson"></div>
+    <code>backgroundCrimson</code>
+  </div>
+  <div class="col cols6">
     <div class="docSwatch backgroundCallout"></div>
     <code>backgroundCallout</code>
   </div>
@@ -697,6 +706,10 @@ name: backgroundSkins
 
 .backgroundWarning {
   background-color: #e6001c;
+}
+
+.backgroundCrimson {
+  background-color: #943437;
 }
 
 .backgroundCallout {
@@ -2428,28 +2441,29 @@ name: circleSkins
 <span class="circleMidnight lg pam typeReversed mrxs">6</span><span class="mrm">circleMidnight</span>
 <span class="circleCallout lg pam typeReversed mrxs">7</span><span class="mrm">circleCallout</span>
 <span class="circleWarning lg pam typeReversed mrxs">8</span><span class="mrm">circleWarning</span>
+<span class="circleCrimson lg pam typeReversed mrxs">8</span><span class="mrm">circleCrimson</span>
 <span class="circleAction lg pam typeReversed mrxs">9</span><span class="mrm">circleAction</span>
 <span class="circleFacebook lg pam typeReversed mrxs">10</span><span class="mrm">circleFacebook</span>
 ```
 */
-.circleAction, .circleLowlight, .circleSeattle, .circleInverse, .circleMidnight, .circleHighlight, .circleCallout, .circleWarning, .circleFacebook {
+.circleAction, .circleLowlight, .circleSeattle, .circleInverse, .circleMidnight, .circleHighlight, .circleCallout, .circleWarning, .circleCrimson, .circleFacebook {
   display: inline-block;
   border-radius: 100%;
   text-align: center;
 }
-.xsm.circleAction, .xsm.circleLowlight, .xsm.circleSeattle, .xsm.circleInverse, .xsm.circleMidnight, .xsm.circleHighlight, .xsm.circleCallout, .xsm.circleWarning, .xsm.circleFacebook {
+.xsm.circleAction, .xsm.circleLowlight, .xsm.circleSeattle, .xsm.circleInverse, .xsm.circleMidnight, .xsm.circleHighlight, .xsm.circleCallout, .xsm.circleWarning, .xsm.circleCrimson, .xsm.circleFacebook {
   width: 20px;
   height: 20px;
 }
-.sm.circleAction, .sm.circleLowlight, .sm.circleSeattle, .sm.circleInverse, .sm.circleMidnight, .sm.circleHighlight, .sm.circleCallout, .sm.circleWarning, .sm.circleFacebook {
+.sm.circleAction, .sm.circleLowlight, .sm.circleSeattle, .sm.circleInverse, .sm.circleMidnight, .sm.circleHighlight, .sm.circleCallout, .sm.circleWarning, .sm.circleCrimson, .sm.circleFacebook {
   width: 28px;
   height: 28px;
 }
-.md.circleAction, .md.circleLowlight, .md.circleSeattle, .md.circleInverse, .md.circleMidnight, .md.circleHighlight, .md.circleCallout, .md.circleWarning, .md.circleFacebook {
+.md.circleAction, .md.circleLowlight, .md.circleSeattle, .md.circleInverse, .md.circleMidnight, .md.circleHighlight, .md.circleCallout, .md.circleWarning, .md.circleCrimson, .md.circleFacebook {
   width: 36px;
   height: 36px;
 }
-.lg.circleAction, .lg.circleLowlight, .lg.circleSeattle, .lg.circleInverse, .lg.circleMidnight, .lg.circleHighlight, .lg.circleCallout, .lg.circleWarning, .lg.circleFacebook {
+.lg.circleAction, .lg.circleLowlight, .lg.circleSeattle, .lg.circleInverse, .lg.circleMidnight, .lg.circleHighlight, .lg.circleCallout, .lg.circleWarning, .lg.circleCrimson, .lg.circleFacebook {
   width: 46px;
   height: 46px;
 }
@@ -2483,6 +2497,10 @@ name: circleSkins
 }
 
 .circleWarning {
+  background-color: #e6001c;
+}
+
+.circleCrimson {
   background-color: #943437;
 }
 
@@ -2516,11 +2534,12 @@ name: dotSkins
 <span class="dotMidnight mrxs"></span><span class="mrm">dotMidnight</span>
 <span class="dotCallout mrxs"></span><span class="mrm">dotCallout</span>
 <span class="dotWarning mrxs"></span><span class="mrm">dotWarning</span>
+<span class="dotCrimson mrxs"></span><span class="mrm">dotCrimson</span>
 <span class="dotAction mrxs"></span><span class="mrm">dotAction</span>
 <span class="dotFacebook mrxs"></span><span class="mrm">dotFacebook</span>
 ```
 */
-.dotAction, .dotLowlight, .dotSeattle, .dotInverse, .dotMidnight, .dotHighlight, .dotCallout, .dotWarning, .dotFacebook {
+.dotAction, .dotLowlight, .dotSeattle, .dotInverse, .dotMidnight, .dotHighlight, .dotCallout, .dotWarning, .dotCrimson, .dotFacebook {
   display: inline-block;
   width: 12px;
   height: 12px;
@@ -2557,6 +2576,10 @@ name: dotSkins
 
 .dotWarning {
   background-color: #e6001c;
+}
+
+.dotCrimson {
+  background-color: #943437;
 }
 
 .dotFacebook {

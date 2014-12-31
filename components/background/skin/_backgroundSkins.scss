@@ -23,6 +23,10 @@ name: backgroundSkins
     <code>backgroundWarning</code>
   </div>
   <div class="col cols6">
+    <div class="docSwatch backgroundCrimson"></div>
+    <code>backgroundCrimson</code>
+  </div>
+  <div class="col cols6">
     <div class="docSwatch backgroundCallout"></div>
     <code>backgroundCallout</code>
   </div>
@@ -61,6 +65,7 @@ name: backgroundSkins
   @include ooBackground("backgroundHighlight", $bgHighlight);
   @include ooBackground("backgroundInverse", $bgInverse);
   @include ooBackground("backgroundWarning", $bgWarn);
+  @include ooBackground("backgroundCrimson", $bgCrimson);
   @include ooBackground("backgroundCallout", $bgCallout);
   @include ooBackground("backgroundMidnight", $bgMidnight);
   @include ooBackground("backgroundDaylight", $bgDaylight);
