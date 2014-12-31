@@ -7,6 +7,14 @@ category: Components
 
 Use this component to create circle objects (100% border radius).
 
+There are 3 sizes:
+
+```html_example
+<span class="circleStandard xsm mrxs">1</span><span class="mrm">xsm</span>
+<span class="circleLowlight paxs sm mrxs">2</span><span class="mrm">sm</span>
+<span class="circleSeattle pas md typeReversed mrxs">3</span><span class="mrm">md</span>
+<span class="circleInverse pam lg typeReversed mrxs">4</span><span class="mrm">lg</span>
+```
 */
 
 
@@ -18,6 +26,10 @@ Use this component to create circle objects (100% border radius).
     border-radius: 100%;
     text-align: center;
 
+    &.xsm {
+      width: $circleRadiusXSml * 2;
+      height: $circleRadiusXSml * 2;
+    }
     &.sm {
       width: $circleRadiusSml * 2;
       height: $circleRadiusSml * 2;
