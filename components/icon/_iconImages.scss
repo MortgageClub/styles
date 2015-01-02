@@ -2,54 +2,39 @@
 ---
 title: Image Icons
 name: iconInline
-category: Base CSS
+parent: icon
 ---
 
-These icons work similarly to bootstrap icon fonts, but are static images instead.
-
-## Available Icons
+These icons work similarly to icon fonts, but are static images instead.
 
 ```html_example
 <ul>
-  <li><i class="iconSpinner"></i>iconSpinner</li>
-  <li><i class="iconLargeSpinner"></i>iconLargeSpinner</li>
+  <li class="backgroundMidnight"><i class="iconLogo"></i></li>
+  <li><i class="iconLogoColor"></i></li>
 </ul>
 ```
-
 */
 
+%iconImage {
+  display:inline-block;
+  content: '';
+}
 
 // IconInline Mixin
-@mixin ooIconInline($name, $image, $margin, $hoverImage: "") {
-
-  %iconImage {
-    display:inline-block;
-    content: '';
-  }
+@mixin ooIconInline($name, $image) {
 
   .icon#{$name}:before {
     @extend %iconImage;
-
-    width: image-width($image);
-    height: image-height($image);
+    width: image-width($image) / 2;
+    height: image-height($image) / 2;
+    background-size: cover;
     background-image: inline-image($image);
     vertical-align: middle;
-
-    @if $margin {
-      margin: $margin
-    }
-  }
-
-  @if $hoverImage != "" {
-    .icon#{$name}:hover::before {
-      background-image: inline-image($hoverImage);
-    }
   }
 }
 
-
 // IconImage Mixin
 @mixin ooIconImage {
-  @include ooIconInline("Spinner", "inline/spinner_dots.gif", 0 0 2px 0);
-  @include ooIconInline("LargeSpinner", "inline/ajax_loader.gif", 0 0 2px 0);
+  @include ooIconInline("Logo", "inline/logo@2x.png");
+  @include ooIconInline("LogoColor", "inline/logo_color@2x.png");
 }

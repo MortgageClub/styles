@@ -1,0 +1,73 @@
+/*doc
+---
+title: Side Nav
+name: sideNav
+category: Mobile
+---
+
+Documentation and examples to be written (Tuan)
+
+Class                | Description
+-------------------- | -----------------
+`mNavBody`           | Apply to the body tag
+`mSideNav`           | Apply to the side nav div
+`mPageContainer`     | Apply to the container that wraps the page content
+`mPageCover`         | Apply to the page cover that acts as the click target hiding the side nav
+`mNavDivider`        | See example (TBW)
+*/
+
+.mNavBody {
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  touch-action: none;
+
+  &.navOn {
+    .mPageContainer {
+      transform: translate3d(-$sideNavWidth, 0, 0);
+      pointer-events: none;
+      overflow-y: hidden;
+      height: 100vh;
+    }
+    .mSideNav {
+      transform: translate3d(0, 0, 0);
+      position: fixed;
+    }
+    .mPageCover {
+      display: block;
+      pointer-events: all;
+    }
+  }
+}
+
+.mSideNav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: $sideNavWidth;
+  overflow: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  backface-visibility: hidden;
+  height: 100%;
+  transform: translate3d(100%, 0, 0);
+  @include box-shadow(0 2px 1px rgba(14,68,108,.1));
+  i:before {
+    vertical-align: baseline !important;
+  }
+}
+
+.mPageContainer {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.mPageCover {
+  display: none;
+}
+
+.mNavDivider {
+  background: $pureBlack;
+}

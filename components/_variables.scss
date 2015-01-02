@@ -1,4 +1,4 @@
-
+$pureBlack: #000;
 $white: #fff;
 $black: #333;
 $darkGray: #666;
@@ -41,7 +41,7 @@ $circleRadiusXSml: 10px;
 $circleRadiusSml: 14px;
 $circleRadiusMed: 18px;
 $circleRadiusLrg: 23px;
-
+$borderInverse: $pureBlack;
 
 // Transition Speeds
 $transitionSpeedDefault: 400ms;
@@ -430,4 +430,6 @@ $markerLowlightBorderColor: darken($midGray, 15%);
 $markerInverseColor: $black;
 $markerInverseBorderColor: darken($black, 15%);
 
+// Mobile stuff
 
+$sideNavWidth: 260px;

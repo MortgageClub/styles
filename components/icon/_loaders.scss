@@ -1,0 +1,71 @@
+/*doc
+---
+title: Loaders
+name: loaders
+category: Base CSS
+---
+
+Loaders are used to indicate that a component is being updated. When used for that purpose,
+they are best mounted on an [overlay](components.html#overlay).
+When you need something to indicate that the content is being fetched,
+you can render a large loader in place of the content while it's being loaded.
+
+```html_example
+<ul>
+  <li class="overlayContainer">
+    The content of this block is being updated.
+    <div class="overlayDefault overlayFull typeAlignCenter"><i class="loader"></i></div>
+  </li>
+  <li class="overlayContainer backgroundSeattle typeReversed">
+    The content of this block is being deleted.
+    <div class="overlayLowlight overlayFull typeAlignCenter"><i class="loaderReversed"></i></div>
+  </li>
+  <li class="backgroundAction">
+    <i class="loaderLarge"></i><i class="loaderReversedLarge"></i>
+  </li>
+</ul>
+```
+*/
+
+@-webkit-keyframes scaleout {
+  0% { -webkit-transform: scale(0.0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0.5;
+  }
+}
+
+@keyframes scaleout {
+  0% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 100% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    opacity: 0.5;
+  }
+}
+
+%loader {
+  display:inline-block;
+  content: '';
+  border-radius: 100%;
+  -webkit-animation: scaleout 1.0s infinite ease-in-out;
+  animation: scaleout 1.0s infinite ease-in-out;
+}
+
+@mixin ooLoader($size, $color, $width, $height) {
+  .loader#{$size}:before {
+    @extend %loader;
+    background-color: $color;
+    width: $width;
+    height: $height;
+  }
+}
+
+@mixin ooLoaders {
+  @include ooLoader("", $baseTypeColor, 20px, 20px);
+  @include ooLoader("Large", $baseTypeColor, 60px, 60px);
+  @include ooLoader("Reversed", $reversedTypeColor, 20px, 20px);
+  @include ooLoader("ReversedLarge", $reversedTypeColor, 60px, 60px);
+}
