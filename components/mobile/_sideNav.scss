@@ -26,13 +26,11 @@ Class                | Description
 
   &.navOn {
     .mPageContainer {
-      transform: translate3d(-$sideNavWidth, 0, 0);
+      @include transform(translate3d(-$sideNavWidth, 0, 0));
       pointer-events: none;
-      overflow-y: hidden;
-      height: 100vh;
     }
     .mSideNav {
-      transform: translate3d(0, 0, 0);
+      @include transform(translate3d(0, 0, 0));
       position: fixed;
     }
     .mPageCover {
@@ -50,12 +48,17 @@ Class                | Description
   overflow: auto;
   overflow-y: scroll;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   backface-visibility: hidden;
   height: 100%;
-  transform: translate3d(100%, 0, 0);
-  @include box-shadow(0 2px 1px rgba(14,68,108,.1));
+  @include transform(translate3d(100%, 0, 0));
+
   i:before {
     vertical-align: baseline !important;
+  }
+
+  a:active {
+    background: $bgAction;
   }
 }
 

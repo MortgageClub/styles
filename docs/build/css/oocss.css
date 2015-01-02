@@ -3287,12 +3287,16 @@ Class                | Description
   touch-action: none;
 }
 .mNavBody.navOn .mPageContainer {
+  -moz-transform: translate3d(-260px, 0, 0);
+  -ms-transform: translate3d(-260px, 0, 0);
+  -webkit-transform: translate3d(-260px, 0, 0);
   transform: translate3d(-260px, 0, 0);
   pointer-events: none;
-  overflow-y: hidden;
-  height: 100vh;
 }
 .mNavBody.navOn .mSideNav {
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   position: fixed;
 }
@@ -3309,15 +3313,19 @@ Class                | Description
   overflow: auto;
   overflow-y: scroll;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   backface-visibility: hidden;
   height: 100%;
+  -moz-transform: translate3d(100%, 0, 0);
+  -ms-transform: translate3d(100%, 0, 0);
+  -webkit-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
-  -moz-box-shadow: 0 2px 1px rgba(14, 68, 108, 0.1);
-  -webkit-box-shadow: 0 2px 1px rgba(14, 68, 108, 0.1);
-  box-shadow: 0 2px 1px rgba(14, 68, 108, 0.1);
 }
 .mSideNav i:before {
   vertical-align: baseline !important;
+}
+.mSideNav a:active {
+  background: #0093bf;
 }
 
 .mPageContainer {
