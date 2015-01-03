@@ -28,21 +28,24 @@ you can render a large loader in place of the content while it's being loaded.
 */
 
 @-webkit-keyframes scaleout {
-  0% { -webkit-transform: scale(0.0) }
+  0% {
+    -webkit-transform: scale(0);
+  }
   100% {
-    -webkit-transform: scale(1.0);
-    opacity: 0.5;
+    -webkit-transform: scale(1);
+    opacity: .5;
   }
 }
 
 @keyframes scaleout {
   0% {
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
-  } 100% {
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-    opacity: 0.5;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    opacity: .5;
   }
 }
 
@@ -50,8 +53,8 @@ you can render a large loader in place of the content while it's being loaded.
   display:inline-block;
   content: '';
   border-radius: 100%;
-  -webkit-animation: scaleout 1.0s infinite ease-in-out;
-  animation: scaleout 1.0s infinite ease-in-out;
+  -webkit-animation: scaleout 1s infinite ease-in-out;
+  animation: scaleout 1s infinite ease-in-out;
 }
 
 @mixin ooLoader($size, $color, $width, $height) {

@@ -2032,7 +2032,7 @@ you can render a large loader in place of the content while it's being loaded.
   }
   100% {
     -webkit-transform: scale(1);
-    opacity: 0.5;
+    opacity: .5;
   }
 }
 @keyframes scaleout {
@@ -2043,15 +2043,15 @@ you can render a large loader in place of the content while it's being loaded.
   100% {
     transform: scale(1);
     -webkit-transform: scale(1);
-    opacity: 0.5;
+    opacity: .5;
   }
 }
 .loader:before, .loaderLarge:before, .loaderReversed:before, .loaderReversedLarge:before {
   display: inline-block;
   content: '';
   border-radius: 100%;
-  -webkit-animation: scaleout 1.0s infinite ease-in-out;
-  animation: scaleout 1.0s infinite ease-in-out;
+  -webkit-animation: scaleout 1s infinite ease-in-out;
+  animation: scaleout 1s infinite ease-in-out;
 }
 
 .iconFood:before, .iconDollarSign:before, .iconMortgage:before, .iconRent:before, .iconAgent:before, .iconHeartEmpty:before, .iconHourGlass:before, .iconFuel:before, .iconPlus:before, .iconMinus:before, .iconStar:before, .iconStarEmpty:before, .iconHome:before, .iconMenu:before, .iconHeart:before, .iconFlag:before, .iconCog:before, .iconDownOpen:before, .iconLeftOpen:before, .iconRightOpen:before, .iconUpOpen:before, .iconDown:before, .iconLeft:before, .iconRight:before, .iconUp:before, .iconAttention:before, .iconCloud:before, .iconMail:before, .iconPencil:before, .iconCheck:before, .iconCancel:before, .iconHelp:before, .iconQuote:before, .iconDirection:before, .iconForward:before, .iconList:before, .iconTag:before, .iconReply:before, .iconReplyAll:before, .iconExport:before, .iconPrint:before, .iconComment:before, .iconChat:before, .iconVcard:before, .iconAddress:before, .iconLocation:before, .iconMap:before, .iconTrash:before, .iconDocs:before, .iconBasket:before, .iconResizeFull:before, .iconResizeSmall:before, .iconPopup:before, .iconInbox:before, .iconFlight:before, .iconTwitter:before, .iconFacebook:before, .iconLinkedin:before, .iconPicture:before, .iconGlobe:before, .iconLeaf:before, .iconGraduationCap:before, .iconTicket:before, .iconVideo:before, .iconTrophy:before, .iconThumbsUp:before, .iconThumbsDown:before, .iconUser:before, .iconUsers:before, .iconFolder:before, .iconCalendar:before, .iconChartPie:before, .iconChartLine:before, .iconChartBar:before, .iconChartArea:before, .iconAttach:before, .iconPhone:before, .iconMobile:before, .iconCamera:before, .iconSearch:before, .iconBell:before, .iconBookmark:before, .iconClock:before, .iconBlock:before, .iconRocket:before, .iconPinterest:before, .iconCup:before, .iconInfo:before {
