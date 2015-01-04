@@ -5,15 +5,112 @@ name: sideNav
 category: Mobile
 ---
 
-Documentation and examples to be written (Tuan)
-
 Class                | Description
 -------------------- | -----------------
 `mNavBody`           | Apply to the body tag
-`mSideNav`           | Apply to the side nav div
-`mPageContainer`     | Apply to the container that wraps the page content
+`mSideNav`           | Apply to the side nav element
+`mPageContainer`     | Apply to the container that wraps the page content, page cover and nav trigger
 `mPageCover`         | Apply to the page cover that acts as the click target hiding the side nav
-`mNavDivider`        | See example (TBW)
+
+```html_example
+<div id="phoneSimulation">
+  <div class="mNavBody"> <!-- in pratice, mNavBody should be applied to your body tag -->
+    <!-- this is the side nav -->
+    <nav class="mSideNav backgroundInverse animate animateFast man pbl hideFully">
+      <div class="overlayContainer backgroundMidnight pvm bbm borderInverse">
+        <span class="block pvm plm"><i class="iconLogo"></i></span>
+      </div>
+      <ul class="h4 man pan">
+        <li class="bbs borderInverse mvn">
+          <a class="linkTypeReversed block pam" href="#"><i class="iconHome mrs"></i>Home</a>
+        </li>
+        <li class="bbs borderInverse mvn">
+          <a class="linkTypeReversed block pam" href="#"><i class="iconUser mrs"></i>Login</a>
+        </li>
+        <li class="bbs borderInverse mvn">
+          <a class="linkTypeReversed block pam" href="#"><i class="iconCog mrs"></i>How It Works</a>
+        </li>
+        <li class="bbs borderInverse mvn">
+          <a class="linkTypeReversed block pam" href="#"><i class="iconChat mrs"></i>Contact</a>
+        </li>
+      </ul>
+      <div class="mNavDivider typeReversed pam pvs bbs borderInverse typeCaps h6 man">Resources</div>
+      <ul class="h4 man pan">
+        <li class="bbs borderInverse mvn">
+          <a class="linkTypeReversed block pam" href="#"><i class="iconSearch mrs"></i>Track &amp; Trace</a>
+        </li>
+        <li class="bbs borderInverse mvn">
+          <a class="linkTypeReversed block pam" href="#"><i class="iconAttention mrs"></i>Denied Parties Search</a>
+        </li>
+        <li class="bbs borderInverse mvn">
+          <a class="linkTypeReversed block pam" href="#"><i class='iconGlobe mrs'></i>Intro to Importing</a>
+        </li>
+        <li class="bbs borderInverse mvn">
+          <a class="linkTypeReversed block pam" href="#"><i class="iconVcard mrs"></i>About us</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Your main content, the header and page cover element should be
+         wrapped within a div applied with mPageContainer -->
+    <div class="mPageContainer animate animateFast">
+      <!-- Mobile page header would look something like this -->
+      <header class="overlayContainer backgroundLowlight man pvm bbm">
+        <div class="pam iconLogoColor"></div>
+        <div class="overlay overlayRight overlayTop pam mvs"><i class="h1 icon iconMenu clickable"></i></div>
+      </header>
+
+      <!-- Your main content -->
+      <div class="h3 pvxl phm typeAlignCenter typeReversed">Some content goes here.</div>
+
+      <!--
+        This page cover is hidden when the nav is inactive.
+        When the side nav is active, it would cover your main content, so that when
+        user clicks/taps on it, it should close the side nav.
+      -->
+      <div class="mPageCover overlay overlayFull zIndexPageOverlay"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// If you use this menu for both desktops and phones, then you would need the following two lines.
+// Otherwise, clickEvent should just be `touchstart` for mobile devices.
+var touchable = 'ontouchstart' in document.documentElement;
+var clickEvent = touchable ? 'touchstart' : 'click';
+
+var transitionendEvent = 'webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd',
+    $phone = $('#phoneSimulation'),
+    $nav = $phone.find('nav'),
+    $icon = $phone.find('header i'),
+    $body = $phone.find('.mNavBody'),
+    $cover = $phone.find('.mPageCover');
+
+var toggleNav = function() {
+  $nav.removeClass('hideFully');
+  setTimeout(function() {
+    $body.toggleClass('navOn');
+    $icon.toggleClass('iconRightOpen');
+  }, 30);
+  $nav.one(transitionendEvent, function() {
+    $nav.off(transitionendEvent);
+    $nav.toggleClass('hideFully', !$body.hasClass('navOn'));
+  });
+}
+
+$icon.on(clickEvent, toggleNav);
+$cover.on(clickEvent, toggleNav);
+</script>
+
+<!-- ignore these. The phoneSimulation styles below are just for demo purposes. -->
+<style>
+  #phoneSimulation {width: 320px; height: 400px; background: gray; position: relative; overflow-x: hidden;}
+  #phoneSimulation .mNavBody.navOn .mSideNav {position: absolute;}
+  #phoneSimulation .mPageContainer {height: 400px;}
+</style>
+```
+
+
 */
 
 .mNavBody {
@@ -36,6 +133,7 @@ Class                | Description
     .mPageCover {
       display: block;
       pointer-events: all;
+      cursor: pointer;
     }
   }
 }
