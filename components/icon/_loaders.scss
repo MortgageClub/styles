@@ -23,6 +23,9 @@ you can render a large loader in place of the content while it's being loaded.
   <li class="backgroundAction">
     <i class="loaderLarge"></i><i class="loaderReversedLarge"></i>
   </li>
+  <li class="backgroundAction">
+    <i class="loaderXL"></i><i class="loaderReversedXL"></i>
+  </li>
 </ul>
 ```
 */
@@ -67,6 +70,8 @@ you can render a large loader in place of the content while it's being loaded.
 @mixin ooLoaders {
   @include ooLoader("", $baseTypeColor, 20px, 20px);
   @include ooLoader("Large", $baseTypeColor, 60px, 60px);
+  @include ooLoader("XL", $baseTypeColor, 100px, 100px);
   @include ooLoader("Reversed", $reversedTypeColor, 20px, 20px);
   @include ooLoader("ReversedLarge", $reversedTypeColor, 60px, 60px);
+  @include ooLoader("ReversedXL", $reversedTypeColor, 100px, 100px);
 }

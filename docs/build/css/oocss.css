@@ -459,39 +459,39 @@ These classes are used to increase or decrease line heights
 }
 
 .typeWarning {
-  color: #e6001c;
+  color: #e6001c !important;
 }
 
 .typeCallout {
-  color: #ee552a;
+  color: #ee552a !important;
 }
 
 .typeHighlight {
-  color: #53b50a;
+  color: #53b50a !important;
 }
 
 .typeSeattle {
-  color: midGray;
+  color: midGray !important;
 }
 
 .typeLowlight {
-  color: #999;
+  color: #999 !important;
 }
 
 .typeMidnight {
-  color: #003151;
+  color: #003151 !important;
 }
 
 .typeReversed {
-  color: #fff;
+  color: #fff !important;
 }
 
 .typeFacebook {
-  color: #4063b3;
+  color: #4063b3 !important;
 }
 
 .typeCrimson {
-  color: #943437;
+  color: #943437 !important;
 }
 
 .typeDeemphasize {
@@ -2023,6 +2023,9 @@ you can render a large loader in place of the content while it's being loaded.
   <li class="backgroundAction">
     <i class="loaderLarge"></i><i class="loaderReversedLarge"></i>
   </li>
+  <li class="backgroundAction">
+    <i class="loaderXL"></i><i class="loaderReversedXL"></i>
+  </li>
 </ul>
 ```
 */
@@ -2044,7 +2047,7 @@ you can render a large loader in place of the content while it's being loaded.
     opacity: .35;
   }
 }
-.loader:before, .loaderLarge:before, .loaderReversed:before, .loaderReversedLarge:before {
+.loader:before, .loaderLarge:before, .loaderXL:before, .loaderReversed:before, .loaderReversedLarge:before, .loaderReversedXL:before {
   display: inline-block;
   content: '';
   border-radius: 100%;
@@ -2455,6 +2458,12 @@ you can render a large loader in place of the content while it's being loaded.
   height: 60px;
 }
 
+.loaderXL:before {
+  background-color: #333;
+  width: 100px;
+  height: 100px;
+}
+
 .loaderReversed:before {
   background-color: #fff;
   width: 20px;
@@ -2465,6 +2474,12 @@ you can render a large loader in place of the content while it's being loaded.
   background-color: #fff;
   width: 60px;
   height: 60px;
+}
+
+.loaderReversedXL:before {
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
 }
 
 /*doc

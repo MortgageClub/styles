@@ -26,38 +26,38 @@ These classes convey meaning through color.
 @mixin ooTypeColor {
 
   .typeWarning {
-    color: $warningTypeColor;
+    color: $warningTypeColor !important;
   }
 
   .typeCallout {
-    color: $calloutTypeColor;
+    color: $calloutTypeColor !important;
   }
 
   .typeHighlight {
-    color: $highlightTypeColor;
+    color: $highlightTypeColor !important;
   }
 
   .typeSeattle {
-    color: $seattleTypeColor;
+    color: $seattleTypeColor !important;
   }
 
   .typeLowlight {
-    color: $lowlightTypeColor;
+    color: $lowlightTypeColor !important;
   }
 
   .typeMidnight {
-    color: $midnightTypeColor;
+    color: $midnightTypeColor !important;
   }
 
   .typeReversed {
-    color: $reversedTypeColor;
+    color: $reversedTypeColor !important;
   }
 
   .typeFacebook {
-    color: $facebookTypeColor;
+    color: $facebookTypeColor !important;
   }
 
   .typeCrimson {
-    color: $crimsonTypeColor;
+    color: $crimsonTypeColor !important;
   }
 }
