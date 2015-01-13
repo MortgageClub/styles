@@ -2967,6 +2967,21 @@ Dropdown with dropdown box align right
 </div>
 ```
 
+Dropdown with dropdown list elements having bottom borders
+```html_example
+<div class="dropdown">
+  <a href="#pancakes" >Pancakes</a>
+  <div class="dropdownBox dropdownBoxRight box boxBasic backgroundLowlight">
+    <ul class="dropdownList dropdownListBordered">
+      <li><a href="#strawberry" class="dropdownLink">Strawberry</a></li>
+      <li><a href="#blueberry" class="dropdownLink">Blueberry</a></li>
+      <li><a href="#kiwi" class="dropdownLink">Kiwi</a></li>
+      <li><a href="#apricot" class="dropdownLink">Apricot</a></li>
+    </ul>
+  </div>
+</div>
+```
+
 You may combine dropdowns with inline lists to create menus:
 
 ```html_example
@@ -3194,6 +3209,12 @@ When you want to "dock" the dropdown to your menu for a sleek look, you can use 
   border-bottom-color: #fff;
   border-left-width: 0;
   border-right-width: 0;
+}
+.dropdownList.dropdownListBordered > li {
+  border-bottom: 1px solid #ccc;
+}
+.dropdownList.dropdownListBordered > li:last-child {
+  border-bottom: none;
 }
 
 .dropdownLink {
