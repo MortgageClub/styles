@@ -2103,7 +2103,6 @@ you can render a large loader in place of the content while it's being loaded.
   speak: none;
   display: inline-block;
   text-decoration: inherit;
-  width: 1em;
   vertical-align: text-top;
   text-align: center;
   font-variant: normal;
@@ -2153,7 +2152,6 @@ you can render a large loader in place of the content while it's being loaded.
 
 .iconShip:before {
   content: "\e606";
-  margin-left: -50%;
 }
 
 .iconPlane:before {
