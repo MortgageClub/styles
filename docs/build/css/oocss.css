@@ -1901,11 +1901,8 @@ icon in an `<i>` tag like this:
 ## Available Icons
 <ul class="list3cols">
 
-  <li><h5 class="typeLowlight"> Core </h5>
+  <li><h5 class="typeLowlight"> Common </h5>
   <li><i class="iconHome"></i>iconHome</li>
-  <li><i class="iconMortgage"></i>iconMortgage</li>
-  <li><i class="iconRent"></i>iconRent</li>
-  <li><i class="iconAgent"></i>iconAgent</li>
   <li><i class="iconSearch"></i>iconSearch</li>
   <li><i class="iconStarEmpty"></i>iconStarEmpty</li>
   <li><i class="iconStar"></i>iconStar</li>
@@ -1927,6 +1924,8 @@ icon in an `<i>` tag like this:
   <li><i class="iconHourGlass"></i>iconHourGlass</li>
   <li><i class="iconFood"></i>iconFood</li>
   <li><i class="iconFuel"></i>iconFuel</li>
+  <li><i class="iconBookOpen"></i>iconBookOpen</li>
+  <li><i class="iconArchive"></i>iconArchive</li>
 
   <li><h5 class="typeLowlight"> Users / User Help </h5>
   <li><i class="iconUser"></i>iconUser</li>
@@ -1938,9 +1937,11 @@ icon in an `<i>` tag like this:
   <li><i class="iconTrophy"></i>iconTrophy</li>
   <li><i class="iconBookmark"></i>iconBookmark</li>
   <li><i class="iconAttention"></i>iconAttention</li>
-  <li><i class="iconBlock"></i>iconBlock</li>
   <li><i class="iconFlag"></i>iconFlag</li>
   <li><i class="iconPrint"></i>iconPrint</li>
+  <li><i class="iconUserAdd"></i>iconUserAdd</li>
+  <li><i class="iconLogin"></i>iconLogin</li>
+  <li><i class="iconLogout"></i>iconLogout</li>
 
   <li><h5 class="typeLowlight"> UGC </h5>
   <li><i class="iconTag"></i>iconTag</li>
@@ -1995,18 +1996,23 @@ icon in an `<i>` tag like this:
   <li><i class="iconLocation"></i>iconLocation</li>
   <li><i class="iconDirection"></i>iconDirection</li>
   <li><i class="iconCup"></i>iconCup</li>
-  <li><i class="iconFlight"></i>iconFlight</li>
   <li><i class="iconGlobe"></i>iconGlobe</li>
   <li><i class="iconLeaf"></i>iconLeaf</li>
   <li><i class="iconGraduationCap"></i>iconGraduationCap</li>
   <li><i class="iconTicket"></i>iconTicket</li>
+  <li><i class="iconPlane"></i>iconPlane</li>
+  <li><i class="iconPlaneLanding"></i>iconPlaneLanding</li>
+  <li><i class="iconPlaneTakeoff"></i>iconPlaneTakeoff</li>
   <li><i class="iconRocket"></i>iconRocket</li>
+  <li><i class="iconTruck"></i>iconTruck</li>
+  <li><i class="iconRoad"></i>iconRoad</li>
 
   <li><h5 class="typeLowlight"> Data </h5>
   <li><i class="iconChartPie"></i>iconChartPie</li>
   <li><i class="iconChartLine"></i>iconChartLine</li>
   <li><i class="iconChartBar"></i>iconChartBar</li>
   <li><i class="iconChartArea"></i>iconChartArea</li>
+  <li><i class="iconFlowTree"></i>iconFlowTree</li>
 
 </ul>
 
@@ -2089,7 +2095,7 @@ you can render a large loader in place of the content while it's being loaded.
   animation: scaleout 1s infinite ease-in-out;
 }
 
-.iconFood:before, .iconDollarSign:before, .iconMortgage:before, .iconRent:before, .iconAgent:before, .iconHeartEmpty:before, .iconHourGlass:before, .iconFuel:before, .iconPlus:before, .iconMinus:before, .iconStar:before, .iconStarEmpty:before, .iconHome:before, .iconMenu:before, .iconHeart:before, .iconFlag:before, .iconCog:before, .iconDownOpen:before, .iconLeftOpen:before, .iconRightOpen:before, .iconUpOpen:before, .iconDown:before, .iconLeft:before, .iconRight:before, .iconUp:before, .iconAttention:before, .iconCloud:before, .iconMail:before, .iconPencil:before, .iconCheck:before, .iconCancel:before, .iconHelp:before, .iconQuote:before, .iconDirection:before, .iconForward:before, .iconList:before, .iconTag:before, .iconReply:before, .iconReplyAll:before, .iconExport:before, .iconPrint:before, .iconComment:before, .iconChat:before, .iconVcard:before, .iconAddress:before, .iconLocation:before, .iconMap:before, .iconTrash:before, .iconDocs:before, .iconBasket:before, .iconResizeFull:before, .iconResizeSmall:before, .iconPopup:before, .iconInbox:before, .iconFlight:before, .iconTwitter:before, .iconFacebook:before, .iconLinkedin:before, .iconPicture:before, .iconGlobe:before, .iconLeaf:before, .iconGraduationCap:before, .iconTicket:before, .iconVideo:before, .iconTrophy:before, .iconThumbsUp:before, .iconThumbsDown:before, .iconUser:before, .iconUsers:before, .iconFolder:before, .iconCalendar:before, .iconChartPie:before, .iconChartLine:before, .iconChartBar:before, .iconChartArea:before, .iconAttach:before, .iconPhone:before, .iconMobile:before, .iconCamera:before, .iconSearch:before, .iconBell:before, .iconBookmark:before, .iconClock:before, .iconBlock:before, .iconRocket:before, .iconPinterest:before, .iconCup:before, .iconInfo:before {
+.iconFlowTree:before, .iconBookOpen:before, .iconUserAdd:before, .iconPlaneLanding:before, .iconPlaneTakeoff:before, .iconArchive:before, .iconInfo:before, .iconLogout:before, .iconLogin:before, .iconPublish:before, .iconShip:before, .iconPlane:before, .iconDollarSign:before, .iconBriefcase:before, .iconHeartEmpty:before, .iconHourGlass:before, .iconFuel:before, .iconPlus:before, .iconMinus:before, .iconStar:before, .iconStarEmpty:before, .iconHome:before, .iconMenu:before, .iconHeart:before, .iconFlag:before, .iconCog:before, .iconDownOpen:before, .iconLeftOpen:before, .iconRightOpen:before, .iconUpOpen:before, .iconDown:before, .iconLeft:before, .iconRight:before, .iconUp:before, .iconAttention:before, .iconCloud:before, .iconMail:before, .iconPencil:before, .iconCheck:before, .iconCancel:before, .iconHelp:before, .iconQuote:before, .iconDirection:before, .iconForward:before, .iconList:before, .iconTag:before, .iconReply:before, .iconReplyAll:before, .iconExport:before, .iconPrint:before, .iconComment:before, .iconChat:before, .iconVcard:before, .iconAddress:before, .iconLocation:before, .iconMap:before, .iconTrash:before, .iconDocs:before, .iconBasket:before, .iconResizeFull:before, .iconResizeSmall:before, .iconPopup:before, .iconInbox:before, .iconTwitter:before, .iconFacebook:before, .iconLinkedin:before, .iconPicture:before, .iconLeaf:before, .iconGraduationCap:before, .iconTicket:before, .iconVideo:before, .iconTrophy:before, .iconThumbsUp:before, .iconThumbsDown:before, .iconUser:before, .iconUsers:before, .iconFolder:before, .iconCalendar:before, .iconChartPie:before, .iconChartLine:before, .iconChartBar:before, .iconChartArea:before, .iconAttach:before, .iconPhone:before, .iconMobile:before, .iconCamera:before, .iconSearch:before, .iconBell:before, .iconBookmark:before, .iconClock:before, .iconRocket:before, .iconPinterest:before, .iconCup:before, .iconTruck:before, .iconRoad:before, .iconGlobe:before {
   font-family: 'Entypo';
   font-style: normal;
   font-weight: normal;
@@ -2104,24 +2110,60 @@ you can render a large loader in place of the content while it's being loaded.
   -webkit-font-smoothing: auto;
 }
 
-.iconFood:before {
+.iconFlowTree:before {
   content: "\e601";
 }
 
-.iconDollarSign:before {
+.iconBookOpen:before {
+  content: "\e600";
+}
+
+.iconUserAdd:before {
   content: "\e602";
 }
 
-.iconMortgage:before {
-  content: "\e606";
-}
-
-.iconRent:before {
+.iconPlaneLanding:before {
   content: "\e607";
 }
 
-.iconAgent:before {
+.iconPlaneTakeoff:before {
+  content: "\e60a";
+}
+
+.iconArchive:before {
+  content: "\e603";
+}
+
+.iconInfo:before {
+  content: "\e60b";
+}
+
+.iconLogout:before {
+  content: "\e60d";
+}
+
+.iconLogin:before {
+  content: "\e604";
+}
+
+.iconPublish:before {
+  content: "\e605";
+}
+
+.iconShip:before {
+  content: "\e606";
+}
+
+.iconPlane:before {
+  content: "\e608";
+}
+
+.iconDollarSign:before {
   content: "\e609";
+}
+
+.iconBriefcase:before {
+  content: "\e60c";
 }
 
 .iconHeartEmpty:before {
@@ -2320,10 +2362,6 @@ you can render a large loader in place of the content while it's being loaded.
   content: "\e830";
 }
 
-.iconFlight:before {
-  content: "\e831";
-}
-
 .iconTwitter:before {
   content: "\e832";
 }
@@ -2338,10 +2376,6 @@ you can render a large loader in place of the content while it's being loaded.
 
 .iconPicture:before {
   content: "\e835";
-}
-
-.iconGlobe:before {
-  content: "\e836";
 }
 
 .iconLeaf:before {
@@ -2436,10 +2470,6 @@ you can render a large loader in place of the content while it's being loaded.
   content: "\e84d";
 }
 
-.iconBlock:before {
-  content: "\e84e";
-}
-
 .iconRocket:before {
   content: "\e84f";
 }
@@ -2452,8 +2482,16 @@ you can render a large loader in place of the content while it's being loaded.
   content: "\e851";
 }
 
-.iconInfo:before {
-  content: "\e804";
+.iconTruck:before {
+  content: "\e9b0";
+}
+
+.iconRoad:before {
+  content: "\e9b1";
+}
+
+.iconGlobe:before {
+  content: "\e9ca";
 }
 
 .icon {

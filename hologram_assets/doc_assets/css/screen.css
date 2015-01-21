@@ -6837,8 +6837,8 @@ To size the SVG Icons, you can add an `.h1 - .h7` class.
 
 @font-face {
   font-family: "Entypo";
-  src: url("http://static.trulia-cdn.com/images/fonts/Entypo_061214/Entypo.eot");
-  src: url("http://static.trulia-cdn.com/images/fonts/Entypo_061214/Entypo.eot?#iefix") format("embedded-opentype"), url("http://static.trulia-cdn.com/images/fonts/Entypo_061214/Entypo.woff") format("woff"), url("http://static.trulia-cdn.com/images/fonts/Entypo_061214/Entypo.ttf") format("truetype"), url("http://static.trulia-cdn.com/images/fonts/Entypo_061214/Entypo.svg#Entypo") format("svg");
+  src: url("../../../fonts/Entypo.eot");
+  src: url("../../../fonts/Entypo.eot?#iefix") format("embedded-opentype"), url("../../../fonts/Entypo.woff") format("woff"), url("../../../fonts/Entypo.ttf") format("truetype"), url("../../../fonts/Entypo.svg#Entypo") format("svg");
   font-weight: normal;
   font-style: normal;
 }
