@@ -201,6 +201,7 @@ icon in an `<i>` tag like this:
   }
   .iconShip:before {
     @extend %entypoBase; content: "\e606";
+    margin-left: -50%;
   }
   .iconPlane:before {
     @extend %entypoBase; content: "\e608";

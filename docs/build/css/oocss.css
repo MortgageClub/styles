@@ -2152,6 +2152,7 @@ you can render a large loader in place of the content while it's being loaded.
 
 .iconShip:before {
   content: "\e606";
+  margin-left: -50%;
 }
 
 .iconPlane:before {
