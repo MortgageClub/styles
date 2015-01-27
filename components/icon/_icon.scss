@@ -41,7 +41,7 @@ icon in an `<i>` tag like this:
   <li><i class="iconCamera"></i>iconCamera</li>
   <li><i class="iconClock"></i>iconClock</li>
   <li><i class="iconHourGlass"></i>iconHourGlass</li>
-  <li><i class="iconFood"></i>iconFood</li>
+  <li><i class="iconPublish"></i>iconPublish</li>
   <li><i class="iconFuel"></i>iconFuel</li>
   <li><i class="iconBookOpen"></i>iconBookOpen</li>
   <li><i class="iconArchive"></i>iconArchive</li>
@@ -64,9 +64,11 @@ icon in an `<i>` tag like this:
 
   <li><h5 class="typeLowlight"> UGC </h5>
   <li><i class="iconTag"></i>iconTag</li>
+  <li><i class="iconCreditCard"></i>iconCreditCard</li>
   <li><i class="iconQuote"></i>iconQuote</li>
   <li><i class="iconComment"></i>iconComment</li>
   <li><i class="iconChat"></i>iconChat</li>
+  <li><i class="iconClipboard"></i>iconClipboard</li>
 
   <li><h5 class="typeLowlight"> Social Media </h5>
   <li><i class="iconTwitter"></i>iconTwitter</li>
@@ -77,12 +79,17 @@ icon in an `<i>` tag like this:
   <li><h5 class="typeLowlight"> Inbox / Web </h5>
   <li><i class="iconCloud"></i>iconCloud</li>
   <li><i class="iconInbox"></i>iconInbox</li>
+  <li><i class="iconDownload"></i>iconDownload</li>
+  <li><i class="iconUpload"></i>iconUpload</li>
+  <li><i class="iconUninstall"></i>iconUninstall</li>
   <li><i class="iconFolder"></i>iconFolder</li>
   <li><i class="iconPencil"></i>iconPencil</li>
+  <li><i class="iconNewMessage"></i>iconNewMessage</li>
   <li><i class="iconReply"></i>iconReply</li>
   <li><i class="iconReplyAll"></i>iconReplyAll</li>
   <li><i class="iconForward"></i>iconForward</li>
   <li><i class="iconAttach"></i>iconAttach</li>
+  <li><i class="iconShareable"></i>iconShareable</li>
 
   <li><h5 class="typeLowlight"> Controls </h5>
   <li><i class="iconPopup"></i>iconPopup</li>
@@ -114,6 +121,7 @@ icon in an `<i>` tag like this:
   <li><i class="iconAddress"></i>iconAddress</li>
   <li><i class="iconLocation"></i>iconLocation</li>
   <li><i class="iconDirection"></i>iconDirection</li>
+  <li><i class="iconCompass"></i>iconCompass</li>
   <li><i class="iconCup"></i>iconCup</li>
   <li><i class="iconGlobe"></i>iconGlobe</li>
   <li><i class="iconLeaf"></i>iconLeaf</li>
@@ -126,6 +134,8 @@ icon in an `<i>` tag like this:
   <li><i class="iconRocket"></i>iconRocket</li>
   <li><i class="iconTruck"></i>iconTruck</li>
   <li><i class="iconRoad"></i>iconRoad</li>
+  <li><i class="iconShield"></i>iconShield</li>
+  <li><i class="iconTrafficCone"></i>iconTrafficCone</li>
 
   <li><h5 class="typeLowlight"> Data </h5>
   <li><i class="iconChartPie"></i>iconChartPie</li>
@@ -133,6 +143,8 @@ icon in an `<i>` tag like this:
   <li><i class="iconChartBar"></i>iconChartBar</li>
   <li><i class="iconChartArea"></i>iconChartArea</li>
   <li><i class="iconFlowTree"></i>iconFlowTree</li>
+  <li><i class="iconFlowBranch"></i>iconFlowBranch</li>
+  <li><i class="iconFlowCascade"></i>iconFlowCascade</li>
 
 </ul>
 
@@ -169,11 +181,26 @@ icon in an `<i>` tag like this:
     -webkit-font-smoothing: auto;
   }
 
+  .iconDownload:before {
+    @extend %entypoBase; content: "\e60e";
+  }
+  .iconFlowBranch:before {
+    @extend %entypoBase; content: "\e60f";
+  }
+  .iconFlowCascade:before {
+    @extend %entypoBase; content: "\e610";
+  }
   .iconFlowTree:before {
     @extend %entypoBase; content: "\e601";
   }
   .iconBookOpen:before {
     @extend %entypoBase; content: "\e600";
+  }
+  .iconUninstall:before {
+    @extend %entypoBase; content: "\e617";
+  }
+  .iconUpload:before {
+    @extend %entypoBase; content: "\e611";
   }
   .iconUserAdd:before {
     @extend %entypoBase; content: "\e602";
@@ -187,6 +214,18 @@ icon in an `<i>` tag like this:
   .iconArchive:before {
     @extend %entypoBase; content: "\e603";
   }
+  .iconMinus:before {
+    @extend %entypoBase; content: "\e612";
+  }
+  .iconPlus:before {
+    @extend %entypoBase; content: "\e613";
+  }
+  .iconCompass:before {
+    @extend %entypoBase; content: "\e614";
+  }
+  .iconCreditCard:before {
+    @extend %entypoBase; content: "\e618";
+  }
   .iconInfo:before {
     @extend %entypoBase; content: "\e60b";
   }
@@ -196,8 +235,20 @@ icon in an `<i>` tag like this:
   .iconLogin:before {
     @extend %entypoBase; content: "\e604";
   }
+  .iconNewMessage:before {
+    @extend %entypoBase; content: "\e615";
+  }
   .iconPublish:before {
     @extend %entypoBase; content: "\e605";
+  }
+  .iconShareable:before {
+    @extend %entypoBase; content: "\e61c";
+  }
+  .iconShield:before {
+    @extend %entypoBase; content: "\e616";
+  }
+  .iconTrafficCone:before {
+    @extend %entypoBase; content: "\e61d";
   }
   .iconShip:before {
     @extend %entypoBase; content: "\e606";
@@ -219,12 +270,6 @@ icon in an `<i>` tag like this:
   }
   .iconFuel:before {
     @extend %entypoBase; content: "\e800";
-  }
-  .iconPlus:before {
-    @extend %entypoBase; content: "\e802";
-  }
-  .iconMinus:before {
-    @extend %entypoBase; content: "\e803";
   }
   .iconStar:before {
     @extend %entypoBase; content: "\e805";
@@ -454,7 +499,11 @@ icon in an `<i>` tag like this:
   .iconRoad:before {
     @extend %entypoBase; content: "\e9b1";
   }
+  .iconClipboard:before {
+    @extend %entypoBase; content: "\e9b8";
+  }
   .iconGlobe:before {
     @extend %entypoBase; content: "\e9ca";
   }
+
 }
