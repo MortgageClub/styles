@@ -3546,10 +3546,8 @@ $cover.on(clickEvent, toggleNav);
 .mNavBody {
   overflow-x: hidden;
   width: 100%;
-  -webkit-user-select: none;
   -webkit-user-drag: none;
   -webkit-tap-highlight-color: transparent;
-  touch-action: none;
 }
 .mNavBody.navOn .mPageContainer {
   -moz-transform: translate3d(-260px, 0, 0);
