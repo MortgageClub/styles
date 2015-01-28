@@ -172,6 +172,10 @@ You may combine dropdowns with inline lists to create menus:
       }
     }
 
+    > li.dropdownListItemHover {
+      background-color: $dropdownListHoverBackgroundColor;
+    }
+
     &.dropdownListBordered > li {
       border-bottom: 1px solid $dropdownListDividerBorderTopColor;
 

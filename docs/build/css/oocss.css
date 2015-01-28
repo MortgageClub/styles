@@ -3315,6 +3315,9 @@ When you want to "dock" the dropdown to your menu for a sleek look, you can use 
   border-left-width: 0;
   border-right-width: 0;
 }
+.dropdownList > li.dropdownListItemHover {
+  background-color: #e9e9e9;
+}
 .dropdownList.dropdownListBordered > li {
   border-bottom: 1px solid #ccc;
 }
