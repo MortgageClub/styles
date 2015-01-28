@@ -29,6 +29,10 @@ These classes convey meaning through color.
     color: $warningTypeColor !important;
   }
 
+  .typeAction {
+    color: $actionTypeColor !important;
+  }
+
   .typeCallout {
     color: $calloutTypeColor !important;
   }

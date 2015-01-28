@@ -496,6 +496,10 @@ These classes are used to increase or decrease line heights
   color: #e6001c !important;
 }
 
+.typeAction {
+  color: #0093bf !important;
+}
+
 .typeCallout {
   color: #ee552a !important;
 }
