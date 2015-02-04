@@ -305,7 +305,7 @@ Class                | Description
 -------------------- | -----------------
 `desaturate`         | Make an image black and white
 `deemphasize`        | Deemphasize an image by reduce its opacity
-`noOverfow`          | Set's max-width to 100%
+`noOverfow`          | Sets max-width to 100%
 
 
 ```html_example
@@ -515,7 +515,7 @@ These classes are used to increase or decrease line heights
 }
 
 .typeSeattle {
-  color: midGray !important;
+  color: #666 !important;
 }
 
 .typeLowlight {
