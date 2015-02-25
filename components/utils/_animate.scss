@@ -33,7 +33,7 @@ Class                | Description
 
 	.animate {
 		@include transition($transitionSpeedDefault);
-    -webkit-backface-visibility: hidden;
+    	-webkit-backface-visibility: hidden;
 	}
 
 	.animateSlow {

@@ -1,0 +1,63 @@
+/*doc
+---
+title: Buttons
+name: button
+category: Components
+---
+
+Use this component to create buttons.
+
+There are 3 sizes:
+
+```html_example
+<button class="btn btnSml btnPrimary mlm">.btn.btnSml</button>
+<button class="btn btnPrimary mlm">.btn</button>
+<button class="btn btnLrg btnPrimary mlm">.btn.btnLrg</button>
+```
+*/
+
+// Base button
+@mixin ooButton {
+  .btn {
+    display: inline-block;
+    font-weight: normal;
+    line-height: normal;
+    cursor: pointer;
+    padding: 9px 35px;
+    font-size:16px;
+    border:none;
+    border: 0;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: solid 2px rgba(0, 0, 0, 0.3);
+    outline: none;
+    @include transition($transitionSpeedFast);
+    @include border-radius(3px);
+
+    &.active {
+      box-shadow: 0px -2px 0px 0px rgb( 0, 37, 60 );
+    }
+  }
+
+  .btn.btnSml {
+    font-size: 14px;
+    padding: 6px 30px;
+  }
+  .btn.btnLrg {
+    font-size: 18px;
+    padding: 12px 40px;
+  }
+}
+
+// Button mixin
+@mixin ooButtonMixin($name, $bgList, $typeColor) {
+  .#{$name} {
+    @extend %#{nth($bgList,1)};
+    color: $typeColor;
+
+    &:hover {
+      @extend %#{nth($bgList,2)};
+      color: $typeColor;
+    }
+  }
+}

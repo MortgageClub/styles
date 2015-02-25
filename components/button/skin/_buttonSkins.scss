@@ -1,0 +1,27 @@
+/*doc
+---
+title: Colors
+parent: button
+name: buttonSkins
+---
+
+<div class="line txtC">
+  <div class="col cols12">
+    <button class="btn btnBasic">.btnBasic</button>
+    <button class="btn btnPrimary">.btnPrimary</button>
+    <button class="btn btnSecondary mlm">.btnSecondary</button>
+    <button class="btn btnAction mlm">.btnAction</button>
+    <button class="btn btnDanger mlm">.btnDanger</button>
+  </div>
+</div>
+*/
+
+
+// ButtonSkins Mixin
+@mixin ooButtonSkins {
+  @include ooButtonMixin("btnBasic", 'backgroundBasic' 'backgroundLowlight', $baseTypeColor);
+  @include ooButtonMixin("btnPrimary", 'backgroundNavy' 'backgroundLightNavy', $reversedTypeColor);
+  @include ooButtonMixin("btnSecondary", 'backgroundBlue' 'backgroundLightBlue', $reversedTypeColor);
+  @include ooButtonMixin("btnAction", 'backgroundGreen' 'backgroundLightGreen', $reversedTypeColor);
+  @include ooButtonMixin("btnDanger", 'backgroundCrimson' 'backgroundLightCrimson', $reversedTypeColor);
+}
