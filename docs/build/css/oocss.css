@@ -305,6 +305,7 @@ Class                | Description
 -------------------- | -----------------
 `desaturate`         | Make an image black and white
 `deemphasize`        | Deemphasize an image by reduce its opacity
+`noOverfow`          | Set's max-width to 100%
 
 
 ```html_example
@@ -322,8 +323,12 @@ img.desaturate {
 }
 
 img.deemphasize {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
-  opacity: 0.7;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+
+img.noOverflow {
+  max-width: 100%;
 }
 
 /*doc
@@ -723,6 +728,10 @@ name: backgroundSkins
 */
 .backgroundBasic {
   background-color: #fff;
+}
+
+.backgroundOffWhite {
+  background-color: #EEF4F4;
 }
 
 .backgroundLowlight {

@@ -11,6 +11,7 @@ Class                | Description
 -------------------- | -----------------
 `desaturate`         | Make an image black and white
 `deemphasize`        | Deemphasize an image by reduce its opacity
+`noOverfow`          | Sets max-width to 100%
 
 
 ```html_example
@@ -30,4 +31,8 @@ img.desaturate {
 
 img.deemphasize {
   @include opacity(0.3);
+}
+
+img.noOverflow {
+  max-width: 100%;
 }
