@@ -1,5 +1,6 @@
 $pureBlack: #000;
 $white: #fff;
+$offWhite: #EEF4F4;
 $black: #333;
 $darkGray: #666;
 $midGray: #999;
@@ -97,6 +98,7 @@ $bgMidnight: $midnightBlue;
 $bgDaylight: $paleYellow;
 $bgAction: $lightBlue;
 $bgFacebook: $facebookBlue;
+$bgOffWhite: $offWhite;
 // To add additional backgrounds use the following syntax:
 //    @include ooBackground(<className>, <color>)
 //    @className  (The class name that you will use for that background)

@@ -61,6 +61,7 @@ name: backgroundSkins
 // BackgroundSkins Mixin
 @mixin ooBackgroundSkins {
   @include ooBackground("backgroundBasic", $bgBasic);
+  @include ooBackground("backgroundOffWhite", $bgOffWhite);
   @include ooBackground("backgroundLowlight", $bgLowlight);
   @include ooBackground("backgroundHighlight", $bgHighlight);
   @include ooBackground("backgroundInverse", $bgInverse);
