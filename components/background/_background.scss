@@ -14,11 +14,7 @@ specific components and modules on the page.
 
 // Background Mixin
 @mixin ooBackground($name, $color) {
-  %#{$name} {
-    background-color: $color;
-  }
-
   .#{$name} {
-    @extend %#{$name};
+    background-color: $color;;
   }
 }

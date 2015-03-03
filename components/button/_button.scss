@@ -24,7 +24,7 @@ There are 3 sizes:
     line-height: normal;
     cursor: pointer;
     padding: 9px 35px;
-    font-size:16px;
+    font-size: $btnDefaultFontSize;
     border:none;
     border: 0;
     text-align: center;
@@ -39,6 +39,10 @@ There are 3 sizes:
     }
   }
 
+  .btn.btnDisabled {
+    border: 0;
+    cursor: default;
+  }
   .btn.btnSml {
     font-size: 14px;
     padding: 6px 30px;
@@ -50,13 +54,14 @@ There are 3 sizes:
 }
 
 // Button mixin
-@mixin ooButtonMixin($name, $bgList, $typeColor) {
+@mixin ooButtonMixin($name, $bgList, $borderColor, $typeColor) {
   .#{$name} {
-    @extend %#{nth($bgList,1)};
+    background-color: nth($bgList,1);
     color: $typeColor;
+    border-color: $borderColor;
 
-    &:hover {
-      @extend %#{nth($bgList,2)};
+    &:hover, &:focus {
+      background-color: nth($bgList,2);
       color: $typeColor;
     }
   }

@@ -106,7 +106,6 @@ $bgBasic: $white;
 $bgInverse: $darkestGray;
 $bgSeattle: $darkGray;
 $bgWarn: $red;
-$bgCrimson : $crimson;
 $bgCallout: $orange;
 $bgMidnight: $darkNavy;
 $bgDaylight: $lightYellow;
@@ -126,6 +125,9 @@ $bgLightestCrimson: $lightestCrimson;
 $bgLightCrimson:    $lightCrimson;
 $bgCrimson:         $crimson;
 $bgDarkCrimson:     $darkCrimson;
+$bgLightYellow:     $lightYellow;
+$bgYellow:          $yellow;
+$bgDarkYellow:      $darkYellow;
 // To add additional backgrounds use the following syntax:
 //    @include ooBackground(<className>, <color>)
 //    @className  (The class name that you will use for that background)
@@ -269,36 +271,40 @@ $lowlightLinkColor: $darkGray;
 $lowlightLinkHoverColor: $darkNavy;
 
 
-// Button Colors
-$btnBackgroundColorDefault: $lighterGray; //default
-$btnBackgroundHoverDefault: lighten($lighterGray, 1%); //hover
-$lightBackground: $lightestGray;
-$btnBackgroundColorFlat: $orange; //flat button
-$btnBackgroundHoverFlat: $lightOrange; //flat button hover
+// Buttons
+/* Font sizes */
+$btnDefaultFontSize: $rootFontSize;
 
-$btnBackgroundStartColorDefault: $lighterGray; //default
-$btnBackgroundEndColorDefault: lighten($lighterGray, 1%); //hover
+/* Default */
+$btnBackgroundColorDefault: $lighterGray;
+$btnBackgroundHoverDefault: lighten($lighterGray, 2%); //hover
+$btnBorderColorDefault: $lightGray;
 $btnTextColorDefault: $darkestGray;
-$btnTextShadowDefault: 0 1px 0 rgba(255, 255, 255, 1);
-$btnBorderColorDefault: $gray;
-$btnBoxShadowDefault: $gray;
-
-$altCommonBtnTextColor: $white;
-$altCommonBtnTextShadow: none;
-
-$btnBackgroundColorFacebook: $facebookBlue; //default
-$btnBackgroundHoverFacebook: lighten($facebookBlue, 5%); //hover
-$btnBoxShadowFacebook: $facebookBlue;
-
-$btnBackgroundColorDanger: $red; //default
-$btnBackgroundHoverDanger: $lightestCrimson; //hover
-
-$btnBackgroundColorDeemphasize: $white;
-$btnBackgroundHoverDeemphasize: lighten($white, 5%);
-
+/* Primary */
+$btnBackgroundColorPrimary: $navy;
+$btnBackgroundHoverPrimary: $lightNavy;
+$btnBorderColorPrimary: $darkNavy;
+$btnTextColorPrimary: $white;
+/* Secondary */
+$btnBackgroundColorSecondary: $blue;
+$btnBackgroundHoverSecondary: $lightBlue;
+$btnBorderColorSecondary: $darkBlue;
+$btnTextColorSecondary: $white;
+/* Action */
+$btnBackgroundColorAction: $green;
+$btnBackgroundHoverAction: $lightGreen;
+$btnBorderColorAction: $darkGreen;
+$btnTextColorAction: $white;
+/* Danger */
+$btnBackgroundColorDanger: $crimson;
+$btnBackgroundHoverDanger: $lightCrimson;
+$btnBorderColorDanger: $darkCrimson;
+$btnTextColorDanger: $white;
+/* Disabled*/
 $btnBackgroundColorDisabled: $gray;
-$btnTextColorDisabled: $darkGray;
-$btnTextShadowDisabled: none;
+$btnBackgroundHoverDisabled: $gray;
+$btnBorderColorDisabled: $darkGray;
+$btnTextColorDisabled: $darkerGray;
 
 
 // Whitespace
