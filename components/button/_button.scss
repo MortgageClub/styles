@@ -37,7 +37,6 @@ There are 3 sizes:
     text-align: center;
     vertical-align: middle;
     outline: 0;
-    background: none;
 
     @include transition($transitionSpeedFast);
     @include border-radius(3px);
@@ -52,7 +51,7 @@ There are 3 sizes:
   }
 
   .btn.btnDisabled, .btn[disabled] {
-    border: 0;
+    border: solid 2px rgba(0, 0, 0, 0);
     cursor: default;
     pointer-events: none;
   }
