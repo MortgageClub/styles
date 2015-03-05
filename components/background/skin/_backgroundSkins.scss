@@ -6,54 +6,105 @@ name: backgroundSkins
 ---
 
 <div class="line txtC">
-  <div class="col cols6">
-    <div class="docSwatch backgroundLowlight"></div>
-    <code>backgroundLowlight</code>
+  <div class="col cols4">
+    <div class="docSwatch backgroundDarkNavy"></div>
+    <code>backgroundDarkNavy</code>
   </div>
-  <div class="col cols6">
-    <div class="docSwatch backgroundHighlight"></div>
-    <code>backgroundHighlight</code>
+  <div class="col cols4">
+    <div class="docSwatch backgroundNavy"></div>
+    <code>backgroundNavy</code>
   </div>
-  <div class="col cols6">
-    <div class="docSwatch backgroundBasic"></div>
-    <code>backgroundBasic</code>
+  <div class="col cols4">
+    <div class="docSwatch backgroundLightNavy"></div>
+    <code>backgroundLightNavy</code>
   </div>
-  <div class="col cols6">
-    <div class="docSwatch backgroundWarning"></div>
-    <code>backgroundWarning</code>
+
+  <div class="col cols4">
+    <div class="docSwatch backgroundDarkBlue"></div>
+    <code>backgroundDarkBlue</code>
   </div>
-  <div class="col cols6">
+  <div class="col cols4">
+    <div class="docSwatch backgroundBlue"></div>
+    <code>backgroundBlue</code>
+  </div>
+  <div class="col cols4">
+    <div class="docSwatch backgroundLightBlue"></div>
+    <code>backgroundLightBlue</code>
+  </div>
+
+  <div class="col cols4">
+    <div class="docSwatch backgroundDarkGreen"></div>
+    <code>backgroundDarkGreen</code>
+  </div>
+  <div class="col cols4">
+    <div class="docSwatch backgroundGreen"></div>
+    <code>backgroundGreen</code>
+  </div>
+  <div class="col cols4">
+    <div class="docSwatch backgroundLightGreen"></div>
+    <code>backgroundLightGreen</code>
+  </div>
+  <div class="col cols4">
+    <div class="docSwatch backgroundDarkCrimson"></div>
+    <code>backgroundDarkCrimson</code>
+  </div>
+  <div class="col cols4">
     <div class="docSwatch backgroundCrimson"></div>
     <code>backgroundCrimson</code>
   </div>
-  <div class="col cols6">
-    <div class="docSwatch backgroundCallout"></div>
-    <code>backgroundCallout</code>
+  <div class="col cols4">
+    <div class="docSwatch backgroundLightCrimson"></div>
+    <code>backgroundLightCrimson</code>
   </div>
-  <div class="col cols6">
-    <div class="docSwatch backgroundInverse"></div>
-    <code>backgroundInverse</code>
+  <div class="col cols4">
+    <div class="docSwatch backgroundDarkYellow"></div>
+    <code>backgroundDarkYellow</code>
   </div>
-  <div class="col cols6">
-    <div class="docSwatch backgroundMidnight"></div>
-    <code>backgroundMidnight</code>
+  <div class="col cols4">
+    <div class="docSwatch backgroundYellow"></div>
+    <code>backgroundYellow</code>
   </div>
-  <div class="col cols6">
+  <div class="col cols4">
+    <div class="docSwatch backgroundLightYellow"></div>
+    <code>backgroundLightYellow</code>
+  </div>
+  <div class="col cols4">
+    <div class="docSwatch backgroundBasic"></div>
+    <code>backgroundBasic</code>
+  </div>
+  <div class="col cols4">
+    <div class="docSwatch backgroundOffWhite"></div>
+    <code>backgroundOffWhite</code>
+  </div>
+  <div class="col cols4">
+    <div class="docSwatch backgroundLowlight"></div>
+    <code>backgroundLowlight</code>
+  </div>
+  <div class="col cols4">
     <div class="docSwatch backgroundSeattle"></div>
     <code>backgroundSeattle</code>
   </div>
-  <div class="col cols6">
-    <div class="docSwatch backgroundDaylight"></div>
-    <code>backgroundDaylight</code>
+  <div class="col cols4">
+    <div class="docSwatch backgroundInverse"></div>
+    <code>backgroundInverse</code>
   </div>
-  <div class="col cols6">
-    <div class="docSwatch backgroundAction"></div>
-    <code>backgroundAction</code>
+  <div class="col cols4">
+    <div class="docSwatch backgroundWarning"></div>
+    <code>backgroundWarning</code>
   </div>
-  <div class="col cols6">
+  <div class="col cols4">
+    <div class="docSwatch backgroundLightestCrimson"></div>
+    <code>backgroundLightestCrimson</code>
+  </div>
+  <div class="col cols4">
+    <div class="docSwatch backgroundCallout"></div>
+    <code>backgroundCallout</code>
+  </div>
+  <div class="col cols4">
     <div class="docSwatch backgroundFacebook"></div>
     <code>backgroundFacebook</code>
   </div>
+  <div class="col"></div>
 </div>
 */
 
@@ -63,14 +114,30 @@ name: backgroundSkins
   @include ooBackground("backgroundBasic", $bgBasic);
   @include ooBackground("backgroundOffWhite", $bgOffWhite);
   @include ooBackground("backgroundLowlight", $bgLowlight);
-  @include ooBackground("backgroundHighlight", $bgHighlight);
   @include ooBackground("backgroundInverse", $bgInverse);
   @include ooBackground("backgroundWarning", $bgWarn);
-  @include ooBackground("backgroundCrimson", $bgCrimson);
   @include ooBackground("backgroundCallout", $bgCallout);
-  @include ooBackground("backgroundMidnight", $bgMidnight);
-  @include ooBackground("backgroundDaylight", $bgDaylight);
-  @include ooBackground("backgroundAction", $bgAction);
   @include ooBackground("backgroundSeattle", $bgSeattle);
   @include ooBackground("backgroundFacebook", $bgFacebook);
+
+  @include ooBackground("backgroundLightNavy", $bgLightNavy);
+  @include ooBackground("backgroundNavy", $bgNavy);
+  @include ooBackground("backgroundDarkNavy", $bgDarkNavy);
+
+  @include ooBackground("backgroundLightBlue", $bgLightBlue);
+  @include ooBackground("backgroundBlue", $bgBlue);
+  @include ooBackground("backgroundDarkBlue", $bgDarkBlue);
+
+  @include ooBackground("backgroundLightGreen", $bgLightGreen);
+  @include ooBackground("backgroundGreen", $bgGreen);
+  @include ooBackground("backgroundDarkGreen", $bgDarkGreen);
+
+  @include ooBackground("backgroundLightestCrimson", $bgLightestCrimson);
+  @include ooBackground("backgroundLightCrimson", $bgLightCrimson);
+  @include ooBackground("backgroundCrimson", $bgCrimson);
+  @include ooBackground("backgroundDarkCrimson", $bgDarkCrimson);
+
+  @include ooBackground("backgroundLightYellow", $bgLightYellow);
+  @include ooBackground("backgroundYellow", $bgYellow);
+  @include ooBackground("backgroundDarkYellow", $bgDarkYellow);
 }

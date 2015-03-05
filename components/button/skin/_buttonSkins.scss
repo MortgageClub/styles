@@ -1,0 +1,33 @@
+/*doc
+---
+title: Colors
+parent: button
+name: buttonSkins
+---
+
+<div class="line txtC">
+  <div class="col cols6">
+    <p class="mbm">
+      <button class="btn btnDefault">.btnDefault</button>
+      <button class="btn btnPrimary mlm">.btnPrimary</button>
+      <button class="btn btnSecondary mlm">.btnSecondary</button>
+    </p>
+    <p>
+      <button class="btn btnAction">.btnAction</button>
+      <button class="btn btnDanger mlm">.btnDanger</button>
+      <button class="btn btnDisabled mlm">.btnDisabled</button>
+    </p>
+  </div>
+</div>
+*/
+
+
+// ButtonSkins Mixin
+@mixin ooButtonSkins {
+  @include ooButtonMixin("btnDefault", $btnBackgroundColorDefault $btnBackgroundHoverDefault, $btnBorderColorDefault, $btnTextColorDefault);
+  @include ooButtonMixin("btnPrimary", $btnBackgroundColorPrimary $btnBackgroundHoverPrimary, $btnBorderColorPrimary, $btnTextColorPrimary);
+  @include ooButtonMixin("btnSecondary", $btnBackgroundColorSecondary $btnBackgroundHoverSecondary, $btnBorderColorSecondary, $btnTextColorSecondary);
+  @include ooButtonMixin("btnAction", $btnBackgroundColorAction $btnBackgroundHoverAction, $btnBorderColorAction, $btnTextColorAction);
+  @include ooButtonMixin("btnDanger", $btnBackgroundColorDanger $btnBackgroundHoverDanger, $btnBorderColorDanger, $btnTextColorDanger);
+  @include ooButtonMixin("btnDisabled", $btnBackgroundColorDisabled $btnBackgroundHoverDisabled, $btnBorderColorDisabled, $btnTextColorDisabled);
+}

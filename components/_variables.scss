@@ -1,31 +1,44 @@
-$pureBlack: #000;
-$white: #fff;
-$offWhite: #EEF4F4;
-$black: #333;
-$darkGray: #666;
-$midGray: #999;
-$gray: #ccc;
-$lightGray: #e9e9e9;
-$paleGray: #efefef;
-$palestGray: #f8f8f8;
+// Core Colors
+$lightNavy: #03568C;
+$navy:		#00436E;
+$darkNavy:  #01375B;
 
-$green: #53b50a;
-$paleGreen: #4f9e1f;
-$darkGreen: #3d7314;
-$blue: #1eb9d4;
-$lightBlue: #0093bf;
-$midnightBlue: #003151;
-$facebookBlue: #4063b3;
+$lightBlue: #00A9DC;
+$blue:		#0093BF;
+$darkBlue:  #01789A;
+
+$lightestCrimson: #DA9697;
+$lightCrimson:    #C7383C;
+$crimson:  	      #953537;
+$darkCrimson:     #6B2527;
+
+$lightGreen: #9FBD87;
+$green:		 #829C6D;
+$darkGreen:  #647855;
+
+$lightYellow: #FDFCEA;
+$yellow:	  #FAF8CF;
+$darkYellow:  #F8F5AE;
+
+$black: #000;
+$darkestGray: #333;
+$darkerGray: #6D6D6D;
+$darkGray: #999;
+$gray: #c8c8c8;
+$lightGray: #e9e9e9;
+$lighterGray: #efefef;
+$lightestGray: #f8f8f8;
+$offWhite: #EEF4F4;
+$white: #fff;
+
+// Utility Colors
+$lightOrange: #f46747;
 $orange: #ee552a;
 $darkOrange: #b14700;
+
+$facebookBlue: #4063b3;
 $gold: #f9cb0b;
 $red: #e6001c;
-$fuschia: #ed1b77;
-$crimson: #943437;
-$tomatoSoup: #ee552a;
-$tomatoSoupHover: #f46747;
-$paleYellow: #fdf8e8;
-
 
 // Contours
 $borderDefaultWidth: 1px;
@@ -42,7 +55,7 @@ $circleRadiusXSml: 10px;
 $circleRadiusSml: 14px;
 $circleRadiusMed: 18px;
 $circleRadiusLrg: 23px;
-$borderInverse: $pureBlack;
+$borderInverse: $black;
 
 // Transition Speeds
 $transitionSpeedDefault: 400ms;
@@ -63,14 +76,14 @@ $zIndexPageOverlay: 100; // Full-page Overlays
 // (not the direct color names)
 
 // Typography Colors
-$baseTypeColor: $black;
+$baseTypeColor: $darkestGray;
 $actionTypeColor: $lightBlue;
-$seattleTypeColor: midGray;
-$lowlightTypeColor: $midGray;
+$seattleTypeColor: $darkGray;
+$lowlightTypeColor: $darkGray;
 $highlightTypeColor: $green;
 $warningTypeColor: $red;
 $calloutTypeColor: $orange;
-$midnightTypeColor: $midnightBlue;
+$midnightTypeColor: $darkNavy;
 $reversedTypeColor: $white;
 $facebookTypeColor: $facebookBlue;
 $crimsonTypeColor : $crimson;
@@ -82,23 +95,38 @@ $btnFontSize: 12px;  // Font size for newTXL btn
 $baseLineHeight: 1.5em !default; //must be unitless
 $baseFontSize: 14px !default; // when using baseFontSize variable, must use it with fontSize mixin
 $baseFontFamily: OpenSans, sans-serif;
-$baseTextColor: $black;
+$baseTextColor: $darkestGray;
+$headingTextColor: $navy;
 
 
 // Background Colors
-$bgLowlight: $palestGray;
+$bgLowlight: $lightestGray;
 $bgHighlight: $green;
 $bgBasic: $white;
-$bgInverse: $black;
-$bgSeattle: $midGray;
+$bgInverse: $darkestGray;
+$bgSeattle: $darkGray;
 $bgWarn: $red;
-$bgCrimson : $crimson;
 $bgCallout: $orange;
-$bgMidnight: $midnightBlue;
-$bgDaylight: $paleYellow;
+$bgDaylight: $lightYellow;
 $bgAction: $lightBlue;
 $bgFacebook: $facebookBlue;
 $bgOffWhite: $offWhite;
+$bgLightNavy:  $lightNavy;
+$bgNavy:       $navy;
+$bgDarkNavy:   $darkNavy;
+$bgLightBlue:  $lightBlue;
+$bgBlue:       $blue;
+$bgDarkBlue:   $darkBlue;
+$bgLightGreen: $lightGreen;
+$bgGreen:      $green;
+$bgDarkGreen:  $darkGreen;
+$bgLightestCrimson: $lightestCrimson;
+$bgLightCrimson:    $lightCrimson;
+$bgCrimson:         $crimson;
+$bgDarkCrimson:     $darkCrimson;
+$bgLightYellow:     $lightYellow;
+$bgYellow:          $yellow;
+$bgDarkYellow:      $darkYellow;
 // To add additional backgrounds use the following syntax:
 //    @include ooBackground(<className>, <color>)
 //    @className  (The class name that you will use for that background)
@@ -109,18 +137,18 @@ $bgOffWhite: $offWhite;
 $tabsBoxBorder: $gray;
 $tabsBorder: $lightGray;
 $tabsBodyBackground: $white;
-$tabsHighlightColor: $palestGray;
+$tabsHighlightColor: $lightestGray;
 $tabsActiveColor: $white;
 $tabsActiveBackground: $white;
-$tabsActiveFontColor: $black;
-$tabsHighlightColor: $palestGray;
+$tabsActiveFontColor: $darkestGray;
+$tabsHighlightColor: $lightestGray;
 $tabsActiveColor: $white;
 $tabsActiveBackground: $white;
-$tabsActiveFontColor: $black;
-$tabPrimaryBackgroundColor: $palestGray;
+$tabsActiveFontColor: $darkestGray;
+$tabPrimaryBackgroundColor: $lightestGray;
 $tabPrimaryActiveBackgroundColor: $white;
 $tabPrimaryActiveFontColor: $green;
-$tabPrimaryFontColor: $black;
+$tabPrimaryFontColor: $darkestGray;
 $tabPrimaryHoverFontColor: $blue;
 $tabColumnsBackgroundColor: rgb(173, 173, 173); // Fall back for IE
 $tabColumnsBackgroundColorOpaque: rgba(173, 173, 173, 0.9); //opaque gray
@@ -131,32 +159,32 @@ $tabBorderRadius: $borderRadiusDefault;
 
 
 // Badge Colors
-$badgePrimaryColor: $tomatoSoup;
+$badgePrimaryColor: $orange;
 $badgeSecondaryColor: $green;
 $badgeTertiaryColor: $red;
-$badgeStandardColor: $midGray;
+$badgeStandardColor: $darkGray;
 
 // Circle Colors
 $circleLowlight : $gray;
-$circleSeattle : $midGray;
+$circleSeattle : $darkGray;
 $circleHighlight : $green;
 $circleWarn : $red;
 $circleCrimson : $crimson;
 $circleCallout : $orange;
-$circleMidnight: $midnightBlue;
-$circleInverse: $black;
+$circleMidnight: $darkNavy;
+$circleInverse: $darkestGray;
 $circleAction: $lightBlue;
 $circleFacebook: $facebookBlue;
 
 // Dot Colors
 $dotLowlight : $gray;
-$dotSeattle : $midGray;
+$dotSeattle : $darkGray;
 $dotHighlight : $green;
 $dotWarn : $red;
 $dotCrimson : $crimson;
 $dotCallout : $orange;
-$dotMidnight: $midnightBlue;
-$dotInverse: $black;
+$dotMidnight: $darkNavy;
+$dotInverse: $darkestGray;
 $dotAction: $lightBlue;
 $dotFacebook: $facebookBlue;
 
@@ -170,30 +198,30 @@ $heatMapBarCold: $green;
 // Alert Colors
 $alertWarnColor: $red;
 $alertConfirmColor: $green;
-$alertInfoColor: $black;
+$alertInfoColor: $darkestGray;
 
 
 // Frame Colors
-$frameBackground: $midGray;
+$frameBackground: $darkGray;
 $frameBorder: $lightGray; //fallback for IE8 and 7
 
 
 // Overlay Colors
-$overlayLowlightBackground: $black;
+$overlayLowlightBackground: $darkestGray;
 $overlayLowlightFontColor: $white;
 $overlayHighlightBackground: $green;
 $overlayHighlightFontColor: $white;
 $overlayActionBackground: $blue;
 $overlayActionFontColor: $white;
 $overlayDefaultBackground: $white;
-$overlayDefaultFontColor: $black;
+$overlayDefaultFontColor: $darkestGray;
 $overlayMidnightFontColor: $white;
-$overlayMidnightBackground: $midnightBlue;
+$overlayMidnightBackground: $darkNavy;
 
 // Divider
 $dividerColor: $lightGray;
 $dividerColorLowlight: $lightGray;
-$inlineTextDividerColor: $midGray;
+$inlineTextDividerColor: $darkGray;
 $borderColor: $lightGray;
 $borderColorLowlight: $lightGray;
 
@@ -205,7 +233,7 @@ $tableBasicBorder: $lightGray;
 // List
 $listInlineDividerColor: $lightGray;
 $listBorderedDividerColor: $lightGray;
-$listHoverBackgroundColor: $palestGray;
+$listHoverBackgroundColor: $lightestGray;
 
 
 // Navigation
@@ -217,7 +245,7 @@ $tabDividerColor: $lightGray;
 
 
 // Close Icon
-$closeIconColor: $midGray;
+$closeIconColor: $darkGray;
 
 
 // SVG Icons
@@ -231,55 +259,51 @@ $tooltipBorderColor: $lightGray;
 
 
 // Toggle Colors
-$toggleColor: $black;
-$toggleColorLowlight: $midGray;
+$toggleColor: $darkestGray;
+$toggleColorLowlight: $darkGray;
 
 
 // Link Colors
 $linkColor: $lightBlue;
-$linkHoverColor: $midnightBlue;
-$lowlightLinkColor: $midGray;
-$lowlightLinkHoverColor: $midnightBlue;
+$linkHoverColor: $darkNavy;
+$lowlightLinkColor: $darkGray;
+$lowlightLinkHoverColor: $darkNavy;
 
 
-// Misc Colors
-$lightBackground: $palestGray;
+// Buttons
+/* Font sizes */
+$btnDefaultFontSize: $rootFontSize;
 
-
-// Button Colors
-$btnBackgroundColorDefault: $paleGray; //default
-$btnBackgroundHoverDefault: lighten($paleGray, 1%); //hover
-$lightBackground: $palestGray;
-$btnBackgroundColorFlat: $tomatoSoup; //flat button
-$btnBackgroundHoverFlat: $tomatoSoupHover; //flat button hover
-
-$btnBackgroundStartColorDefault: $paleGray; //default
-$btnBackgroundEndColorDefault: lighten($paleGray, 1%); //hover
-$btnTextColorDefault: $black;
-$btnTextShadowDefault: 0 1px 0 rgba(255, 255, 255, 1);
-$btnBorderColorDefault: $gray;
-$btnBoxShadowDefault: $gray;
-
-$altCommonBtnTextColor: $white;
-$altCommonBtnTextShadow: none;
-
-$btnBackgroundColorPrimary: $orange; //default
-$btnBackgroundHoverPrimary: lighten($orange, 5%); //hover
-$btnBoxShadowPrimary: $darkOrange;
-
-$btnBackgroundColorFacebook: $facebookBlue; //default
-$btnBackgroundHoverFacebook: lighten($facebookBlue, 5%); //hover
-$btnBoxShadowFacebook: $facebookBlue;
-
-$btnBackgroundColorDanger: $red; //default
-$btnBackgroundHoverDanger: lighten($red, 5%); //hover
-
-$btnBackgroundColorDeemphasize: $white;
-$btnBackgroundHoverDeemphasize: lighten($white, 5%);
-
+/* Default */
+$btnBackgroundColorDefault: $lighterGray;
+$btnBackgroundHoverDefault: lighten($lighterGray, 2%); //hover
+$btnBorderColorDefault: $lightGray;
+$btnTextColorDefault: $darkestGray;
+/* Primary */
+$btnBackgroundColorPrimary: $navy;
+$btnBackgroundHoverPrimary: $lightNavy;
+$btnBorderColorPrimary: $darkNavy;
+$btnTextColorPrimary: $white;
+/* Secondary */
+$btnBackgroundColorSecondary: $blue;
+$btnBackgroundHoverSecondary: $lightBlue;
+$btnBorderColorSecondary: $darkBlue;
+$btnTextColorSecondary: $white;
+/* Action */
+$btnBackgroundColorAction: $green;
+$btnBackgroundHoverAction: $lightGreen;
+$btnBorderColorAction: $darkGreen;
+$btnTextColorAction: $white;
+/* Danger */
+$btnBackgroundColorDanger: $crimson;
+$btnBackgroundHoverDanger: $lightCrimson;
+$btnBorderColorDanger: $darkCrimson;
+$btnTextColorDanger: $white;
+/* Disabled*/
 $btnBackgroundColorDisabled: $gray;
-$btnTextColorDisabled: $midGray;
-$btnTextShadowDisabled: none;
+$btnBackgroundHoverDisabled: $gray;
+$btnBorderColorDisabled: $darkGray;
+$btnTextColorDisabled: $darkerGray;
 
 
 // Whitespace
@@ -319,18 +343,18 @@ $dropdownBasicItemActiveBackground: $green; // The item you hover/focus on in th
 $dropdownBasicItemActiveTextColor: $white;
 $dropdownBasicItemTextShadow: 1px 1px 0 $darkGray; // can be null
 $dropdownBasicLinkColor: $blue;
-$dropdownListColor: $black;
+$dropdownListColor: $darkestGray;
 $dropdownListTextShadowColor: $white;
 $dropdownListHoverBackgroundColor: $lightGray;
 $dropdownListDividerBorderTopColor: $gray;
 $dropdownListDividerBorderBottomColor: $white;
-$dropdownLinkColor: $black;
+$dropdownLinkColor: $darkestGray;
 $dropdownDefaultZIndex: $zIndexPopup;
 
 
 // Form
-$placeholderText: $midGray;
-$formLabelColor: $midGray;
+$placeholderText: $darkGray;
+$formLabelColor: $darkGray;
 $formFieldBorder: 1px solid $gray;
 $formFieldBorderHighlight: 1px solid $green;
 $formFieldBorderWarning: 1px solid $red;
@@ -339,7 +363,7 @@ $formFieldBorderRadius: $borderRadiusSml;
 
 // Rating
 $ratingBarOffStartColor: $lightGray;
-$ratingBarOffEndColor: $midGray;
+$ratingBarOffEndColor: $darkGray;
 $ratingBarOnStartColor: $darkGreen;
 $ratingBarOnEndColor: $green;
 
@@ -354,7 +378,7 @@ $bodyColor: $white;
 $sideBarWidth: 185px; // left column in template
 $asideWidth: 300px; // right column in template
 $footerBorder: 5px solid $green;
-$footerLinkColor: $black;
+$footerLinkColor: $darkestGray;
 $footerLinkHoverColor: $green;
 
 
@@ -365,27 +389,27 @@ $carouselPaginationActiveColor: $green;
 
 // AddOn Defaults
 $addOnLowlightBackgroundColor: $gray;
-$addOnLowlightTextColor: $midGray;
+$addOnLowlightTextColor: $darkGray;
 $addOnLowlightTextShadow: 0 1px 0 rgba(255, 255, 255, 1);
-$addOnBtnBackgroundColor: $palestGray;
-$addOnBtnBackgroundStartColor: $palestGray; //light
-$addOnBtnBackgroundEndColor: $palestGray; //dark
-$addOnBtnTextColor: $black;
+$addOnBtnBackgroundColor: $lightestGray;
+$addOnBtnBackgroundStartColor: $lightestGray; //light
+$addOnBtnBackgroundEndColor: $lightestGray; //dark
+$addOnBtnTextColor: $darkestGray;
 $addOnBtnTextShadow: 0 1px 0 rgba(255, 255, 255, 1);
 
 
 // Modal Colors
-$modalBackgroundDark: $black;
+$modalBackgroundDark: $darkestGray;
 $modalBackgroundLight: $white;
 
 
 // Image Container
-$imageContainerBackgroundColor: $palestGray;
+$imageContainerBackgroundColor: $lightestGray;
 
 
 // Slider Colors
 $sliderBorderColor: $gray;
-$sliderBackgroundColor: $palestGray;
+$sliderBackgroundColor: $lightestGray;
 $sliderLineInsetShadowColor: $lightGray;
 
 
@@ -396,7 +420,7 @@ $photoPlayerThumbnailBorderHighlightColor: $green;
 
 // Tag Colors
 $tagBasicBorderColor: $lightGray;
-$tagBasicBackgroundColor: $palestGray;
+$tagBasicBackgroundColor: $lightestGray;
 $tagCloseColor: $gray;
 $tagBasicShadowColor: $white;
 
@@ -428,10 +452,10 @@ $markerTertiaryColor: $red;
 $markerTertiaryBorderColor: darken($red, 15%);
 $markerHighlightColor: $orange;
 $markerHighlightBorderColor: darken($orange, 15%);
-$markerLowlightColor: $midGray;
-$markerLowlightBorderColor: darken($midGray, 15%);
-$markerInverseColor: $black;
-$markerInverseBorderColor: darken($black, 15%);
+$markerLowlightColor: $darkGray;
+$markerLowlightBorderColor: darken($darkGray, 15%);
+$markerInverseColor: $darkestGray;
+$markerInverseBorderColor: darken($darkestGray, 15%);
 
 // Mobile stuff
 

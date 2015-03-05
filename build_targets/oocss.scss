@@ -45,7 +45,8 @@
 @import '../components/typography/skin/typeTransform';
 @import '../components/typography/skin/typeAlign';
 @import '../components/typography/skin/typeHeight';
-@include ooTypography;
+@import '../components/typography/skin/typeSizes';
+@include ooTypeSizes;
 @include ooTypeColor;
 @include ooTypeWeight;
 @include ooTypeTransform;
@@ -76,6 +77,12 @@
 @import '../components/overlay/skin/overlaySkins';
 @include ooOverlay;
 @include ooOverlaySkins;
+
+// Buttons
+@import '../components/button/button';
+@import '../components/button/skin/buttonSkins';
+@include ooButton;
+@include ooButtonSkins;
 
 // Table
 @import '../components/table/table';
