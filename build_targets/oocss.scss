@@ -104,15 +104,11 @@
 
 // Circles
 @import '../components/circle/circle';
-@import '../components/circle/skin/circleSkins';
 @include ooCircle;
-@include ooCircleSkins;
 
 // Dots
 @import '../components/dot/dot';
-@import '../components/dot/skin/dotSkins';
 @include ooDot;
-@include ooDotSkins;
 
 // Hover
 @import '../components/hover/hover';

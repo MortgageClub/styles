@@ -5,7 +5,16 @@ name: dot
 category: Components
 ---
 
-Dots are a small dot for lists.
+Dots are a small dot for lists. You can use the background classes to colorize it.
+
+```html_example
+<span class="dot backgroundSeattle mrxs"></span><span class="mrm">Seattle</span>
+<span class="dot backgroundInverse mrxs"></span><span class="mrm">Inverse</span>
+<span class="dot backgroundHighlight mrxs"></span><span class="mrm">Highlight</span>
+<span class="dot backgroundDarkNavy mrxs"></span><span class="mrm">DarkNavy</span>
+<span class="dot backgroundCallout mrxs"></span><span class="mrm">Callout</span>
+<span class="dot backgroundWarning mrxs"></span><span class="mrm">Warning</span>
+```
 
 */
 
@@ -13,7 +22,7 @@ Dots are a small dot for lists.
 // Dot Mixin
 @mixin ooDot {
 
-  %dot{
+  .dot {
     display: inline-block;
     width: 12px;
     height: 12px;
