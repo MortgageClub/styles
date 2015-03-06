@@ -7,13 +7,13 @@ category: Components
 
 Use this component to create circle objects (100% border radius).
 
-There are 3 sizes:
+There are 4 sizes and you can use the background classes to colorize them:
 
 ```html_example
-<span class="circleStandard xsm mrxs">1</span><span class="mrm">xsm</span>
-<span class="circleLowlight paxs sm mrxs">2</span><span class="mrm">sm</span>
-<span class="circleSeattle pas md typeReversed mrxs">3</span><span class="mrm">md</span>
-<span class="circleInverse pam lg typeReversed mrxs">4</span><span class="mrm">lg</span>
+<span class="circle xsm backgroundSeattle typeReversed mrxs">1</span><span class="mrm">xsm</span>
+<span class="circle sm backgroundDarkGreen typeReversed paxs mrxs">2</span><span class="mrm">sm</span>
+<span class="circle md backgroundNavy typeReversed pas mrxs">3</span><span class="mrm">md</span>
+<span class="circle lg backgroundInverse typeReversed pam mrxs">4</span><span class="mrm">lg</span>
 ```
 */
 
@@ -21,7 +21,7 @@ There are 3 sizes:
 // Circle Mixin
 @mixin ooCircle {
 
-  %circle{
+  .circle {
     display: inline-block;
     border-radius: 100%;
     text-align: center;
