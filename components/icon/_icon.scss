@@ -496,10 +496,10 @@ icon in an `<i>` tag like this:
     @extend %entypoBase; content: "\e851";
   }
   .iconTruck:before {
-    @extend %entypoBase; content: "\e9b0";
+    @extend %entypoBase; content: "\e9b1";
   }
   .iconRoad:before {
-    @extend %entypoBase; content: "\e9b1";
+    @extend %entypoBase; content: "\e9b2";
   }
   .iconClipboard:before {
     @extend %entypoBase; content: "\e9b8";
