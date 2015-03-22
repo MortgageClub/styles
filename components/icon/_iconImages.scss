@@ -35,6 +35,5 @@ These icons work similarly to icon fonts, but are static images instead.
 
 // IconImage Mixin
 @mixin ooIconImage {
-  @include ooIconInline("Logo", "inline/logo@2x.png");
-  @include ooIconInline("LogoColor", "inline/logo_color@2x.png");
+
 }
