@@ -157,7 +157,7 @@ icon in an `<i>` tag like this:
 @mixin ooIcon {
   .icon {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: baseline;
     line-height: 1;
     margin-top: 0;
     margin-bottom: 0;
@@ -175,7 +175,7 @@ icon in an `<i>` tag like this:
     speak: none;
     display: inline-block;
     text-decoration: inherit;
-    vertical-align: text-top;
+    vertical-align: baseline;
     text-align: center;
     // For safety - reset parent styles, that can break glyph codes
     font-variant: normal;
